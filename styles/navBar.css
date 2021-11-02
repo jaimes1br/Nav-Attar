@@ -1,0 +1,40 @@
+
+.navDiv{
+    position: fixed;
+    z-index: 1;
+    padding: 0%;
+}
+
+.navAttar{
+    background-color: var(--colorMoradoNav);
+    height: 8em;
+    width: 100vw;
+}
+
+
+#navbarNav{
+    z-index: 8;
+    font: var(--textNav);
+}
+
+.navAttar_list .nav-link{
+    font: var(--textNav);
+    color: #000;
+    text-transform: uppercase;
+    padding: .5em;
+}
+
+.navAttar_listDes{
+    font: var(--textNavs);
+    color: #000;
+    font-size: 1.8em;
+    margin: 1em 0;
+}
+
+
+.navAttar__icon{
+    padding: 0;
+    margin: 0;
+    width: 2.5em;
+}
+

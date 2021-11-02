@@ -1,0 +1,19 @@
+@import url(./navBar.css);
+
+
+:root{
+    --fontBase: 'Montserrat', sans-serif;
+    --textNav: 700 1.6em/1em var(--fontBase);
+    --textNavS: 500 1.6em/1em var(--fontBase);
+
+    --colorMoradoNav: #BDB2FF;
+
+}
+
+
+
+*{
+    font-size: 10px;
+}
+
+
