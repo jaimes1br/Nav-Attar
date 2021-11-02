@@ -21,23 +21,24 @@ footer{
     
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 5px 8px;
+    padding: 12px 15px;
     text-decoration: none;
     width: 50px;
     height: 20px;
     border-radius: 7px;
     font-size: 20px;
+    font-family: Roboto, sans-serif;
 }
 
 .menuItem{
     border-top: 40px;
     border-bottom: 40px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .menuItem a:hover{
-    background-color: #928bc0;
+    background-color: #8d87b4;
     color: black;
-    font-size: 22px; 
+    font-size: 20px; 
 }
