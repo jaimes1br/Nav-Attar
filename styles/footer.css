@@ -1,0 +1,17 @@
+footer{
+    background-color: #867FB3;
+}
+
+#nonePoint{
+    list-style-type: none;
+}
+
+/* .foot{
+    
+} */
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
