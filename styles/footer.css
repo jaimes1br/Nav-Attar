@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #nonePoint{
     list-style-type: none;
 } /*id que refiere a los links*/
@@ -12,8 +13,19 @@
 
 .button-social{
     background: white;
+=======
+footer{
+    background-color: rgba(90, 201, 205, 0.582);
+    
+}
+.img-logo{
+    justify-content: center;
+    width: 150px;
+}
+.btn-social{
+>>>>>>> 9077d58b845ffb7afa20dd1e4ae0f530498d95f3
     padding: 10px;
-    width: 20px;
+    width: 50px;
 }
 .social{
     padding-top: 50px;
@@ -26,6 +38,10 @@
 }
 .button-bar{
     background: white;
-    width: 10px;
-    height: 2px;
+    width: 150px;
+    height: 5px;
+    border: white;
+}
+.lineWhite{
+    justify-content: center;
 }
