@@ -1,0 +1,70 @@
+body{
+
+    background-color: #FAF4F4;
+}
+
+/*cuadro nosotros y descripción*/
+.titulo{
+    display:flex;
+    flex-direction: column;
+    padding-left: 50px;
+    width: 800px;
+    height: 150px;
+    margin-left: 21%;
+    background: #ECE4DB;
+    border-radius: 2px;
+   /* box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);*/
+}
+
+.titulo h1{
+
+    text-align: center;
+    padding-right: 30px;
+}
+
+.titulo p{
+
+    text-align: center;
+    padding-right: 30px;
+}
+
+/*contenedor primera fila de fotos*/
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 40px;
+    gap: 16px;
+}
+/*contenedor segunda fila de fotos*/
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    gap: 16px;
+}
+
+/* nombres */
+.container h5{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor h5{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card img{
+
+    margin: 10px;
+    width: 220px;
+    height: 300px;
+}
+
+
+
+
+
+
