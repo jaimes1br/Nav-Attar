@@ -2,9 +2,13 @@
     list-style-type: none;
 }
 
-/* .links{
+.foot{
+    background-color: #867FB3;
+}
+
+.links{
     display: block;
-} */
+} 
 
 .button-social{
     background: white;
