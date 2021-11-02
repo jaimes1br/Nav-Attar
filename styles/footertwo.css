@@ -6,6 +6,7 @@
 .img{
     display: flex;
     justify-content: center;
+    padding-top: 10px;
 }
 .img-logo{
     width: 105px;
@@ -16,7 +17,7 @@
 }
 .social{
     padding-top: 5px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
@@ -38,7 +39,7 @@
 }
 .lineWhite h2{
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
 }
 .thanks{
@@ -46,4 +47,7 @@
     justify-content: center;
     align-items: center;
     padding-right: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    color: white;
 }
