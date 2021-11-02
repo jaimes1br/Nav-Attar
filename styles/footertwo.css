@@ -1,36 +1,41 @@
-footer{
-    background-color: rgba(90, 201, 205, 0.582);
-}
+
 .logo{
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 .img{
-    align-content: center;
+    display: flex;
+    justify-content: center;
 }
 .img-logo{
     width: 80px;
 }
 .btn-social{
-padding: 10px;
-width: 50px;
+    padding: 10px;
+    width: 50px;
 }
 .social{
-padding-top: 50px;
-padding-bottom: 10px;
-padding-left: 15px;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-gap: 16px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
 }
 .button-bar{
-background: white;
-width: 150px;
-height: 5px;
-border: white;
+    background: white;
+    width: 150px;
+    height: 5px;
+    border: white;
 }
 .lineWhite{
-align-content: center;
+    display: flex;
+    justify-content: center;
+}
+.thanks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
