@@ -1,14 +1,14 @@
 #nonePoint{
     list-style-type: none;
-}
+} /*id que refiere a los links*/
 
 .foot{
     background-color: #867FB3;
-}
+}/*referencia a la clase en el section*/
 
 .links{
     display: block;
-} 
+}/*todos los links*/
 
 .button-social{
     background: white;
