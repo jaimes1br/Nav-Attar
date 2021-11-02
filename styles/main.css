@@ -1,3 +1,5 @@
+@import url(./footer.css);
+@import url(/styles/footertwo.css);
 @import url(./navBar.css);
 
 
@@ -17,3 +19,8 @@
 }
 
 
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
