@@ -25,6 +25,8 @@ body{
     top: 1em;
     left: 40%;
     font: var(--textTitulos);
+    animation-name: movimiento;
+    animation-duration: 5s;
 }
 
 .tituloDes{
@@ -34,13 +36,35 @@ body{
     width: 50em;
     font: var(--textTituloDes);
     text-align: center;
+    animation-name: movimiento;
+    animation-duration: 5s;
 }
+
+
+@keyframes movimiento{
+    0%{
+        transform: translatey(-100px);
+    }
+    50%{
+        transform: translatey(10px);      
+    }
+    70%{
+        transform: translatey(15px);      
+    }
+    100%{
+        transform: translatey(5px);
+    }
+}
+
+
 
 /*Mision y vison*/
 .elemento{
     display: flex;
     flex-direction: row;
     height: 40em;
+    animation-name: movimientoLado;
+    animation-duration: 5s;
 }
 
 .elementoImagen img{
@@ -69,6 +93,22 @@ body{
 }
 
 
+@keyframes movimientoLado{
+    0%{
+        transform: translatex(-100px);
+    }
+    50%{
+        transform: translatex(10px);      
+    }
+    70%{
+        transform: translatex(15px);      
+    }
+    100%{
+        transform: translatex(5px);
+    }
+}
+
+
 /*Presentación*/
 .presentación{
     border-top: 1em solid var(--colorMoradoFoo);
@@ -89,6 +129,8 @@ body{
     padding: 40px;
     gap: 16px;
     text-align: center;
+    animation-name: movimientoLado;
+    animation-duration: 5s;
 }
 /*contenedor segunda fila de fotos*/
 .contenedor {
@@ -99,6 +141,8 @@ body{
     gap: 16px;
     text-align: center;
     margin-bottom: 3em;
+    animation-name: movimientoLadoD;
+    animation-duration: 5s;
 }
 
 /* nombres */
@@ -114,4 +158,19 @@ body{
 }
 
 
+
+@keyframes movimientoLadoD{
+    0%{
+        transform: translatex(500px);
+    }
+    50%{
+        transform: translatex(100px);      
+    }
+    70%{
+        transform: translatex(40px);      
+    }
+    100%{
+        transform: translatex(5px);
+    }
+}
 

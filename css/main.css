@@ -1,6 +1,7 @@
 @import url(./navBar.css);
 @import url(./footer.css);
 @import url(./nosotros.css);
+@import url(./contactoEquipo.css);
 
 
 :root{
@@ -11,6 +12,8 @@
     --textTitulos: 700 10em/1em var(--fontBase); 
     --textTituloDes: 500 2.3em/1.5em var(--fontBase);
     --textDescripcionT: 700 4em/1em var(--fontBase);
+    --textDescripcionCon: 400 1.4em/1.5em var(--fontBase);
+
 
     --colorMoradoNav: #BDB2FF;
     --colorMoradoNavHover: #998fcf;
