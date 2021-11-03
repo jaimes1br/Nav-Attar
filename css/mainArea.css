@@ -1,0 +1,68 @@
+#main{
+    /*background-color: rgba(252, 206, 214, 0.281);*/
+    display: flex;
+    justify-content: center;
+} 
+.ilogo{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+.logomain{
+    width: 35em;
+    height: auto;
+}
+
+.main-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    gap: 5em;
+}
+
+.infoa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10em; 
+    padding-bottom: 5em;
+}
+
+#boton{ 
+    background-color: #A0C4FF;  
+    border-color: #A0C4FF; 
+    width: 10em;
+    height: 2.5em;
+    font-weight: bold;
+    font-size: 1.75em;
+}
+.description{
+    padding-bottom: 2em;
+}
+.description p{
+    font-weight:300;
+     font-size: 1.75em;
+     background-color: rgb(255, 230, 234);
+}
+
+.containercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    background: #FAF4F4;
+    width: 85%;
+    border-radius: 3.5em;
+}
+
+
+
