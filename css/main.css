@@ -1,5 +1,4 @@
 @import url(./footer.css);
-@import url(/styles/footertwo.css);
 @import url(./navBar.css);
 
 
@@ -7,9 +6,11 @@
     --fontBase: 'Montserrat', sans-serif;
     --textNav: 700 1.6em/1em var(--fontBase);
     --textNavS: 500 1.6em/1em var(--fontBase);
+    --textFooter: 500 1.8em/1em var(--fontBase);
 
     --colorMoradoNav: #BDB2FF;
-
+    --colorMoradoFoo: #867FB3;
+    --colorMoradoFooHover: #8d87b4;
 }
 
 

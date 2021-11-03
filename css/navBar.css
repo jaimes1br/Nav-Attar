@@ -1,6 +1,6 @@
 
 .navDiv{
-    position: fixed;
+    /* position: fixed; */
     z-index: 1;
     padding: 0%;
 }
@@ -8,7 +8,6 @@
 .navAttar{
     background-color: var(--colorMoradoNav);
     height: 8em;
-    width: 100vw;
 }
 
 
