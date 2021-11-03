@@ -87,27 +87,30 @@
                 <img src="./../img/logos/gatoLogo.png" alt="..." >
 
             </div>
-            <form id="form">
+            <form action=" " method="POST" id="form">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="email" class="form-control" id="nombre" placeholder="Cliente">
+                    <input type="text" class="form-control" id="nombre" placeholder="Cliente">
                 </div><!--nombre-->
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="correo" placeholder="name@example.com">
                 </div><!--correo-->
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
-                    <input type="email" class="form-control" id="asunto">
+                    <input type="text" class="form-control" id="asunto">
                 </div><!--asunto-->
                 <div class="form-group formularioTexto_men">
                     <label for="mensaje">Mensaje</label>
-                    <input type="email" class="form-control" id="mensaje" placeholder="¡Hola!">
+                    <input type="text" class="form-control" id="mensaje" placeholder="¡Hola!">
                 </div><!--mensaje-->
+
+                <div class="text-center divBtn">
+                  <button type="submit" class="btn" id="btnEnviar">¡Enviar!</button>
+                  <!--<p class="warning" id="alertas"></p>-->
+                </div>
             </form>
-            <div class="text-center divBtn">
-                <button type="submit" class="btn" id="btnEnviar">¡Enviar!</button>
-            </div>
+          
         </div><!--divTexto-->
                 
             </div><!--divForm-->
