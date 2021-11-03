@@ -87,33 +87,32 @@
                 <img src="./../img/logos/gatoLogo.png" alt="..." >
 
             </div>
-<<<<<<< HEAD
-            <form method="post">
-=======
-            <form id="form">
->>>>>>> 2e67459e63843a32531c7f14e45b1155c43b63fc
+            <form id="form" method="post">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Cliente" required>
-                    <div id="div_error"></div>
+                    
+                    <div id="div_error"></div><!--div mensage-->
+
                 </div><!--nombre-->
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="correo" id="correo" placeholder="name@example.com" required>
                 </div><!--correo-->
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
-                    <input type="email" class="form-control" id="asunto">
+                    <input type="text" class="form-control" name="asunto" id="asunto" required>
                 </div><!--asunto-->
                 <div class="form-group formularioTexto_men">
                     <label for="mensaje">Mensaje</label>
-                    <input type="email" class="form-control" id="mensaje" placeholder="¡Hola!">
+                    <input type="text" class="form-control" name="mensaje" id="mensaje" placeholder="¡Hola!" required>
                 </div><!--mensaje-->
+                <div class="text-center divBtn">
+                  <button type="submit" class="btn" id="btnEnviar">¡Enviar!</button>
+                  <!-- <input type="submit" value="enviar!" class="btn" id="btnEnviar" > -->
+              </div>
             </form>
-            <div class="text-center divBtn">
-                <!-- <button type="button" class="btn" id="btnEnviar">¡Enviar!</button> -->
-                <input type="submit" value="enviar!" class="btn" id="btnEnviar" >
-            </div>
+            
         </div><!--divTexto-->
                 
             </div><!--divForm-->
@@ -163,10 +162,6 @@
     </footer><!--footer-->
     </div><!--ContainerFooter-->
 
-<<<<<<< HEAD
-    <script src="../js/contactVal.js"></script>
-=======
     <script type="text/javascript" src="../js/contactVal.js"></script>
->>>>>>> 2e67459e63843a32531c7f14e45b1155c43b63fc
 </body>
 </html>
