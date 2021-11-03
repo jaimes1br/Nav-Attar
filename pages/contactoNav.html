@@ -87,10 +87,11 @@
                 <img src="./../img/logos/gatoLogo.png" alt="..." >
 
             </div>
-            <form >
+            <form method="post">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="email" class="form-control" id="nombre" placeholder="Cliente">
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Cliente" required>
+                    <div id="div_error"></div>
                 </div><!--nombre-->
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
@@ -106,7 +107,8 @@
                 </div><!--mensaje-->
             </form>
             <div class="text-center divBtn">
-                <button type="button" class="btn" id="btnEnviar">¡Enviar!</button>
+                <!-- <button type="button" class="btn" id="btnEnviar">¡Enviar!</button> -->
+                <input type="submit" value="enviar!" class="btn" id="btnEnviar" >
             </div>
         </div><!--divTexto-->
                 
@@ -157,6 +159,6 @@
     </footer><!--footer-->
     </div><!--ContainerFooter-->
 
-
+    <script src="../js/contactVal.js"></script>
 </body>
 </html>
