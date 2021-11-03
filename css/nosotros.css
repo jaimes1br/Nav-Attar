@@ -1,0 +1,117 @@
+body{
+
+    background-color: #FAF4F4;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*cuadro nosotros y descripción*/
+#fondo{
+    position: relative;
+    display: inline-block;
+    left: 1%;
+    top: 0; 
+    width: 95vw;
+}
+#fondo img{
+    width: 95vw;
+    height: 50em;
+    opacity: 50%;
+}
+
+.titulo{
+    position: absolute;
+    top: 1em;
+    left: 40%;
+    font: var(--textTitulos);
+}
+
+.tituloDes{
+    position: absolute;
+    top: 12em;
+    left: 8%;
+    width: 50em;
+    font: var(--textTituloDes);
+    text-align: center;
+}
+
+/*Mision y vison*/
+.elemento{
+    display: flex;
+    flex-direction: row;
+    height: 40em;
+}
+
+.elementoImagen img{
+    width: auto;
+    height: 40em;
+    margin: 2em 8em;
+}
+
+.elementoTexto h1{
+    font: var(--textDescripcionT);
+    text-align: center;
+    margin: 1em 0;
+}
+
+.elementoTexto p{
+    font: var(--textTituloDes);
+    text-align: center;
+}
+
+.elementoTexto_top{
+    border-top: 1em solid var(--colorMoradoFoo);
+}
+
+.elemento_rev{
+    flex-direction: row-reverse;
+}
+
+
+/*Presentación*/
+.presentación{
+    border-top: 1em solid var(--colorMoradoFoo);
+    border-bottom: 1em solid var(--colorMoradoFoo);
+    margin: 0;
+}
+.presentación p{
+    font: var(--textTituloDes);
+    text-align: center;
+    margin: 3em 0;
+}
+
+/*contenedor primera fila de fotos*/
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 40px;
+    gap: 16px;
+    text-align: center;
+}
+/*contenedor segunda fila de fotos*/
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    gap: 16px;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+/* nombres */
+.container h5 a, .contenedor h5 a{
+    text-align: center;
+    font: var(--textTituloDes);
+}
+
+.card img{
+    margin: 10px;
+    width: 220px;
+    height: 300px;
+}
+
+
+

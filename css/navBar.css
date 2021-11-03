@@ -3,6 +3,7 @@
     /* position: fixed; */
     z-index: 1;
     padding: 0%;
+    margin: 0;
 }
 
 .navAttar{
@@ -18,9 +19,8 @@
 
 .navAttar_list .nav-link{
     font: var(--textNav);
-    color: #000;
     text-transform: uppercase;
-    padding: .5em;
+    margin: 1em 0;
 }
 
 .navAttar_listDes{
@@ -36,4 +36,10 @@
     margin: 0;
     width: 2.5em;
 }
+
+.navAttar_list li:hover{
+    background-color: var(--colorMoradoNavHover);
+    border-radius: 1em;
+}
+
 

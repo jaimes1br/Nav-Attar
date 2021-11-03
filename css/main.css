@@ -1,5 +1,6 @@
-@import url(./footer.css);
 @import url(./navBar.css);
+@import url(./footer.css);
+@import url(./nosotros.css);
 
 
 :root{
@@ -7,10 +8,17 @@
     --textNav: 700 1.6em/1em var(--fontBase);
     --textNavS: 500 1.6em/1em var(--fontBase);
     --textFooter: 500 1.8em/1em var(--fontBase);
+    --textTitulos: 700 10em/1em var(--fontBase); 
+    --textTituloDes: 500 2.3em/1.5em var(--fontBase);
+    --textDescripcionT: 700 4em/1em var(--fontBase);
 
     --colorMoradoNav: #BDB2FF;
+    --colorMoradoNavHover: #998fcf;
     --colorMoradoFoo: #867FB3;
     --colorMoradoFooHover: #8d87b4;
+
+    --colorActive: #6e66a0;
+
 }
 
 
