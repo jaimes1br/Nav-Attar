@@ -1,3 +1,4 @@
+/* MiNE */
 *{
     margin: 0;
     padding: 0;
@@ -5,36 +6,31 @@
 }
 
 .hr{
-    margin: 40px;
     margin-right: 10%;
     margin-left: 10%;
 }
 
-.containerContacto{
-    margin-top: 6em;
-    margin-bottom: 6em;
+.container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 400px;
     background: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    padding: 0 20px;
-    
+    padding: 0 40px;
 }
 
 .card-container{
     display:flex;
-    width: 100em;
+    width: 700px;
     height: auto;
     background: #DDD9F5;
-    border-radius: 10px;
+    border-radius: 2px;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
-    /* margin-top: 40em; */
 }
 
 .header, .description{
-    /* padding: 2em; */
+    padding: 20px;
     text-align: center;
 }
 
@@ -46,7 +42,7 @@
 .header img{
     border-radius: 20%;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, .06);
-    margin: 3em 3em;
+    margin: 10px 80px;
 }
 
 .header a:hover img{
@@ -58,23 +54,24 @@
 }
 
 .description h2{
-    font: var(--textDescripcionT)
+    font-weight: 700;
+    font-size: 30px;
 }
 
 .description h4{
-    margin-bottom: 1em;
-    font: var(--textTituloDes);
+    margin-bottom: 20px;
+    font-weight: 500;
     color: rgb(49, 0, 128);
 }
 
 .description p{
-    margin: 2em 2em;
-    padding: 1em;
-    /* font-size: 11px; */
-    font: var(--textDescripcionCon);
-    background-color: #E7DDD1;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, .06);
-    border-radius: 10%;
+margin: 20px 20px;
+padding: 10px;
+font-size: 11px;
+background-color: #E7DDD1;
+box-shadow: 0 0 0 2px rgba(0, 0, 0, .06);
+border-radius: 10%;
+
 }
 
 .description, .social{
@@ -89,7 +86,7 @@
 
 .social{
     display: flex;
-    margin-left: 2vh;
+    margin-left: 6vh;
     flex-direction: row; 
     justify-content: flex-start;
     gap: 15px;
@@ -97,9 +94,14 @@
 .social a{
     padding-top: 3px;
     background-color: rgb(187, 187, 187);
-    border: 2px solid rgb(187, 187, 187); 
-    width: 4em;
-    height: 4em;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-style: solid;
+    border-color: rgb(187, 187, 187);
+    width: 30px;
+    height: 30px;
 }
 
 .social:hover .imagen a {-webkit-transform:scale(1.3);transform:scale(1.3);}
@@ -107,13 +109,21 @@
 
 
 .social button{
-    font: var(--textTitulos);
-    font-size: 1.8em;
-    background-color: var(--colorMoradoNav);
-    border-color: var(--colorMoradoNav);
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #BDB2FF;
+    color: black;
+    border-color: #BDB2FF;
     border-radius: 3px;
-    width: 10em;
-    height: 3em;
+    width: 120px;
+    height: 30px;
+    /* margin-top: 40px;
+    margin-bottom: 100px; */
+    /* text-transform: uppercase; */
 }
-
-
+ @media (max-width: 640px){
+     .card-container{
+         display: block;
+         border: 0;
+     }
+ }
