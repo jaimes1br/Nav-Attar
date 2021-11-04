@@ -13,39 +13,58 @@ form.addEventListener("submit", e=>{
  alertas.innerHTML = ""
  let Temail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-if(nombre.value.length <= 2 || nombre.value.length == 0){
-    alerta += `Nombre no valido <br>`
+  if(nombre.value.length <= 2 || nombre.value.length == 0){
+      alerta += `Nombre no valido <br>`
+      valido = true
+  }
+  if(!Temail.test(email.value) || email.value.length==0){
+    
+    alerta += `Email no valido <br>`
     valido = true
-}
-if(!Temail.test(email.value) || email.value.length==0){
-   
-  alerta += `Email no valido <br>`
-  valido = true
-}
+  }
 
-if(asunto.value.length >= 50 || asunto.value.length == 0){
+  if(asunto.value.length >= 50 || asunto.value.length == 0){
 
-  alerta += `Asunto no valido <br>`
-  valido = true
-}
+    alerta += `Asunto no valido <br>`
+    valido = true
+  }
 
-if(mensaje.value.length >= 150 || mensaje.value.length==0){
+  if(mensaje.value.length >= 150 || mensaje.value.length==0){
 
-  alerta += `Mensaje no valido <br>`
-  valido = true
+    alerta += `Mensaje no valido <br>`
+    valido = true
 
-}
+  }
 
-if(valido){
+  if(valido){
 
+<<<<<<< HEAD
   alertas.innerHTML = alerta;
+=======
+    alertaDiv.innerHTML = ` 
+        <div class="alert alert-dark" role="alert"> 
+        ${alerta}
+          
+        </div>`;
+>>>>>>> 8e0830cda1a76b19d53dc347f0be1e4d1c2c444e
 
-}else{
+  }else{
 
+<<<<<<< HEAD
   var dir = document.createElement("a");
         dir.href = `mailto:nav.attar.contact@gmail.com?subject=${asunto.value}&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${correo.value}`;
         dir.click();
 }
+=======
+    var correo = document.createElement("a");
+    correo.href = `b1jaimes89@gmail.com?subject=${asunto.value}
+    &body=Nombre:\n\n ${nombre.value}
+    \n\nMensaje: \n\n ${mensaje.value}
+    \n\n Correo Cliente: ${correo.value}`;
+
+    correo.click();
+  }
+>>>>>>> 8e0830cda1a76b19d53dc347f0be1e4d1c2c444e
 
 })
 

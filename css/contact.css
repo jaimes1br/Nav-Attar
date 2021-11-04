@@ -1,0 +1,8 @@
+input.submit, select.sbtn{
+   background: rgb(167, 19, 19);
+   border: 1px solid #393939;
+   border-radius: 5px 5px 5px 5px;
+   color: #393939;
+   font-size: 12px;
+   padding: 5px;
+}
