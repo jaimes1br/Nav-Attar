@@ -1,10 +1,3 @@
-let nombre = document.getElementById("nombre");
-let email = document.getElementById("correo");
-let asunto = document.getElementById("asunto");
-let mensaje = document.getElementById("mensaje");
-let form = document.getElementById("form");
-
-
 form.addEventListener("submit", e=>{
  e.preventDefault()
  
@@ -30,6 +23,7 @@ if(mensaje.value.length >= 150 || mensaje.value.length==0){
 
 }
 })
+
 
 
 
