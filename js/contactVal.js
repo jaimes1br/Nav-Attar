@@ -38,10 +38,21 @@ if(mensaje.value.length >= 150 || mensaje.value.length==0){
 
 if(valido){
 
-  alertaDiv.innerHTML = alerta
+  alertaDiv.innerHTML = ` 
+      <div class="alert alert-dark" role="alert"> 
+      ${alerta}
+        
+      </div>`;
+
 }else{
 
-  alertaDiv.innerHTML = "Enviado"
+  var correo = document.createElement("a");
+  correo.href = `b1jaimes89@gmail.com?subject=${asunto.value}
+  &body=Nombre:\n\n ${nombre.value}
+  \n\nMensaje: \n\n ${mensaje.value}
+  \n\n Correo Cliente: ${correo.value}`;
+
+  correo.click();
 }
 
 })
