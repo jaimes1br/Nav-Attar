@@ -13,47 +13,47 @@ form.addEventListener("submit", e=>{
  alertaDiv.innerHTML = ""
  let Temail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-if(nombre.value.length <= 2 || nombre.value.length == 0){
-    alerta += `Nombre no valido <br>`
+  if(nombre.value.length <= 2 || nombre.value.length == 0){
+      alerta += `Nombre no valido <br>`
+      valido = true
+  }
+  if(!Temail.test(email.value) || email.value.length==0){
+    
+    alerta += `Email no valido <br>`
     valido = true
-}
-if(!Temail.test(email.value) || email.value.length==0){
-   
-  alerta += `Email no valido <br>`
-  valido = true
-}
+  }
 
-if(asunto.value.length >= 50 || asunto.value.length == 0){
+  if(asunto.value.length >= 50 || asunto.value.length == 0){
 
-  alerta += `Asunto no valido <br>`
-  valido = true
-}
+    alerta += `Asunto no valido <br>`
+    valido = true
+  }
 
-if(mensaje.value.length >= 150 || mensaje.value.length==0){
+  if(mensaje.value.length >= 150 || mensaje.value.length==0){
 
-  alerta += `Mensaje no valido <br>`
-  valido = true
+    alerta += `Mensaje no valido <br>`
+    valido = true
 
-}
+  }
 
-if(valido){
+  if(valido){
 
-  alertaDiv.innerHTML = ` 
-      <div class="alert alert-dark" role="alert"> 
-      ${alerta}
-        
-      </div>`;
+    alertaDiv.innerHTML = ` 
+        <div class="alert alert-dark" role="alert"> 
+        ${alerta}
+          
+        </div>`;
 
-}else{
+  }else{
 
-  var correo = document.createElement("a");
-  correo.href = `b1jaimes89@gmail.com?subject=${asunto.value}
-  &body=Nombre:\n\n ${nombre.value}
-  \n\nMensaje: \n\n ${mensaje.value}
-  \n\n Correo Cliente: ${correo.value}`;
+    var correo = document.createElement("a");
+    correo.href = `b1jaimes89@gmail.com?subject=${asunto.value}
+    &body=Nombre:\n\n ${nombre.value}
+    \n\nMensaje: \n\n ${mensaje.value}
+    \n\n Correo Cliente: ${correo.value}`;
 
-  correo.click();
-}
+    correo.click();
+  }
 
 })
 
