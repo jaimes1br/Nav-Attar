@@ -38,33 +38,14 @@ form.addEventListener("submit", e=>{
 
   if(valido){
 
-<<<<<<< HEAD
-  alertas.innerHTML = alerta;
-=======
-    alertaDiv.innerHTML = ` 
-        <div class="alert alert-dark" role="alert"> 
-        ${alerta}
-          
-        </div>`;
->>>>>>> 8e0830cda1a76b19d53dc347f0be1e4d1c2c444e
+    alertas.innerHTML = alerta
 
   }else{
 
-<<<<<<< HEAD
-  var dir = document.createElement("a");
-        dir.href = `mailto:nav.attar.contact@gmail.com?subject=${asunto.value}&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${correo.value}`;
-        dir.click();
-}
-=======
-    var correo = document.createElement("a");
-    correo.href = `b1jaimes89@gmail.com?subject=${asunto.value}
-    &body=Nombre:\n\n ${nombre.value}
-    \n\nMensaje: \n\n ${mensaje.value}
-    \n\n Correo Cliente: ${correo.value}`;
-
-    correo.click();
+    var dir = document.createElement("a");
+    dir.href = `mailto:nav.attar.contact@gmail.com?subject=${asunto.value}&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value}`;
+    dir.click();
   }
->>>>>>> 8e0830cda1a76b19d53dc347f0be1e4d1c2c444e
 
 })
 
