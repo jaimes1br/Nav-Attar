@@ -87,15 +87,11 @@
                 <img src="./../img/logos/gatoLogo.png" alt="..." >
 
             </div>
-<<<<<<< HEAD
-            <form method="post">
-=======
-            <form id="form">
->>>>>>> 2e67459e63843a32531c7f14e45b1155c43b63fc
+
+            <form method="post" id="form" enctype="text/plain">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Cliente" required>
-                    <div id="div_error"></div>
+                    <input type="text" class="form-control" id="nombre" placeholder="Cliente">
                 </div><!--nombre-->
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
@@ -103,18 +99,25 @@
                 </div><!--correo-->
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
-                    <input type="email" class="form-control" id="asunto">
+                    <input type="text" class="form-control" id="asunto">
                 </div><!--asunto-->
                 <div class="form-group formularioTexto_men">
                     <label for="mensaje">Mensaje</label>
-                    <input type="email" class="form-control" id="mensaje" placeholder="¡Hola!">
+                    <input type="text" class="form-control" id="mensaje" placeholder="¡Hola!">
                 </div><!--mensaje-->
+
+                <div class="text-center divBtn" >
+                  <input type="submit" name="submit" value="¡Enviar!"  class="btn btn-light"> 
+                  <!--<p class="warning" id="alertas"></p>-->  
+                </div>
+
+
+                <div class="alert alert-dark" id="alerta" role="alert">
+                 
+                </div>
             </form>
-            <div class="text-center divBtn">
-                <!-- <button type="button" class="btn" id="btnEnviar">¡Enviar!</button> -->
-                <input type="submit" value="enviar!" class="btn" id="btnEnviar" >
-            </div>
-        </div><!--divTexto-->
+          
+            </div><!--divTexto-->
                 
             </div><!--divForm-->
             </div><!--containerForm-->
@@ -157,13 +160,32 @@
 
           <div class="thanks">
             <h5>Hecho con amor ❤️ de: <br> <a href="https://mexico.generation.org/" >@GenerationMx</a> por <a href="/pages/contactoEquipo.html#alejandro">Alejandro</a>, <br> <a href="/pages/contactoEquipo.html#brandon"> Brandon</a>, <a href="/pages/contactoEquipo.html#dann"> Daniel,</a> <a href="/pages/contactoEquipo.html#daniel"> Erik</a>, <br> <a href="/pages/contactoEquipo.html#ilan">Ilan</a>, <a href="/pages/contactoEquipo.html#pablo">Pablo</a> y <a href="/pages/contactoEquipo.html#paola">Paola</a>.</h5>
-        </div><!--Thanks-->
+          </div><!--Thanks-->
 
       </section><!--foot-->
     </footer><!--footer-->
     </div><!--ContainerFooter-->
 
-    <script src="/js/contactVal.js"></script>
-    <script type="text/javascript" src="/js/contactVal.js"></script>
+    <script type="text/javascript" src="../js/contactVal.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
