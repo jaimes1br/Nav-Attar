@@ -1,0 +1,288 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+
+/*-----------------------------------------------------------------
+ ||  nosotros       
+  -----------------------------------------------------------------*/
+
+#nosotros{
+    background: url('./../img/womanOpa.jpg') no-repeat center center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    align-items: center;
+    position: relative;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    border: 1em solid black;
+}
+
+.nosotrosTexto{
+    position: relative;
+    display: block;
+    top: 5em;
+    color: black;
+    text-align: center;
+}
+
+.nosotrosTexto h3{
+    font-size: 8vw;
+    font-weight: 500;
+}
+
+
+.nosotrosTexto p{
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+
+
+/*-----------------------------------------------------------------
+ ||  elemento (mision-vision)        
+  -----------------------------------------------------------------*/
+
+.elemento{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1vw solid #867FB3;
+    padding: 3em 0;
+}
+
+.elemento-rev{
+    flex-direction: row-reverse;
+}
+
+.elementoImagen{
+    height: 70vh;
+    width: auto;
+}
+
+
+.elementoTexto h1{
+    margin: 0.5em 0;
+    font-size: 5vw;
+    font-weight: 500;
+}
+
+.elementoTexto p{
+    padding: 1em;
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+
+/*-----------------------------------------------------------------
+ ||  presentacion        
+  -----------------------------------------------------------------*/
+
+.textPresentacion{
+    text-align: center;
+    margin: 2em;
+    padding: 1em;
+}
+
+.textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+.textPresentacion p > span{
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+
+/*-----------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
+
+
+/* NestHubMax xl */
+@media only screen and (max-width: 1281px) { 
+        
+    .nosotrosTexto h3{
+        font-size: 8vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 2.5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elemento{
+        justify-content: space-around;
+    }
+    
+    .elementoImagen{
+        height: 50vh;
+        width: auto;
+    }
+    
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 6vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em 0;
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+}
+
+/* NestHub lg */
+@media only screen and (max-width: 1025px) { 
+    
+    .nosotrosTexto h3{
+        font-size: 10vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 2.3vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elemento{
+        justify-content:center;
+    }
+    
+    .elementoImagen{
+        height: 40vh;
+        width: auto;
+    }
+    
+    .elementoTexto{
+        width: 50%;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 5vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em 0;
+        font-size: 2.3vw;
+        font-weight: 400;
+    }
+
+    
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 2.3vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+}
+
+/* ipad md */
+@media only screen and (max-width: 769px) { 
+    
+    .nosotrosTexto h3{
+        font-size: 12vw;
+        font-weight: 500;
+    }
+    .nosotrosTexto p{
+        font-size: 4vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elementoImagen{
+        display: none;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em;
+        font-size: 4vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 5vw;
+        font-weight: 700;
+    }
+    
+}
+
+/* motoG4 sm */
+@media only screen and (max-width: 480px) { 
+     
+    .nosotrosTexto h3{
+        font-size: 12vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elementoImagen{
+        display: none;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 9vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em;
+        font-size: 5vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 5vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 7.5vw;
+        font-weight: 700;
+    }
+}
