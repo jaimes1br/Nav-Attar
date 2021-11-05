@@ -20,8 +20,6 @@
     margin: 0;
 }
 
-
-
 .imagenFormulario img{
     width: 60em;
     height: 70em;
@@ -87,18 +85,92 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-@media(max-width: 640px){
+@media only screen and (max-width: 1281px){
 
     .container{
         display: block;
         border: 0;
     }
 
-    .checo {
+    .formularioTexto{
 
-        width: 240px;
-        height: 240px;
+        width: auto;
     }
+
+
+    .checo {
+        height: 50vh;
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1025px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+    .checo {
+        height: 40vh;
+        width: auto;
+        margin-bottom: 20px;
+    }
+  
+
+}
+
+@media only screen and (max-width: 769px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+
+    .checo {
+        
+        display: none;
+    }
+
+  
+
+}
+
+@media only screen and (max-width: 480px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+
+    .checo {
+        
+        display: none;
+    }
+    
+
 }
 
 
