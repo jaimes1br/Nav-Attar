@@ -152,11 +152,16 @@ body{
 }
 
 .card img{
-    margin: 10px;
+    margin:auto;
+    margin-top: 10px;
     width: 220px;
     height: 300px;
 }
 
+.card{
+
+    margin-top: 20px;
+}
 .Generation{
     font-size: 0.9em;
     line-height: 1.5em;
