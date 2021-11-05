@@ -87,8 +87,19 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+@media(max-width: 640px){
 
+    .container{
+        display: block;
+        border: 0;
+    }
 
+    .checo {
+
+        width: 240px;
+        height: 240px;
+    }
+}
 
 
 
