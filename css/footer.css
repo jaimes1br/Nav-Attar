@@ -96,6 +96,13 @@ footer{
     padding-right: 4em;
 }
 
+.thanks a{
+    font-size: 1em;
+    line-height: 1.5em;
+    /* font-size: 1em; */
+    color: white;
+}
+
 .thanks h5{
     font: var(--textFooter);
     font-size: 1.5em;

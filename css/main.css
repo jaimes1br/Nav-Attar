@@ -3,6 +3,10 @@
 @import url(./nosotros.css);
 @import url(./contactoEquipo.css);
 @import url(./contactoNav.css);
+<<<<<<< HEAD
+=======
+@import url(./mainArea.css);
+>>>>>>> Alex
 
 
 :root{
@@ -20,12 +24,9 @@
     --colorMoradoNavHover: #998fcf;
     --colorMoradoFoo: #867FB3;
     --colorMoradoFooHover: #8d87b4;
-
     --colorActive: #6e66a0;
 
 }
-
-
 
 *{
     font-size: 10px;
