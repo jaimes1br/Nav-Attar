@@ -54,7 +54,7 @@
      background-color: rgb(255, 230, 234);
 }
 
-.contenedor{
+.rectangulo{
     display: flex;
     align-items: center;
     justify-content: center;
