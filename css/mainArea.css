@@ -75,5 +75,20 @@
 body{
     margin: 0px;
    }
-
-
+@media(max-width:480px){
+    .logomain {
+    width: 250px;
+    height: 240px;
+    
+    }
+    /* .infoa {
+      width: 250px;
+      height: 240px;  
+    } */
+    .rectangulo{
+        display: block;
+        border: 0;
+        width: 350px;
+        height: auto; 
+    }
+}
