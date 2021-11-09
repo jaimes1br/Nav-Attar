@@ -1,7 +1,10 @@
 @import url(./navBar.css);
 @import url(./footer.css);
+@import url(./estilosFooter.css);
 @import url(./nosotros.css);
 @import url(./contactoEquipo.css);
+@import url(./contactoNav.css);
+@import url(./contact.css);
 @import url(./mainArea.css);
 
 
@@ -20,12 +23,9 @@
     --colorMoradoNavHover: #998fcf;
     --colorMoradoFoo: #867FB3;
     --colorMoradoFooHover: #8d87b4;
-
     --colorActive: #6e66a0;
 
 }
-
-
 
 *{
     font-size: 10px;

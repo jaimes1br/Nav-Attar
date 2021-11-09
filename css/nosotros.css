@@ -6,38 +6,295 @@ body{
 }
 
 
-/*cuadro nosotros y descripción*/
-#fondo{
-    position: relative;
-    display: inline-block;
-    left: 1%;
-    top: 0; 
-    width: 95vw;
-}
-#fondo img{
-    width: 95vw;
-    height: 50em;
-    opacity: 50%;
-}
 
-.titulo{
-    position: absolute;
-    top: 1em;
-    left: 40%;
-    font: var(--textTitulos);
+/*-----------------------------------------------------------------
+ ||  nosotros       
+  -----------------------------------------------------------------*/
+
+  #nosotros{
+    background: url('./../img/womanOpa.jpg') no-repeat center center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    align-items: center;
+    position: relative;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    border: 1em solid black;
     animation-name: movimiento;
     animation-duration: 5s;
 }
 
-.tituloDes{
-    position: absolute;
-    top: 12em;
-    left: 8%;
-    width: 50em;
-    font: var(--textTituloDes);
+.nosotrosTexto{
+    position: relative;
+    display: block;
+    top: 5em;
+    color: black;
     text-align: center;
     animation-name: movimiento;
     animation-duration: 5s;
+}
+
+.nosotrosTexto h3{
+    font-size: 8vw;
+    font-weight: 500;
+}
+
+
+.nosotrosTexto p{
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+
+
+/*-----------------------------------------------------------------
+ ||  elemento (mision-vision)        
+  -----------------------------------------------------------------*/
+
+.elemento{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1vw solid #867FB3;
+    padding: 3em 0;
+    animation: movimientoLado 5s;
+}
+
+.elemento-rev{
+    flex-direction: row-reverse;
+    animation: movimientoLadoD 5s;
+}
+
+.elementoImagen{
+    height: 70vh;
+    width: auto;
+}
+
+
+.elementoTexto h1{
+    margin: 0.5em 0;
+    font-size: 5vw;
+    font-weight: 500;
+}
+
+.elementoTexto p{
+    padding: 1em;
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+
+/*-----------------------------------------------------------------
+ ||  presentacion        
+  -----------------------------------------------------------------*/
+
+.textPresentacion{
+    text-align: center;
+    margin: 2em;
+    padding: 1em;
+    animation-name: movimiento;
+    animation-duration: 5s;
+}
+
+.textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+.textPresentacion p > span{
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+
+/*-----------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
+
+
+/* NestHubMax xl */
+@media only screen and (max-width: 1281px) { 
+        
+    .nosotrosTexto h3{
+        font-size: 8vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 2.5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elemento{
+        justify-content: space-around;
+    }
+    
+    .elementoImagen{
+        height: 50vh;
+        width: auto;
+    }
+    
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 6vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em 0;
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+}
+
+/* NestHub lg */
+@media only screen and (max-width: 1025px) { 
+    
+    .nosotrosTexto h3{
+        font-size: 10vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 2.3vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elemento{
+        justify-content:center;
+    }
+    
+    .elementoImagen{
+        height: 40vh;
+        width: auto;
+    }
+    
+    .elementoTexto{
+        width: 50%;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 5vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em 0;
+        font-size: 2.3vw;
+        font-weight: 400;
+    }
+
+    
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 2.3vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 3.5vw;
+        font-weight: 700;
+    }
+
+}
+
+/* ipad md */
+@media only screen and (max-width: 769px) { 
+    
+    .nosotrosTexto h3{
+        font-size: 12vw;
+        font-weight: 500;
+    }
+    .nosotrosTexto p{
+        font-size: 4vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elementoImagen{
+        display: none;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 10vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em;
+        font-size: 4vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 5vw;
+        font-weight: 700;
+    }
+    
+}
+
+/* motoG4 sm */
+@media only screen and (max-width: 480px) { 
+     
+    .nosotrosTexto h3{
+        font-size: 12vw;
+        font-weight: 500;
+    }
+
+    .nosotrosTexto p{
+        font-size: 5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .elementoImagen{
+        display: none;
+    }
+    
+    .elementoTexto h1{
+        margin: 0.5em 0;
+        font-size: 9vw;
+        font-weight: 500;
+    }
+    
+    .elementoTexto p{
+        padding: 1em;
+        font-size: 5vw;
+        font-weight: 400;
+    }
+
+    .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
+        font-size: 5vw;
+        font-weight: 400;
+    }
+    
+    .textPresentacion p > span{
+        font-size: 7.5vw;
+        font-weight: 700;
+    }
 }
 
 
@@ -57,42 +314,7 @@ body{
 }
 
 
-
-/*Mision y vison*/
-.elemento{
-    display: flex;
-    flex-direction: row;
-    height: 40em;
-    animation-name: movimientoLado;
-    animation-duration: 5s;
-}
-
-.elementoImagen img{
-    width: auto;
-    height: 40em;
-    margin: 2em 8em;
-}
-
-.elementoTexto h1{
-    font: var(--textDescripcionT);
-    text-align: center;
-    margin: 1em 0;
-}
-
-.elementoTexto p{
-    font: var(--textTituloDes);
-    text-align: center;
-}
-
-.elementoTexto_top{
-    border-top: 1em solid var(--colorMoradoFoo);
-}
-
-.elemento_rev{
-    flex-direction: row-reverse;
-}
-
-
+ 
 @keyframes movimientoLado{
     0%{
         transform: translatex(-100px);
@@ -106,20 +328,24 @@ body{
     100%{
         transform: translatex(5px);
     }
-}
+} 
+
+@keyframes movimientoLadoD{
+    0%{
+        transform: translatex(500px);
+    }
+    50%{
+        transform: translatex(200px);      
+    }
+    70%{
+        transform: translatex(15px);      
+    }
+    100%{
+        transform: translatex(5px);
+    }
+} 
 
 
-/*Presentación*/
-.presentación{
-    border-top: 1em solid var(--colorMoradoFoo);
-    border-bottom: 1em solid var(--colorMoradoFoo);
-    margin: 0;
-}
-.presentación p{
-    font: var(--textTituloDes);
-    text-align: center;
-    margin: 3em 0;
-}
 
 /*contenedor primera fila de fotos*/
 .container{
@@ -152,25 +378,22 @@ body{
 }
 
 .card img{
-    margin: 10px;
+    margin:auto;
+    margin-top: 10px;
     width: 220px;
     height: 300px;
 }
 
+.card{
 
-
-@keyframes movimientoLadoD{
-    0%{
-        transform: translatex(500px);
-    }
-    50%{
-        transform: translatex(100px);      
-    }
-    70%{
-        transform: translatex(40px);      
-    }
-    100%{
-        transform: translatex(5px);
-    }
+    margin-top: 20px;
 }
+.Generation{
+    font-size: 0.9em;
+    line-height: 1.5em;
+    /* font-size: 1em; */
+    color: black;
+}
+
+
 
