@@ -69,6 +69,107 @@
     padding: 0.5em 0;
 }
 
+.modal-body{
+
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-header {
+    background-color: #BDB2FF;
+}
+
+.modal-title{
+   font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 1281px){
+
+    .container{
+        display: block;
+        border: 0;
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+
+    .checo {
+        height: 50vh;
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1025px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+    .checo {
+        height: 40vh;
+        width: auto;
+        margin-bottom: 20px;
+    }
+  
+
+}
+
+@media only screen and (max-width: 769px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+
+    .checo {
+        
+        display: none;
+    }
+
+  
+
+}
+
+@media only screen and (max-width: 480px){
+
+    .container{
+        display: block;
+        border: 0;
+       
+    }
+
+    .formularioTexto{
+
+        width: auto;
+    }
+
+
+    .checo {
+        
+        display: none;
+    }
+    
 .alert-dark{
     background-color: #CFE1FE;
     margin-top: 10px;
@@ -84,5 +185,4 @@
     line-height : 15px;
 
 }
-
-
+}
