@@ -38,7 +38,7 @@
 .seccion-lista_elemento a:hover{
     background-color: #8d87b4;
     color: black;
-    
+    text-decoration: none;
 }
 
 
