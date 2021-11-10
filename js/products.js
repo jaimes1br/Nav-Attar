@@ -1,28 +1,19 @@
 function addItem(item){
     const itemHTML = 
     
-    `<div class=" col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 sinP">
-        <div class="card cardTam">
-            <a href="#"><img src="${item.img}" class="imgProducto" alt="..."></a>  
-            <div class="card-body">
-                <div class="nombreProducto">
-                    <a href="#"><h3 class="card-title nombreProducto__titulo">${item.name}</h3></a>
-                </div><!--nombre-->
-                <div class="datosProducto">
-                    <a href=""><h2 class="card-text">$${item.price}°°</h2></a>
-                    <a href=""> <h4 class="card-text">Medida: ${item.size}</h4> </a>
-                </div><!--datos-->
-                <div class="descripcion">
-                    <a href=""><h5 class="card-text descripcion_a">${item.category}</h5></a>
-                    <p class="card-text">${item.description}</p>    
-                </div><!--descripcion-->
-                <div class="botonesProducto">
-                    <a href="#" class="btn btn-primary">¡ Comprar !</a> 
-                </div><!--comprar-->
-            </div><!--cardBody-->
-        </div><!--card-->
-     </div><!--colProducto-->
-    `;
+    '<div   class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">' +
+    '<div class="card" style="width: 22rem;">' +
+    '    <img src="'+item.img +'" class="card-img-top" alt="image">' +
+    '    <div class="card-body">' +
+    '        <h3 class="card-title">'+item.name+'</h5>' +
+    '        <h5 class="card-title">Medida: '+item.size+'</h5>' +
+    '        <h5 class="card-title">Categoria: '+item.category+'</h5>' +
+    '        <h5 class="card-title">$'+item.price+'</h5>' +
+    '        <p class="card-text">'+item.description+'</p>' +
+    '        <a href="#" class="btn btn-primary">Comprar</a>' +
+    '    </div>' +
+    '</div>'
+    '</div>';
 
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
