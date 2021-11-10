@@ -1,0 +1,141 @@
+*{
+    font-size: 10px;   
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/*-----------------------------------------------------------------
+||  seccion enlaces       
+-----------------------------------------------------------------*/
+
+.cardTam{
+    margin: 2em 0;
+    width: 23em;
+}
+
+.imgProducto{
+    display: block;
+    margin: auto;
+    width: 22em;
+    height: 26em;
+    /* border: 3px solid #000; */
+}
+
+.nombreProducto__titulo{
+    color: #000;
+    text-decoration: none;
+}
+
+.datosProducto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 0 0 1em;
+}
+
+.datosProducto h2,.datosProducto h4{
+    color: #000;
+    text-decoration: none;    
+}
+
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.descripcion h5{
+    color: #565959;
+    text-decoration: none;    
+    padding-bottom: 0 0 0.75em;
+    line-height: 1em;
+}
+
+.descripcion p{
+    color: #565959;
+    text-decoration: none;    
+    padding-bottom: 0 0 3em;
+    line-height: 1.5em;
+}
+
+
+
+.botonesProducto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.botonesProducto a{
+    height: 2em;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ 
+
+/*-----------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
+
+/* NestHub lg */
+@media only screen and (max-width: 1025px) {
+    
+        
+    .cardTam{
+        width: 18.5em;
+    }
+
+    .imgProducto{
+        width: 17em;
+        height: 22em;
+    }
+
+    .datosProducto{
+        margin: 1em 0;
+        flex-direction: column;
+    }
+
+    .datosProducto h2{
+        font-size: 3em;
+    }
+    .datosProducto h4{
+        font-size: 1.4em;
+    }
+
+}
+
+/* ipad md */
+@media only screen and (max-width: 769px) { 
+    
+    .imgProducto{
+        width: 23em;
+        height: 28em;
+    }
+            
+    .cardTam{
+        width: 25em;
+    }
+
+}
+
+/* motoG4 sm */
+@media only screen and (max-width: 480px) { 
+
+    .imgProducto{
+        width: 20em;
+        height: 25em;
+    }
+            
+    .cardTam{
+        width: 30em;
+    }
+
+
+}
+
