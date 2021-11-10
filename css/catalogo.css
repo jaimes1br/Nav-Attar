@@ -1,20 +1,53 @@
+.sinAnimacion{
+    animation-name: none;
+    animation-duration: 0s;
+}
+
+
 .container_cat{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
+
+
+/* .container1 h1{
+    margin-top: 15px;
+} */
+
+
+/*-----------------------------------------------------------------
+||  Menu Izquierdo Categorias      
+-----------------------------------------------------------------*/
 
 .menu_izq{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: rgb(255, 230, 234);
-    color: black;
-    margin-top: 20px;
-    padding: 2em;
-    border-radius: 5px;
+}
+.menu_izq li{
+    float: left;    
 }
 
-.menu_izq li{
-    font-size: large;
-    margin-left: 3em;
+.menu_izq li a {
+    display: block;
+    color: #000;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1.4em 2em;
+    text-decoration: none;
 }
+
+.menu_izq li a:hover{
+    background-color: #daa8b0;
+}
+
+
+/*-----------------------------------------------------------------
+||  Fondo productos     
+-----------------------------------------------------------------*/
+
 
 .fondo{
     margin-top: 20px;
@@ -23,16 +56,25 @@
     padding-bottom: 200px;
 }
 
-.card{
+
+/*-----------------------------------------------------------------
+||  Tarjeta producto      
+-----------------------------------------------------------------*/
+
+.sinP{
+    padding: 0;
+}
+.cardTam{
+    /* margin: 2em 0; */
+    width: 25rem;
+}
+
+/* .card{
     margin-top: 2em;
     margin-left: 1vh;
-}
+} */
 
 .card img{
     width: 20em;
     height: 25em;
-}
-
-.container1 h1{
-    margin-top: 15px;
 }
