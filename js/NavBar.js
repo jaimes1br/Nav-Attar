@@ -32,11 +32,11 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Catálogo
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 1</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html">Todos</a>
           <a class="dropdown-item navAttar_listDes" href="#">Categoría 2</a>
           <a class="dropdown-item navAttar_listDes" href="#">Categoría 3</a>
           <a class="dropdown-item navAttar_listDes" href="#">Categoría 4</a>
