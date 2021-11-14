@@ -1,8 +1,11 @@
 body{
 
-    background-color: #FAF4F4;
+    background-image: url('../img/final..jpg');
+    /*background-color: #FAF4F4;*/
+    /*background-repeat: no-repeat;*/
     padding: 0;
     margin: 0;
+    
 }
 
 
@@ -58,6 +61,7 @@ body{
     flex-direction: row;
     text-align: center;
     align-items: center;
+   /* background-color: #867FB3;*/
     border-bottom: 1vw solid #867FB3;
     padding: 3em 0;
     animation: movimientoLado 5s;
@@ -134,11 +138,10 @@ body{
     }
     
     .elementoImagen{
-        height: 50vh;
-        width: auto;
+        height: auto;
+        width: 20vh;
     }
-    
-    
+
     .elementoTexto h1{
         margin: 0.5em 0;
         font-size: 6vw;
@@ -150,6 +153,8 @@ body{
         font-size: 2.5vw;
         font-weight: 400;
     }
+
+
 
     .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
         font-size: 2.5vw;
@@ -182,7 +187,7 @@ body{
     }
     
     .elementoImagen{
-        height: 40vh;
+        height: 20vh;
         width: auto;
     }
     
@@ -244,6 +249,10 @@ body{
         font-weight: 400;
     }
 
+    .card1{
+
+        margin: none;
+    }
     .textPresentacion p, .textPresentacion p > a, .textPresentacion p > span{
         font-size: 4vw;
         font-weight: 400;
@@ -294,7 +303,7 @@ body{
     .textPresentacion p > span{
         font-size: 7.5vw;
         font-weight: 700;
-    }
+    }    
 }
 
 
@@ -352,7 +361,7 @@ body{
     display: flex;
     justify-content:center;
     align-items: center;
-    padding: 40px;
+    padding: 10px;
     gap: 16px;
     text-align: center;
     animation-name: movimientoLado;
@@ -361,15 +370,17 @@ body{
 /*contenedor segunda fila de fotos*/
 .contenedor {
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     padding-top: 1px;
     gap: 16px;
     text-align: center;
     margin-bottom: 3em;
     animation-name: movimientoLadoD;
-    animation-duration: 5s;
+    animation-duration: 5s;   
 }
+
+
 
 /* nombres */
 .container h5 a, .contenedor h5 a{
@@ -395,5 +406,9 @@ body{
     color: black;
 }
 
+.card1{
 
+    margin-left: 130px;
+  
+}
 
