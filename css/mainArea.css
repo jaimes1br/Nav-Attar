@@ -63,10 +63,23 @@
     padding: 4em;
     margin-top: 4em;
     margin-bottom: 4em;
-    background: #FAF4F4;
+    background:#f4f4f4;
     width: 100%;
     border-radius: 3.5em;
 }
+
+
+
+.imag{
+
+    width: 35em;
+    height: auto;
+
+}
+
+
+
+
 .noAnimacion{
     animation-name: none;
     animation-duration: 0;
