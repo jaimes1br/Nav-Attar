@@ -61,9 +61,9 @@
     align-items: center;
     justify-content: center;
     padding: 4em;
-    margin-top: 4em;
+    margin-top: 1em;
     margin-bottom: 4em;
-    background:#f4f4f4;
+    background:royalblue;
     width: 100%;
     border-radius: 3.5em;
 }
@@ -104,4 +104,29 @@ body{
         width: 350px;
         height: auto; 
     }
+}
+
+.carrusel p{
+
+    background-color:none;
+}
+
+#coraline{
+
+    background-image: url(../img/97-972291_coraline-tunnel.jpg);
+}
+
+#arnold{
+    background-image: url(../img/64188faa180afde4d36e69cf5636d4e2.jpg);
+    background-repeat: no-repeat;    
+}
+
+#carlitos{
+
+    background-image: url(../img/wp9296719.jpg);
+}
+
+#Harry{
+
+    background-image: url(../img/584c19801a64c5f5f198b6c441d0cf7e.jpg);
 }

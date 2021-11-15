@@ -371,8 +371,6 @@ body{
     }
 } 
 
-
-
 /*contenedor primera fila de fotos*/
 .container{
     display: flex;
@@ -385,7 +383,7 @@ body{
     animation-duration: 5s;
 }
 /*contenedor segunda fila de fotos*/
-.contenedor {
+/*.contenedor {
     display: flex;
     justify-content:center;
     align-items: center;
@@ -395,8 +393,13 @@ body{
     margin-bottom: 3em;
     animation-name: movimientoLadoD;
     animation-duration: 5s;   
-}
+}*/
 
+.centrado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* nombres */
@@ -422,10 +425,3 @@ body{
     /* font-size: 1em; */
     color: black;
 }
-
-.card1{
-
-    margin-left: 130px;
-  
-}
-
