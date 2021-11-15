@@ -130,3 +130,11 @@ body{
 
     background-image: url(../img/584c19801a64c5f5f198b6c441d0cf7e.jpg);
 }
+
+.frase{
+
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Petemoss', cursive;
+    font-size: 45px;
+}
