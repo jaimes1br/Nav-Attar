@@ -2,15 +2,15 @@ let Nombre = document.getElementById("Nombre_prod");
 let Medida = document.getElementById("Medida_prod");
 let Categoria = document.getElementById("Categoria_prod");
 let Precio = document.getElementById("Precio_prod");
-// let Imagen = document.getElementById("Imagen_prod");
-// let Img = Imagen.value;
-// let extImagen = /(.pdf)$/i;
+//let Imagen = "";
+let Imagen = document.getElementById("Imagen_prod");
 let Descripcion = document.getElementById("Descripcion_prod");
 //let Subir = document.getElementById("Subir");
 let alertas = document.getElementById("alerta");
 
 function SubirNuevo(){
   console.log('Atendiendo formulario');
+  console.log(Imagen.value);
 
 
   let validar = false;
@@ -45,31 +45,14 @@ function SubirNuevo(){
     validar = true;
   }
 
-  //--------------------------Campo Imagen
+  //---------------------------------------Campo Imagen
   
-  function validarExt(){
-    let ArchivoInput = document.getElementById('Imagen_prod');
-    let ArchivoRuta = ArchivoInput.value;
-    let extImagen = /(.PDF|.PNG|.JPG)$/i;
-
-    if(!extImagen.exec(ArchivoRuta))
-    {
-      NuevaAlerta.push('¡Formato de imagen no valido! <br>');
-      console.log('Imagen');
-      return false;
+  if(Imagen.value=="0"){
+    NuevaAlerta.push('¡Favor de Seleccionar una Imagen! <br>');
+    console.log('Imagen');
+    validar = true;
     }
-    else
-    {
-      if(ArchivoInput.files && ArchivoInput.files[0]){
-        let visor = new FileReader();
-        visor.onload = function(e){
-          document.getElementById('Visor_Imagen').innerHTML=
-          '<embed src="'+e.target.result+'" width="500" height="500" >';
-        };
-        visor.readAsDataURL(ArchivoInput.files[0]);
-      }
-    }
-  }
+  
 
   //--------------------------Campo Descripcion
   if(!tnombre.test(Descripcion.value) || Descripcion.value.length ==0 || Descripcion.value.length == 0 || Descripcion.value.length > 200){
@@ -86,79 +69,59 @@ function SubirNuevo(){
   if(!validar){
     NuevaAlerta.push('¡Formulario Correcto! <br>');
     alertas.innerHTML = NuevaAlerta.join('');
+
+
+    Guardar();
+    function Guardar(){
+
+      let Producto = {
+        nombre: Nombre.value,
+        medida: Medida.value,
+        categoria: Categoria.value,
+        precio: Precio.value,
+        imagen: Imagen.value,
+        Descripcion: Descripcion.value
+      };
+      localStorage.setItem("Producto", JSON.stringify(Producto));
+    }
+
     Nombre.value = "";
     Medida.value = "";
     Categoria.value = "";
     Precio.value = "";
+    Imagen.value = "";
     Descripcion.value = "";
+    console.log(Nombre.value);
+
     return false;
   }
 
-
-
-  
 }
 
-
-
-//-----------------------------------------------------------------------
-
-
-// Subir.addEventListener("click", function(event){
-
-// // Subir.addEventListener("click", e=>{
-// //  e.preventDefault()
-  
-//  let valido = false
-//  let alerta = ""
-//  alertas.innerHTML = ""
-
-
-
-//  let temail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-//  let tnombre = /^[a-zA-Z ]*$/
-//  let ttel =/^[0-9]*$/
-
-//   if(!tnombre.test(Nombre_prod.value) || Nombre_prod.value.length <= 2 || Nombre_prod.value.length == 0){
-//       alerta += `¡Nombre no valido! <br>`
-//       valido = true
-//   }
-//   if(!temail.test(email.value) || email.value.length==0 || email.value.length >= 320){
-    
-//     alerta += `¡Email no valido! <br>`
-//     valido = true
-//   }
-
-//   if(!ttel.test(tel.value) || tel.value.length < 10 || tel.value.length == 0 || tel.value.length >= 12){
-
-//     alerta += `¡Teléfono no valido! <br>`
-//     valido = true
-//   }
-
-//   if(mensaje.value.length >= 150 || mensaje.value.length == 0){
-
-//     alerta += `¡Mensaje no valido! <br>`
-//     valido = true
-
-//   }
-
-//   if(valido){
-
-//     alertas.innerHTML = alerta;
-
-//   }
-
-//   if(!valido){
-
-//     alerta +=`¡Formulario Correcto!`
-//     alertas.innerHTML = alerta;
-//     var dir = document.createElement("a");
-//     dir.href = `mailto:nav.attar.contact@gmail.com?&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value} %20%0D%0A %20%0D%0A %20%0D%0A Teléfono cliente: ${tel.value}`;
-//     dir.click();
-//   }
-
-//   // var dir = document.createElement("a");
-//   // dir.href = `mailto:nav.attar.contact@gmail.com?subject=${asunto.value}&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value}`;
-//   // dir.click();
-// })
-
+//-------------------------------------Funcion chida, no borrar porfavor.--------------
+// function load(){                                                                   |
+// console.log("Load");                                                               |
+// document.getElementById("Imagen_prod").addEventListener("change",function(a){      |
+//   console.log("onchange");                                                         | 
+//   let files = a.target.files;                                                      |
+//   let reader = new FileReader();                                                   |
+//   reader.onload = function(){                                                      |
+//     //console.log(reader.result);                                                  |
+//     Imagen = reader.result;                                                        |
+//     let img = new Image();                                                         |
+//     img.onload = function(){                                                       |
+//       let cnv = document.getElementById("imgCanvas");                              |
+//       cnv.width = img.width;                                                       | 
+//       cnv.height = img.height;                                                     |
+//       console.log(img.width);                                                      |
+//       console.log(img.height);                                                     |
+//       let ctx = cnv.getContext("2d");                                              |
+//       ctx.drawImage(img,0,0);                                                      |
+//     };                                                                             |
+//     img.src = reader.result;                                                       |
+//   };                                                                               |
+//   reader.readAsDataURL(files[0]);                                                  |
+// });                                                                                |
+// }                                                                                  |
+//data:image/jpeg;base64                                                              |
+//-------------------------------------------------------------------------------------
