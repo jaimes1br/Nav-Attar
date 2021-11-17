@@ -17,7 +17,6 @@
     align-items: center;
     justify-content: center;
     height: 600px;
-   
     font-family: 'Montserrat', sans-serif;
     padding: 0 20px;
     
@@ -106,14 +105,16 @@
 .contenedor {overflow:hidden;}
 
 
-.social button{
+#descarga{
     font: var(--textTitulos);
     font-size: 1.8em;
     background-color: var(--colorMoradoNav);
     border-color: var(--colorMoradoNav);
     border-radius: 3px;
     width: 10em;
-    height: 3em;
+    height: 2em;
+    color: black;
+    padding-top: 6px;
 }
 
 
