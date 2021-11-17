@@ -137,10 +137,10 @@ body{
   background-image: url(../img/muñequitos/fondoNav.jpg);
 }
 
-.frase{
+.frase img{
+   background-color: black;
+   display: flex;
+   justify-content: center;
 
-    text-align: center;
-    padding-top: 20px;
-    font-family: 'Petemoss', cursive;
-    font-size: 45px;
+    
 }
