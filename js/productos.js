@@ -12,7 +12,7 @@ function addItem(item){
     '    <div class="card-body">' +
     '        <h3 class="card-title">'+item.name+'</h5>' +
     '        <h5 class="card-title">Medida: '+item.size+'</h5>' +
-    '        <h5 class="card-title">Categoria: '+item.category+'</h5>' +
+    '        <h5 class="card-title">Categoría: '+item.category+'</h5>' +
     '        <h5 class="card-title">$'+item.price+'</h5>' +
     '        <p class="card-text">'+item.description+'</p>' +
     '        <a href="#" class="btn btn-primary">Comprar</a>' +
