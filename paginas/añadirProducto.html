@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./img/logos/gatoLogo.png">
+  <!--CSS Correciones-->
+  <link rel="stylesheet" href="./css/añadirProducto.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <!--Font Montserrat-->
@@ -14,80 +16,106 @@
     <title>Añadir Producto</title>
 </head>
 <body>
-   
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
     </button>
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
-          <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header" style="background-color: #BDB2FF">
-              <h5 class="modal-title"  id="exampleModalLabel">Añade un Producto</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+            </button>
             </div>
+
+
             <div class="modal-body">
-                <form class="form-inline">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="nombre"></label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre Producto">
-                        </div><!--Nombre del producto-->
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="nombre"></label>
-                            <input type="number" class="form-control" id="nombre" placeholder="Tamaño en centímetros">
-                        </div><!--Tamaño del producto-->
-                        
-                        
-                        <div class="input-group mx-sm-3 mb-2">
-                            <!-- <div class="input-group-prepend">
-                              <label class="input-group-text" for="inputGroupSelect01">Selecciona una opción</label>
-                            </div> -->
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option selected>Selecciona una categoría</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div><!--Categoría del producto-->
-
-
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="nombre"></label>
-                            <input type="number" class="form-control" id="nombre" placeholder="Precio">
-                        </div><!--Precio del producto--> 
-                    
-                    </div><!--Características || TERMINA-->
-                    
-                    <div class="row">
-                        <div class="input-group form-group mx-sm-3 mb-2">
-                            <!-- <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                            </div> -->
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                              <label class="custom-file-label" for="inputGroupFile01">Imagen</label>
-                            </div>
+                        <div class="col-md-3 ml-auto">
+                            <input type="text" class="form-control" placeholder="Nombre">
                         </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <!-- <label for="formGroupExampleInput">Example label</label> -->
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Descripción">
-                        </div><!--Descripción del producto-->
-                    </div>         
-                </form>
-            </div><!---->
+
+                        <div class="input-group mb-3 mb-auto col-md-3 ml-auto">
+                            <input type="number" class="form-control" placeholder="Medida">                            
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">cm</span>
+                            </div>
+                        </div><!--MEDIDA-->
+
+                        <div class="col-md-3 ml-auto">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">Categorías</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                  <option selected>Opciones</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                        </div><!--CATEGORIA-->
+
+                        <div class="input-group mb-3 mb-auto col-md-3 ml-auto">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">$</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Precio">
+                        </div><!--PRECIO-->
+                    </div><!--TERMINA 1ER DIV-->
+
+                    <div class="row">
+                        <div class="col-md-9 ml-auto">
+                            <input type="text" class="form-control" placeholder="Descripción">
+                        </div><!--DESCRIPCIÓN-->
+
+                        <div class="col-md-3 ml-auto">                            
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Elige una Imagen</label>
+
+
+
+                                <!--
+                                *******************************
+                                CAMBIAR EL BROWS POR BUSSCAR
+                                AL JUNTAR PEGARLO EN EL CSS
+                                *******************************
+                                -->
+
+
+                            </div>
+                        </div><!--IMAGEN-->
+                    </div><!--TARMINA 2DO DIV-->
+
+                </div>
+            </div>
+
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Añadir</button>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto">
+                            ALERTA BOOTSTRAP
+                        </div>
+                        <div class="col-md-3 ml-auto">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelar" style="color: black;">Cancelar</button>
+                            <button type="button" class="btn btn-primary" id="guarcambios">Guardar cambios</button>
+                        </div>
+                    </div>                    
+                </div>
             </div>
-          </div>
+        </div>
         </div>
     </div>
 
-    <!-- <script src="../css/main.css"></script> -->
+    <script src="../js/añadirProducto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>  
 </body>
