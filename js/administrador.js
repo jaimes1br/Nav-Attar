@@ -1,21 +1,20 @@
-let Nombre = document.getElementById("Nombre_prod");
-let Medida = document.getElementById("Medida_prod");
-let Categoria = document.getElementById("Categoria_prod");
-let Precio = document.getElementById("Precio_prod");
+let Nombre = document.getElementById("Nombre_prod"); //input
+let Medida = document.getElementById("Medida_prod"); //input
+let Categoria = document.getElementById("Categoria_prod"); //select
+let Precio = document.getElementById("Precio_prod"); //input
 //let Imagen = "";
-let Imagen = document.getElementById("Imagen_prod");
-let Descripcion = document.getElementById("Descripcion_prod");
-//let Subir = document.getElementById("Subir");
-let alertas = document.getElementById("alerta");
+let Imagen = document.getElementById("Imagen_prod"); //select
+let Descripcion = document.getElementById("Descripcion_prod"); //input
+let alertas = document.getElementById("alerta"); //div
 
 function SubirNuevo(){
   console.log('Atendiendo formulario');
-  console.log(Imagen.value);
 
 
+//----------------------------Expresiones regulares
   let validar = false;
   let NuevaAlerta = [];
-  let tnombre = /^[a-zA-Z ]*$/
+  let tnombre = /^[a-zA-Z0-9!.,?¿¡ ]*$/
   let tPrecio =/^[0-9]*$/
   
   //--------------------------Campo Nombre
@@ -60,6 +59,8 @@ function SubirNuevo(){
     console.log('Descripcion');
     validar = true;
   }
+  
+  //------------------------------Validacion de formulario correcto
 
   if(validar)
   {
@@ -70,8 +71,19 @@ function SubirNuevo(){
     NuevaAlerta.push('¡Formulario Correcto! <br>');
     alertas.innerHTML = NuevaAlerta.join('');
 
+    //----------------------------Llamada a funciones para subir y descargar informacion del local Storage
 
     Guardar();
+    Obtener();
+    
+    //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
+
+    function Obtener(){
+      let Producto = localStorage.getItem("Producto");
+      console.log(Producto);
+    }
+
+
     function Guardar(){
 
       let Producto = {
@@ -84,6 +96,8 @@ function SubirNuevo(){
       };
       localStorage.setItem("Producto", JSON.stringify(Producto));
     }
+
+    //-------------------------Regresa los campos a blanco
 
     Nombre.value = "";
     Medida.value = "";
