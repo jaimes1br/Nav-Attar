@@ -5,85 +5,10 @@
 } 
 
 
-.ilogo{
-    padding-top: 8em;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-}
-.logomain{
-    width: 35em;
-    height: auto;
-}
+.imagen img{
 
-.main-area{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: auto;
-    gap: 5em;
-}
-
-.infoa{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
- 
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10em; 
-    padding-bottom: 5em;
-}
-
-#boton{ 
-    background-color: #A0C4FF;  
-    border-color: #A0C4FF; 
-    width: 10em;
-    height: 2.5em;
-    font-weight: bold;
-    font-size: 1.75em;
-}
-.description{
-    padding-bottom: 2em;
-}
-.description p{
-    font-weight:300;
-     font-size: 1.75em;
-     background-color: none;
-}
-
-.rectangulo{
-    display: flex;
-    /* align-items: center;
-    justify-content: center; */
     width: 1120px;
     height: 544px;
-    padding: 4em;
-    margin-top: 1em;
-    margin-bottom: 4em;
-    background:royalblue;
-    border-radius: 3.5em;
-}
-
-
-
-.imag{
-
-    width: 35em;
-    height: auto;
-
-}
-
-
-
-
-.noAnimacion{
-    animation-name: none;
-    animation-duration: 0;
 }
 
 body{
@@ -107,40 +32,21 @@ body{
     }
 }
 
-.carrusel {
 
-    background-color:none;
-}
 
-#coraline{
+.frase {
+  
+   text-align: center;
+   padding-top: 20px;
+   font-family: 'Petemoss', cursive;
+   font-size: 60px;
 
-    background-image: url(../img/muñequitos/coraline.jpg);
-}
-
-#arnold{
-    background-image: url(../img/muñequitos/fonharyhel.jpg);
-    background-repeat: no-repeat;    
-}
-
-#carlitos{
-
-    background-image: url(../img/muñequitos/fondoCarl.jpg);
-}
-
-#Harry{
-
-    background-image: url(../img/muñequitos/fondohp.jpg);
-    
-}
-
-#estambres{
-  background-image: url(../img/muñequitos/fondoNav.jpg);
-}
-
-.frase img{
-   background-color: black;
-   display: flex;
-   justify-content: center;
 
     
+}
+
+#promo{
+    text-align: center;
+    font-family: 'Petemoss', cursive;
+    font-size: 80px;
 }
