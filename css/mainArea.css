@@ -53,18 +53,19 @@
 .description p{
     font-weight:300;
      font-size: 1.75em;
-     background-color: rgb(255, 230, 234);
+     background-color: none;
 }
 
 .rectangulo{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
+    width: 1120px;
+    height: 544px;
     padding: 4em;
     margin-top: 1em;
     margin-bottom: 4em;
     background:royalblue;
-    width: 100%;
     border-radius: 3.5em;
 }
 
@@ -106,29 +107,34 @@ body{
     }
 }
 
-.carrusel p{
+.carrusel {
 
     background-color:none;
 }
 
 #coraline{
 
-    background-image: url(../img/97-972291_coraline-tunnel.jpg);
+    background-image: url(../img/muñequitos/coraline.jpg);
 }
 
 #arnold{
-    background-image: url(../img/64188faa180afde4d36e69cf5636d4e2.jpg);
+    background-image: url(../img/muñequitos/fonharyhel.jpg);
     background-repeat: no-repeat;    
 }
 
 #carlitos{
 
-    background-image: url(../img/wp9296719.jpg);
+    background-image: url(../img/muñequitos/fondoCarl.jpg);
 }
 
 #Harry{
 
-    background-image: url(../img/584c19801a64c5f5f198b6c441d0cf7e.jpg);
+    background-image: url(../img/muñequitos/fondohp.jpg);
+    
+}
+
+#estambres{
+  background-image: url(../img/muñequitos/fondoNav.jpg);
 }
 
 .frase{
