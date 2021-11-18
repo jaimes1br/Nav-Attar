@@ -26,7 +26,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="#">Artesanos</a>
+        <a class="nav-link" href="./artesanos.html">Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">
@@ -44,7 +44,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
 
       
       <li class="nav-item mr-5">
-        <a class="nav-link" href="#">Iniciar sesión</a>
+        <a class="nav-link" href="./../pages/loggin.html">Iniciar sesión</a>
       </li>  <!--iniciarSesion-->
 
       <li class="nav-item mr-5 ">

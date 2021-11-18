@@ -397,6 +397,8 @@
         justify-content: flex-start;
         /* align-items: center; */
         margin: 0;
+        margin-left: 2em;
+        margin-bottom: 1em;
         padding: 0;
     }
     
@@ -460,6 +462,7 @@
         justify-content: center;
         padding: 0;
         margin: 2em 0;
+        margin-left: 2em;
     }
 
     .agradecimiento h5{
