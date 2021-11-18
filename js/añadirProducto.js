@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-})
-=======
 let Nombre = document.getElementById("Nombre_prod"); //input
 let Medida = document.getElementById("Medida_prod"); //input
 let Categoria = document.getElementById("Categoria_prod"); //select
@@ -24,27 +19,27 @@ function SubirNuevo(){
   
   //--------------------------Campo Nombre
   if(!tnombre.test(Nombre.value) || Nombre.value.length <= 2 || Nombre.value.length == 0){
-    NuevaAlerta.push('¡Nombre no valido! <br>');
+    NuevaAlerta.push('¡Nombre no válido! <br>');
     console.log('Nombre');
     validar = true;
   }
 
   //--------------------------Campo Medida
   if(!tPrecio.test(Medida.value) || Medida.value < 5 || Medida.value.length == 0 || Medida.value >= 40){
-    NuevaAlerta.push('¡Especificar una Medida! <br>');
+    NuevaAlerta.push('¡Especifica una medida! <br>');
     console.log('Medida');
     validar = true;
   }
   
   //--------------------------Campo Categoria
   if(Categoria.value=="Categoria:"||Categoria.value==""){
-    NuevaAlerta.push('¡Favor de Elegir una Categoria! <br>');
+    NuevaAlerta.push('¡Elige una categoría! <br>');
     validar = true;
     }
 
   //--------------------------Campo Precio
   if(!tPrecio.test(Precio.value) || Precio.value <= 50 || Precio.value.length == 0 || Precio.value >= 500){
-    NuevaAlerta.push('¡Especificar Precio! <br>');
+    NuevaAlerta.push('¡Especifica precio! <br>');
     console.log('Precio');
     validar = true;
   }
@@ -52,7 +47,7 @@ function SubirNuevo(){
   //---------------------------------------Campo Imagen
   
   if(Imagen.value=="0"){
-    NuevaAlerta.push('¡Favor de Seleccionar una Imagen! <br>');
+    NuevaAlerta.push('¡Selecciona una imagen! <br>');
     console.log('Imagen');
     validar = true;
     }
@@ -60,8 +55,8 @@ function SubirNuevo(){
 
   //--------------------------Campo Descripcion
   if(!tnombre.test(Descripcion.value) || Descripcion.value.length ==0 || Descripcion.value.length == 0 || Descripcion.value.length > 200){
-    NuevaAlerta.push('¡Agregar una descripcion! <br>');
-    console.log('Descripcion');
+    NuevaAlerta.push('¡Agrega una descripción! <br>');
+    console.log('Descripción');
     validar = true;
   }
   
@@ -144,4 +139,3 @@ function SubirNuevo(){
 // }                                                                                  |
 //data:image/jpeg;base64                                                              |
 //-------------------------------------------------------------------------------------
->>>>>>> dc87f377d9cb2f6569c67d38f1e806be78c9f064
