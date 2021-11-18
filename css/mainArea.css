@@ -34,7 +34,6 @@
 #personal{
 
     border-radius: 1.5em;
-    padding-top: 10px;
     overflow: hidden;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     cursor: default;
@@ -109,4 +108,17 @@
     justify-content: center;
     gap: 40px;
     padding-top: 20px;
+}
+.container2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container2 img{
+
+    width: 200px;
+    height: 300px;
 }
