@@ -6,7 +6,7 @@
 @import url(./contact.css);
 @import url(./mainArea.css);
 @import url(./catalogo.css);
-
+@import url(./trabajando.css);
 
 :root{
     --fontBase: 'Montserrat', sans-serif;
@@ -29,8 +29,13 @@
 
 *{
     font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+.noAnimacion{
+    animation-name: none;
+    animation-duration: 0;
+}
 
 .foot{
     display: flex;
