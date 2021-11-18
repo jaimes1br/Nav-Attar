@@ -19,7 +19,7 @@ footerPaginas.innerHTML = `
             </div><!--seccion1-->
             <div class="col seccion">
               <ul class="seccion-lista" >
-                <li class="seccion-lista_elemento"><a href="#">Artesanos</a></li>
+                <li class="seccion-lista_elemento"><a href="./artesanos.html">Artesanos</a></li>
                 <li class="seccion-lista_elemento"><a href="./contactoNav.html">Contacto Nav-Attar</a></li>
                 <li class="seccion-lista_elemento"><a href="./contactoEquipo.html">Contacto Equipo</a></li>
               </ul>
