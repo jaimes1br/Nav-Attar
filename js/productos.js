@@ -19,7 +19,7 @@ function addItem(item){
               </div>
               <h5 class="card-title">${item.category} </h5>
               <p class="card-text">${item.description}</p>
-              <a href="./vistaProducto.html class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
+              <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
           </div>
       </div>
       </div> `
