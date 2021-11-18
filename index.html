@@ -20,7 +20,7 @@
 
 <body>
   
-  <div class="container-fluid">
+  <div class="container-fluid px-0">
     <nav class="navbar navbar-expand-lg navbar-light navAttar">
       
       <a class="navbar-brand" href="">
@@ -34,11 +34,11 @@
       <div class="collapse navbar-collapse" id="navbarNav"> 
         <ul class="navbar-nav ml-auto navAttar_list">
           <li class="nav-item dropdown mr-5">
-            <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
               Contacto
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item navAttar_listDes" href="#">Nav-Attar</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/contactoNav.html"> Nav-Attar</a>
               <a class="dropdown-item navAttar_listDes" href="./pages/contactoEquipo.html">Equipo de desarrollo</a>                            
             </div>
           </li> <!--contactos-->
@@ -48,7 +48,7 @@
           </li> <!--nosotros-->
 
           <li class="nav-item mr-5">
-            <a class="nav-link" href="#">Artesanos</a>
+            <a class="nav-link" href="./pages/artesanos.html">Artesanos</a>
           </li><!--artesanos-->
 
           <li class="nav-item dropdown mr-5">
@@ -56,35 +56,41 @@
               Catálogo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item navAttar_listDes" href="#">Categoría 1</a>
-              <a class="dropdown-item navAttar_listDes" href="#">Categoría 2</a>
-              <a class="dropdown-item navAttar_listDes" href="#">Categoría 3</a>
-              <a class="dropdown-item navAttar_listDes" href="#">Categoría 4</a>
-              <a class="dropdown-item navAttar_listDes" href="#">Categoría 5</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/categoria1.html">Categoría 1</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/categoria2.html">Categoría 2</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/categoria3.html">Categoría 3</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/categoria4.html">Categoría 4</a>
+              <a class="dropdown-item navAttar_listDes" href="./pages/categoria5.html">Categoría 5</a>
             </div>
           </li> <!--catalogo-->
 
           <li class="nav-item mr-5">
-            <a class="nav-link" href="#">Iniciar sesión</a>
+            <a class="nav-link" href="./pages/loggin.html">Iniciar sesión</a>
           </li>  <!--iniciarSesion-->
 
           <li class="nav-item mr-5 ">
-            <a href="#" class="nav-link">
+            <a href="./pages/carrito.html" class="nav-link">
               <img class="navAttar__icon" src="./img/iconos/cart.svg" alt="...">
             </a>
           </li> <!--Carrito-->
         </ul><!--listaNAv-->
       </div><!--divHamburguesa-->
-    </nav><!--navBar-->   
+    </nav><!--navBar--> 
   </div><!--navBarContaier-->
  
+<!-- Contenido -->
 
-  <div class="container-fluid" id="main">
-    <div class="containercontainer">
-      <div class="main-area">
-        <div class="ilogo">
-          <img class="logomain" src="./img/logos/gatoComOrejas.png" alt="Logo Nav-Attar">
-        </div><!--ilogo-->
+<div class="container noAnimacion" id="main">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="rectangulo noAnimacion">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="align-self-center ilogo">
+            <img class="logomain" src="./img/logos/gatoComOrejas.png" alt="Logo Nav-Attar">
+          </div><!--ilogo-->
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="infoa">
           <div class="description">
             <p>Nav-Attar es todo un concepto de artesanía mexicana. Contamos con las mejores artesanas mexicanas, mostrando que a través de ellas lo que el arte mexicano es hoy en día. El compromiso esta con nuestros aliados, las artesanas. Buscando que sigan desarrollándose, manteniendo y ofreciendo sus productos a mucha más gente.</p>
@@ -94,52 +100,75 @@
             <button type="button" class="btn btn-lg rounded-pill" id="boton">Catálogo</button>
           </div><!--buttons-->
         </div><!--infoa-->
-      </div><!--main-area-->
-    </div><!--containercontainer-->
-  </div><!--contain-->
+        </div><!--col 6-->
+      </div><!--row 2/2-->
+      </div><!--rectangulo-->
+    </div><!--col 12-->
+  </div><!--row 1/2-->
+</div><!--container-->
 
 
 
-  <div class="container-fluid">
+<!-- ]/contenido -->
+
+
+
+
+  <div class="container-fluid px-0">
     <footer>
-      <section class="foot">
-          <div class="links">
-              <div class="sec3">
-                  <ul id="nonePoint">
-                      <li class="menuItem"><a href="#">Contactos</a></li>
-                      <li class="menuItem"><a href="./pages/nosotros.html">Nosotros</a></li>
-                      <li class="menuItem"><a href="#">Artesanos</a></li>
-                  </ul>
-              </div>
-              <div class="sec2">
-                  <ul id="nonePoint">
-                      <li class="menuItem"><a href="#">Cátalogo</a></li>
-                      <li class="menuItem"s><a href="#">Iniciar Sesión</a></li>
-                  </ul>
-              </div>
-          </div><!--Link-->
 
-          <div class="logo">
-              <div class="img">
-                  <img class="img-logo" src="./img/logos/gatoLogo.png" alt="Logo Nav-Attar">
-              </div>
-              <div class="lineWhite">
+      <div class="container-fluid">
+        <div class="row">
+        
+          <div class=" col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div class="row align-items-center">
+              <div class="col seccion">
+                <ul class="seccion-lista">
+                  <li class="seccion-lista_elemento"><a href="#">Contacto <br> Nav-Attar</a></li>
+                  <li class="seccion-lista_elemento"><a href="#">Contacto Equipo</a></li>
+                  <li class="seccion-lista_elemento"><a href="#">Artesanos</a></li>
+                </ul>
+              </div><!--seccion1-->
+              <div class="col seccion">
+                <ul class="seccion-lista" >
+                  <li class="seccion-lista_elemento"><a href="#">Nosotros</a></li>
+                  <li class="seccion-lista_elemento"><a href="">Catalogo</a></li>
+                  <li class="seccion-lista_elemento"><a href="#">Inicio Sesión</a></li>
+                </ul>
+              </div><!--seccion2-->
+            </div><!--row-->    
+          </div><!--links-->
+    
+    
+          <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 " >
+            <div class="row justify-content-center">
+              <div class="col-8 offset-2 offset-md-1 logo">
+              
+                <div class="logo-img">
+                    <img class="img-logo" src="./../img/logos/gatoLogo.png" alt="Logo Nav-Attar">
+                </div><!--logo-->
+                <div class="logo-nombre">
                   <h2>Nav-Attar</h2>
-                  <button class="button-bar"></button>
-              </div>
-              <div class="social">
-                  <img class="btn-social" src="./img/iconos/social/facebook.png" alt="icon-facebook" >
-                  <img class="btn-social" src="./img/iconos/social/gorjeo.png" alt="icon-twitter">
-                  <img class="btn-social" src="./img/iconos/social/instagram.png" alt="icon-instragram">
-              </div>
-          </div><!--Logo-->
-
-          <div class="thanks">
-              <h5>Hecho con amor ❤️ de: <br> @GenerationMx, Alejandro, <br> Brandon, Daniel, Erik, <br> Ilan, Pablo y Paola.</h5>
-          </div><!--Thanks-->
-
-      </section><!--foot-->
-    </footer><!--footer-->
+                </div><!--nombre-->
+                <div class="logo-social">
+                  <img class="logo-social_btn" src="./../img/iconos/social/facebook.png" alt="icon-facebook" >
+                  <img class="logo-social_btn" src="./../img/iconos/social/gorjeo.png" alt="icon-twitter">
+                  <img class="logo-social_btn" src="./../img/iconos/social/instagram.png" alt="icon-instragram">
+                </div><!--redes-->
+              
+              </div><!--col-->
+            </div><!--row-->
+          </div><!--logo-->
+        
+    
+          <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 agradecimiento" >
+            <h5>Hecho con amor ❤️ de: <br> <a href="https://mexico.generation.org/" >@GenerationMx</a> por <a href="/pages/contactoEquipo.html#alejandro">Alejandro</a>, <br> <a href="/pages/contactoEquipo.html#brandon"> Brandon</a>, <a href="/pages/contactoEquipo.html#dann"> Daniel,</a> <a href="/pages/contactoEquipo.html#daniel"> Erik</a>, <br> <a href="/pages/contactoEquipo.html#ilan">Ilan</a>, <a href="/pages/contactoEquipo.html#pablo">Pablo</a> y <a href="/pages/contactoEquipo.html#paola">Paola</a>.</h5>
+          </div><!--gracias-->
+        
+        </div><!--row-->
+      </div><!--container-->
+  
+    </footer>
   </div><!--ContainerFooter-->
 
 
