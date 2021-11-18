@@ -67,3 +67,46 @@
 #fin {
     padding-left:600px;
 }
+.boton button{
+    font: var(--textTitulos);
+    font-size: 1.8em;
+    background-color: var(--colorMoradoNav);
+    border-color: var(--colorMoradoNav);
+    border-radius: 3px;
+    width: 10em;
+    height: 2em;
+    color: black;
+    padding-top: 6px;
+}
+.boton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.final img{
+
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.final{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+
+}
+
+.finalim{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 20px;
+}
