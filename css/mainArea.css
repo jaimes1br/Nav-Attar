@@ -28,23 +28,6 @@
     padding-top: 20px;
 }
 
-
-.container{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.container img{
-
-    width: 200px;
-    height: 300px;
-}
-
-
-
 .final img{
 
     width: 200px;
@@ -135,10 +118,8 @@
     padding-top: 40px;
     padding-left: 300px;
 }
-#fin {
-    padding-left:600px;
-}
-.boton button{
+
+.boton a{
     font: var(--textTitulos);
     font-size: 1.8em;
     background-color: var(--colorMoradoNav);
@@ -181,8 +162,9 @@
     gap: 40px;
     padding-top: 20px;
 }
-.container2{
 
+
+.container2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,3 +176,4 @@
     width: 200px;
     height: 300px;
 }
+
