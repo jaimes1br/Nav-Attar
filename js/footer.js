@@ -14,7 +14,7 @@ footerIndex.innerHTML = `
                 <li class="seccion-lista_elemento"><a href="./../index.html">Inicio</a></li>
                 <li class="seccion-lista_elemento"><a href="./../pages/nosotros.html">Nosotros</a></li>
                 <li class="seccion-lista_elemento"><a href="./../pages/catalogo.html">Catálogo</a></li>
-                <li class="seccion-lista_elemento"><a href="./../pages/loggin.html">Inicio Sesión</a></li>
+                <li class="seccion-lista_elemento"><a href="./../pages/registro.html">Inicio Sesión</a></li>
               </ul>
             </div><!--seccion1-->
             <div class="col seccion">

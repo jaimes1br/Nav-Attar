@@ -9,7 +9,7 @@ body{
     border-style: solid;
     border-color: #979797;
     padding: 0%;
-    height: 650px;
+    height: 75em;
 }
 
 .headForm{
@@ -59,9 +59,26 @@ body{
     color: black;
 }
 
+.BotonReg:hover{
+    background-color: #6e66a0;
+}
+
+
 .padingReg input{
     height:3em;
     margin-bottom: 1.5em;
     font: var(--textFooter);
     /* textFootre */
+}
+
+.especialPasReg, .especialPasReg input{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.especialPasReg small{
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    padding: 0 2em;
+    text-align: center;
 }

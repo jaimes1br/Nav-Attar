@@ -44,7 +44,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
 
       
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./../pages/loggin.html">Iniciar sesión</a>
+        <a class="nav-link" href="./../pages/registro.html">Iniciar sesión</a>
       </li>  <!--iniciarSesion-->
 
       <li class="nav-item mr-5 ">
