@@ -67,6 +67,26 @@ form.addEventListener('submit', e => {
         <div class="alert alert-success" role="alert">
             <h3> ¡Tu registro ha sido exitoso! </h3>
         </div>`;
+        guardarRegistro();
+        obtenerRegistro();
     }
 
+
 })
+
+
+function guardarRegistro(){
+    
+    let usuario = {
+        'nombre': nombre.value,
+        'telefono': telefono.value,
+        'correo': correo.value,
+      'contrasena': pass.value
+    };
+    localStorage.setItem("UsuarioReg", JSON.stringify(usuario));
+}
+
+function obtenerRegistro(){
+    let usuario = localStorage.getItem("UsuarioReg");
+    console.log(usuario);
+  }
