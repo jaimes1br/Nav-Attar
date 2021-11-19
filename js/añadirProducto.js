@@ -112,6 +112,20 @@ function SubirNuevo(){
 
 }
 
+/*********************************
+ *Funcion añadir card
+ ********************************/
+function cardProducto(){
+  let div = document.getElementById('obtenerProducto');
+  div.innerHTML= `
+  <div>
+  <p>Productos</p>
+  <div>${Obtener().Producto}</div>
+  </div>
+  `;
+}
+
+
 //-------------------------------------Funcion chida, no borrar porfavor.--------------
 // function load(){                                                                   |
 // console.log("Load");                                                               |
