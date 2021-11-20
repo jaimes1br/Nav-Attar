@@ -110,34 +110,33 @@ function SubirNuevo(){
     return false;
     
   }
-    function AñadirProducto(item){
-      let nombre = Erik;
-
-      const itemHTML =
-      `
-        <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
-          <div class="card tamañoCartProducto" >
-              <a href="./vistaProducto.html">
-                <img src="${item.Imagen}" class="card-img-top" alt="image">
-              </a>
-              <div class="card-body elementosCardProducto">
-                  <a href="./vistaProducto.html"><h2 class="card-title">${nombre}</h2></a>
-                  <div class="cardPrecio">
-                    <a href="./vistaProducto.html"><h3 class="card-title">$${item.price} MN</h3></a>
-                    <h5 class="card-title">${item.size}</h5>
-                  </div>
-                  <h5 class="card-title">${item.category} </h5>
-                  <p class="card-text">${item.description}</p>
-                  <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
-              </div>
-          </div>
-          </div> `
-        
-       ;
     
-        const divItem = document.getElementById("obtenerProducto");
-        divItem.innerHTML += itemHTML;
-      }//addItem
+  function addItem(item){
+    const itemHTML = 
+    `
+    <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
+      <div class="card tamañoCartProducto" >
+          <a href="./vistaProducto.html">
+            <img src="${item.imagen}" class="card-img-top" alt="image">
+          </a>
+          <div class="card-body elementosCardProducto">
+              <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
+              <div class="cardPrecio">
+                <a href="./vistaProducto.html"><h3 class="card-title">$${item.price} MN</h3></a>
+                <h5 class="card-title">${item.size}</h5>
+              </div>
+              <h5 class="card-title">${item.category} </h5>
+              <p class="card-text">${item.description}</p>
+              <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
+          </div>
+      </div>
+      </div> `
+    
+   ;
+
+    const itemsContainer = document.getElementById("obtenerProducto");
+    itemsContainer.innerHTML += itemHTML;
+}//addItem
 
   
 

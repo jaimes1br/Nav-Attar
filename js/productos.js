@@ -1,4 +1,15 @@
 
+/******************************** 
+ * PRUEBA 
+ * ******************************/
+
+objetos = [Obtener()]; 
+
+function Obtener(){
+    let Producto = JSON.parse(localStorage.getItem("Producto"));
+    console.log(Producto);
+    return Producto;
+  }
 
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
@@ -9,16 +20,16 @@ function addItem(item){
     <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
       <div class="card tamañoCartProducto" >
           <a href="./vistaProducto.html">
-            <img src="${item.img}" class="card-img-top" alt="image">
+            <img src="${item.imagen}" class="card-img-top" alt="image">
           </a>
           <div class="card-body elementosCardProducto">
-              <a href="./vistaProducto.html"><h2 class="card-title">${item.name}</h2></a>
+              <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
               <div class="cardPrecio">
-                <a href="./vistaProducto.html"><h3 class="card-title">$${item.price} MN</h3></a>
-                <h5 class="card-title">${item.size}</h5>
+                <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
+                <h5 class="card-title">${item.medida}</h5>
               </div>
-              <h5 class="card-title">${item.category} </h5>
-              <p class="card-text">${item.description}</p>
+              <h5 class="card-title">${item.categoria} </h5>
+              <p class="card-text">${item.Descripcion}</p>
               <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
           </div>
       </div>
@@ -29,6 +40,43 @@ function addItem(item){
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
 }//addItem
+
+/*********************
+ * PRUEBA FUNCION ---------------------------------------------------------------------- v.2
+ **********************/
+ 
+ function addItem2(item){
+     const itemHTML = 
+     `
+     <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
+       <div class="card tamañoCartProducto" >
+           <a href="./vistaProducto.html">
+             <img src="${item.imagen}" class="card-img-top" alt="image">
+           </a>
+           <div class="card-body elementosCardProducto">
+               <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
+               <div class="cardPrecio">
+                 <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
+                 <h5 class="card-title">${item.medida}</h5>
+               </div>
+               <h5 class="card-title">${item.categoria} </h5>
+               <p class="card-text">${item.Descripcion}</p>
+               <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
+           </div>
+       </div>
+       </div> `
+     
+    ;
+ 
+     const itemsContainer = document.getElementById("obtenerProductos");
+     itemsContainer.innerHTML += itemHTML;
+ }//addItem
+
+
+
+
+
+
 
 
 /*-----------------------------------------------------------------
@@ -138,7 +186,7 @@ function elementoCategoria(){
 /*-----------------------------------------------------------------
  ||  Lista de objetos         
  -----------------------------------------------------------------*/
-objetos = [
+productos = [
     {
         'id':'1',
         'name':'Batman',
