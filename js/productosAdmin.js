@@ -12,30 +12,35 @@ objetos = [Obtener()];
  -----------------------------------------------------------------*/
  
 function addItem(item){
+   console.log(item.nombre);
     const itemHTML = 
     `
-    <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
-      <div class="card tamañoCartProducto" >
-          <a href="./vistaProducto.html">
-             <img src="${item.imagen}" class="card-img-top" alt="image">  
-          </a>
-          <div class="card-body elementosCardProducto">
-              <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
-              <div class="cardPrecio">
-                <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
-                <h5 class="card-title">${item.medida}cm</h5>
-              </div>
-              <h5 class="card-title">${item.categoria} </h5>
-              <p class="card-text">${item.Descripcion}</p>
-              
-          </div>
+    
+<div class="cardcom">
+                                        
+<div class="pIndividual1">
+  <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
+</div><!--pIndividual-->
+    <div class="cardInfo">
+      <h5 class="card-title">Nombre: ${item.nombre}</h5>
+      <h5 class="card-title">Medida: ${item.medida}cm</h5>
+      <h5 class="card-title">Categoría: ${item.categoria}</h5>
+      <h5 class="card-title">Precio: $${item.precio}</h5>
+    </div><!--cardInfo-->
+    <div class="ap">
+      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+      <div class="eliminar">
+      <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+      </div><!--Eliminar-->
+      <div class="descript">
+      <p class="card-text">${item.Descripcion}</p>
+    </div><!--descript-->
+    <!-- </div> -->
+    </div><!--ap-->
+    <!-- <div id="list-items">
 
-            <div class="btn_comprar">
-            <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
-            </div>
-
-      </div>
-      </div> `
+    </div> -->
+</div><!--cardcom--> `
    ;
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
@@ -264,6 +269,7 @@ productos = [
  -----------------------------------------------------------------*/
 objetos.forEach(objeto => {
     addItem(objeto);
+    addItem2(objeto);
 });
 
 

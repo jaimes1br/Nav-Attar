@@ -158,3 +158,8 @@
 .ArtNombre h5{
     font-size: 20px;
 }
+
+.btn-primary {
+    border-radius: 50%;
+    background-color: blue;
+}
