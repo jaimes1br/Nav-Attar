@@ -25,15 +25,6 @@ function addItem(item){
                 <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
                 <h5 class="card-title">${item.medida}cm</h5>
               </div>
-<<<<<<< HEAD
-              <h5 class="card-title">${item.category} </h5>
-              <p class="card-text">${item.description}</p>
-          </div>
-
-            <div class="btn_comprar">
-             <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
-            </div>
-=======
               <h5 class="card-title">${item.categoria} </h5>
               <p class="card-text">${item.Descripcion}</p>
               
@@ -43,7 +34,6 @@ function addItem(item){
             <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
             </div>
 
->>>>>>> a2537f2fe9a278b55259501614dc530ed04cee0f
       </div>
       </div> `
    ;

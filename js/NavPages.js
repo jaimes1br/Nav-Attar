@@ -35,10 +35,12 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html">Todos</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 2</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 3</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 4</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 5</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Caricaturas</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Celebridades</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Mascotas</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Personajes</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Personalizados</a>
+          <a class="dropdown-item navAttar_listDes" href="#">Superhéroes</a>
         </div>
       </li> <!--catalogo-->
 
