@@ -47,18 +47,18 @@ function addItem(item){
 /*-----------------------------------------------------------------
  ||  Funcion addItem1        
  -----------------------------------------------------------------*/
-function filtrado(objetos,filtro){
+function filtrado(productos,filtro){
     const itemsContainer = document.getElementById("list-items");
         
     if( filtro === 'Todos'){
         itemsContainer.innerHTML = '';
-        objetos.forEach(objeto => {
+        productos.forEach(objeto => {
             addItem(objeto);
         });
     }
     else{
         itemsContainer.innerHTML = '';
-        objetos.forEach(objeto => {
+        productos.forEach(objeto => {
             if (objeto.category === filtro) {
                 addItem(objeto);
             }//if
@@ -67,13 +67,9 @@ function filtrado(objetos,filtro){
 
 }//filtrado
 
-
-
-
-
-
-
-//coloca menu de cuadro 
+/*-----------------------------------------------------------------
+ ||  Funcion menu de cuadro        
+ -----------------------------------------------------------------*/
 function cuadro(){
     let div = document.getElementById('contenedorCategorias');
     div.innerHTML = '';
@@ -81,14 +77,15 @@ function cuadro(){
     <div id="menuCambio" class="card " style="width: 20em;">
         <div class="card-header" id="menuCategorias"><h3>Categorías</h3></div>
         <ul class="list-group list-group-flush ">
-    
-            <li class="listaCategorias"><a href="#" class="categoria">Todos</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Caricaturas</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Celebridades</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Mascotas</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Personajes</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Personalizados</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Superhéroes</a></li>
+            
+            <li class="listaCategorias"><button type="button" class="btn categoria">Todos</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Caricaturas</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Celebridades</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Mascotas</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Personajes</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Personalizados</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Superhéroes</button></li>
+            
             
         </ul>
     </div><!---->`;
@@ -99,13 +96,16 @@ function cuadro(){
     menu.forEach(function(categoria){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
-        filtrado(objetos,seleccion);
+        seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+        filtrado(productos,seleccion);
     })
     });
 
 }//menuCuadro
 
-//coloca menu en dropdown
+/*-----------------------------------------------------------------
+ ||  Funcion menu de dropdown        
+ -----------------------------------------------------------------*/
 function lista(){
     let div = document.getElementById('contenedorCategorias');
     div.innerHTML = '';
@@ -121,7 +121,7 @@ function lista(){
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Mascotas</a>
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Personajes</a>
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Personalizados</a>
-            <a class="dropdown-item elementoMenuListaCategorias"  href="#">Superhéroes</a>
+            <a class="dropdown-item elementoMenuListaCategorias" href="#">Superhéroes</a>
         </div>
     </div>`;
 
@@ -130,13 +130,12 @@ function lista(){
     lista.forEach(function(categoria){
         categoria.addEventListener('click', (e) =>{
             let seleccion = e.currentTarget.innerHTML; 
-            console.log(seleccion);
-            filtrado(objetos,seleccion);
+            filtrado(productos,seleccion);
         })
     });
 }//menuLista
 
-//dependiendo la pantalla que se manera se muestra un elemento
+//dependiendo la pantalla se muestra un elemento
 function elementoCategoria(){
     let pantallaw = screen.width;
     let pantallah = screen.height;    
@@ -270,7 +269,7 @@ objetos.forEach(objeto => {
 
 
 /*-----------------------------------------------------------------
- ||  Saber que elemento pongo, cuadro o ista       
+ ||  Saber que elemento pongo, cuadro o lista       
  -----------------------------------------------------------------*/
 elementoCategoria();
 
@@ -279,7 +278,7 @@ elementoCategoria();
  -----------------------------------------------------------------*/
 
 window.addEventListener("resize", function(e){
-  
     elementoCategoria();
 });
+
 

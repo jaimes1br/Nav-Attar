@@ -35,20 +35,20 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
         <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Catálogo
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html">Todos</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Caricaturas</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Celebridades</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Mascotas</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Personajes</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Personalizados</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Superhéroes</a>
-        </div>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Todos">Todos</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Caricaturas">Caricaturas</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Celebridades">Celebridades</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Mascotas">Mascotas</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personajes">Personajes</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
+      </div>
       </li> <!--catalogo-->
 
       
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./../pages/loggin.html">Iniciar sesión</a>
+        <a class="nav-link" href="./../pages/registro.html">Iniciar sesión</a>
       </li>  <!--iniciarSesion-->
 
       <li class="nav-item mr-5 ">

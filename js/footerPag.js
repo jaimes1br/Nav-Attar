@@ -13,8 +13,8 @@ footerPaginas.innerHTML = `
                 
                 <li class="seccion-lista_elemento"><a href="./../index.html">Inicio</a></li>
                 <li class="seccion-lista_elemento"><a href="./nosotros.html">Nosotros</a></li>
-                <li class="seccion-lista_elemento"><a href="./catalogo.html">Catálogo</a></li>
-                <li class="seccion-lista_elemento"><a href="./loggin.html">Inicio Sesión</a></li>
+                <li class="seccion-lista_elemento"><a  href="./catalogo.html?cat=Todos">Catálogo</a></li>
+                <li class="seccion-lista_elemento"><a href="./registro.html">Inicio Sesión</a></li>
               </ul>
             </div><!--seccion1-->
             <div class="col seccion">

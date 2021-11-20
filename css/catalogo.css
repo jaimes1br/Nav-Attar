@@ -68,6 +68,10 @@
     margin-left: 1vh;
 }
 
+.cardProducto{
+    display: flex;
+}
+
 .card a img{
     width: 20em;
     height: 25em;
@@ -84,8 +88,8 @@
     color: #000;
 }
 
-.elementosCardProducto a:hover ,.elementosCardProducto a:hover {
-    text-decoration: none;
+.elementosCardProducto a:hover  {
+    text-decoration-color: #6e66a0;
 }
 
 .elementosCardProducto a:hover h2, .elementosCardProducto a:hover h3{
@@ -93,6 +97,9 @@
     font-weight: 700;
 }
 
+.elementosCardProducto a{
+    align-items: flex-end;
+}
 
 .cardPrecio{
     display: flex;
@@ -112,14 +119,18 @@
 
 #btnComprar{
     display: flex;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    /* position: relative; */
+    /* bottom: 0.1em; */
     background-color: #BDB2FF;
     color: #000;
     font-size: 1.5em;
     font-weight: 700;
-    height: 3em;
-    margin-top: 2em ;
+    /* height: 3em; */
+    padding: 0.5em 1em; 
+    /* margin-top: 2em ; */
+    
 }
 
 #btnComprar:hover{
@@ -171,17 +182,17 @@
     font-size: 1em;
     
 }
-.listaCategorias a{
+.listaCategorias a, .listaCategorias button{
     font-size: 1.5em;
     color: #000;
 }
 
-.listaCategorias a:hover{
+.listaCategorias a:hover, .listaCategorias button:hover{
     font-size: 1.4em;
     font-weight: 700;
     color: #000;
     text-decoration: none;
-    padding: 1em 0;
+    /* padding: 1em 0; */
 }
 
 
@@ -270,6 +281,7 @@
         font-size: 1.8em;
     }
 
+
 }
 
 /* NestHub lg */
@@ -287,6 +299,10 @@
         width: 34rem; height: 58rem;
     }
     
+    .dviPersonalizado_btn{
+        font-size: 2em;
+        left: 43%;
+    }
 }
 
 /* motoG4 sm */
@@ -295,5 +311,11 @@
         width: 30rem; height: 58rem;
     }
     
+    .dviPersonalizado_btn{
+        font-size: 1.5em;
+        top:45%;
+        left: 30%;
+        padding: 0.5em 0.8em;
+    }
     
 }

@@ -37,25 +37,52 @@
                     <!-- <label for="nombre">Nombre de Usuario</label> -->
                     <input type="text" class="form-control" id="nombre" placeholder="Nombre de Usuario">
                 </div><!--nombre-->
+                <div class="form-group NumReg padingReg">
+                    <!-- <label for="telefono">Número de teléfono</label> -->
+                    <input type="tel" class="form-control" id="telefono" placeholder="Número de teléfono">
+                </div><!--numTelefono-->
                 <div class="form-group CorreReg padingReg">
                     <!-- <label for="correo">Correo electrónico</label> -->
                     <input type="email" class="form-control" id="correo" placeholder="Correo">
                 </div><!--correo-->
-                <div class="form-group ContraseñaReg padingReg">
+                <div class="form-group ContraseñaReg padingReg especialPasReg ">
                     <!-- <label for="tel">Contraseña</label> -->
-                    <input type="text" class="form-control" id="tel" placeholder="Contraseña">
+                    <input type="password" class="form-control " id="pass" placeholder="Contraseña">
+                    <small class="form-text text-muted">Usa 8 o más caracteres con una combinación de letras, números y símbolos. </small>
+                
                 </div><!--asunto-->
                 <div class="form-group ContraseñaReg2 padingReg">
                     <!-- <label for="mensaje">Confirmar contraseña</label> -->
-                    <input type="text" class="form-control" id="mensaje" placeholder="Confirmar contraseña">
+                    <input type="password" class="form-control" id="confpass" placeholder="Confirmar contraseña">
                 </div><!--mensaje-->
 
                 <div class="text-center divBtn" >
-                    <button type="button" class="btn btn-secondary BotonReg">Registrarse</button>
+                    <button type="submit" class="btn btn-secondary BotonReg" data-toggle="modal" data-target="#aleRegistro">Registrarse</button>
                 </div>
             </form>
           </div>  <!--divFormularioText-->   
   </div><!--divContainer-->
+
+
+  <div class="modal fade" id="aleRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 10px;">
+        <div class="modal-header" style="border-radius: 10px 10px 0px 0px;">
+          <h5 class="modal-title" id="exampleModalLabel">¡ Atención !</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="alertaRegistro">
+          
+        </div>
+      </div>
+    </div>
+  </div><!--modal-->
+
+
+
+
 
   <footer id="footerModPag"></footer>
 
@@ -64,6 +91,8 @@
   
     <script src="./../js/NavPages.js"></script>
     <script src="./../js/footerPag.js"></script>
+    <script src="./../js/registroVal.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
