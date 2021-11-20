@@ -103,6 +103,14 @@
     justify-content: space-around;
 }
 
+.btn_comprar{
+
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    align-items: flex-end;
+}
+
 #btnComprar{
     display: flex;
     justify-content: center;
