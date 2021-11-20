@@ -19,17 +19,61 @@
    font-size: 60px;   
 }
 
+
+.boton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.final img{
+
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.final{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+
+}
+
+.finalim{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.boton button{
+    font: var(--textTitulos);
+    font-size: 1.8em;
+    background-color: var(--colorMoradoNav);
+    border-color: var(--colorMoradoNav);
+    border-radius: 3px;
+    width: 10em;
+    height: 2em;
+    color: black;
+    padding-top: 6px;
+}
+
+
 #promo{
     text-align: center;
     font-family: 'Petemoss', cursive;
     font-size: 80px;
 }
 
-.container{
 
-    display: flex;
-    justify-content:center;
-}
 
 #personal{
 
@@ -49,7 +93,7 @@
 
 @media only screen and (max-width: 480px) { 
 
-    #titulo{
+    .fr{
         width: 100px;
         height: 20px ;
         
@@ -59,12 +103,20 @@
         height: 20px;
         
     }
+} 
+
+.frase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#titulo {
-    padding-left:300px;
-}
-#fin {
-    padding-left:600px;
+
+.contenedor{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-top: 40px;
+    padding-left: 300px;
 }
 .boton a{
     font: var(--textTitulos);
@@ -109,8 +161,9 @@
     gap: 40px;
     padding-top: 20px;
 }
-.container2{
 
+
+.container2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,3 +175,4 @@
     width: 200px;
     height: 300px;
 }
+
