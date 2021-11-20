@@ -5,9 +5,15 @@
     border-bottom-right-radius: 1.5rem;
 }
 
+.ArtImg{
+    padding-bottom: 2rem;
+}
+
 .ArtImg img{
-    width: 10em;
-    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
 }
 
 .azul{
@@ -72,7 +78,7 @@
     display: flex;
     flex-direction: row;
     align-self: center;
-    padding: 2rem;
+    padding: 2rem
 }
 
 .modBut{
@@ -95,6 +101,7 @@
     background-color: #F8EDEB;
     border-radius: 1rem;
     margin-right: 5rem;
+    width: 17rem;
     
 }
 .subInfo{
