@@ -1,5 +1,4 @@
 
-
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
@@ -14,10 +13,10 @@ function addItem(item){
           <div class="card-body elementosCardProducto">
               <a href="./vistaProducto.html"><h2 class="card-title">${item.name}</h2></a>
               <div class="cardPrecio">
-                <a href="./vistaProducto.html"><h3 class="card-title">$${item.price} MN</h3></a>
-                <h5 class="card-title">${item.size}</h5>
+                <a href="./vistaProducto.html"><h3 class="card-title">$${item.price} MXN</h3></a>
+                <h3 >${item.size}</h3>
               </div>
-              <h5 class="card-title">${item.category} </h5>
+              <h3>${item.category} </h3>
               <p class="card-text">${item.description}</p>
               <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
           </div>
@@ -34,18 +33,18 @@ function addItem(item){
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
-function filtrado(objetos,filtro){
+function filtrado(productos,filtro){
     const itemsContainer = document.getElementById("list-items");
         
     if( filtro === 'Todos'){
         itemsContainer.innerHTML = '';
-        objetos.forEach(objeto => {
+        productos.forEach(objeto => {
             addItem(objeto);
         });
     }
     else{
         itemsContainer.innerHTML = '';
-        objetos.forEach(objeto => {
+        productos.forEach(objeto => {
             if (objeto.category === filtro) {
                 addItem(objeto);
             }//if
@@ -54,7 +53,9 @@ function filtrado(objetos,filtro){
 
 }//filtrado
 
-//coloca menu de cuadro 
+/*-----------------------------------------------------------------
+ ||  Funcion menu de cuadro        
+ -----------------------------------------------------------------*/
 function cuadro(){
     let div = document.getElementById('contenedorCategorias');
     div.innerHTML = '';
@@ -62,14 +63,15 @@ function cuadro(){
     <div id="menuCambio" class="card " style="width: 20em;">
         <div class="card-header" id="menuCategorias"><h3>Categorías</h3></div>
         <ul class="list-group list-group-flush ">
-    
-            <li class="listaCategorias"><a href="#" class="categoria">Todos</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Caricaturas</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Celebridades</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Mascotas</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Personajes</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Personalizados</a></li>
-            <li class="listaCategorias"><a href="#" class="categoria">Superhéroes</a></li>
+            
+            <li class="listaCategorias"><button type="button" class="btn categoria">Todos</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Caricaturas</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Celebridades</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Mascotas</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Personajes</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Personalizados</button></li>
+            <li class="listaCategorias"><button type="button" class="btn categoria">Superhéroes</button></li>
+            
             
         </ul>
     </div><!---->`;
@@ -80,13 +82,16 @@ function cuadro(){
     menu.forEach(function(categoria){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
-        filtrado(objetos,seleccion);
+        seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+        filtrado(productos,seleccion);
     })
     });
 
 }//menuCuadro
 
-//coloca menu en dropdown
+/*-----------------------------------------------------------------
+ ||  Funcion menu de dropdown        
+ -----------------------------------------------------------------*/
 function lista(){
     let div = document.getElementById('contenedorCategorias');
     div.innerHTML = '';
@@ -102,7 +107,7 @@ function lista(){
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Mascotas</a>
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Personajes</a>
             <a class="dropdown-item elementoMenuListaCategorias" href="#">Personalizados</a>
-            <a class="dropdown-item elementoMenuListaCategorias"  href="#">Superhéroes</a>
+            <a class="dropdown-item elementoMenuListaCategorias" href="#">Superhéroes</a>
         </div>
     </div>`;
 
@@ -111,13 +116,12 @@ function lista(){
     lista.forEach(function(categoria){
         categoria.addEventListener('click', (e) =>{
             let seleccion = e.currentTarget.innerHTML; 
-            console.log(seleccion);
-            filtrado(objetos,seleccion);
+            filtrado(productos,seleccion);
         })
     });
 }//menuLista
 
-//dependiendo la pantalla que se manera se muestra un elemento
+//dependiendo la pantalla se muestra un elemento
 function elementoCategoria(){
     let pantallaw = screen.width;
     let pantallah = screen.height;    
@@ -138,121 +142,133 @@ function elementoCategoria(){
 /*-----------------------------------------------------------------
  ||  Lista de objetos         
  -----------------------------------------------------------------*/
-objetos = [
-    {
-        'id':'1',
-        'name':'Batman',
-        'img':'../img/muñequitos/batman.jpg',
-        'size':'25 cm',
-        'category':'Superhéroes',
-        'price':'200.00',
-        'description':'Batman es un superheroe que te acompañara en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'2',
-        'name':'Baby Yoda',
-        'img':'../img/muñequitos/bby.jpg',
-        'size':'20 cm',
-        'category':'Superhéroes',
-        'price':'350.00',
-        'description':'Si cool quieres ser, Baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto'},
-    { 
-        'id':'3',
-        'name':'Carlitos',
-        'img':'../img/muñequitos/carlitos.jpg',
-        'size':'20 cm',
-        'category':'Caricaturas',
-        'price':'350.00',
-        'description':'¿Recuerdas los momentos en familia cuando veian juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'4',
-        'name':'Coraline',
-        'img':'../img/muñequitos/carol.jpg',
-        'size':'22 cm',
-        'category':'Caricaturas',
-        'price':'420.00',
-        'description':'Muñequito de Coraline tejido, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'5',
-        'name':'Homero',
-        'img':'../img/muñequitos/homero.jpg',
-        'size':'15 cm',
-        'category':'Personajes',
-        'price':'120.00',
-        'description':'Desde Sprinfield hasta tus manos, este llavero te hara decir "WooHoo".'},
-    {
-        'id':'6',
-        'name':'Harry Potter Team',
-        'img':'../img/muñequitos/hp.jpg',
-        'size':'20 cm',
-        'category':'Personajes',
-        'price':'600.00',
-        'description':'Este trio de amigos magicos te van a encantar.'},
-    {
-        'id':'7',
-        'name':'Perrito',
-        'img':'../img/muñequitos/dog2.jpg',
-        'size':'25 cm',
-        'category':'Mascotas',
-        'price':'420.00',
-        'description':'Una forma mas de recordar y llevar contigo a tu mascota a donde sea.'},
-    {
-        'id':'8',
-        'name':'Erizo',
-        'img':'../img/muñequitos/erizo.jpg',
-        'size':'20 cm',
-        'category':'Mascotas',
-        'price':'130.00',
-        'description':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'9',
-        'name':'Arnols y Helga',
-        'img':'../img/muñequitos/heyh.jpg',
-        'size':'25 cm',
-        'category':'Caricaturas',
-        'price':'380.00',
-        'description':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'10',
-        'name':'Iron Maiden',
-        'img':'../img/muñequitos/iron.jpg',
-        'size':'20 cm',
-        'category':'Celebridades',
-        'price':'420.00',
-        'description':'El regalo perfecto para los Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'11',
-        'name':'Friend',
-        'img':'../img/muñequitos/friend.jpg',
-        'size':'18 cm',
-        'category':'Personalizados',
-        'price':'200.00',
-        'description':'Regala algo a tus seres queridos, recuerda que puedes personalizarlo a tu gusto'},
-    {
-        'id':'12',
-        'name':'Muñequita de Chinos',
-        'img':'../img/muñequitos/chinos.jpg',
-        'size':'20 cm',
-        'category':'Personalizados',
-        'price':'600.00',
-        'description':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
-];
+/**
+ * objetosTexto: datos duros de productos
+ * objetosJSON: datos de productos en JSON
+ * productosJSON: datos de producto en JSON desde el local
+ * productos: datos de producto en array 
+*/
+
+//  let objetosTexto = [
+//     {
+//         'id': 1,
+//         'name':'Batman',
+//         'img':'../img/muñequitos/batman.jpg',
+//         'size':'25 cm',
+//         'category':'Superheroes',
+//         'price':'200.00',
+//         'description':'Batman es un superheroe que te acompañara en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 2,
+//         'name':'Baby Yoda',
+//         'img':'../img/muñequitos/bby.jpg',
+//         'size':'20 cm',
+//         'category':'Superheroes',
+//         'price':'350.00',
+//         'description':'Si cool quieres ser, Baby Yoda debes tener, desde una galaxia lejana, recuerda que puedes personalizarlo a tu gusto'},
+//     { 
+//         'id': 3,
+//         'name':'Carlitos',
+//         'img':'../img/muñequitos/carlitos.jpg',
+//         'size':'20 cm',
+//         'category':'Caricaturas',
+//         'price':'350.00',
+//         'description':'¿Recuerdas los momentos en familia al mirar los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 4,
+//         'name':'Coraline',
+//         'img':'../img/muñequitos/carol.jpg',
+//         'size':'22 cm',
+//         'category':'Caricaturas',
+//         'price':'420.00',
+//         'description':'¿Y podré llevar guantes de color verde fosforecente y botas de agua amarillas? recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 5,
+//         'name':'Homero',
+//         'img':'../img/muñequitos/homero.jpg',
+//         'size':'15 cm',
+//         'category':'Personajes',
+//         'price':'120.00',
+//         'description':'Desde Sprinfield hasta tus manos, el icónico personaje amarillo,  este llavero te hara decir "WooHoo".'},
+//     {
+//         'id': 6,
+//         'name':'Harry Potter Team',
+//         'img':'../img/muñequitos/hp.jpg',
+//         'size':'20 cm',
+//         'category':'Personajes',
+//         'price':'600.00',
+//         'description':'¿Por qué siempre que pasa algo están ustedes tres? Este trio de amigos magicos te van a encantar.'},
+//     {
+//         'id': 7,
+//         'name':'Perrito',
+//         'img':'../img/muñequitos/dog2.jpg',
+//         'size':'25 cm',
+//         'category':'Mascotas',
+//         'price':'420.00',
+//         'description':'Una mejor forma de recordar y llevar contigo no solo a tu mascota, sino a tu amigo de cuatro patas a donde sea.'},
+//     {
+//         'id': 8,
+//         'name':'Erizo',
+//         'img':'../img/muñequitos/erizo.jpg',
+//         'size':'20 cm',
+//         'category':'Mascotas',
+//         'price':'130.00',
+//         'description':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 9,
+//         'name':'Arnols y Helga',
+//         'img':'../img/muñequitos/heyh.jpg',
+//         'size':'25 cm',
+//         'category':'Caricaturas',
+//         'price':'380.00',
+//         'description':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 10,
+//         'name':'Iron Maiden',
+//         'img':'../img/muñequitos/iron.jpg',
+//         'size':'20 cm',
+//         'category':'Celebridades',
+//         'price':'420.00',
+//         'description':'El regalo perfecto para los verdaderos Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 11,
+//         'name':'Friend',
+//         'img':'../img/muñequitos/friend.jpg',
+//         'size':'18 cm',
+//         'category':'Personalizados',
+//         'price':'200.00',
+//         'description':'Un regalo de totalmente diferente para tus seres queridos, recuerda que puedes personalizarlo a tu gusto'},
+//     {
+//         'id': 12,
+//         'name':'Muñequita de Chinos',
+//         'img':'../img/muñequitos/chinos.jpg',
+//         'size':'20 cm',
+//         'category':'Personalizados',
+//         'price':'600.00',
+//         'description':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
+// ];
+
+// let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
+// localStorage.setItem("objetos", objetosJSON); //En localStorage
+
+let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
+let productos = JSON.parse(productosJSON);
+
 
 
 /*-----------------------------------------------------------------
  ||  Mandar a imprimir en pag cada elemento        
  -----------------------------------------------------------------*/
-objetos.forEach(objeto => {
-    addItem(objeto);
-});
    
+let url = window.location;
+let catUrl = url.search.split('=')[1];
+
+filtrado(productos,catUrl);
 
 /*-----------------------------------------------------------------
- ||  Saber que elemento pongo, cuadro o ista       
+ ||  Saber que elemento pongo, cuadro o lista       
  -----------------------------------------------------------------*/
 elementoCategoria();
-
-
-
 
 
 /*-----------------------------------------------------------------
@@ -260,7 +276,7 @@ elementoCategoria();
  -----------------------------------------------------------------*/
 
 window.addEventListener("resize", function(e){
-  
     elementoCategoria();
 });
+
 
