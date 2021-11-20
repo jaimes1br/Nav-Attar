@@ -74,14 +74,14 @@ function SubirNuevo(){
     //----------------------------Llamada a funciones para subir y descargar informacion del local Storage
 
     Guardar();
-    Obtener();
+    // Obtener();
     
-    //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
+    // //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
 
-    function Obtener(){
-      let Producto = localStorage.getItem("Producto");
-      console.log(Producto);
-    }
+    // function Obtener(){
+    //   let Producto = localStorage.getItem("Producto");
+    //   console.log(Producto);
+    // }
 
 
     function Guardar(){
