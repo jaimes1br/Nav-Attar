@@ -114,7 +114,101 @@ body{
     }
 }
 
+/*-----------------------------------------------------------------
+ ||  carrucel chiquito        
+  -----------------------------------------------------------------*/
 
 
+  .prinslider-contenedor{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
 
+.imagen-slider{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+}
+
+.slides-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 0 30px;
+}
+
+.prinimg{
+    position: relative;
+    width: 240px;
+    height: 370px;
+    transition: .5s;
+    filter: saturate(10%);
+}
+
+.principal-button{
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.principal-button:hover{
+    background-color: rgba(0, 0, 0, .2);  
+}
+
+#prinslider-img1:target ~ .imagen-slider #img1,
+#prinslider-img1:target ~ .imagen-slider #button-1{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+#prinslider-img2:target ~ .imagen-slider #img2,
+#prinslider-img2:target ~ .imagen-slider #button-2{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#prinslider-img3:target ~ .imagen-slider #img3,
+#prinslider-img3:target ~ .imagen-slider #button-3{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#prinslider-img4:target ~ .imagen-slider #img4,
+#prinslider-img4:target ~ .imagen-slider #button-4{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#prinslider-img5:target ~ .imagen-slider #img5,
+#prinslider-img5:target ~ .imagen-slider #button-5{
+    width: 380px;
+    height: 585px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+#prinslider-img1:target ~ .imagen-slider {left: 0%;}
 
