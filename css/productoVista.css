@@ -1,0 +1,120 @@
+body{
+
+    /* background-image: url('../img/fondopagina.jpg');*/
+     /*background-color: #FAF4F4;*/
+     /* background-repeat: no-repeat; */
+     background-color: #FAF4F4;
+     
+ }
+.contenedorvistaproducto{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+
+.vistaproducto{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    background-color:#e1d0ff;
+    border-color:#e1d0ff;
+}
+
+.cardvistaproducto{
+
+    margin: 30px;
+    background-color: #ECE4DB;
+}
+
+.textovistaproducto{
+    display: flex;
+    justify-content: left;
+
+}
+
+.textovistaproducto h5{
+
+    padding-right: 150px;
+    
+}
+
+.textovistaproducto p{
+
+    padding-right: 300px;
+}
+
+.btn-vistaproducto{
+    
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+}
+
+.btn-vistaproducto button{
+
+    background-color:#e1d0ff;
+    border-color:var(--colorMoradoNav);
+    color: black;
+}
+
+
+
+.vistaproductoimg img{
+
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.promovistaproducto h5{
+
+    padding-top: 30px;
+    font-size: 20px;
+    /* color: transparent;
+    background-image: linear-gradient(to left, #FFD700, #7B68EE, #3498db, #2ecc71, #FFD700);    
+    background-clip: text;
+    animation: color 3s linear infinite;
+    background-size: 500%;     */
+}
+
+/* @keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+} */
+/*-----------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
+
+  @media only screen and (max-width: 480px) { 
+
+    .vistaproductoimg{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardvistaproducto h5{
+
+       font-size: 14px;
+        padding-right: 60px;
+    }
+
+    .cardvistaproducto p{
+        padding-right: 160px;
+    }
+}
+
+
+
+
+

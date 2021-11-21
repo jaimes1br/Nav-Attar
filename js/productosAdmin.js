@@ -1,11 +1,11 @@
-objetos = [Obtener()];
+// objetos = [Obtener()];
     
-    //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
+//     //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
 
-    function Obtener(){
-      let Productos = JSON.parse(localStorage.getItem("Producto")); 
-      return Productos;   
-    }
+//     function Obtener(){
+//       let Productos = JSON.parse(localStorage.getItem("Producto")); 
+//       return Productos;   
+//     }
 
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
