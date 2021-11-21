@@ -89,6 +89,18 @@ body{
     font-weight: 400;
 }
 
+#logocom{
+
+    width: 450px;
+    height: 450px;
+}
+
+#gatobolita{
+
+    width: 380px;
+    height: 380px;
+
+}
 
 /*-----------------------------------------------------------------
  ||  presentacion        
@@ -381,18 +393,7 @@ body{
     animation-name: movimientoLado;
     animation-duration: 5s;
 }
-/*contenedor segunda fila de fotos*/
-/*.contenedor {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    padding-top: 1px;
-    gap: 16px;
-    text-align: center;
-    margin-bottom: 3em;
-    animation-name: movimientoLadoD;
-    animation-duration: 5s;   
-}*/
+
 
 .centrado{
     display: flex;
@@ -405,6 +406,10 @@ body{
 .container h5 a, .contenedor h5 a{
     text-align: center;
     font: var(--textTituloDes);
+    font-size: 30px;
+    color: black;
+        
+
 }
 
 .card img{
@@ -424,3 +429,7 @@ body{
     /* font-size: 1em; */
     color: black;
 }
+
+
+
+
