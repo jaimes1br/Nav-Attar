@@ -64,6 +64,7 @@ body{
     border-bottom: 1vw solid #867FB3;
     padding: 3em 0;
     animation: movimientoLado 5s;
+    
 }
 
 .elemento-rev{
@@ -122,6 +123,19 @@ body{
 .textPresentacion p > span{
     font-size: 3vw;
     font-weight: 700;
+}
+
+#navNosotros{
+    font-size: 50px;
+    font-family: 'Petemoss', cursive;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+    animation: color 3s linear infinite;
+    background-size: 500%;
+
 }
 
 

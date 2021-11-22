@@ -21,6 +21,8 @@ body{
     gap: 30px;
     background-color:#e1d0ff;
     border-color:#e1d0ff;
+    height: 50vh;
+    width: 120vh;
 }
 
 .cardvistaproducto{
@@ -41,9 +43,16 @@ body{
     
 }
 
+.textovistaproducto h3{
+
+    padding-right: 185px;
+
+}
+
 .textovistaproducto p{
 
     padding-right: 300px;
+    font-size: 14px;
 }
 
 .btn-vistaproducto{
@@ -66,22 +75,27 @@ body{
 
 .vistaproductoimg img{
 
-    border-radius: 50%;
+    border-radius: 60%;
+    width: 260px;
+    height: 290px;
     margin: 10px;
 }
 
 .promovistaproducto h5{
 
     padding-top: 30px;
-    font-size: 20px;
-    /* color: transparent;
-    background-image: linear-gradient(to left, #FFD700, #7B68EE, #3498db, #2ecc71, #FFD700);    
-    background-clip: text;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Petemoss', cursive;
+    color: transparent;
+    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
     animation: color 3s linear infinite;
-    background-size: 500%;     */
+    background-size: 500%;
 }
 
-/* @keyframes color {
+@keyframes color {
     from {
         background-position: 0% 50%;
     }
@@ -89,8 +103,8 @@ body{
     to {
         background-position: 100% 50%;
     }
-} */
-/*-----------------------------------------------------------------
+} 
+/*---------------------------------------------------------------
  ||  modeloResponsivo        
   -----------------------------------------------------------------*/
 
@@ -112,6 +126,19 @@ body{
     .cardvistaproducto p{
         padding-right: 160px;
     }
+
+    .prinslider-contenedor{
+    
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 40vh;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        margin: 20px;
+    }
+
 }
 
 /*-----------------------------------------------------------------
@@ -120,23 +147,27 @@ body{
 
 
   .prinslider-contenedor{
-    width: 100%;
-    height: 85vh;
+    
     display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
     align-items: center;
     overflow: hidden;
+    margin: 20px;
 }
 
 .imagen-slider{
-    width: 100%;
-    height: 600px;
-    position: absolute;
-    left: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 200px;
+    position: absolute;
     transition: .7s;
 }
+
 
 .slides-img{
     display: flex;
@@ -147,18 +178,20 @@ body{
 
 .prinimg{
     position: relative;
-    width: 240px;
-    height: 370px;
+    width: 140px;
+    height: 170px;
     transition: .5s;
     filter: saturate(10%);
 }
 
 .principal-button{
     position: absolute;
-    width: 240px;
-    height: 370px;
+    width: 140px;
+    height: 170px;
     transition: .5s;
+    border-radius: 90%;
     background-color: rgba(0, 0, 0, .4);
+    
 }
 
 .principal-button:hover{
@@ -167,48 +200,48 @@ body{
 
 #prinslider-img1:target ~ .imagen-slider #img1,
 #prinslider-img1:target ~ .imagen-slider #button-1{
-    width: 380px;
-    height: 585px;
+    width: 200px;
+    height: 220px;
     background-color: transparent;
     filter: saturate(100%);
 }
 #prinslider-img2:target ~ .imagen-slider #img2,
 #prinslider-img2:target ~ .imagen-slider #button-2{
-    width: 380px;
-    height: 585px;
+    width: 200px;
+    height: 220px;
     background-color: transparent;
     filter: saturate(100%);
 }
 
 #prinslider-img3:target ~ .imagen-slider #img3,
 #prinslider-img3:target ~ .imagen-slider #button-3{
-    width: 380px;
-    height: 585px;
+    width: 200px;
+    height: 220px;
     background-color: transparent;
     filter: saturate(100%);
 }
 
 #prinslider-img4:target ~ .imagen-slider #img4,
 #prinslider-img4:target ~ .imagen-slider #button-4{
-    width: 380px;
-    height: 585px;
+    width: 200px;
+    height: 220px;
     background-color: transparent;
     filter: saturate(100%);
 }
 
 #prinslider-img5:target ~ .imagen-slider #img5,
 #prinslider-img5:target ~ .imagen-slider #button-5{
-    width: 380px;
-    height: 585px;
+    width: 200px;
+    height: 220px;
     background-color: transparent;
     filter: saturate(100%);
 }
 
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+/* #prinslider-img1:target ~ .imagen-slider {left: 5%;}
+#prinslider-img1:target ~ .imagen-slider {left: 3%;}
+#prinslider-img1:target ~ .imagen-slider {left: 1%;}
 
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
-#prinslider-img1:target ~ .imagen-slider {left: 0%;}
+#prinslider-img1:target ~ .imagen-slider {left: -1%;}
+#prinslider-img1:target ~ .imagen-slider {left: -3%;}
+#prinslider-img1:target ~ .imagen-slider {left: -5%;}   */
 
