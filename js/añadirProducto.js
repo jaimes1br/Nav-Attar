@@ -66,7 +66,7 @@ function SubirNuevo(){
 
     //----------------------------Llamada a funciones para subir y descargar informacion del local Storage
 
-    Guardar();
+    guardar();
     // Obtener();
     
     // //............................Declaracion de las funciones para Obtener y Guardar informacion de LocalStorage
@@ -77,23 +77,21 @@ function SubirNuevo(){
     // }
 
 
-    function guardar(productos){
+    function guardar(){
     
-      let nuevoProducto = {
+      let Producto = {
         
-        'id': (productos.length + 1),
-        'name': nombre.value,
-        'img': imagen.value,
-        'size': medida.value + ' cm',
-        'category': categoria.value,
-        'price':precio.value + '.00',
-        'description': descripcion.value
+      //  'id': (productos.length + 1),
+        nombre: nombre.value,
+        imagen: imagen.value,
+        medida: medida.value,
+        categoria: categoria.value,
+        precio:precio.value,
+        descripcion: descripcion.value
       };
 
-      productos.push(nuevoProducto);
-      
-      let productosJSON = JSON.stringify(productos); //produtos a JSON
-      localStorage.setItem("objetos", productosJSON);
+      // productos.push(nuevoProducto);
+      localStorage.setItem("Producto", JSON.stringify(Producto));
     }
 
 

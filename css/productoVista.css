@@ -1,85 +1,64 @@
 body{
 
-    /* background-image: url('../img/fondopagina.jpg');*/
-     /*background-color: #FAF4F4;*/
-     /* background-repeat: no-repeat; */
      background-color: #FAF4F4;
      
  }
+
+ /*---------------------------------------------------------------
+ ||  tarjeta 
+  -----------------------------------------------------------------*/
+
 .contenedorvistaproducto{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items:center;
     flex-direction: column;
+
 }
 
-
 .vistaproducto{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
     background-color:#e1d0ff;
     border-color:#e1d0ff;
-    height: 50vh;
-    width: 120vh;
+}
+.vistaproductoimg img{
+
+    border-radius: 60%; 
+    width: 200px;
+    height: 250px;
+    margin: 10px;
 }
 
 .cardvistaproducto{
-
-    margin: 30px;
-    background-color: #ECE4DB;
-}
-
-.textovistaproducto{
     display: flex;
-    justify-content: left;
-
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-top: 50px;
+    margin-top: 10px;
 }
 
-.textovistaproducto h5{
+.cardvistaproducto h4{
 
-    padding-right: 150px;
-    
+    font-size: 20px;
 }
 
-.textovistaproducto h3{
+#preciovistaProducto{
 
-    padding-right: 185px;
-
-}
-
-.textovistaproducto p{
-
-    padding-right: 300px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .btn-vistaproducto{
     
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 10px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
 }
-
-.btn-vistaproducto button{
-
-    background-color:#e1d0ff;
-    border-color:var(--colorMoradoNav);
-    color: black;
-}
-
-
-
-.vistaproductoimg img{
-
-    border-radius: 60%;
-    width: 260px;
-    height: 290px;
-    margin: 10px;
-}
+/*---------------------------------------------------------------
+ ||  otros productos   
+  -----------------------------------------------------------------*/
 
 .promovistaproducto h5{
 
@@ -105,47 +84,81 @@ body{
     }
 } 
 /*---------------------------------------------------------------
+ ||  imagenes circulares     
+  -----------------------------------------------------------------*/
+
+  .otrosproductos{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .otrosproductos img{
+    width: 140px;
+    height: 170px;
+  }
+
+  .productosotros{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*---------------------------------------------------------------
  ||  modeloResponsivo        
   -----------------------------------------------------------------*/
 
   @media only screen and (max-width: 480px) { 
 
+
+
     .vistaproductoimg{
 
+        text-align: center;
+    }
+
+    .cardvistaproducto{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items:flex-start;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-left: -60px;
     }
 
-    .cardvistaproducto h5{
+    .promovistaproducto h5{
 
-       font-size: 14px;
-        padding-right: 60px;
+        text-align: center;
+        padding-top: 15px;
+        font-size: 30px;
     }
 
-    .cardvistaproducto p{
-        padding-right: 160px;
-    }
+    .otrosproductos{
 
-    .prinslider-contenedor{
-    
         display: flex;
         justify-content: center;
-        width: 100%;
-        height: 40vh;
         align-items: center;
         flex-direction: column;
-        overflow: hidden;
-        margin: 20px;
-    }
+      }
 
+      .productosotros{    
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
+  }
 
-/*-----------------------------------------------------------------
+ 
+
+/* /*-----------------------------------------------------------------
  ||  carrucel chiquito        
   -----------------------------------------------------------------*/
 
-
+/*
   .prinslider-contenedor{
     
     display: flex;
@@ -235,7 +248,7 @@ body{
     height: 220px;
     background-color: transparent;
     filter: saturate(100%);
-}
+} */
 
 /* #prinslider-img1:target ~ .imagen-slider {left: 5%;}
 #prinslider-img1:target ~ .imagen-slider {left: 3%;}
@@ -243,5 +256,4 @@ body{
 
 #prinslider-img1:target ~ .imagen-slider {left: -1%;}
 #prinslider-img1:target ~ .imagen-slider {left: -3%;}
-#prinslider-img1:target ~ .imagen-slider {left: -5%;}   */
-
+#prinslider-img1:target ~ .imagen-slider {left: -5%;}  */

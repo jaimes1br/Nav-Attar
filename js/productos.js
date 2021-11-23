@@ -26,7 +26,7 @@ function addItem(item){
                 <h5 class="card-title">${item.medida}cm</h5>
               </div>
               <h5 class="card-title">${item.categoria} </h5>
-              <p class="card-text">${item.Descripcion}</p>
+              <p class="card-text">${item.descripcion}</p>
               
           </div>
 
@@ -52,13 +52,13 @@ function filtrado(productos,filtro){
         
     if( filtro === 'Todos'){
         itemsContainer.innerHTML = '';
-        productos.forEach(objeto => {
+        objetos.forEach(objeto => {
             addItem(objeto);
         });
     }
     else{
         itemsContainer.innerHTML = '';
-        productos.forEach(objeto => {
+        objetos.forEach(objeto => {
             if (objeto.category === filtro) {
                 addItem(objeto);
             }//if
@@ -96,8 +96,8 @@ function cuadro(){
     menu.forEach(function(categoria){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
-        seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-        filtrado(productos,seleccion);
+        // seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+        filtrado(objetos,seleccion);
     })
     });
 
@@ -130,7 +130,7 @@ function lista(){
     lista.forEach(function(categoria){
         categoria.addEventListener('click', (e) =>{
             let seleccion = e.currentTarget.innerHTML; 
-            filtrado(productos,seleccion);
+            filtrado(objetos,seleccion);
         })
     });
 }//menuLista
