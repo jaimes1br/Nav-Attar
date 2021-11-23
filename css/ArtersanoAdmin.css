@@ -139,7 +139,7 @@
 }
 
 .todo{
-    /* display: flex; */
+    display: block;
     flex-direction: row;
     align-items: center;
     align-self: center;
