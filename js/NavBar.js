@@ -7,8 +7,8 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
     <img src="./img/logos/logoNombre.png"  width="170px" alt="Nav-Attar" class="d-inline-block align-top">
   </a> <!--logoNavAttar-->
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler navAttar-hamburgerTam" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navAttar-hamburgerTam"></span>
   </button> <!--buttonHamburguesa-->
 
   <div class="collapse navbar-collapse" id="navbarNav"> 

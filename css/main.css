@@ -3,7 +3,7 @@
 @import url(./nosotros.css);
 @import url(./contactoEquipo.css);
 @import url(./contactoNav.css);
-@import url(./contact.css);
+/* @import url(./contact.css); */
 @import url(./mainArea.css);
 @import url(./catalogo.css);
 @import url(./trabajando.css);
@@ -37,7 +37,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.noAnimacion{
+.noAnimacion, .sinAnimacion{
     animation-name: none;
     animation-duration: 0;
 }
