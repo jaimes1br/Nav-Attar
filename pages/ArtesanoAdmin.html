@@ -9,6 +9,7 @@
       <!--Nuestro CSS-->
   <link rel="stylesheet" href="./../css/ArtersanoAdmin.css">
   <!-- cambiar direcccion de css -->
+  <link rel="stylesheet" href="./../css/main.css">
 
   <!-- Icono Nav-Attar -->
   <link rel="icon" type="image/png" href="./img/logos/gatoLogo.png">
@@ -23,20 +24,14 @@
 </head>
 <body>
   
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 px-0">
-          <div class="container-fluid px-0"></div>
-            <div class="head "></div>
-        </div><!--container-fluid-->
-    </div><!--col-->
-  </div><!--row-->  
+  <header>
+    <div class="container-fluid px-0" style="background-color: #BDB2FF; height:6rem"></div>
+  </header>
     
-    
+      <div class="container-fluid todo">
         <div class="row ">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <div class="container-fluid azul">
-                    <div class="row completo">
-                        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                          <div class="Artesano">
                             <div class="infoArtesano text-center">
                                 <div class="subInfo">
                                 <!--imagen y nombre del artesano-->
@@ -51,20 +46,22 @@
                                 <!--menu del artesano-->
                                 <div class="catergorias">
                                     <div class="btn-group-vertical">
-                                      <a class="btn" href="#" role="button">Perfil</a>
+                                      <a class="btn" href="#" role="button" style="font-size: 17px;">Perfil</a>
                                       <button type="button" class="btn disabled"></button>
                                       <button type="button" class="btn disabled"></button>
                                       <button type="button" class="btn disabled"></button>
                                       <button type="button" class="btn disabled"></button>
-                                      <a class="btn" href="#" role="button">Cerrar Sesión</a>
+                                      <a class="btn" href="#" role="button" style="font-size: 17px;">Cerrar Sesión</a>
                                     </div><!--btn-group-vertical-->
                                 </div><!--categorias-->
                             </div><!--ArteMenu-->
                             </div><!--subInfo-->
                         </div><!--infoArtesano-->
+                      </div><!--artesano-->
                         </div><!--col 1-->
-                        <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-                            <div class="navCard">
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                          <div class="CardCompleto">
+                            <div class="navCard" style="width: 75rem;">
                                 <!--nav card-->
                                 <div class="card">
                                     <div class="card-header">
@@ -101,8 +98,8 @@
                                     <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"> -->
                                       <div class="cardcom">
                                         
-                                        <div class="pIndividual">
-                                          <img src="./../img/muñequitos/checoperez.jpg" class="card-img-top" alt="image">
+                                        <div class="pIndividual1">
+                                          <img src="./../img/muñequitos/checoperez.jpg" class="card-img-top" alt="image" id="imago">
                                         </div><!--pIndividual-->
                                             <div class="cardInfo">
                                               <h5 class="card-title">Nombre: </h5>
@@ -113,7 +110,7 @@
                                             <div class="ap">
                                               <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
                                               <div class="eliminar">
-                                              <a href="#" class="btn">Eliminar</a>
+                                              <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
                                               </div><!--Eliminar-->
                                               <div class="descript">
                                               <p class="card-text">Descripción del articulo </p>
@@ -125,15 +122,14 @@
                                   </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--navCard-->  
+                        </div><!--CardCompleto-->
                         </div><!--col 1-->
-                    </div><!--row 2-->
-                </div><!--azul-->
-            </div><!--col-->
         </div><!--row 1-->
-  
+      </div> <!--todo-->  
 
+        <footer id="footerModPag"></footer>
 
-
+      <script src="./../js/footerPag.js"></script>
     <script src="./ArteAdmin.js"></script>
     <!-- cambiar js link -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
