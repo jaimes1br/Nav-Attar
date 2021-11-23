@@ -8,6 +8,12 @@ let confpass = document.getElementById('confpass');
 let alertaDiv = document.getElementById('alertaRegistro');
 
 
+// let usuarios = [];
+// let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
+// localStorage.setItem("usuarios", usuariosJSON); //En localStorage
+
+
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -61,7 +67,6 @@ form.addEventListener('submit', e => {
             <h3> ¡Tu registro ha sido exitoso! </h3>
         </div>`;
         guardarRegistro();
-        obtenerRegistro();
     }
 
 
@@ -78,9 +83,23 @@ function guardarRegistro(){
         'contrasena': pass.value
     };
     
-    localStorage.setItem("UsuarioReg", JSON.stringify(usuario));
+    let usuarios = obtener();
+
+    usuarios.push(usuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    nombre.value = '';
+    telefono.value = '';
+    correo.value = '';
+    pass.value = '';
+    confpass.value = '';
 }
 
-function obtenerRegistro(){
-    let usuario = localStorage.getItem("UsuarioReg");
-  }
+  
+function obtener(){
+    
+    let objetosJSON = localStorage.getItem("usuarios");      
+    let usuarios = JSON.parse(objetosJSON);
+   
+    return usuarios;
+}

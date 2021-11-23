@@ -43,7 +43,6 @@ function addItem(item){
 
 
 
-
 /*-----------------------------------------------------------------
  ||  Funcion filtrado     
  -----------------------------------------------------------------*/
@@ -273,21 +272,6 @@ let productos = JSON.parse(productosJSON);
 
 
 
-
-
-/*-----------------------------------------------------------------
- ||  Mandar a imprimir en pag cada elemento        
- -----------------------------------------------------------------*/
-// objetos.forEach(objeto => {
-//     addItem(objeto);
-// });
-
-// productos.forEach(objeto => {
-//     addItem(objeto);
-// });
-
-
-
 /*-----------------------------------------------------------------
  ||  Elementos para filtrar dependiento la categoria seleccionada desde la nav       
  -----------------------------------------------------------------*/
@@ -295,8 +279,6 @@ let productos = JSON.parse(productosJSON);
 let url = window.location;
 let catUrl = url.search.split('=')[1];
 filtrado(productos,catUrl);
-
-
 
 
 /*-----------------------------------------------------------------

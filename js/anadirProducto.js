@@ -96,7 +96,7 @@ function SubirNuevo(){
     imagen.value = "";
     descripcion.value = "";
         
-    return false;
+    location.reload();
   }
 }
 
