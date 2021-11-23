@@ -10,6 +10,7 @@ body{
     border-color: #979797;
     padding: 0%;
     height: 53em;
+    width: 45em;
 }
 
 .headForm2{
@@ -101,5 +102,8 @@ body{
 @media only screen and (max-width: 480px) { 
     .BotonConLog{
         height: 50px;
+    }
+    .FormLog{
+        width: 29em;
     }
 }
