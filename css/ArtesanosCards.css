@@ -88,3 +88,8 @@
     padding-top: 5rem;
     
 }
+
+.ImgArtesanos {
+    display: flex;
+    padding-left: 10rem;
+}
