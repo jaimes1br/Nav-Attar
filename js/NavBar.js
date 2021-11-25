@@ -35,13 +35,15 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
         <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Catálogo
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html">Todos</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 2</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 3</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 4</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 5</a>
-        </div>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Todos">Todos</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Caricaturas">Caricaturas</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Celebridades">Celebridades</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Mascotas">Mascotas</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personajes">Personajes</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
+        <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
+      </div>
       </li> <!--catalogo-->
 
       

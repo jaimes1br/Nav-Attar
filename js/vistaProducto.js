@@ -13,29 +13,25 @@ objetos = [Obtener()];
  
 function addItem(item){
     const itemHTML = 
-    `
-    <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
-      <div class="card tamañoCartProducto" >
-          <a href="./vistaProducto.html">
-             <img src="${item.imagen}" class="card-img-top" alt="image">  
-          </a>
-          <div class="card-body elementosCardProducto">
-              <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
-              <div class="cardPrecio">
-                <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
-                <h5 class="card-title">${item.medida}cm</h5>
-              </div>
-              <h5 class="card-title">${item.categoria} </h5>
-              <p class="card-text">${item.descripcion}</p>
-              
-          </div>
-
-            <div class="btn_comprar">
-            <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
-            </div>
-
+    `<div class="card mb-3 vistaproducto" style="max-width: 800px;">
+    <div class="row no-gutters">
+      <div class="col-md-4 vistaproductoimg">
+        <img src="${item.imagen}" alt="...">
       </div>
-      </div> `
+      <div class="col-md-8">
+        <div class="card-body cardvistaproducto">
+          <h4 class="card-title">${item.nombre}<br> <span>Nombre del artesano</span></h4>
+          <p class="card-tex"> Materiales: Cuerditas gg <br> Medidas: ${item.medida} cm <br> Categoría: ${item.categoria}</p>
+          <p id="preciovistaProducto"> $ ${item.precio}</p>
+          <div class="btn-vistaproducto">
+            <button type="button" class="btn btn-secondary">¡Lo quiero!</button>
+            <button type="button" class="btn btn-secondary">Contactar al artesano</button>
+            </div>
+        </div>
+      </div>
+    </div>
+   </div>  `
+    
    ;
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
@@ -280,5 +276,3 @@ elementoCategoria();
 window.addEventListener("resize", function(e){
     elementoCategoria();
 });
-
-
