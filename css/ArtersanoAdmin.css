@@ -7,13 +7,21 @@
 
 .ArtImg{
     padding-bottom: 2rem;
+    position: relative;
+    left: 17%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    text-align: center;
+    
 }
 
 .ArtImg img{
     object-fit: cover;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    width: 100%;
+    height: auto;
+    
 }
 
 
