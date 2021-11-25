@@ -68,6 +68,7 @@
     width: auto; 
     justify-self: center;
     align-self: center;
+    background-color: darkblue;
 }
 
 .ap{
@@ -161,6 +162,7 @@
     justify-content: space-around;
     padding-top: 4rem;
     height: 50rem;
+    background-color: darkgreen;
     
 }
 
@@ -169,7 +171,7 @@
     justify-content:flex-start;
     align-items: center;
     padding-top: 6rem;
-    /* background-color: cadetblue; */
+    background-color: cadetblue;
 
 }
 .ArtNombre h5{
@@ -185,9 +187,9 @@
     background-color:#BDB2FF;
 }
 
-/* .navCard{
+.navCard{
 background-color: crimson;
-} */
+} 
 
 
 
