@@ -14,35 +14,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">    
-    <title>Nav-Attar</title>
+    <title>Nav-Attar - Usuario</title>
 </head>
 <body>
     
     <header id="myHeadpage"></header>
 
- 
+  <div class="fraseTituloUser">
+    <h4>¡Bienvenido Usuario!</h4>
+  </div>
 
   <div class="container sinAnimacion">    
-    <div class="formularioTexto  FormLog">
-        <div class="headForm2">
-             <img src="../img/user.png" alt="" class="ImageLog">
+    <div class="formularioTexto  FormLogUser">
+        <div class="headForm2User">
+             <img src="../img/user.png" alt="" class="ImageLogUser">
         </div>
         <!--FORMULARIO-->
         <form method="post" id="form" enctype="text/plain" class="camposReg" > 
-            <div class="form-group CorreReg padingLog">
+            <div class="form-group CorreReg padingLogUser">
                 <!-- <label for="correo">Correo electrónico</label> -->
                 <input type="email" class="form-control" id="correo" placeholder="Correo electrónico">
             </div><!--correo-->
-            <div class="form-group ContraseñaReg padingLog especialPasLog ">
+            <div class="form-group ContraseñaReg padingLogUser especialPasLogUser ">
                 <!-- <label for="tel">Contraseña</label> -->
                 <input type="password" class="form-control " id="pass" placeholder="Contraseña">           
             </div><!--asunto-->
             <div class="text-center divBtn" >
-                <button type="submit" class="btn btn-secondary BotonLog" data-toggle="modal" data-target="#aleRegistro">Iniciar sesión</button>
+                <button type="submit" class="btn btn-secondary BotonLogUser" data-toggle="modal" data-target="#aleRegistro">Iniciar sesión</button>
             </div>
-            <div class="botones">
-                <button type="submit" class="btn btn-secondary BotonConLog" data-toggle="modal" data-target="#aleRegistro">¿Olvidaste tu contraseña?</button>
-                <button type="submit" class="btn btn-secondary BotonConLog" data-toggle="modal" data-target="#aleRegistro">Registrarse</button>
+            <div class="botonesUser">
+                <button type="submit" class="btn btn-secondary BotonConLogUser" data-toggle="modal" data-target="#aleRegistro">¿Olvidaste tu contraseña?</button>
+                <button type="submit" class="btn btn-secondary BotonConLogUser" data-toggle="modal" data-target="#aleRegistro">Registrarse</button>
             </div> 
         </form>
     </div>  <!--divFormularioText-->      

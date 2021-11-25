@@ -42,10 +42,15 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
         </div>
       </li> <!--catalogo-->
 
-      
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="./../pages/loggin.html">Iniciar sesión</a>
-      </li>  <!--iniciarSesion-->
+      <li class="nav-item dropdown mr-5">
+        <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Iniciar sesion
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
+        </div>
+      </li> <!--Iniciar Sesion-->
 
       <li class="nav-item mr-5 ">
         <a href="#" class="nav-link">
