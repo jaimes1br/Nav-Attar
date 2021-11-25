@@ -95,7 +95,7 @@ function cuadro(){
     menu.forEach(function(categoria){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
-        // seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+        seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
         filtrado(productos,seleccion);
     })
     });
@@ -223,11 +223,11 @@ function elementoCategoria(){
         'descripcion':'Una forma mas de recordar y llevar contigo a tu mascota a donde sea.'},
     {
         'id':'8',
-        'nombre':'Erizo',
-        'imagen':'../img/muñequitos/erizo.jpg',
+        'nombre':'Gato programador',
+        'imagen':'../img/muñequitos/Gato-Cafe.jpg',
         'medida':'20',
         'categoria':'Mascotas',
-        'precio':'130.00',
+        'precio':'300.00',
         'descripcion':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'9',

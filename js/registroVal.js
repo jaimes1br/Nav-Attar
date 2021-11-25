@@ -8,9 +8,9 @@ let confpass = document.getElementById('confpass');
 let alertaDiv = document.getElementById('alertaRegistro');
 
 
-// let usuarios = [];
-// let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
-// localStorage.setItem("usuarios", usuariosJSON); //En localStorage
+let usuarios = [];
+let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
+localStorage.setItem("usuarios", usuariosJSON); //En localStorage
 
 
 

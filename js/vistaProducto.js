@@ -1,12 +1,12 @@
 
-
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
  
-function addItem(item){
+ function addItem(item){
     const itemHTML = 
-    `<div class="card mb-3 vistaproducto" style="max-width: 800px;">
+    `
+    <div class="card mb-3 vistaproducto" style="max-width: 800px;">
     <div class="row no-gutters">
       <div class="col-md-4 vistaproductoimg">
         <img src="${item.imagen}" alt="...">
@@ -14,7 +14,7 @@ function addItem(item){
       <div class="col-md-8">
         <div class="card-body cardvistaproducto">
           <h4 class="card-title">${item.nombre}<br> <span>Nombre del artesano</span></h4>
-          <p class="card-tex"> Materiales: Cuerditas gg <br> Medidas: ${item.medida} cm <br> Categoría: ${item.categoria}</p>
+          <p class="card-tex"> Materiales: Cuerditas <br> Medidas: ${item.medida} cm <br> Categoría: ${item.categoria}</p>
           <p id="preciovistaProducto"> $ ${item.precio}</p>
           <div class="btn-vistaproducto">
             <button type="button" class="btn btn-secondary">¡Lo quiero!</button>
@@ -23,8 +23,8 @@ function addItem(item){
         </div>
       </div>
     </div>
-   </div>  `
-    
+   </div> 
+    `
    ;
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
@@ -48,6 +48,7 @@ productos.forEach(element => {
         console.log('si')
         addItem(element)
     }
+
 });
 
 
