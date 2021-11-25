@@ -20,7 +20,7 @@ function addItem(item){
       </div>
       <div class="col-md-8">
         <div class="card-body cardvistaproducto">
-          <h4 class="card-title">Nombre: ${item.nombre}<br> <span>Nombre del artesano</span></h4>
+          <h4 class="card-title">${item.nombre}<br> <span>Nombre del artesano</span></h4>
           <p class="card-tex"> Materiales: Cuerditas gg <br> Medidas: ${item.medida} cm <br> Categoría: ${item.categoria}</p>
           <p id="preciovistaProducto"> $ ${item.precio}</p>
           <div class="btn-vistaproducto">

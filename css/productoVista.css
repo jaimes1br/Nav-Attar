@@ -112,9 +112,6 @@ body{
   -----------------------------------------------------------------*/
 
   @media only screen and (max-width: 480px) { 
-
-
-
     .vistaproductoimg{
 
         text-align: center;
@@ -149,8 +146,134 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-}
+    }
+
+    .cardvistaproducto{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-left: -60px;
+    }
   }
+
+
+@media only screen and (min-width: 768px) and (max-height: 1024px)  {
+
+    .otrosproductos{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2px;
+      }
+    
+      .otrosproductos img{
+        width: 96px;
+        height: 124px;
+      } 
+}
+
+
+ @media only screen and (width: 540px) and (height: 720px)  {
+
+    .otrosproductos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2px;
+      }
+    
+      .otrosproductos img{
+        width: 230px;
+        height: 260px;
+      } 
+
+      .promovistaproducto h5{
+        font-size: 50px;       
+    }
+
+    .vistaproductoimg{
+
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .cardvistaproducto{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-left: -60px;
+    }
+
+    .cardvistaproducto h4{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        /* padding-top: 10px;
+        margin-top: 10px;
+        margin-left: -60px; */
+    }
+    .btn-vistaproducto{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }    
+}
+
+/* @media only screen and (min-width: 1024px) and (max-height: 600px)  {
+
+    .otrosproductos{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2px;
+      }
+    
+      .otrosproductos img{
+        width: 96px;
+        height: 124px;
+      } 
+
+      .cardvistaproducto{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        padding-top: 50px;
+        margin-top: 10px;
+        margin-left: -50px;
+    }
+} */
+
+
+  /* @media only screen and (max-width: 769px) { 
+
+    .otrosproductos{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 2px;
+      }
+    
+      .otrosproductos img{
+        width: 100px;
+        height: 130px;
+      }
+    
+ }  */
 
  
 
