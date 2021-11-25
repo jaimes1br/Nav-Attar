@@ -1,0 +1,64 @@
+.procesoPersonalizado{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin-top: 3em;
+}
+
+.procesoPersonalizado img{
+    width: 20em;
+    /* height: 20em; */
+    margin: 0;
+    padding: 0
+} 
+
+
+.datosPersonalizado{
+    margin-top: 1.5em;
+    display: flex;
+
+}
+
+.datosPersonalizado_linea {
+    margin: 0 1em 0 0;
+    width: 10%;    
+    border-top: 1px solid #999;
+    position: relative;
+    top: 0.8em;
+    float:left;
+}
+
+.datosPersonalizado_linea-der{
+    margin-left: 1em;
+    width: 60%;
+}
+
+.sepPersonalizado{
+    margin-top: 1em;
+}
+
+.selectPersonalizado{
+    width: 10em;
+    height: 3em;
+    border-radius: 1em;
+    font: var(--textDescripcionCon);
+}
+
+.textoPersonalizadoImg{
+    font-size: 0.5em;
+}
+
+.divPerosonalizadoSelect{
+    display: flex;
+    flex-direction: column;
+}
+
+.selectPersonalizado option{
+    font: var(--textDescripcionCon);    
+    font-size: 1em;
+    margin: 0.5em 0;
+    padding: 0.5em 0;
+}
+
+

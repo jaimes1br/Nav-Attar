@@ -20,15 +20,122 @@
     
     <header id="myHeadpage"></header> 
 
-   
-    <div class="container noAnimacion divTrabajando">
-        <h1>¡ Estamos trabajando en esto !</h1>
-        <img src="./../img/work.svg" alt="...">
+
+    <div class="container noAnimacion">
+      <div class="row procesoPersonalizado">
+        <div class="col">
+          <img src="./../img/procesoPer/carrito1.jpg" alt="...">
+          <img src="./../img/procesoPer/list2(1).jpg" alt="...">
+          <img src="./../img/procesoPer/sobre3.jpg" alt="...">
+          <img src="./../img/procesoPer/pago4.jpg" alt="...">
+          <img src="./../img/procesoPer/pedido5.jpg" alt="...">
+        </div>
+      </div>
     </div>
-  
-  
-  
-  
+
+   
+    <div class="container sinAnimacion formulario"> 
+        
+        <div class="formularioTexto">
+            <div class="divLogo text-center">
+                <img src="./../img/logos/gatoLogo.png" alt="..." >
+            </div><!--logo-->
+
+            
+            <div class="datosPersonalizado">
+                <div class="datosPersonalizado_linea">&nbsp;</div>
+                <p>Datos Personales</p>
+                <div class=" datosPersonalizado_linea datosPersonalizado_linea-der">&nbsp;</div>
+            </div><!--datosPersonales-->
+
+            <form method="post" id="form" enctype="text/plain">
+                
+                <div class="form-row">
+                    <div class="col">
+                        <label for="nombre">Nombre</label>    
+                        <input type="text" class="form-control" placeholder="Juan Carlos" >
+                    </div><!--nombre-->
+                    <div class="col">
+                        <label for="nombre">Celular</label> 
+                        <input type="tel" class="form-control" placeholder="XX-XX-XX-XX-XX">
+                    </div><!--celular-->
+                </div><!--formRow-->
+
+                  <div class="form-group sepPersonalizado">
+                    <label for="correo ">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+                </div><!--correo-->
+                
+                <div class="datosPersonalizado">
+                    <div class="datosPersonalizado_linea">&nbsp;</div>
+                    <p>Datos Producto</p>
+                    <div class=" datosPersonalizado_linea datosPersonalizado_linea-der">&nbsp;</div>
+                </div><!--datosProducto-->
+    
+                <div class="form-row">
+                    <div class="col-5 divPerosonalizadoSelect">
+                        <label for="tam">Tamaño</label>    
+                        <select class="custom-select divSeleccionPersonalizado selectPersonalizado " id="tam" >
+                            <option selected>Tamaño</option>
+                            <option value="15">15 [cm]</option>
+                            <option value="18">18 [cm]</option>
+                            <option value="20">20 [cm]</option>
+                            <option value="25">25 [cm]</option>
+                            <option value="30">30 [cm]</option>
+                        </select>
+                    </div><!--tam-->
+                    <div class="col divPerosonalizadoSelect">
+                        <label for="tam">Artesan@</label>    
+                        <select class="custom-select selectPersonalizado " id="tam" >
+                            <option selected>Seleciona</option>
+                            <option value="artesano1">artesano1</option>
+                            <option value="artesano1">artesano1</option>
+                            <option value="artesano1">artesano1</option>
+                            <option value="artesano1">artesano1</option>
+                            <option value="artesano1">artesano1</option>
+                        </select>
+                    </div>
+                </div><!--formRow-->
+
+                <div class="form-group formularioTexto_men sepPersonalizado">
+                    <label for="mensaje">Comentarios adicionales</label>
+                    <input type="text" class="form-control textoPersonalizadoImg " id="mensaje" placeholder="¡Hola!">
+                </div><!--comentariosAdicionales-->
+
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                
+                
+                <div class="form-group">  
+                </div>
+                
+                <div class="text-center divBtn" >
+                  <input type="submit" name="submit" value="¡Enviar!"  class="btn btn-light" data-toggle="modal" data-target="#alert" > 
+                  <!--<p class="warning" id="alertas"></p>-->  
+                </div>
+              </div>
+            </form><!--FORMULARIO-->
+
+  </div><!--divTexto-->
+
+    <!--MODALES ALERTA-->
+
+  <div class="modal fade" id="alert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 10px;" >
+          <div class="modal-header" style="border-radius: 10px 10px 0px 0px;" >
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+            <button type="button" class="close equisContacNav " data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" >&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="alerta">
+            
+          </div>   
+        </div>
+      </div>
+  </div>
+
+    
   
   
   
@@ -39,7 +146,7 @@
     <footer id="footerModPag"></footer>
 
     
-    <script src="./../js/NavPages.js"></script>
+    <script src="./../js/navPag.js"></script>
     <script src="./../js/footerPag.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
