@@ -47,11 +47,6 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li> <!--catalogo-->
 
       
-<<<<<<< HEAD
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="./../pages/login.html">Iniciar sesión</a>
-      </li>  <!--iniciarSesion-->
-=======
       <li class="nav-item dropdown mr-5">
         <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Iniciar sesion
@@ -61,7 +56,6 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
         </div>
       </li> <!--Iniciar Sesion-->
->>>>>>> 850477301e62ad9d54626ce4c65523f344230518
 
       <li class="nav-item mr-5 ">
         <a href="#" class="nav-link">

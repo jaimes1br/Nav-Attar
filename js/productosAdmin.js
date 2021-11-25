@@ -4,29 +4,28 @@
  -----------------------------------------------------------------*/
  
 function addItem(item){
-    console.log(item.nombre);
-    const itemHTML = `
-    <div class="cardcom">                                        
-        <div class="pIndividual1">
-            <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
-        </div><!--pIndividual-->
+   console.log(item.nombre);
+    const itemHTML = 
+    `
+    
+<div class="cardcom">
+                                        
+<div class="pIndividual1">
+  <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
+</div><!--pIndividual-->
+    <div class="cardInfo">
+      <h5 class="card-title">${item.nombre}</h5>
+      <h5 class="card-title">${item.medida}cm</h5>
+      <h5 class="card-title">${item.categoria}</h5>
+      <h5 class="card-title">$${item.precio}</h5>
+      <p class="card-text">${item.descripcion}</p>
+      <div class="eliminarProductAdmin">
+        <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+      </div> <!--eliminar-->
         
-        <div class="cardInfo">
-            <h5 class="card-title">Nombre: ${item.nombre}</h5>
-            <h5 class="card-title">Medida: ${item.medida}cm</h5>
-            <h5 class="card-title">Categoría: ${item.categoria}</h5>
-            <h5 class="card-title">Precio: $${item.precio}</h5>
-        </div><!--cardInfo-->
-        
-        <div class="ap">
-            <div class="eliminar">
-                <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
-            </div><!--Eliminar-->
-            <div class="descript">
-                <p class="card-text">${item.descripcion}</p>
-            </div><!--descript-->
-        </div><!--ap-->
-    </div><!--cardcom--> `
+    </div><!--ap-->
+   
+</div><!--cardcom--> `
    ;
     const itemsContainer = document.getElementById("listaProductosArtesano");
     itemsContainer.innerHTML += itemHTML;

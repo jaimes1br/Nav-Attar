@@ -4,6 +4,11 @@
     justify-content: center;
 } 
 
+
+/*---------------------------------------------------------------
+ ||  carrusel 
+  -----------------------------------------------------------------*/
+
 .carousel-item {
 
     margin: 20px;
@@ -13,61 +18,50 @@
     padding-right: 90px;  
 }
 
-.frase {
+
+/*---------------------------------------------------------------
+ ||  Titulos de colores 
+  -----------------------------------------------------------------*/
+
+  .frase {
   
-   text-align: center;
-   padding-top: 20px;
-   font-family: 'Petemoss', cursive;
-   font-size: 60px;   
-}
-
-
-.boton{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     padding-top: 20px;
-}
-
-.final img{
-
-    width: 200px;
-    height: 200px;
-}
-
-
-
-.final{
+    font-family: 'Petemoss', cursive;
+    font-size: 60px;   
+ }
+ 
+  .frase h4{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 10px;
-
+    font-size: 50px;
+    font-family: 'Petemoss', cursive;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+    animation: color 3s linear infinite;
+    background-size: 500%;
 }
 
-.finalim{
-    display: flex;
-    align-items: center;
+.frase2 h4{
+
+    display:flex;
     justify-content: center;
-    gap: 40px;
-    padding-top: 20px;
+    align-items: center;
+    font-size: 55px;
+    font-family: 'Petemoss', cursive;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+    animation: color 3s linear infinite;
+    background-size: 500%;
 }
-
-.boton button{
-    font: var(--textTitulos);
-    font-size: 1.8em;
-    background-color: var(--colorMoradoNav);
-    border-color: var(--colorMoradoNav);
-    border-radius: 3px;
-    width: 10em;
-    height: 2em;
-    color: black;
-    padding-top: 6px;
-}
-
 
 #promo{
     text-align: center;
@@ -75,7 +69,21 @@
     font-size: 80px;
 }
 
+/*---------------------------------------------------------------
+ ||  Sección para personalizar
+  -----------------------------------------------------------------*/
+  .promoInicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
 
+.promoInicio img{
+
+    width: 200px;
+    height: 300px;
+}
 
 #personal{
 
@@ -187,24 +195,27 @@ and (max-height: 1366px)  {
     background-size: 500%;
 }
 
-.frase2 h4{
+.botonInicio{
 
-    display:flex;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 20px;
+}
+
+.despedidaInicio{
+
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 55px;
-    font-family: 'Petemoss', cursive;
-    font-weight: bolder;
-    color: transparent;
-    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip:text;
-    animation: color 3s linear infinite;
-    background-size: 500%;
+    gap: 20px;
+    padding: 10px;
 }
 
 
-.boton a{
+
+
+.botonInicio a{
     font: var(--textTitulos);
     font-size: 1.8em;
     background-color: var(--colorMoradoNav);
@@ -215,14 +226,8 @@ and (max-height: 1366px)  {
     color: black;
     padding-top: 6px;
 }
-.boton{
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
-.final img{
+.despedidaInicio img{
 
     width: 200px;
     height: 200px;
@@ -230,34 +235,133 @@ and (max-height: 1366px)  {
 
 
 
-.final{
+.despedidaInicio{
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 10px;
-
 }
 
-.finalim{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding-top: 20px;
+.despedidaInicio img{
+
+    width: 200px;
+    height: 200px;
 }
 
+.despedidaInicio{
 
-.container2{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     padding: 10px;
 }
 
-.container2 img{
+/*---------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
 
-    width: 200px;
-    height: 300px;
-}
+@media only screen and (max-width: 480px) { 
+
+    .carousel-item {
+        margin:0px;
+        padding-top:10px;
+        padding-left: 20px;
+        padding-right: 20px;  
+    }
+  
+    #tituloinicio2{
+    font-size: 30px;
+    padding-top: 20px;
+   }
+
+    #tituloinicio{
+        font-size: 20px;
+        text-align: center;
+    }
+
+   
+    .promoInicio{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;     
+    }
+
+    #personal{
+
+        width: 90px;
+        height: 130px;
+    }
+
+    #despedidaF{
+
+        width: 90px;
+        height: 90px;
+    }
+
+    .botonInicio{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .botonInicio a{
+        font: var(--textTitulos);
+        font-size: 1em;
+        background-color: var(--colorMoradoNav);
+        border-color: var(--colorMoradoNav);
+        border-radius: 3px;
+        width: 10em;
+        height: 2em;
+        color: black;
+        padding-top: 6px;
+    }
+
+} 
+
+@media only screen and (max-width: 769px) { 
+
+    .carousel-item {
+        margin:0px;
+        padding-top:15px;
+        padding-left: 30px;
+        padding-right: 30px;  
+    }
+
+    .promoInicio{
+
+        padding-bottom: 20px;
+    }
+
+    .despedidaInicio{
+
+        padding-top: 40px;
+    }
+    #personal{
+
+        width: 100px;
+        height: 140px;
+    }    
+
+    #despedidaF{
+
+        width: 90px;
+        height: 90px;
+    }
+ } 
+
+ 
+
+
+
+
+
+
+
+
+
