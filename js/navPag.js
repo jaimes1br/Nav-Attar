@@ -26,7 +26,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./artesanos.html">Artesanos</a>
+        <a class="nav-link" href="./artesanosCard.html">Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">
@@ -34,18 +34,25 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
           Catálogo
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html">Todos</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 2</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 3</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 4</a>
-          <a class="dropdown-item navAttar_listDes" href="#">Categoría 5</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Todos">Todos</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Caricaturas">Caricaturas</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Celebridades">Celebridades</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Mascotas">Mascotas</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personajes">Personajes</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
         </div>
       </li> <!--catalogo-->
 
-      
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="./../pages/loggin.html">Iniciar sesión</a>
-      </li>  <!--iniciarSesion-->
+      <li class="nav-item dropdown mr-5">
+        <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Iniciar sesion
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
+        </div>
+      </li> <!--Iniciar Sesion-->
 
       <li class="nav-item mr-5 ">
         <a href="#" class="nav-link">
