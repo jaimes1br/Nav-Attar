@@ -31,7 +31,7 @@ function addItem(item){
           </div>
 
             <div class="btn_comprar">
-            <a href="./vistaProducto.html" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
+            <a href="./vistaProducto.html?id=${item.id}" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
             </div>
 
       </div>
