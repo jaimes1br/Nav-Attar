@@ -26,20 +26,13 @@ function addItem(item){
       <h5 class="card-title">${item.medida}cm</h5>
       <h5 class="card-title">${item.categoria}</h5>
       <h5 class="card-title">$${item.precio}</h5>
-    </div><!--cardInfo-->
-    <div class="ap">
-      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
-      <div class="eliminar">
-      <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
-      </div><!--Eliminar-->
-      <div class="descript">
       <p class="card-text">${item.descripcion}</p>
-    </div><!--descript-->
-    <!-- </div> -->
+      <div class="eliminarProductAdmin">
+        <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+      </div> <!--eliminar-->
+        
     </div><!--ap-->
-    <!-- <div id="list-items">
-
-    </div> -->
+   
 </div><!--cardcom--> `
    ;
     const itemsContainer = document.getElementById("list-items");
