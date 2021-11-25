@@ -24,12 +24,11 @@
 }
 
 
-
 .pIndividual1 img{
     border-radius: 1.5em;
     width: 150px;
     height: auto;
-   margin: 10px;
+    margin-top: 0%;
 }
 
 .pIndividual{
@@ -51,13 +50,16 @@
 }
 
 .cardInfo{
-
-    margin: 10px;
     display: flex;
     flex-direction: column;
+    
     justify-content: center ;
-    text-align: justify;
 }
+
+.navcon{
+    background-color:#BDB2FF;
+}
+
 
 .navcon a{
     color: black;
@@ -68,7 +70,6 @@
     width: auto; 
     justify-self: center;
     align-self: center;
-    background-color: darkblue;
 }
 
 .ap{
@@ -92,24 +93,19 @@
 
 .modBut{
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-self: flex-end;
+    justify-content: end;
     border-radius: 2rem;
     background-color: #BDB2FF;
     width: 2.5rem;
     height: 2.5rem;
 }
 
-.eliminarProductAdmin{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 #eliminar-btn{
+    align-self: flex-end;
     border-radius: .7rem ;
-    width: 80px;
-    height: 30px;
+    width: 96px;
+    height: 38.4px;
 
 }
 
@@ -117,24 +113,24 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:flex-end;
+    justify-content: center;
     padding-top: 4rem;
-    /* background-color: cornflowerblue; */
     
     
 }
 
 .infoArtesano{
     display: flex;
+
     justify-content: center;
     align-items: center;
     background-color: #F8EDEB;
     border-radius: 1rem;
     width: 17rem;
     height: 35rem;
-
+  
+    
 }
-
 .subInfo{
     padding: 1rem;
 }
@@ -161,36 +157,20 @@
     justify-content: space-around;
     padding-top: 4rem;
     height: 50rem;
-    background-color: darkgreen;
     
 }
 
 .CardCompleto{
     display: flex;
-    justify-content:flex-start;
-    align-items: center;
+    justify-content: flex-start;
     padding-top: 6rem;
-    background-color: cadetblue;
 
 }
 .ArtNombre h5{
     font-size: 20px;
 }
 
-/* .btn-primary {
+.btn-primary {
     border-radius: 50%;
-    background-color:#BDB2FF;
-} */
-
-.navcon{
-    background-color:#BDB2FF;
+    background-color: blue;
 }
-
-.navCard{
-background-color: crimson;
-} 
-
-
-
-
-
