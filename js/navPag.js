@@ -26,7 +26,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./artesanos.html">Artesanos</a>
+        <a class="nav-link" href="./artesanosCard.html">Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">

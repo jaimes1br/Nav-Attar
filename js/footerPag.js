@@ -14,12 +14,12 @@ footerPaginas.innerHTML = `
                 <li class="seccion-lista_elemento"><a href="./../index.html">Inicio</a></li>
                 <li class="seccion-lista_elemento"><a href="./nosotros.html">Nosotros</a></li>
                 <li class="seccion-lista_elemento"><a  href="./catalogo.html?cat=Todos">Catálogo</a></li>
-                <li class="seccion-lista_elemento"><a href="./login.html">Inicio Sesión</a></li>
+                <li class="seccion-lista_elemento"><a href="./loginUser.html">Inicio Sesión</a></li>
               </ul>
             </div><!--seccion1-->
             <div class="col seccion">
               <ul class="seccion-lista" >
-                <li class="seccion-lista_elemento"><a href="./artesanos.html">Artesanos</a></li>
+                <li class="seccion-lista_elemento"><a href="./artesanosCard.html">Artesanos</a></li>
                 <li class="seccion-lista_elemento"><a href="./contactoNav.html">Contacto Nav-Attar</a></li>
                 <li class="seccion-lista_elemento"><a href="./contactoEquipo.html">Contacto Equipo</a></li>
               </ul>

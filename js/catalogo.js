@@ -51,7 +51,7 @@ function filtrado(productos,filtro){
         
     if( filtro === 'Todos'){
         itemsContainer.innerHTML = '';
-        objetos.forEach(objeto => {
+        productos.forEach(objeto => {
             addItem(objeto);
         });
     }
@@ -96,7 +96,7 @@ function cuadro(){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
         // seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-        filtrado(objetos,seleccion);
+        filtrado(productos,seleccion);
     })
     });
 
@@ -267,10 +267,11 @@ function elementoCategoria(){
 // let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
 
+
 let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
 let productos = JSON.parse(productosJSON);
 
-
+console.log(productos);
 
 /*-----------------------------------------------------------------
  ||  Elementos para filtrar dependiento la categoria seleccionada desde la nav       
