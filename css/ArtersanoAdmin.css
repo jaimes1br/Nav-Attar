@@ -13,7 +13,10 @@
     height: 100px;
     overflow: hidden;
     border-radius: 50%;
+<<<<<<< HEAD
     text-align: center;
+=======
+>>>>>>> 821b432697c740fec4a9d4fac190e1e79e2447ce
     
 }
 
@@ -23,7 +26,6 @@
     height: auto;
     
 }
-
 
 
 .pIndividual1 img{
@@ -57,6 +59,11 @@
     
     justify-content: center ;
 }
+
+.navcon{
+    background-color:#BDB2FF;
+}
+
 
 .navcon a{
     color: black;
@@ -147,7 +154,11 @@
 }
 
 .todo{
+<<<<<<< HEAD
     display: block;
+=======
+    /* display: flex; */
+>>>>>>> 821b432697c740fec4a9d4fac190e1e79e2447ce
     flex-direction: row;
     align-items: center;
     align-self: center;
@@ -165,4 +176,12 @@
 }
 .ArtNombre h5{
     font-size: 20px;
+<<<<<<< HEAD
+=======
+}
+
+.btn-primary {
+    border-radius: 50%;
+    background-color: blue;
+>>>>>>> 821b432697c740fec4a9d4fac190e1e79e2447ce
 }

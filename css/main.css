@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url(./navBar.css);
 @import url(./estilosFooter.css);
 @import url(./nosotros.css);
@@ -12,6 +13,23 @@
 @import url(./registro.css);
 @import url(./ArtersanoAdmin.css);
 @import url(./productoVista.css);
+=======
+@import url(./navBar.css); /*barra navegacion*/
+@import url(./estilosFooter.css); /*footer*/
+@import url(./nosotros.css); /*nosotros*/
+@import url(./contactoEquipo.css); /*contactoEquipo*/
+@import url(./contactoNav.css); /*contactoNav*/
+@import url(./mainArea.css); /*pagina inicio*/
+@import url(./catalogo.css); /*catalogo*/ 
+@import url(./artersanoAdmin.css); /*paginaDeAgregarProductoNuevo*/
+@import url(./artesanosCards.css); /*paginaArtesanos*/
+@import url(./registro.css); /*formularioRegistro*/
+@import url(./loginUser.css); /*loginUser*/
+@import url(./loginArte.css); /*loginArtesano*/
+@import url(./personalizado.css); /*paginaParaPedidoPersonalizado*/
+@import url(./productoVista.css); /*productoIndividual*/
+
+>>>>>>> 821b432697c740fec4a9d4fac190e1e79e2447ce
 /* @import url(./administrador.css); */
 /*@import url(./administrador.css); */
 
@@ -40,7 +58,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.noAnimacion{
+.noAnimacion, .sinAnimacion{
     animation-name: none;
     animation-duration: 0;
 }
