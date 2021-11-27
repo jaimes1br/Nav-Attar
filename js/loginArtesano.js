@@ -1,6 +1,6 @@
 
 /**
- * Nosotros crearemos los accesos para los artesanos daremos una contraseña 
+ * Nosotros crearemos los accesos para los artesanos, daremos una contraseña 
  * provicional dado que hay que controlar sus cards de presentación.
  * 
  */
@@ -90,7 +90,7 @@ let artesanos = [
 ];
 
 
-/**Descomentar lineas para poner en el local el arrego de los artesanos */
+/**Descomentar líneas para poner en el local el arrego de los artesanos */
 // let artesanosJSON = JSON.stringify(artesanos); //artesano a JSON
 // localStorage.setItem("artesanos", artesanosJSON); //a localStorage
 

@@ -28,17 +28,17 @@ function formValidation(e){
     let regexpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
-        alerta += `<h3>¡Nombre no valido!</h3> <br>`;
+        alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
     }
     
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
-        alerta += `<h3>¡Número no valido! </h3><br>`;
+        alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
     }
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
-        alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
+        alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
     }
 

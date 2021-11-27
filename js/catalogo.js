@@ -1,6 +1,6 @@
 
 /*-----------------------------------------------------------------
- ||  Funcion addItem        
+ ||  Función addItem        
  -----------------------------------------------------------------*/
  
 function addItem(item){
@@ -36,7 +36,7 @@ function addItem(item){
 
 
 /*-----------------------------------------------------------------
- ||  Funcion filtrado     
+ ||  Función filtrado     
  -----------------------------------------------------------------*/
 function filtrado(productos,filtro){
     const itemsContainer = document.getElementById("list-items");
@@ -59,7 +59,7 @@ function filtrado(productos,filtro){
 }//filtrado
 
 /*-----------------------------------------------------------------
- ||  Funcion menu de cuadro        
+ ||  Función menú de cuadro        
  -----------------------------------------------------------------*/
 function cuadro(){
     let div = document.getElementById('contenedorCategorias');
@@ -95,7 +95,7 @@ function cuadro(){
 }//menuCuadro
 
 /*-----------------------------------------------------------------
- ||  Funcion menu de dropdown        
+ ||  Función menú de dropdown        
  -----------------------------------------------------------------*/
 function lista(){
     let div = document.getElementById('contenedorCategorias');
@@ -254,9 +254,10 @@ function elementoCategoria(){
         'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
 ];
 
-/**Descomentar lineas de abajo para generar el local de los productos iniciales
- * comenar a siguiente vez
+/**Descomentar líneas de abajo para generar el local de los productos iniciales
+ * comentar la siguiente vez
  */
+
 // let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
 
@@ -265,7 +266,7 @@ let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
 let productos = JSON.parse(productosJSON);
 
 /*-----------------------------------------------------------------
- ||  Elementos para filtrar dependiento la categoria seleccionada desde la nav       
+ ||  Elementos para filtrar dependiento la categoría seleccionada desde la nav       
  -----------------------------------------------------------------*/
 
 let url = window.location;
@@ -279,7 +280,7 @@ filtrado(productos,catUrl);
 elementoCategoria();
 
 /*-----------------------------------------------------------------
- ||  redimension de panalla   
+ ||  Redimensión de panalla   
  -----------------------------------------------------------------*/
 
 window.addEventListener("resize", function(e){

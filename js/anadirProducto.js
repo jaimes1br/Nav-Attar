@@ -25,12 +25,12 @@ function SubirNuevo(){
   }
 
   //--------------------------Campo Medida
-  if(!tPrecio.test(medida.value) || medida.value < 5 || medida.value.length == 0 || medida.value >= 40){
-    nuevaAlerta += ('<h3>¡Especifica una medida!</h3> <br>');
+  if(!tPrecio.test(medida.value) || medida.value < 5 || medida.value.length == 0 || medida.value >= 50){
+    nuevaAlerta += ('<h3>¡Especifica una medida entre 5-50cm!</h3> <br>');
     validar = true;
   }
   
-  //--------------------------Campo Categoria
+  //--------------------------Campo Categoría
   if(categoria.value=="Categoria:"||categoria.value==""){
     nuevaAlerta += ('<h3>¡Elige una categoría!</h3> <br>');
     validar = true;
@@ -38,7 +38,7 @@ function SubirNuevo(){
 
   //--------------------------Campo Precio
   if(!tPrecio.test(precio.value) || precio.value <= 50 || precio.value.length == 0 || precio.value >= 500){
-    nuevaAlerta += ('<h3>¡Especifica precio!</h3> <br>');
+    nuevaAlerta += ('<h3>¡Especifica un precio entre $50-500 MXN!</h3> <br>');
     validar = true;
   }
 
@@ -50,13 +50,13 @@ function SubirNuevo(){
   }
   
 
-  //--------------------------Campo Descripcion
+  //--------------------------Campo Descripción
   if(!tdescripcion.test(descripcion.value) || descripcion.value.length == 0 || descripcion.value.length > 200){
     nuevaAlerta += ('<h3> ¡Agrega una descripción!</h3>  <br>');
     validar = true;
   }
   
-  //------------------------------Validacion de formulario correcto
+  //------------------------------Validación de formulario correcto
 
   if(validar){
     alertas.innerHTML += `

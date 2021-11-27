@@ -44,7 +44,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
         <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
         <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
       </div>
-      </li> <!--catalogo-->
+      </li> <!--catálogo-->
 
       
       <li class="nav-item dropdown mr-5">
@@ -55,7 +55,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
         </div>
-      </li> <!--Iniciar Sesion-->
+      </li> <!--Iniciar Sesión-->
 
       <li class="nav-item mr-5 ">
         <a href="#" class="nav-link">

@@ -42,7 +42,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
           <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
           <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
         </div>
-      </li> <!--catalogo-->
+      </li> <!--catálogo-->
 
       <li class="nav-item dropdown mr-5">
         <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
         </div>
-      </li> <!--Iniciar Sesion-->
+      </li> <!--Iniciar Sesión-->
 
       <li class="nav-item mr-5 ">
         <a href="#" class="nav-link">

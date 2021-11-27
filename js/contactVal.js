@@ -16,24 +16,24 @@ form.addEventListener("submit", e=>{
  let ttel =/^[0-9]*$/
 
   if(!tnombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0){
-      alerta += `<h3> ¡Nombre no valido! </h3><br>`
+      alerta += `<h3> ¡Nombre no válido! </h3><br>`
       valido = true
   }
   if(!temail.test(email.value) || email.value.length==0 || email.value.length >= 320){
     
-    alerta += `<h3>¡Correo electrónico no valido! </h3><br>`
+    alerta += `<h3>¡Correo electrónico no válido! </h3><br>`
     valido = true
   }
 
   if(!ttel.test(tel.value) || tel.value.length < 10 || tel.value.length == 0 || tel.value.length >= 12){
 
-    alerta += `<h3>¡Teléfono no valido! </h3><br>`
+    alerta += `<h3>¡Teléfono no válido! </h3><br>`
     valido = true
   }
 
   if(mensaje.value.length >= 150 || mensaje.value.length == 0){
 
-    alerta += `<h3>¡Mensaje no valido! </h3> <br>`
+    alerta += `<h3>¡Mensaje no válido! </h3> <br>`
     valido = true
 
   }

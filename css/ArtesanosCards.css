@@ -7,8 +7,8 @@
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     justify-content: center;
     /*justify-content: space-around;*/
-    
-    /* margin-top: 40em; */
+    margin-top: 7rem;
+    margin-bottom: 10rem;
 }
 
 /* .todo{
@@ -18,7 +18,7 @@
     padding: 0;
 }  */
 
-.description.social-btns-artesanos a{
+.social-btns-artesanos a{
     display: inline-block;
     padding: 0 15px;
     color: purple;
@@ -59,25 +59,26 @@
     
 }
 
-.descriptionArtesano{
+.descripcionArtesano{
     display: flex;
     /* margin-left: 2vh; */
     flex-direction: column; 
     /*align-items:center;*/
     gap: 2.5rem;
 }
-.descriptionArtesano h2{
+.descripcionArtesano h2{
     font-size: 35px;
 }
 
-.descriptionArtesano h4{
+.descripcionArtesano h4{
     font-size: 19px;
 }
 
-.descriptionArtesano p{
+.descripcionArtesano p{
     text-align: center;
     font-size: 3em;
 }
+
 
 #botones{
     display: flex;
@@ -94,7 +95,8 @@
     align-items: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-right: 2rem;
+    /* padding-right: 2rem;
+    padding-left: 10%; */
     
 }
 
@@ -132,15 +134,15 @@
 MEDIA 
 *************************/
 @media only screen and (max-width: 769px) { 
-    .descriptionArtesano h2{
+    .descripcionArtesano h2{
         font-size: 3em;
     }
     
-    .descriptionArtesano h4{
+    .descripcionArtesano h4{
         font-size: 19px;
     }
     
-    .descriptionArtesano p{
+    .descricionArtesano p{
         font-size: 1.3em;
         padding: 0 1em;
         margin: 0 3em;

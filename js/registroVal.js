@@ -27,22 +27,22 @@ form.addEventListener('submit', e => {
     let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
-        alerta += `<h3>¡Nombre no valido!</h3> <br>`;
+        alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
     }
 
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
-        alerta += `<h3>¡Número no valido! </h3><br>`;
+        alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
     }
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
-        alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
+        alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
     }
 
     if(!regexPass.test(pass.value) || pass.value.length == 0 || pass.value.length > 20){
-        alerta += `<h3>¡Contraseña no valida! </h3><br>`;
+        alerta += `<h3>¡Contraseña no válida! </h3><br>`;
         valido = true;
     }
 
