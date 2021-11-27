@@ -6,9 +6,17 @@
     flex-direction: column;
 }
 
+
+
 .contenedorEquipo p{
 
     text-align: justify;
+    font-size: 15px;
+}
+
+.backgroundEquipo{
+    background-color:#FAF4F4;
+    border-color:#FAF4F4;
 }
 
 /*-----------------------------------------------------------------
@@ -39,6 +47,8 @@
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     cursor: default;
     transition: all 400ms ease;
+    padding: 2rem;
+    border-radius: 25px;
 }
 
 .equipo:hover{
@@ -59,6 +69,8 @@
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     cursor: default;
     transition: all 400ms ease;
+    padding: 2rem;
+    border-radius: 25px;
 }
 
 .equipo1:hover{
@@ -68,10 +80,13 @@
 } 
 
 .fotoEquipo img{
-
+    display: flex;
+    justify-content: center;
+    margin: 2em;
     width: 200px;
     height: 250px;
-    margin: 10px;
+    padding-right: 1rem;
+    /* margin: 10px; */
 }
 
 /*-----------------------------------------------------------------
@@ -88,8 +103,8 @@
 }
 
 #iconoequipo{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 #descarga{
@@ -102,6 +117,11 @@
     width: 160px;
     height: 32px;
     color: black;
+}
+
+.btnCV{
+    margin-top: 1rem;
+    
 }
 
 /*-----------------------------------------------------------------

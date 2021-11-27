@@ -255,7 +255,7 @@ function elementoCategoria(){
 ];
 
 /**Descomentar lineas de abajo para generar el local de los productos iniciales
- * comenar a siguiente vez
+ * comentar la siguiente vez
  */
 // let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
