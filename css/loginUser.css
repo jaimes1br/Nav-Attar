@@ -133,6 +133,9 @@ body{
 
 
 @media only screen and (max-width: 480px) { 
+    .btn2{
+        padding-top: 1em;
+    }
     .BotonConLogUser{
         height: 50px;
     }
