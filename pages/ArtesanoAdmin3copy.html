@@ -48,83 +48,66 @@
           </div><!--LADO IZQUIERDO-->
                   
           <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 ">
-            <div class="row" style="background-color: aqua;">
-              
-              <!--********************** CARD MENÚ NAV ***************************-->
-
-              <div class="card container-fluid">
-                <div class="row">
-                  
-                    <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11">
-                      <div class="card-header" id="cabeza-card">
-                        <ul class="nav nav-tabs card-header-tabs" id="productos-list" role="tablist">
-                          <li class="nav-item">
-                            <a class="nav-link active" href="#productos" role="tab" aria-controls="productos" aria-selected="true">Productos</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link"  href="#pendiente" role="tab" aria-controls="pendientes" aria-selected="false">Pendientes</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#comentarios" role="tab" aria-controls="comentarios" aria-selected="false">Comentarios</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#pedidos" role="tab" aria-controls="pedidos" aria-selected="false">Pedidos</a>
-                          </li>                    
-                        </ul><!--TERMINA UNDER LIST-->
-                      </div><!--CARD-HEADER-->
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
-                      <div class="modBut">
-                          <button type="button" class="btn bcrear" data-toggle="modal" data-target="#staticBackdrop">
-                          <p>+</p>
-                          </button>
-                      </div>
-                    </div>
-      
-                  </div><!--CARD-HEADER-->
-                </div>
-    
-                  <div class="card-body">
-                    <h4 class="card-title">Bologna</h4>
-                    <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
-                      
-                    <div class="tab-content mt-4">
-
-                      <div class="tab-pane active" id="productos" role="tabpanel">
-                        <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of about one million people. </p>
-                        <a href="#" class="card-link text-danger">Read more</a>
-                      </div><!--PRODUCTOS-->
-                        
-                      <div class="tab-pane" id="pendientes" role="tabpanel" aria-labelledby="pendientes-tab">  
-                        <p class="card-text">First settled around 1000 BCE and then founded as the Etruscan Felsina about 500 BCE, it was occupied by the Boii in the 4th century BCE and became a Roman colony and municipium with the name of Bononia in 196 BCE. </p>
-                        <a href="#" class="card-link text-danger">Read more</a>
-                      </div><!--PENDIENTES-->
-                        
-                      <div class="tab-pane" id="comentarios" role="tabpanel" aria-labelledby="comentarios-tab">
-                        <p class="card-text">Immerse yourself in the colours, aromas and traditions of Emilia-Romagna with a holiday in Bologna, and discover the city's rich artistic heritage.</p>
-                        <a href="#" class="btn btn-danger btn-sm">Get Deals</a>
-                      </div><!--COMENTARIOS-->
-
-                      <div class="tab-pane" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
-                        <p class="card-text">Immerse yourself in the colours, aromas and traditions of Emilia-Romagna with a holiday in Bologna, and discover the city's rich artistic heritage.</p>
-                        <a href="#" class="btn btn-danger btn-sm">Pedidos</a>
-                      </div><!--PEDIDOS-->
-      
-                    </div><!--TAB-CONTENT MT-3-->
-
-                  </div><!--CARD-BODY-->
+            
+                                        
+            <!--/**************************EMPIEZA CARD**************************/-->
+            <div class="card card-completo">
+              <div class="card-header">
+                <ul class="nav navcon nav-tabs card-header-tabs navcom" id="productos-lista" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#Productos" role="tab" aria-controls="Productos" aria-selected="true">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#Pendientes" role="tab" aria-controls="Pendientes" aria-selected="false">Pendientes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Comentarios" role="tab" aria-controls="Comentarios" aria-selected="false">Comentarios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Pedidos" role="tab" aria-controls="Pedidos" aria-selected="false">Pedidos</a>
+                  </li>
+                  <div class="modBut ml-auto">
+                    <button type="button" class="btn bcrear" data-toggle="modal" data-target="#staticBackdrop">
+                        +
+                    </button>
+                  </div><!--Modbut-->
+                </ul>
+              </div>
+              <div class="card-body">
                 
-              </div><!--CERRAR CLASE-->
+                <div class="tab-content mt-3">
+                  <div class="tab-pane active" id="Productos" role="tabpanel">
+                    <h4 class="card-title">Lista de Productos</h4>
+                  </div>
+                   
+                  <div class="tab-pane" id="Pendientes" role="tabpanel" aria-labelledby="history-tab">  
+                    <h4 class="card-title">Pendientes</h4>
+                  </div>
+                   
+                  <div class="tab-pane" id="Comentarios" role="tabpanel" aria-labelledby="deals-tab">
+                    <h4 class="card-title">Comentarios</h4>
+                  </div>
 
-              <!--********************** CARD MENÚ NAV TERMINA***************************-->
+                  <div class="tab-pane" id="Pedidos" role="tabpanel" aria-labelledby="deals-tab">
+                    <h4 class="card-title">Pedidos</h4>
+                  </div>
+                </div>
+              </div><!--card-body-->
+            </div><!--card-completo-->
+              
 
-            </div><!--DIV ROW--> 
-          </div><!--COLLADO DERECHO-->
+            <!--/****************************************************/-->
 
-        </div>  
-      </div> 
-    </div>
+            
+          </div><!--COL DERECHO-->
+
+        </div><!--ROW-->
+      </div><!--CONTENT FLUID-->
+    </div><!--CONTAINER-->
+
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
