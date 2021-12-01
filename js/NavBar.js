@@ -3,10 +3,20 @@
 document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0">
 <nav class="navbar navbar-expand-lg navbar-light navAttar">
   
-  <a class="navbar-brand" href="">
-    <img src="./img/logos/logoNombre.png"  width="170px" alt="Nav-Attar" class="d-inline-block align-top">
+  <a class="navbar-brand" href="" >
+    <img src="./../img/logos/logoNombre.png"  width="170px" alt="Nav-Attar" class="d-inline-block align-top ">
   </a> <!--logoNavAttar-->
 
+  <div class = "navBarUsuarioLista">
+    <ul class="">
+      
+      <li class="nav-item navBar-item">
+          <a href="" aling="right"><img src="./img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador">100</span></a>
+      </li><!--artesanos-->
+
+    </ul><!--listaNAvUsuario-->
+  </div><!--elementosUsuarios-->  
+  
   <button class="navbar-toggler navAttar-hamburgerTam" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon navAttar-hamburgerTam"></span>
   </button> <!--buttonHamburguesa-->
@@ -47,7 +57,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li> <!--catalogo-->
 
       
-      <li class="nav-item dropdown mr-5">
+      <li class="nav-item dropdown mr-4" id="sesIni">
         <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Iniciar sesión
         </a>
@@ -57,13 +67,8 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
         </div>
       </li> <!--Iniciar Sesion-->
 
-      <li class="nav-item mr-5 ">
-        <a href="#" class="nav-link">
-          <img class="navAttar__icon" src="./img/iconos/cart.svg" alt="...">
-        </a>
-      </li> <!--Carrito-->
     </ul><!--listaNAv-->
-  </div><!--divHamburguesa-->
+    </div><!--divHamburguesa--> 
 </nav><!--navBar-->
 </div><!--navBarContaier-->`;
 

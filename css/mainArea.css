@@ -24,12 +24,16 @@
 /*---------------------------------------------------------------
  ||  Titulos de colores 
   -----------------------------------------------------------------*/
+  @font-face {
+    font-family: MiFuentePersonal;
+    src: url("/fuentes/ropest/Ropest_PERSONAL_USE_ONLY.ttf") format("opentype");
+}
 
   .frase {
   
     text-align: center;
     padding-top: 20px;
-    font-family: 'Petemoss', cursive;
+    font-family: MiFuentePersonal;
     font-size: 60px;   
  }
  
@@ -39,14 +43,14 @@
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    font-family: 'Petemoss', cursive;
-    font-weight: bolder;
+    font-family: MiFuentePersonal;
+    /* font-weight: bolder;
     color: transparent;
     background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
     -webkit-text-fill-color: transparent;
     -webkit-background-clip:text;
     animation: color 3s linear infinite;
-    background-size: 500%;
+    background-size: 500%; */
 }
 
 .frase2 h4{
@@ -54,21 +58,22 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    font-size: 55px;
-    font-family: 'Petemoss', cursive;
-    font-weight: bolder;
+    font-size: 40px;
+    font-family: MiFuentePersonal;
+    padding-bottom: 20px;
+    /* font-weight: bolder;
     color: transparent;
     background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
     -webkit-text-fill-color: transparent;
     -webkit-background-clip:text;
     animation: color 3s linear infinite;
-    background-size: 500%;
+    background-size: 500%; */
 }
 
 #promo{
     text-align: center;
-    font-family: 'Petemoss', cursive;
-    font-size: 80px;
+    font-family: MiFuentePersonal;
+    font-size: 10px;
 }
 
 /*---------------------------------------------------------------
@@ -187,14 +192,13 @@ and (max-height: 1366px)  {
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    font-family: 'Petemoss', cursive;
-    font-weight: bolder;
+    /* font-weight: bolder;
     color: transparent;
     background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
     -webkit-text-fill-color: transparent;
     -webkit-background-clip:text;
     animation: color 3s linear infinite;
-    background-size: 500%;
+    background-size: 500%; */
 }
 
 .botonInicio{

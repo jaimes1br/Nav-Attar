@@ -150,6 +150,14 @@
 ];
 
 
+/**
+*   Para desplegar los productos en el catálogo quitar los comentarios
+•   de las dos líneas siguientes (161 y 162).
+•	Actualizar la página y comprobar que exista el arreglo ‘objetos’
+•	en el local Storage, al estar, volver a comentar las dos líneas 
+•	para comprobar el funcionamiento de añadir un elemento.
+*/
+
 // let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
 

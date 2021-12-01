@@ -41,6 +41,7 @@ body{
 .nosotrosTexto h3{
     font-size: 8vw;
     font-weight: 500;
+    font-family: MiFuentePersonal;
 }
 
 
@@ -82,12 +83,17 @@ body{
     margin: 0.5em 0;
     font-size: 5vw;
     font-weight: 500;
+    font-family: MiFuentePersonal;
 }
 
 .elementoTexto p{
     padding: 1em;
     font-size: 2vw;
     font-weight: 400;
+}
+
+#hola{
+    font-family: MiFuentePersonal;
 }
 
 #logocom{
@@ -127,7 +133,7 @@ body{
 
 #navNosotros{
     font-size: 50px;
-    font-family: 'Petemoss', cursive;
+    font-family: MiFuentePersonal;
     font-weight: bolder;
     color: transparent;
     background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    

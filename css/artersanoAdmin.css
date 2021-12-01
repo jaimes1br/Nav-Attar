@@ -54,7 +54,6 @@
 .cardInfo{
     display: flex;
     flex-direction: column;
-    
     justify-content: center ;
 }
 
@@ -116,7 +115,7 @@
     align-items: center;
     justify-content: center; 
     padding-top: 4rem; 
-    gap: 4em; */
+    gap: 4em;
     /* cmabios desde aqui */
     background-color: #F8EDEB;
     border-radius: 5%;

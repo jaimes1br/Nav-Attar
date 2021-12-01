@@ -34,21 +34,13 @@
 let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
 let productos = JSON.parse(productosJSON);
 
-console.log(productos)
-
 let url = window.location;
 let idUrl = url.search.split('=')[1];
 
-console.log(idUrl)
-
-
 productos.forEach(element => {
-    console.log(element.id)
     if(element.id == idUrl){
-        console.log('si')
         addItem(element)
     }
-
 });
 
 
