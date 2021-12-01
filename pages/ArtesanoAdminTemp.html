@@ -23,93 +23,83 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">    
 </head>
 <body>
-  
-  <header>
-    <div class="container-fluid px-0" style="background-color: #BDB2FF; height:6rem"></div>
-  </header>
-  <!-- <header id="myHeadpage"></header>  -->
-    
-      <div class="container-fluid todo">
-        <div class="row ">
+    <header>
+        <div class="container-fluid px-0" style="background-color: #BDB2FF; height:6rem"></div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                          <div class="artesano">
-                            <div class="infoArtesano text-center"><!--VERIFICAR FUNCION DE INFO ARTESANO************************************-->
-                                <div class="subInfo"><!--IMAGEN Y NOMBRE ********************************-->
-                                <!--imagen y nombre del artesano-->
-                                    <div class="ArtImg">
-                                        <img src="./../img/muñequitos/fabi.jpg" alt="">
-                                    </div>
-                                    <div class="ArtNombre"> <!--CORREGIR CON MEDIA*******************************************-->
-                                        <h5>Nombre Artesano</h5>
-                                    </div>
-                                </div>
-                            <!--IMAGEN Y NOMBRE-->
-                            <div class="ArteMenu"> <!--ABARCA BOTONES******************************-->
-                                <!--menu del artesano-->
-                                <div class="catergorias">
-                                    <div class="btn-group-vertical">
-                                      <a class="btn" href="#" role="button" style="font-size: 17px;">Perfil</a>
-                                      <button type="button" class="btn disabled"></button>
-                                      <button type="button" class="btn disabled"></button>
-                                      <button type="button" class="btn disabled"></button>
-                                      <button type="button" class="btn disabled"></button>
-                                      <a class="btn" href="#" role="button" style="font-size: 17px;">Cerrar Sesión</a>
-                                    </div><!--btn-group-vertical-->
-                                </div><!--categorias-->
-                            </div><!--ArteMenu-->
-                            </div><!--subInfo-->
-                        </div><!--infoArtesano-->
-                      </div><!--artesano-->
-                        </div><!--col 1-->
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                          <div class="CardCompleto">
-                            <div class="navCard" style="width: 75rem;">
-                                <!--nav card-->
-                                <div class="card">
-                                    <div class="card-header">
-                                    <div class="row">
-                                      <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-                                    
-                                      <div class="navcon">
-                                      <ul class="nav nav-tabs card-header-tabs">
-                                        <li class="nav-item">
-                                          <a class="nav-link active" href="#">Productos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="#">Pendientes</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="#">Comentarios</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="#">Pedidos</a>
-                                        </li>
-                                      </ul>
-                                      </div>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                                      <div class="modBut">
-                                        <button type="button" class="btn bcrear" data-toggle="modal" data-target="#staticBackdrop">
-                                            +
-                                        </button>
-                                      </div><!--Modbut-->
-                                      </div><!--col-->
-                                    </div><!--row -->
-                                  </div><!--card-header-->
-                                  <div class="card-body" id="list-items">
+                
+                <div class="artesano">
+                    <div class="ArtImg">
+                        <img src="./../img/muñequitos/fabi.jpg" alt="" srcset="">
+                    </div>
+                    <h5>Nombre Artesano</h5>
+                    <div class="btn-group-vertical">
+                        <a class="btn" href="#" role="button" style="font-size: 17px;">Perfil</a>
+                        <button type="button" class="btn disabled"></button>
+                        <button type="button" class="btn disabled"></button>
+                        <button type="button" class="btn disabled"></button>
+                        <button type="button" class="btn disabled"></button>
+                        <a class="btn" href="#" role="button" style="font-size: 17px;">Cerrar Sesión</a>
+                    </div><!--btn-group-vertical-->
+                </div><!--Artresano-->
+            </div><!--Col 4-->
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="card card-completo">
+                        <div class="card-header">
+                          <ul class="nav navcon nav-tabs card-header-tabs navcom" id="productos-lista" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#Productos" role="tab" aria-controls="Productos" aria-selected="true">Productos</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link"  href="#Pendientes" role="tab" aria-controls="Pendientes" aria-selected="false">Pendientes</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#Comentarios" role="tab" aria-controls="Comentarios" aria-selected="false">Comentarios</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#Pedidos" role="tab" aria-controls="Pedidos" aria-selected="false">Pedidos</a>
+                            </li>
+                            <div class="modBut ml-auto">
+                              <button type="button" class="btn bcrear" data-toggle="modal" data-target="#staticBackdrop">
+                                  +
+                              </button>
+                            </div><!--Modbut-->
+                          </ul>
+                        </div>
+                        <div class="card-body">
+                          
+                          <div class="tab-content mt-3">
+                            <div class="tab-pane active" id="Productos" role="tabpanel">
+                              <h4 class="card-title">Lista de Productos</h4>
+                            </div>
+                             
+                            <div class="tab-pane" id="Pendientes" role="tabpanel" aria-labelledby="history-tab">  
+                              <h4 class="card-title">Pendientes</h4>
+                            </div>
+                             
+                            <div class="tab-pane" id="Comentarios" role="tabpanel" aria-labelledby="deals-tab">
+                              <h4 class="card-title">Comentarios</h4>
+                            </div>
+          
+                            <div class="tab-pane" id="Pedidos" role="tabpanel" aria-labelledby="deals-tab">
+                              <h4 class="card-title">Pedidos</h4>
+                            </div>
+                          </div>
+                        </div><!--card-body-->
+                </div><!--card-completo-->
+            </div><!--Col 8-->
+       
+        </div><!--row-->
+    </div><!--container-->
 
-                                </div>
-                                </div><!--card-->
-                            </div><!--navCard-->  
-                        </div><!--CardCompleto-->
-                        </div><!--col 1-->
-        </div><!--row 1-->
-      </div> <!--todo-->  
 
-     
 
-      <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+     <!-- Modal -->
+     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #BDB2FF">
@@ -232,9 +222,12 @@
         </div>
     </div>
 
-      <footer id="footerModPag"></footer>
 
-      <script src="./../js/footerPag.js"></script>
+
+
+    <footer id="footerModPag"></footer>
+
+    <script src="./../js/footerPag.js"></script>
     <!-- <script src="../js/navBar.js"></script> -->
     <script src="../js/anadirProducto.js"></script>
     <script src="../js/productosAdmin.js"></script>
