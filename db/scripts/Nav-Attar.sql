@@ -1,14 +1,14 @@
 CREATE DATABASE nav_attar;
 USE nav_attar;
 
-CREATE TABLE `categoría` (
-  `IDcategoría` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categoria` (
+  `IDcategoria` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
-  PRIMARY KEY (`IDcategoría`)
+  PRIMARY KEY (`IDcategoria`)
 );
 
-CREATE TABLE `ubicación` (
-  `IDubicación` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ubicacion` (
+  `IDubicacion` int NOT NULL AUTO_INCREMENT,
   `estado` varchar(45) NOT NULL,
   `municipio` varchar(45) NOT NULL,
   `CP` varchar(45) DEFAULT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `ubicación` (
   `calle` varchar(45) NOT NULL,
   `no_interior` varchar(45) DEFAULT NULL,
   `no_exterior` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`IDubicación`)
+  PRIMARY KEY (`IDubicacion`)
 );
 
 CREATE TABLE `artesano` (
@@ -24,11 +24,11 @@ CREATE TABLE `artesano` (
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) DEFAULT NULL,
   `correo_electronico` varchar(100) NOT NULL,
-  `Ubicación_IDubicación` int NOT NULL,
-  `teléfono` varchar(45) DEFAULT NULL,
+  `Ubicacion_IDubicacion` int NOT NULL,
+  `telefono` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IDartesano`),
-  KEY `fk_Artesano_Ubicación1_idx` (`Ubicación_IDubicación`),
-  CONSTRAINT `fk_Artesano_Ubicación1` FOREIGN KEY (`Ubicación_IDubicación`) REFERENCES `ubicación` (`IDubicación`)
+  KEY `fk_Artesano_Ubicacion1_idx` (`Ubicacion_IDubicacion`),
+  CONSTRAINT `fk_Artesano_Ubicacion1` FOREIGN KEY (`Ubicacion_IDubicacion`) REFERENCES `ubicacion` (`IDubicacion`)
 );
 
 CREATE TABLE `cliente` (
@@ -36,12 +36,12 @@ CREATE TABLE `cliente` (
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) DEFAULT NULL,
   `correo_electronico` varchar(100) NOT NULL,
-  `contraseña` varchar(50) NOT NULL,
-  `Ubicación_IDubicación` int NOT NULL,
-  `teléfono` varchar(45) DEFAULT NULL,
+  `contrasena` varchar(50) NOT NULL,
+  `Ubicacion_IDubicacion` int NOT NULL,
+  `telefono` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IDusuario`),
-  KEY `fk_Cliente_Ubicación1_idx` (`Ubicación_IDubicación`),
-  CONSTRAINT `fk_Cliente_Ubicación1` FOREIGN KEY (`Ubicación_IDubicación`) REFERENCES `ubicación` (`IDubicación`)
+  KEY `fk_Cliente_Ubicacion1_idx` (`Ubicacion_IDubicacion`),
+  CONSTRAINT `fk_Cliente_Ubicacion1` FOREIGN KEY (`Ubicacion_IDubicacion`) REFERENCES `ubicacion` (`IDubicacion`)
 );
 
 CREATE TABLE `productos` (
@@ -49,16 +49,16 @@ CREATE TABLE `productos` (
   `nombre` varchar(45) NOT NULL,
   `precio` decimal(5,2) NOT NULL,
   `medida` int DEFAULT NULL,
-  `descripción` varchar(500) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
   `imagen` varchar(300) NOT NULL,
   `existencia` tinyint NOT NULL,
-  `Categoría_IDcategoría` int NOT NULL,
+  `Categoria_IDcategoria` int NOT NULL,
   `Artesano_IDartesano` int NOT NULL,
   PRIMARY KEY (`IDproducto`),
-  KEY `fk_Productos_Categoría_idx` (`Categoría_IDcategoría`),
+  KEY `fk_Productos_Categoria_idx` (`Categoria_IDcategoria`),
   KEY `fk_Productos_Artesano1_idx` (`Artesano_IDartesano`),
   CONSTRAINT `fk_Productos_Artesano1` FOREIGN KEY (`Artesano_IDartesano`) REFERENCES `artesano` (`IDartesano`),
-  CONSTRAINT `fk_Productos_Categoría` FOREIGN KEY (`Categoría_IDcategoría`) REFERENCES `categoría` (`IDcategoría`)
+  CONSTRAINT `fk_Productos_Categoria` FOREIGN KEY (`Categoria_IDcategoria`) REFERENCES `categoria` (`IDcategoria`)
 );
 
 CREATE TABLE `pedido` (
@@ -87,12 +87,12 @@ CREATE TABLE `carrito` (
 );
 
 
-INSERT INTO `categoría`(nombre) VALUES ("Caricaturas"), 
+INSERT INTO `categoria`(nombre) VALUES ("Caricaturas"), 
 ("Celebridades"), ("Mascotas"), ("Personajes"), 
 ("Personalizados"), ("Superhéroes");
 
 
-INSERT INTO `ubicación`(estado, municipio, CP, colonia, calle, no_interior, no_exterior)
+INSERT INTO `ubicacion`(estado, municipio, CP, colonia, calle, no_interior, no_exterior)
 VALUES 
 ("EDOMEX", "Ecatepec de Morelos", "55010", "Guadalupe Victoria", "Francisco Villa", "S/N", "lote 3"),
 ("EDOMEX", "Ecatepec de Morelos", "55210", "Valle de Anahuac", "Ignacio Zaragoza", "S/N", "66A"),
@@ -108,7 +108,7 @@ VALUES
 
 
 
-INSERT INTO artesano (nombre, apellido, correo_electronico, teléfono, Ubicación_IDubicación) 
+INSERT INTO artesano (nombre, apellido, correo_electronico, telefono, Ubicacion_IDubicacion) 
 VALUES
 ("Paola", "Quiroz", "paola.rod.quiroz@gmail.com","5512345678", 3), 
 ("Alejandro", "Rodriguez", "ale.rodriguez@gmail.com", "5578654321",4), 
@@ -118,7 +118,7 @@ VALUES
 
 
 
-INSERT INTO cliente (nombre, apellido, correo_electronico, teléfono, contraseña, Ubicación_IDubicación)
+INSERT INTO cliente (nombre, apellido, correo_electronico, telefono, contrasena, Ubicacion_IDubicacion)
 VALUES 
 
 ("Brandon", "Jaimes", "brandon.jaimes@gmail.com", "5543456234", "bran1234", 1),
@@ -129,7 +129,7 @@ VALUES
 
 
 
-INSERT INTO productos (nombre, precio, medida, descripción, imagen, existencia, Categoría_IDcategoría, Artesano_IDartesano) 
+INSERT INTO productos (nombre, precio, medida, descripcion, imagen, existencia, Categoria_IDcategoria, Artesano_IDartesano) 
 VALUES 
 
 ("Batman", 200, 25, "Batman es un superhéroe que te acompañará en todos tus aventuras, recuerda que puedes personalizarlo a tu gusto", "batman.png", "1", 6, 2),
