@@ -10,8 +10,6 @@ let mensaje = document.getElementById('mensaje');
 let alertDiv = document.getElementById('alerta');
 let imagen = document.getElementById('product_img');
 
-
-
 let erroneo = false;
 
 
@@ -30,27 +28,27 @@ function formValidation(e){
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
         alerta += `<h3>¡Nombre no valido!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónNombre
     
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
         alerta += `<h3>¡Número no valido! </h3><br>`;
         valido = true;
-    }
+    }//validaciónTeléfono
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
         alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónCorreoElectrónico
 
     if(tam.value == 'Tamaño'){
         alerta += `<h3>¡Selecciona un tamaño!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónTamaño
 
     if(artesano.value == 'Selecciona'){
         alerta += `<h3>¡Selecciona un artesan@!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónArtesano
    
    
     if(valido){
@@ -82,8 +80,8 @@ function formValidation(e){
 
         let myWidget = cloudinary.createUploadWidget({
             
-            cloudName: 'dndhg2pgz',
-            uploadPreset: 'bo6jeclt'
+            cloudName: 'nav-attar',
+            uploadPreset: 'navAttar'
     
         }, (error, result) => {
             if (!error && result && result.event === "success") {
@@ -113,7 +111,6 @@ function formValidation(e){
 
 
 function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
-    console.log('aqui');
     var dir = document.createElement("a");
     dir.href = `mailto:nav.attar.contact@gmail.com?Subject=Cotización para : ${nombre.value} 
         &body=Cliente: ${nombre.value}%20%0D%0A %20%0D%0A ${mensaje.value} %20%0D%0A%20%0D%0ACorreo : ${correo.value} %20%0D%0ATeléfono: ${telefono.value}%20%0D%0ATamaño: ${tam.value} [cm]%20%0D%0A %20%0D%0A Artesan@: ${artesano.value} %20%0D%0A %20%0D%0AImagen en: %20%0D%0A ${url}`;
@@ -139,7 +136,7 @@ function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
                     <h3> Gracias, pronto estaremos en contacto </h3>
                 </div>`;
 
-}
+}//sePreparanDatosParaEnvarMensaje
 
 
     

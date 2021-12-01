@@ -1,0 +1,147 @@
+
+/* Carrito titulo  */
+.carritoCompras{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 5em;
+    /* margin-bottom: 5em  ; */
+}
+
+
+.carritoCompras_titulo h1{
+    display: inline;
+    font-size: 5em;
+    font-weight: 500;
+}
+
+
+/*Separacio carrito y vacio o tarjetas*/
+.sepCarritoCompras{
+    width: 100%;
+    height: 0.2em;
+    background-color: #867FB3;
+    margin: 0;
+}
+
+/* Contenedor para poner vacio o las tarjetas */
+
+#contenidoCarritoCompras{
+    margin: 2em 0 3em 0;
+}
+
+
+/* Estilos para cuando el carrito esta vacio */
+.vacioCarritoCompras{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+
+.vacioCarritoCompras a{
+    margin-top: 2em;
+    justify-content: center;
+}
+
+
+/* Estilos de la tabla pra meter las tarjetas aqui no esta vacio el carrito */
+
+table#tablaCarritoCompras{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table#tablaCarritoCompras th,
+table#tablaCarritoCompras td {
+  padding: 0.5em;
+  margin: 2em;
+  font-size: 1.8em;
+}
+
+table#tablaCarritoCompras thead, table#tablaCarritoCompras tbody{
+    border-bottom: 0.2em solid #867FB3;
+}
+
+
+table#cart td {
+  border: 1px solid;
+}
+
+tr.sepCarritoComprasTr{
+    margin-left: 3em;
+}
+
+
+td.imagenCarrito img{
+    width: 10em;
+    height: 10em;
+    margin-left: 3em;
+}
+
+.precioCarrito{
+    margin: 0 3em;
+}
+
+.cantidad{
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.cantidad p{
+    margin: auto;
+    padding: 0 1em;
+    font-size: 1em;
+}
+
+.cantidad button{
+    height: 2em;
+}
+
+.carritoEliminar button{
+    background-color: #aca2a4 ;
+}
+
+.carritoEliminar button:hover{
+    background-color: #dc3545 ;
+}
+
+.carritoEliminar button img{
+    width: 2em;
+    margin: 0.5em;
+}
+
+/* Tarjeta de total de la compra */
+
+.cardTotalCarrito{
+    display: flex;
+    justify-content: flex-end
+}
+
+.totalCarrito{
+    text-align: left;
+    width: 30rem;
+    margin: 3em 0;
+}
+
+.totalCarrito .card-header{
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.renglonCarrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;  
+    margin: 1em 0;  
+}
+
+.btnFinalizar {
+    align-items: flex-end;
+
+}
