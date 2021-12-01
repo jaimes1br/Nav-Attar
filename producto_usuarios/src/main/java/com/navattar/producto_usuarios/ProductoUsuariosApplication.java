@@ -1,13 +1,13 @@
-package com.navattar.userproducts;
+package com.navattar.producto_usuarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserproductsApplication {
+public class ProductoUsuariosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserproductsApplication.class, args);
+		SpringApplication.run(ProductoUsuariosApplication.class, args);
 	}
 
 }

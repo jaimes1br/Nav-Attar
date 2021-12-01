@@ -1,10 +1,10 @@
-package com.navattar.userproducts;
+package com.navattar.producto_usuarios;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserproductsApplicationTests {
+class ProductoUsuariosApplicationTests {
 
 	@Test
 	void contextLoads() {
