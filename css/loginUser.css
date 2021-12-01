@@ -17,15 +17,15 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 45px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: MiFuentePersonal;
     /* font-family: 'Petemoss', cursive; */
-    font-weight: bolder;
+    /* font-weight: bolder;
     color: transparent;
     background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
     -webkit-text-fill-color: transparent;
     -webkit-background-clip:text;
     animation: color 3s linear infinite;
-    background-size: 500%;
+    background-size: 500%; */
 }
 
 .FormLogUser{
