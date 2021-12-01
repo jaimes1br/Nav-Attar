@@ -24,32 +24,32 @@ form.addEventListener('submit', e => {
     let regexpNombre = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
     let regexpTel =/^[0-9]*$/
     let regexpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d@$!%*?&-_]{8,}$/;
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
         alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónNombre
 
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
         alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
-    }
+    }//validaciónTeléfono
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
         alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
-    }
+    }//validaciónCorreoElectrónico
 
     if(!regexPass.test(pass.value) || pass.value.length == 0 || pass.value.length > 20){
         alerta += `<h3>¡Contraseña no válida! </h3><br>`;
         valido = true;
-    }
+    }//validaciónContraseña
 
     if(pass.value != confpass.value ){
         alerta += `<h3> ¡Las contraseñas no coinciden!</h3>`;
         valido = true;    
-    }
+    }//validaciónConfirmaciónContraseña
 
 
 
@@ -77,10 +77,12 @@ function guardarRegistro(){
     
 
     let usuario = {
+        'id' : 5,
         'nombre': nombre.value,
         'telefono': telefono.value,
         'correo': correo.value,
-        'contrasena': encriptar(pass.value)
+        'contrasena': encriptar(pass.value),
+        'carrito': []
     };
     
     let usuarios = obtener();
@@ -93,7 +95,8 @@ function guardarRegistro(){
     correo.value = '';
     pass.value = '';
     confpass.value = '';
-}
+    window.setTimeout(() => {window.location.href = './../pages/loginUser.html';}, 2000);
+}//guardamosElRegistroDeUnNuevoUsuario
 
   
 function obtener(){
@@ -102,8 +105,8 @@ function obtener(){
     let usuarios = JSON.parse(objetosJSON);
    
     return usuarios;
-}
+}//obtenerDatosDelLocal
 
 function encriptar(palabra){
     return btoa(palabra);
-}
+}//encripatamosLaContraseña

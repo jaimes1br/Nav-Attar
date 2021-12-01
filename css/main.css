@@ -12,9 +12,7 @@
 @import url(./loginArte.css); /*loginArtesano*/
 @import url(./personalizado.css); /*paginaParaPedidoPersonalizado*/
 @import url(./productoVista.css); /*productoIndividual*/
-
-/* @import url(./administrador.css); */
-/*@import url(./administrador.css); */
+@import url(./carritoCompras.css); /*pagina del carrito de compras*/
 
 
 :root{

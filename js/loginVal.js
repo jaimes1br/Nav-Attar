@@ -7,6 +7,9 @@ let usuarioSesion = [];
 // let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
 // localStorage.setItem("usuarioSesion", usuarioSesionJSON);
 
+let usuarioSesion = [];
+let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
+localStorage.setItem("usuarioSesion", usuarioSesionJSON);
 
 
 form.addEventListener('submit', e => {
@@ -21,12 +24,12 @@ form.addEventListener('submit', e => {
     if(correo.value == ''){
         alerta += `<h3>Introduzca una dirrección de correo</h3> <br>`;
         valido = true;
-    }
+    }//validaciónCorreoElectrónioEsVacío
 
     if(pass.value == ''){
         alerta += `<h3>Introducir una contraseña</h3> <br>`;
         valido = true;
-    }
+    }//validaciónContraseñaVacía
 
 
     
@@ -37,18 +40,17 @@ form.addEventListener('submit', e => {
         
         usuarios.forEach(usuario => {
             if(usuario.correo == correo.value && usuario.contrasena == encriptar(pass.value)){
-                console.log('Lo encontramos');
                 alertaLogin.innerHTML += `
                     <div class="alert alert-success" role="alert">
                         <h3>Bienvenid@ ${usuario.nombre}</h3> <br>
                     </div>`;
                 erroneo = false;
+
+                // Poner el usuario en el local
                 iniciarSesion(usuario);
                 window.setTimeout(() => {window.location.href = './../index.html';}, 2000);  
                 
-            }else{
-
-            }
+            }//validaciónExistaElUsuarioEnElLocal
 
         });
 
@@ -57,7 +59,7 @@ form.addEventListener('submit', e => {
                       <h3>la contraseña es incorrecta. Vuelve a intentarlo</h3> <br>
                       <h3>o haz clic en "¿Olvidaste tu contraseña?"</h3> <br>`
             valido = true;    
-        }
+        }//validaciónSiHayProblemasConCorreoOCntraseña
     }
 
    
@@ -80,14 +82,15 @@ function obtener(){
     let usuarios = JSON.parse(objetosJSON);
     
     return usuarios;
-}
+}//TomamosDatosDelStorage
 
 function encriptar(palabra){
     return btoa(palabra);
-}
+}//encriptamosLaContraseñaIngresada
 
 function iniciarSesion(usuario){
-    let usuarioJSON = JSON.stringify(usuario);
-    localStorage.setItem("usuarioSesion",usuarioJSON);
-    return;
-}
+
+    let usuarioJSON = JSON.stringify(usuario); //produtos a JSON
+    localStorage.setItem("usuarioSesion", usuarioJSON);
+    return
+}//siLosDatosSonValidosColocamosEnLocal

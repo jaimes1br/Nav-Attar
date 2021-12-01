@@ -18,25 +18,26 @@ form.addEventListener("submit", e=>{
   if(!tnombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0){
       alerta += `<h3> ¡Nombre no válido! </h3><br>`
       valido = true
-  }
+  }//validaciónNombre
+
   if(!temail.test(email.value) || email.value.length==0 || email.value.length >= 320){
     
     alerta += `<h3>¡Correo electrónico no válido! </h3><br>`
     valido = true
-  }
+  }//validaciónCorreoElectrónico
 
   if(!ttel.test(tel.value) || tel.value.length < 10 || tel.value.length == 0 || tel.value.length >= 12){
 
     alerta += `<h3>¡Teléfono no válido! </h3><br>`
     valido = true
-  }
+  }//validaciónTeléfono
 
   if(mensaje.value.length >= 150 || mensaje.value.length == 0){
 
     alerta += `<h3>¡Mensaje no válido! </h3> <br>`
     valido = true
 
-  }
+  }//validaciónMensaje
 
   if(valido){
 
@@ -54,13 +55,10 @@ form.addEventListener("submit", e=>{
         <h3> ${alerta} </h3>
     </div>`;
     var dir = document.createElement("a");
-    dir.href = `mailto:nav.attar.contact@gmail.com?&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value} %20%0D%0A %20%0D%0A %20%0D%0A Teléfono cliente: ${tel.value}`;
+    dir.href = `mailto:nav.attar.contact@gmail.com?subject= Contacto Nav-Attar&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value} %20%0D%0A %20%0D%0A %20%0D%0A Teléfono cliente: ${tel.value}`;
     dir.click();
   }
 
-  // var dir = document.createElement("a");
-  // dir.href = `mailto:nav.attar.contact@gmail.com?subject=${asunto.value}&body=${nombre.value}%20%0D%0A %20%0D%0A${mensaje.value} %20%0D%0A %20%0D%0A %20%0D%0A Correo cliente: ${email.value}`;
-  // dir.click();
 })
 
 

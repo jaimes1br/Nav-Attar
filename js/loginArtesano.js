@@ -24,20 +24,20 @@ form.addEventListener('submit', e => {
     if(correo.value == ''){
         alerta += `<h3>Introduzca una dirrección de correo</h3> <br>`;
         valido = true;
-    }
+    }//validaciónCorreoElectrónioEsVacío
  
     if(pass.value == ''){
         alerta += `<h3>Introducir una contraseña</h3> <br>`;
         valido = true;
-    }
+    }//validaciónContraseñaVacía
   
     if(!valido){
-         
+        
+        /**Consolta del arreglo y checamos elemento por elemento si conicide*/
         let artesanos = obtener();
         
         artesanos.forEach(artesanos => {
             if(artesanos.correo == correo.value && artesanos.contrasena == encriptar(pass.value)){
-                console.log('Lo encontramos');
                 alertaLogin.innerHTML += `
                     <div class="alert alert-success" role="alert">
                         <h3>Bienvenid@ ${artesanos.nombre}</h3> <br>
@@ -73,11 +73,11 @@ function obtener(){
      let artesanos = JSON.parse(objetosJSON);
      
      return artesanos;
-}
+}//tomamosDatosDelLocal
 
 function encriptar(palabra){
     return btoa(palabra);
-}
+}//encriptamosContraseñaQueSeIngresa
 
 
 let artesanos = [
@@ -90,7 +90,12 @@ let artesanos = [
 ];
 
 
-/**Descomentar líneas para poner en el local el arrego de los artesanos */
-// let artesanosJSON = JSON.stringify(artesanos); //artesano a JSON
-// localStorage.setItem("artesanos", artesanosJSON); //a localStorage
+/**
+ * Quitar los comentarios de las siguientes líneas (98 y 99) para 
+ * poner en el local Storage el arreglo de los artesanos disponibles.
+ * 
+ * */
+
+let artesanosJSON = JSON.stringify(artesanos); //artesano a JSON
+localStorage.setItem("artesanos", artesanosJSON); //a localStorage
 

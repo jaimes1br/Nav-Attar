@@ -16,14 +16,17 @@ body{
 
 }
 
+
 .vistaproducto{
+    padding-left: 50px;
     background-color:#e1d0ff;
     border-color:#e1d0ff;
+    width: 650px;
 }
 .vistaproductoimg img{
 
     border-radius: 60%; 
-    width: 200px;
+    width: 220px;
     height: 250px;
     margin: 10px;
 }
@@ -34,13 +37,13 @@ body{
     align-items:flex-start;
     flex-direction: column;
     padding-left: 80px;
-    padding-top: 50px;
+    padding-top: 20px;
     margin-top: 10px;
 }
 
 .cardvistaproducto h4{
 
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #preciovistaProducto{
@@ -86,6 +89,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    padding-bottom: 20px;
   }
 
   .otrosproductos img{
@@ -105,24 +109,51 @@ body{
   -----------------------------------------------------------------*/
 
   @media only screen and (max-width: 480px) { 
+
     .vistaproductoimg{
 
-        text-align: center;
+        display: flex;
+        align-items: flex-start;
+        margin: 0px;
+     }
+
+    .dviPersonalizado_btn{
+        margin: 0;
+        padding: 0.5em;
+        position: absolute;
+        left: 42%;
+        top: 60%;
+        width: 80px;
+        height: 20px;
+        
+        background-color: #867FB3;
+        border-radius: 0.5em;
+        font-size: 1em;
+        font-weight: 500;
+        color: #000;    
+        transition-duration: 0.4s;
+        cursor: pointer; 
     }
+
+    .vistaproducto{
+        padding: 30px;
+        width: 300px;
+    }
+
 
     .cardvistaproducto{
         display: flex;
         justify-content: center;
-        align-items:flex-start;
+        align-items:center;
         flex-direction: column;
         padding-top: 10px;
         margin-top: 10px;
-        margin-left: -60px;
+         margin-left: -60px;
     }
 
     .promovistaproducto h5{
 
-        text-align: center;
+        text-align: justify;
         padding-top: 15px;
         font-size: 30px;
     }
@@ -141,15 +172,6 @@ body{
         justify-content: center;
     }
 
-    .cardvistaproducto{
-        display: flex;
-        justify-content: center;
-        align-items:center;
-        flex-direction: column;
-        padding-top: 10px;
-        margin-top: 10px;
-        margin-left: -60px;
-    }
   }
 
 
@@ -168,6 +190,7 @@ body{
         width: 96px;
         height: 124px;
       } 
+
 }
 
 
@@ -180,6 +203,30 @@ body{
         flex-direction: column;
         gap: 2px;
       }
+
+      .vistaproducto{
+
+        padding: 20px;
+          width: 500px;
+      }
+
+      .dviPersonalizado_btn{
+        margin: 0;
+        padding: 0.5em;
+        position: absolute;
+        left: 44%;
+        top: 60%;
+        width: 109px;
+        height: 30px;
+        
+        background-color: #867FB3;
+        border-radius: 0.5em;
+        font-size: 1.3em;
+        font-weight: 500;
+        color: #000;    
+        transition-duration: 0.4s;
+        cursor: pointer; 
+    }
     
       .otrosproductos img{
         width: 230px;
@@ -188,7 +235,7 @@ body{
 
       .promovistaproducto h5{
         font-size: 50px;       
-    }
+      }
 
     .vistaproductoimg{
 
@@ -220,4 +267,22 @@ body{
         justify-content: center;
         align-items:center;
     }    
+}
+
+@media only screen and (width: 280px) and (height: 653px)  {
+
+    .vistaproducto{
+        width: 260px;
+    }
+
+
+    .vistaproductoimg img{
+
+       text-align: center;
+        width: 200px;
+        margin-right: 1000px;
+
+    }
+
+
 }
