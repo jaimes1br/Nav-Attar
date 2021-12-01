@@ -62,16 +62,9 @@ body{
 
 .promovistaproducto h5{
 
-    padding-top: 30px;
-    font-size: 60px;
-    font-weight: bold;
-    font-family: 'Petemoss', cursive;
-    color: transparent;
-    background: linear-gradient(to left, #ff5bf9, #7B68EE, #a47fcd, #08c0ff, #ff5bf9);    
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip:text;
-    animation: color 3s linear infinite;
-    background-size: 500%;
+    font-family: MiFuentePersonal;
+    font-size: 4em;
+    font-weight: 500;
 }
 
 @keyframes color {

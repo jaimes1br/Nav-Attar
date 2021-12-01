@@ -47,8 +47,8 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li> <!--catálogo-->
 
       
-      <li class="nav-item dropdown mr-5">
-        <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item dropdown mr-5" id="sesIni">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Iniciar sesión
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -67,4 +67,22 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
 </nav><!--navBar-->
 </div><!--navBarContaier-->`;
 
+let usuarioSesion = obtener();
+let iniciarSes= document.getElementById("sesIni");
 
+console.log (usuarioSesion);
+//let usuarioSesion = [];
+
+if (usuarioSesion.length != 0){
+    iniciarSes.innerHTML=`
+    <a class="nav-link" href="#">
+        Cerrar sesión
+    </a>` 
+}
+
+function obtener(){
+  let objetoJSON = localStorage.getItem("usuarioSesion");
+  let usuarios = JSON.parse(objetoJSON);
+
+  return usuarios;
+}

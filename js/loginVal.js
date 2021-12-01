@@ -3,6 +3,9 @@ let form = document.getElementById('form');
 let correo = document.getElementById("correo");
 let pass = document.getElementById('pass');
 let alertaLogin = document.getElementById('alertaLogin');
+let usuarioSesion = [];
+// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
+// localStorage.setItem("usuarioSesion", usuarioSesionJSON);
 
 
 
@@ -29,7 +32,7 @@ form.addEventListener('submit', e => {
     
     if(!valido){
         
-        /**Consolta del arreglo y checamos elemento por elemento si conicide*/
+        /**Consulta el arreglo y checa elemento por elemento para ver si conicide*/
         let usuarios = obtener();
         
         usuarios.forEach(usuario => {
@@ -40,6 +43,7 @@ form.addEventListener('submit', e => {
                         <h3>Bienvenid@ ${usuario.nombre}</h3> <br>
                     </div>`;
                 erroneo = false;
+                iniciarSesion(usuario);
                 window.setTimeout(() => {window.location.href = './../index.html';}, 2000);  
                 
             }else{
@@ -80,4 +84,10 @@ function obtener(){
 
 function encriptar(palabra){
     return btoa(palabra);
+}
+
+function iniciarSesion(usuario){
+    let usuarioJSON = JSON.stringify(usuario);
+    localStorage.setItem("usuarioSesion",usuarioJSON);
+    return;
 }
