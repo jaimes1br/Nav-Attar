@@ -26,17 +26,17 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
           Contacto
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item navAttar_listDes" href="./pages/contactoNav.html"> Nav-Attar</a>
-          <a class="dropdown-item navAttar_listDes" href="./pages/contactoEquipo.html">Equipo de desarrollo</a>                            
+          <a class="dropdown-item navAttar_listDes" href="./../pages/contactoNav.html"> Nav-Attar</a>
+          <a class="dropdown-item navAttar_listDes" href="./../pages/contactoEquipo.html">Equipo de desarrollo</a>                            
         </div>
       </li> <!--contactos-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
+        <a class="nav-link" href="./../pages/nosotros.html">Nosotros</a>
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./pages/artesanos.html">Artesanos</a>
+        <a class="nav-link" href="./../pages/artesanosCard.html">Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">

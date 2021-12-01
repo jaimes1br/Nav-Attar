@@ -38,7 +38,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./pages/artesanos.html">Artesanos</a>
+        <a class="nav-link" href="./pages/artesanosCard.html">Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">
