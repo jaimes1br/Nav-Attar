@@ -8,13 +8,13 @@ function addItem(item){
     `
     <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4">
       <div class="card tamañoCartProducto" >
-          <a href="./vistaProducto.html">
+          <a href="./vistaProducto.html?id=${item.id}">
              <img src="${item.imagen}" class="card-img-top" alt="image">  
           </a>
           <div class="card-body elementosCardProducto">
-              <a href="./vistaProducto.html"><h2 class="card-title">${item.nombre}</h2></a>
+              <a href="./vistaProducto.html?id=${item.id}"><h2 class="card-title">${item.nombre}</h2></a>
               <div class="cardPrecio">
-                <a href="./vistaProducto.html"><h3 class="card-title">$${item.precio} MN</h3></a>
+                <a href="./vistaProducto.html?id=${item.id}"><h3 class="card-title">$${item.precio} MXN</h3></a>
                 <h3>${item.medida}cm</h3>
               </div>
               <h3>${item.categoria} </h3>
