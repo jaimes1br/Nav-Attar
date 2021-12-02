@@ -40,18 +40,23 @@ public class serviciosProductos {
         return pro;
     }//deleteProducto
 
-    public void updateProducto(Long idProducto, String nombre, float precio, int medida, String descripcion, String imagen, int existencia, int categoria_IDcategoria, int artesano_IDartesano){
-        switch (idProducto <= lista.size()){
-
-
-
+    public void updateProducto(Long idProducto, String nombreProducto, String nuevoNombre, float nuevoPrecio, int nuevaMedida, String nuevaDescripcion, String nuevaImagen, int existenciaActual, int actCategoria_IDcategoria){
+        if (idProducto <= lista.size()){
+            productos producto = lista.get(idProducto.intValue()-1);
+            if (producto.getNombre().equals(nombreProducto)){
+                producto.setNombre(nuevoNombre);
+                producto.setPrecio(nuevoPrecio);
+                producto.setMedida(nuevaMedida);
+                producto.setDescripcion(nuevaDescripcion);
+                producto.setImagen(nuevaImagen);
+                producto.setExistencia(existenciaActual);
+                producto.setCategoria_IDcategoria(actCategoria_IDcategoria);
             }
         }
-
     }
 
-    public void addUser(users user){
-        lista.add(user);
+    public void addProducto(productos producto){
+        lista.add(producto);
     }// addUser
 
 }
