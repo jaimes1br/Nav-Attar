@@ -33,7 +33,7 @@
     </div><!--cardcom-->
     `
    ;
-    const itemsContainer = document.getElementById("list-items");
+    const itemsContainer = document.getElementById("Productos");
     itemsContainer.innerHTML += itemHTML;
 }//addItem
 
