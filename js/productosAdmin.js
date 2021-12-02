@@ -170,3 +170,8 @@ let nuevo = productos[productos.length - 1];
 
 addItem(nuevo);
 
+$('#productos-lista a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    console.log('click')
+  })
