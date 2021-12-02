@@ -6,7 +6,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 5em;
-    /* margin-bottom: 5em  ; */
 }
 
 
@@ -19,7 +18,7 @@
 
 /*Separacio carrito y vacio o tarjetas*/
 .sepCarritoCompras{
-    width: 100%;
+    width: 80%;
     height: 0.2em;
     background-color: #867FB3;
     margin: 0;
@@ -28,7 +27,7 @@
 /* Contenedor para poner vacio o las tarjetas */
 
 #contenidoCarritoCompras{
-    margin: 2em 0 3em 0;
+    margin: 2em 0 0 5em;
 }
 
 
@@ -46,8 +45,19 @@
     justify-content: center;
 }
 
+.tristeCarrito{
+    width: 2em;
+    /* height: 2em; */
+}
 
-/* Estilos de la tabla pra meter las tarjetas aqui no esta vacio el carrito */
+/*div donde colocamos la tabla*/
+.elementoCarritoCompras{
+    display: block;
+    margin: 3em;
+}
+
+
+/* Estilos de la tabla para meter las tarjetas aqui no esta vacio el carrito */
 
 table#tablaCarritoCompras{
     width: 100%;
@@ -100,7 +110,18 @@ td.imagenCarrito img{
 
 .cantidad button{
     height: 2em;
+    background-color: #BDB2FF;
+    color: #000;
 }
+
+.cantidad button:hover{
+    background-color: #6e66a0;
+    color: #fff;
+    font-weight: 700;
+    border: 0.1em solid #000;
+    transition-duration: 0.5s;
+}
+
 
 .carritoEliminar button{
     background-color: #aca2a4 ;
@@ -125,7 +146,7 @@ td.imagenCarrito img{
 .totalCarrito{
     text-align: left;
     width: 30rem;
-    margin: 3em 0;
+    margin: 1em 0 3em 0;
 }
 
 .totalCarrito .card-header{
@@ -143,5 +164,22 @@ td.imagenCarrito img{
 
 .btnFinalizar {
     align-items: flex-end;
+}
 
+
+/*-----------------------------------------------------------------
+ ||  modeloResponsivo        
+  -----------------------------------------------------------------*/
+
+
+/* motoG4 sm */
+@media only screen and (max-width: 480px) { 
+   
+    .carritoCompras_titulo h1{
+        margin-left: 0.5em;
+    }
+
+    .sepCarritoCompras{
+        width: 100%;
+    }
 }
