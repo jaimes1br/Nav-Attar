@@ -22,7 +22,7 @@
     object-fit: cover;
     width: 100%;
     height: auto;
-    
+    margin-top: 0;
 }
 
 
@@ -47,8 +47,6 @@
     flex-direction: row;
     justify-content: space-around;
     justify-self: center;
-    
-   
 }
 
 .cardInfo{
@@ -59,6 +57,11 @@
 
 #productos-list{
     background-color:#BDB2FF;
+}
+
+#contenido-tabs{
+    display: flex;
+    align-items: flex-start;
 }
 
 
@@ -94,11 +97,12 @@
 .modBut{
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 2rem;
     background-color: #BDB2FF;
     width: 2.5rem;
     height: 2.5rem;
-    margin-bottom: 1em;
+    /* margin-bottom: 1.5em; */
 }
 
 #eliminar-btn{
@@ -109,18 +113,26 @@
 
 }
 
-.artesano{
-    /* display: flex;
-    flex-direction: column;*/
+#artesano{
+    display: flex;
+    flex-direction: column;
+    height: 40em;
     align-items: center;
     justify-content: center; 
     padding-top: 4rem; 
     gap: 4em;
     /* cmabios desde aqui */
     background-color: #F8EDEB;
-    border-radius: 5%;
-    padding: 2em;
-    
+    border-radius: 40px;
+    padding: 2em;  
+    margin-left: 13rem; 
+}
+.artesano1{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 2em;
+
 }
 
 .infoArtesano{
@@ -146,6 +158,7 @@
 
 .cardInfo h5{
     font-size: 17px;
+    justify-self: center;
 }
 
 .todo{
@@ -159,17 +172,142 @@
     
 }
 
-.CardCompleto{
+.card-completo{
     display: flex;
     justify-content: flex-start;
-    padding-top: 6rem;
+    background-color: #FAF4F4;
+    border-radius: 5px;
+    margin-top: 6rem;
+    margin-right: 4rem;
 
 }
-.ArtNombre h5{
-    font-size: 20px;
+#artesano h5{
+    font-size: 17px;
+    
 }
 
-.btn-primary {
-    border-radius: 50%;
-    background-color: blue;
+.btn-guardar {
+    border-radius: 5px;
+    background-color: #BDB2FF;
 }
+
+.bcrear{
+    font-size: 17px;
+}
+
+.modal-content{
+    gap: 2em;
+}
+
+.modal-body{
+    gap: 1rem;
+}
+ 
+ /*(tabletas and telefonos largos, 600px and up) */
+ @media only screen and (max-width: 769px) {  
+ 
+    .cardcom{
+        background-color:#BDB2FF;  
+        border-radius: 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        justify-self: center;
+        align-items: center;
+        gap: 1em;
+    }  
+    .cardInfo h5{
+        font-size: 12px;
+        justify-items: center;
+    }
+    .descript p{
+        font-size: 13px;
+        padding: 1em;
+    }
+    #eliminar-btn{
+        align-self: flex-end;
+        border-radius: .7rem ;
+        object-fit: cover;
+        width: 100%;
+        height: 25px;
+    }
+    .pIndividual1{
+        padding-top: 2em;
+    }
+    #artesano{
+        display: flex;
+        flex-direction: column;
+        height: 40em;
+        align-items: center;
+        justify-content: center; 
+        padding-top: 4rem; 
+        gap: 2em;
+        /* cmabios desde aqui */
+        background-color: #F8EDEB;
+        border-radius: 40px;
+        padding: 2em;  
+        margin-left: 6rem; 
+    }  
+ 
+ }
+
+ /* (telefonos, 600px and down) */
+@media only screen and (max-width: 480px) {  
+
+    .cardcom{
+        background-color:#BDB2FF;  
+        border-radius: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        justify-self: center;
+        align-items: center;
+        gap: 1em;
+    }  
+    .cardInfo h5{
+        font-size: 12px;
+    }
+    .descript p{
+        font-size: 13px;
+        padding: 2em;
+    }
+    #eliminar-btn{
+        align-self: flex-end;
+        border-radius: .7rem ;
+        object-fit: cover;
+        width: 100%;
+        height: 30px;
+    }
+    .pIndividual1{
+        padding-top: 2em;
+    }
+    #artesano{
+        display: flex;
+        flex-direction: column;
+        height: 40em;
+        align-items: center;
+        justify-content: center; 
+        padding-top: 4rem; 
+        gap: 4em;
+        /* cmabios desde aqui */
+        background-color: #F8EDEB;
+        border-radius: 40px;
+        padding: 2em;  
+        margin-left: 6rem; 
+    }
+
+    .card-completo{
+        display: flex;
+        justify-content: flex-start;
+        background-color: #FAF4F4;
+        border-radius: 5px;
+        margin-top: 6rem;
+        margin-right: 1rem;
+    
+    }
+    
+ 
+   }
+ 
+
+ 

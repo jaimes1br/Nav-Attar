@@ -22,6 +22,9 @@
   <header id="myHeadpage"></header> 
 
 
+<div class="container noAnimacion" id='pedidosCarDiv'>
+</div>
+
  <div class="container noAnimacion carritoCompras">
     <div class="row carritoCompras_titulo">
         <h1>Carrito</h1>
@@ -29,13 +32,15 @@
     
     <hr class="sepCarritoCompras">
 
-    <div class="row "  id="contenidoCarritoCompras ">
+    <div class="row " id="contenidoCarritoCompras">
         <!-- <div class="vacioCarritoCompras">
             <h2>Tu carrito está vacío.</h2>
             <a href="./catalogo.html" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catalogo</a>
         </div>carritoVacio -->
 
-        <div class="elementoCarritoCompras ">
+       
+
+        <div class="elementoCarritoCompras " id='divContenidoCarrito'>
             <table id = 'tablaCarritoCompras'>
                 <thead>
                     <tr>
@@ -47,52 +52,8 @@
                         <th></th><!--botonEliminar-->
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="sepCarritoComprasTr">
-                        <td class = "imagenCarrito">  
-                            <img src="./../img/muñequitos/carol.jpg" alt="">
-                        </td><!--imagenProducto-->
-                        <td class = "nombre"> 
-                            Harry Potter Team
-                        </td><!--nombreProducto-->
-                        <td class = "precio precioCarrito">
-                           $ 420.00 MXN
-                        </td><!--precioProducto-->
-                        <td class= "cantidad">
-                            <button class= 'cantidadBtn' value="menos">-</button>
-                            <p id = 'cantidadValor' >1</p>
-                            <button class= 'cantidadBtn' value="mas">+</button>
-                        </td><!--cantidodaPrdocuto-->
-                        <td class="subTotal">
-                            $ 420.00 MXN
-                        </td>
-                        <td class="carritoEliminar">
-                            <button type="button" class="btn carritoEli"><img src="./../img/iconos/trashWhite.svg" alt=""></button>
-                        </td>
-                    </tr>
-                    <tr class="sepCarritoComprasTr">
-                        <td class = "imagenCarrito">  
-                            <img src="./../img/muñequitos/carol.jpg" alt="">
-                        </td><!--imagenProducto-->
-                        <td class = "nombre"> 
-                            Harry Potter Team
-                        </td><!--nombreProducto-->
-                        <td class = "precio precioCarrito">
-                           $ 10.00 MXN
-                        </td><!--precioProducto-->
-                        <td class= "cantidad">
-                            <button class= 'cantidadBtn' value="menos">-</button>
-                            <p id = 'cantidadValor' >1</p>
-                            <button class= 'cantidadBtn' value="mas">+</button>
-                        </td><!--cantidodaPrdocuto-->
-                        <td class="subTotal">
-                            $ 10.00 MXN
-                        </td>
-                        <td class="carritoEliminar">
-                            <button type="button" class="btn carritoEli"><img src="./../img/iconos/trashWhite.svg" alt=""></button>
-                        </td>
-                    </tr>
-                      
+                <tbody id="listaCarritoProd">
+                   
                 </tbody>
             </table>
         </div><!--elementoDelCarrito-->
@@ -101,21 +62,16 @@
 </div><!--container-->
 
 
-<div class="container  noAnimacion">
-    <div class="d-flex justify-content-end">
+<div class="container  noAnimacion" id="divTotal">
+    <div class="d-flex justify-content-end" id= 'divCenterTotal'>
         <div class="card totalCarrito">
-            <div class="card-header">
-                Total del carrito
+            <div class="card-header ">
+                Total del carrito: <h4 id="totalCarrito">$ 0.00 MXN</h4>
             </div><!--titulo-->
             <ul class="list-group list-group-flush">
-                <li class="list-group-item renglonCarrito">
-                    <h5>Total</h5>
-                    <h4>$ 420.00 MXN</h4>
-                </li>
                 <li class="list-group-item btnFinalizar">
-                    <button class = "btn elementosCardProducto_btn " id="btnComprar"> Finalizar compra</button>
+                    <button class = "btn elementosCardProducto_btn " data-toggle="modal" data-target="#alertFinalizar" id="btnComprar"> Finalizar compra</button>
                 </li>
-                
             </ul><!--elementos-->
         </div><!--card-->
     </div><!--rowHaciaDerecha-->
@@ -123,14 +79,35 @@
 
   <footer id="footerModPag"></footer>
 
+
+  <div class="modal fade" id="alertFinalizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 10px;" >
+        <div class="modal-header" style="border-radius: 10px 10px 0px 0px;" >
+          <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          <button type="button" class="close equisContacNav " data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" >&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="alerta">
+          
+        </div>   
+      </div>
+    </div>
+</div>
+
+
+
+
+
   
   
   
   <script src="./../js/navPag.js"></script>
   <script src="./../js/footerPag.js"></script>
+  <script src="./../js/loginCerrarSesion.js"></script>
+  <script src="./../js/carritoCanasta.js"></script>
   <script src="./../js/carritoCompras.js"></script>
-  
-  
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
