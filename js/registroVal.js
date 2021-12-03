@@ -82,7 +82,8 @@ function guardarRegistro(){
         'telefono': telefono.value,
         'correo': correo.value,
         'contrasena': encriptar(pass.value),
-        'carrito': []
+        'carrito': [],
+        'pedidos': []
     };
     
     let usuarios = obtener();

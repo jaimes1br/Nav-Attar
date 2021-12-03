@@ -115,21 +115,25 @@
     justify-content: center;
     padding-bottom: 10px;
     align-items: flex-end;
+    gap: 3em;
+}
+
+
+
+.btn_comprar button img{
+    width: 5em;
+    height: 5em;
 }
 
 #btnComprar{
     display: flex;
     align-items: center;
     text-align: center;
-    /* position: relative; */
-    /* bottom: 0.1em; */
     background-color: #BDB2FF;
     color: #000;
     font-size: 1.5em;
     font-weight: 700;
-    /* height: 3em; */
     padding: 0.5em 1em; 
-    /* margin-top: 2em ; */
     
 }
 

@@ -9,7 +9,7 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
     <ul class="">
       
       <li class="nav-item navBar-item">
-          <a href="" aling="right"><img src="./../img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador">100</span></a>
+          <a href="./../pages/carritoCompras.html" aling="right"><img src="./../img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador" id='contadorCanasta'>0</span></a>
       </li><!--artesanos-->
 
     </ul><!--listaNAvUsuario-->

@@ -22,9 +22,10 @@ function addItem(item){
               
           </div>
 
-            <div class="btn_comprar">
+          <div class="btn_comprar">
             <a href="./vistaProducto.html?id=${item.id}" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
-            </div>
+            <button type="button" class="btn anadirACarrito" value = '${item.id}' data-toggle="modal" data-target="#aleLogin"><img src="./../img/iconos/anadir.png" alt=""></button>
+          </div>
 
       </div>
       </div> `
@@ -157,7 +158,7 @@ function elementoCategoria(){
 
  let objetosTexto = [
     {
-        'id':'1',
+        'id': 1,
         "nombre":"Batman",
         'imagen':'../img/muñequitos/batman.jpg',
         'medida':'25',
@@ -165,7 +166,7 @@ function elementoCategoria(){
         'precio':'200.00',
         'descripcion':'Batman es un superheroe que te acompañara en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'2',
+        'id': 2 ,
         'nombre':'Baby Yoda',
         'imagen':'../img/muñequitos/bby.jpg',
         'medida':'20',
@@ -173,7 +174,7 @@ function elementoCategoria(){
         'precio':'350.00',
         'descripcion':'Si cool quieres ser, Baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto'},
     { 
-        'id':'3',
+        'id':3,
         'nombre':'Carlitos',
         'imagen':'../img/muñequitos/carlitos.jpg',
         'medida':'20',
@@ -181,7 +182,7 @@ function elementoCategoria(){
         'precio':'350.00',
         'descripcion':'¿Recuerdas los momentos en familia cuando veian juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'4',
+        'id': 4,
         'nombre':'Coraline',
         'imagen':'../img/muñequitos/carol.jpg',
         'medida':'22',
@@ -189,7 +190,7 @@ function elementoCategoria(){
         'precio':'420.00',
         'descripcion':'Muñequito de Coraline tejido, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'5',
+        'id': 5,
         'nombre':'Homero',
         'imagen':'../img/muñequitos/homero.jpg',
         'medida':'15',
@@ -197,7 +198,7 @@ function elementoCategoria(){
         'precio':'120.00',
         'descripcion':'Desde Sprinfield hasta tus manos, este llavero te hara decir "WooHoo".'},
     {
-        'id':'6',
+        'id': 6,
         'nombre':'Harry Potter Team',
         'imagen':'../img/muñequitos/hp.jpg',
         'medida':'20',
@@ -205,7 +206,7 @@ function elementoCategoria(){
         'precio':'600.00',
         'descripcion':'Este trio de amigos magicos te van a encantar.'},
     {
-        'id':'7',
+        'id': 7,
         'nombre':'Perrito',
         'imagen':'../img/muñequitos/dog2.jpg',
         'medida':'25',
@@ -213,7 +214,7 @@ function elementoCategoria(){
         'precio':'420.00',
         'descripcion':'Una forma mas de recordar y llevar contigo a tu mascota a donde sea.'},
     {
-        'id':'8',
+        'id': 8,
         'nombre':'Gato programador',
         'imagen':'../img/muñequitos/Gato-Cafe.jpg',
         'medida':'20',
@@ -221,7 +222,7 @@ function elementoCategoria(){
         'precio':'300.00',
         'descripcion':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'9',
+        'id': 9,
         'nombre':'Arnols y Helga',
         'imagen':'../img/muñequitos/heyh.jpg',
         'medida':'25',
@@ -229,7 +230,7 @@ function elementoCategoria(){
         'precio':'380.00',
         'descripcion':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'10',
+        'id': 10,
         'nombre':'Iron Maiden',
         'imagen':'../img/muñequitos/iron.jpg',
         'medida':'20',
@@ -237,7 +238,7 @@ function elementoCategoria(){
         'precio':'420.00',
         'descripcion':'El regalo perfecto para los Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'11',
+        'id': 11,
         'nombre':'Friend',
         'imagen':'../img/muñequitos/friend.jpg',
         'medida':'18',
@@ -245,20 +246,64 @@ function elementoCategoria(){
         'precio':'200.00',
         'descripcion':'Regala algo a tus seres queridos, recuerda que puedes personalizarlo a tu gusto'},
     {
-        'id':'12',
+        'id': 12,
         'nombre':'Muñequita de Chinos',
         'imagen':'../img/muñequitos/chinos.jpg',
         'medida':'20',
         'categoria':'Personalizados',
         'precio':'600.00',
         'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
-];
+    {
+        'id': 13,
+        'nombre':'Eladoscuro',
+        'imagen':'../img/muñequitos/luchador.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Luchador inspirado en una e-commerce basada en la venta online de souvenirs mexicanas con diseños originales, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 14,
+        'nombre':'Ketzal',
+        'imagen':'../img/muñequitos/quetzal.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Quetzal inspirado en una e-commerce para una cafetería, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 15,
+        'nombre':'Nav-Attar',
+        'imagen':'../img/muñequitos/sata.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en una e-commerce basada en la venta muñecos de crochet, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 16,
+        'nombre':'TremendaMexa',
+        'imagen':'../img/muñequitos/mndil.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en la e-commerce basada en la venta de mandiles de cuero personalizados y café, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 17,
+        'nombre':'Never Dies Co.',
+        'imagen':'../img/muñequitos/metal.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en una e-commerce basada en la venta de playeras, recuerda que puedes personalizarlo a tu gusto'}
+                            
+
+
+
+    ];
 
 /**Descomentar lineas de abajo para generar el local de los productos iniciales
  * comentar la siguiente vez
  */
- //let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
- //localStorage.setItem("objetos", objetosJSON); //En localStorage
+  let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
+  localStorage.setItem("objetos", objetosJSON); //En localStorage
 
 
 let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
