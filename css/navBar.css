@@ -120,14 +120,23 @@
 /* Modelo Responsivo */
 @media only screen and (width:1280px) and (height:800px) {
     .navBar-item a{
-    left: 44em;   
+    left: 42em;   
  }
 }
 
 @media only screen and (max-width:1024px) {
     .navBar-item a{
-    left: 18em;   
+    left: 17.8em;   
  }
+ .navBar-item a img{
+    width: 4.5em;
+} 
+.navbar-brand img{
+    width: 15em;
+}
+.navAttar_list .nav-link{
+font-size: 1.5em;
+}
 }
 
 @media only screen and (max-width:769px) { 

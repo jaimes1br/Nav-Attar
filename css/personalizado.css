@@ -125,3 +125,11 @@
 .formularioTextoPersonalizado{
     height: 95em;
 }
+
+.video{
+    width: 520px;
+    height: 440px;
+    position: relative;
+    top: -20em;
+    
+}
