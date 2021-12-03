@@ -40,18 +40,34 @@ public class serviciosProductos {
         return pro;
     }//deleteProducto
 
-    public void updateProducto(Long idProducto, String nombreProducto, String nuevoNombre, float nuevoPrecio, int nuevaMedida, String nuevaDescripcion, String nuevaImagen, int existenciaActual, int actCategoria_IDcategoria){
+    public void updateProducto(Long idProducto, String nombreProducto, float nuevoPrecio, int nuevaMedida, String nuevaDescripcion, String nuevaImagen, int existenciaActual, int actCategoria_IDcategoria){
         if (idProducto <= lista.size()){
             productos producto = lista.get(idProducto.intValue()-1);
-            if (producto.getNombre().equals(nombreProducto)){
-                producto.setNombre(nuevoNombre);
+            if (nombreProducto != null)
+                if ((!nombreProducto.isEmpty()) && (!nombreProducto.equals(producto.getNombre()))) {
+                    producto.setNombre(nombreProducto);
+                }//nombreProducto
+            if ((nuevoPrecio > 0) && (nuevoPrecio != producto.getPrecio())) {
                 producto.setPrecio(nuevoPrecio);
+                }//nuevo precio
+            if ((nuevaMedida > 0) && (nuevaMedida != producto.getMedida())){
                 producto.setMedida(nuevaMedida);
-                producto.setDescripcion(nuevaDescripcion);
-                producto.setImagen(nuevaImagen);
+                }//Nueva medida
+            if (nuevaDescripcion != null)
+                if ((!nuevaDescripcion.isEmpty()) && (!nuevaDescripcion.equals(producto.getDescripcion()))) {
+                    producto.setDescripcion(nuevaDescripcion);
+                }//Nueva descripcion
+            if (nuevaImagen != null)
+                if ((!nuevaImagen.isEmpty()) && (!nuevaImagen.equals(producto.getImagen()))){
+                    producto.setImagen(nuevaImagen);
+                }//Nueva imagen
+            if ((existenciaActual >= 0 ) && (existenciaActual != producto.getExistencia())){
                 producto.setExistencia(existenciaActual);
+            }//Actualizacion de existencia producto
+
+            if ((actCategoria_IDcategoria > 0) && (actCategoria_IDcategoria <= 5)){
                 producto.setCategoria_IDcategoria(actCategoria_IDcategoria);
-            }
+            }//Actualizacion de la categoria
         }
     }
 
