@@ -1,3 +1,37 @@
+function mostrarPedidos(usuario){
+
+    console.log(usuario.pedidos);
+
+    if(usuario.pedidos.length != 0){
+        let divPedidos = document.getElementById('pedidosCarDiv');
+        divPedidos.innerHTML = `
+        <div class="row carritoCompras_tituloPedidos">
+            <h1>Pedidos</h1>
+        </div>
+        <hr class="sepCarritoCompras">
+        <div id = "pedidosLista">
+        </div>`;
+
+        let listaPedidos = document.getElementById('pedidosLista');
+        listaPedidos.innerHTML = '';
+        usuario.pedidos.forEach(pedido =>{
+            listaPedidos.innerHTML += `
+            <div class="card elementoPedido" style="width: 80rem;">
+                <img src="${pedido.imagen}" class="card-img-top" alt="...">
+                <div class="card-body elementoTexPedido">
+                    <h3> Artesan@ que realiza tu pedido: ${pedido.artesano}  </h3>
+                    <h3> Estado: Pendiete </h3>
+                </div>
+            </div>`;
+        })
+
+        
+
+
+    }
+
+}
+
 
 function contador(accion, cantidadObj,precioObj,subTotalObj){
 
@@ -21,7 +55,7 @@ function contador(accion, cantidadObj,precioObj,subTotalObj){
 function cuentaTotal(){
 
     let total = document.getElementById('totalCarrito');
-    let totalNum =  parseFloat(total.innerHTML.split(" ")[1]);
+    // let totalNum =  parseFloat(total.innerHTML.split(" ")[1]);
 
     const productos = document.querySelectorAll('.subTotal');
 
@@ -73,7 +107,6 @@ function desplegar(){
    
 
     if (usuario.length == 0){
-    
         let divAnuncio = document.getElementById('contenidoCarritoCompras');
         divAnuncio.innerHTML = `
         
@@ -86,7 +119,8 @@ function desplegar(){
         divTotal.innerHTML = '';
     
     }else{
-   
+        
+        mostrarPedidos(usuario);
         canasta(usuario.carrito.length);
 
         if(usuario.carrito == 0){ 
@@ -107,6 +141,8 @@ function desplegar(){
             
             let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
             let productos = JSON.parse(productosJSON);
+
+            divProductos.innerHTML = '';
 
             productos.forEach( producto => {
                 if ( usuario.carrito.indexOf(producto.id) != -1 ){
@@ -135,10 +171,29 @@ function desplegar(){
                     </tr>
                     `;
                 }}); //forEach
+
+                
+        cuentaTotal();
+        actualizarBotonesEliminar();   
         }//elementos en carrito
         
     }//else Hay usuario en sesion
     
+    let finalizarBtn = document.getElementById('btnComprar');
+    finalizarBtn.addEventListener('click',function(e){
+        let alertaDiv = document.getElementById('alerta');
+        alertaDiv.innerHTML = `
+        <div class="alert alert-success" role="alert">
+            <h3>¡Felicidades acabas de realizar tu compra!</h3> <br>
+        </div>`;
+
+        usuario.carrito = [];
+        localStorage.setItem("usuarioSesion", JSON.stringify(usuario));
+
+        window.setTimeout(() => {window.location.reload();}, 2000);
+        
+    })
+
     let btnsCantidad = document.querySelectorAll('.cantidadBtn');
     btnsCantidad.forEach( function(boton){
         boton.addEventListener('click', function (e) {
@@ -151,26 +206,77 @@ function desplegar(){
 
 
 
-// prueba();
+function desplegarPequeño(){
 
-desplegar();
-cuentaTotal();
-actualizarBotonesEliminar();
+    let divTarjetas = document.getElementById('divContenidoCarrito');
+    divTarjetas.innerHTML = '';
+    let divTotal = document.getElementById('divCenterTotal');
+    divTotal.classList = [];
 
-
-
-function prueba(){
+    let usuarioJSON = localStorage.getItem("usuarioSesion");
+    let usuario = JSON.parse(usuarioJSON);
+   
+    if (usuario.length == 0){
     
-    let usuario = {
-        'id' : 5,
-        'nombre': 'Prueba',
-        'telefono': '555555555555',
-        'correo': 'prueba@gmail.com',
-        'contrasena': 'una',
-        'carrito': []
-    };
+        let divAnuncio = document.getElementById('contenidoCarritoCompras');
+        divAnuncio.innerHTML = `
+        
+        <div class="vacioCarritoCompras">
+            <h2>Tu carrito está vacío    <img src="./../img/iconos/triste.png"  class='tristeCarrito' alt="triste"></h2>
+            <a href="./../pages/catalogo.html?cat=Todos" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catálogo</a>
+        </div>`;
     
-    let usuarioJSON = JSON.stringify(usuario); //produtos a JSON
-    localStorage.setItem("usuarioSesion", usuarioJSON);
+        let divTotal = document.getElementById('divTotal');
+        divTotal.innerHTML = '';
+    
+    }if(usuario.carrito == 0){ 
+        let divAnuncio = document.getElementById('contenidoCarritoCompras');
+        divAnuncio.innerHTML = `
+        
+        <div class="vacioCarritoCompras">
+            <h2>Tu carrito está vacío. <img src="./../img/iconos/triste.png"  class='tristeCarrito' alt="triste"></h2>
+            <a href="./../pages/catalogo.html?cat=Todos" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catálogo</a>
+        </div>`;
+    
+        let divTotal = document.getElementById('divTotal');
+        divTotal.innerHTML = '';
+    }
 
+}
+
+
+
+
+
+function desplegarCarrito(){
+    let pantallaw = screen.width;
+    
+    if (pantallaw < 481){
+        console.log('motgo')
+        desplegarPequeño();
+    }else {
+        desplegar();     
+    }
+}//elementoCategoria
+
+
+
+desplegarCarrito();
+
+
+/*-----------------------------------------------------------------
+ ||  redimension de panalla   
+ -----------------------------------------------------------------*/
+
+ window.addEventListener("resize", function(e){
+    desplegarCarrito();
+});
+
+
+
+function obtener(){
+    let usuarioJSON = localStorage.getItem("usuarioSesion");
+    let usuario = JSON.parse(usuarioJSON);
+
+    return usuario;
 }

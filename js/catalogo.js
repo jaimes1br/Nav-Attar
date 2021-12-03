@@ -253,13 +253,57 @@ function elementoCategoria(){
         'categoria':'Personalizados',
         'precio':'600.00',
         'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
-];
+    {
+        'id': 13,
+        'nombre':'Eladoscuro',
+        'imagen':'../img/muñequitos/luchador.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Luchador inspirado en una e-commerce basada en la venta online de souvenirs mexicanas con diseños originales, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 14,
+        'nombre':'Ketzal',
+        'imagen':'../img/muñequitos/quetzal.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Quetzal inspirado en una e-commerce para una cafetería, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 15,
+        'nombre':'Nav-Attar',
+        'imagen':'../img/muñequitos/sata.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en una e-commerce basada en la venta muñecos de crochet, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 16,
+        'nombre':'TremendaMexa',
+        'imagen':'../img/muñequitos/mndil.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en la e-commerce basada en la venta de mandiles de cuero personalizados y café, recuerda que puedes personalizarlo a tu gusto'},
+    {
+        'id': 17,
+        'nombre':'Never Dies Co.',
+        'imagen':'../img/muñequitos/metal.jpg',
+        'medida':'20',
+        'categoria':'Personalizados',
+        'precio':'600.00',
+        'descripcion':'Inspirado en una e-commerce basada en la venta de playeras, recuerda que puedes personalizarlo a tu gusto'}
+                            
+
+
+
+    ];
 
 /**Descomentar lineas de abajo para generar el local de los productos iniciales
  * comenar a siguiente vez
  */
- let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
- localStorage.setItem("objetos", objetosJSON); //En localStorage
+//  let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
+//  localStorage.setItem("objetos", objetosJSON); //En localStorage
 
 
 let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local

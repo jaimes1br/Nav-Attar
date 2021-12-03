@@ -1,3 +1,36 @@
+/* Carrito Pedidos */
+
+#pedidosCarDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.carritoCompras_tituloPedidos h1{
+    display: inline;
+    font-size: 5em;
+    font-weight: 500;
+    margin-top: 1em;
+}
+
+.elementoPedido{
+    display: flex;
+    flex-direction: row;
+    border-radius: 3%;
+}
+
+.elementoPedido img{
+    width: 15em;
+    height: 15em;
+    margin: 2em;
+}
+
+.elementoTexPedido h3{
+    margin-top: 1em;
+    font-size: 2em;
+}
 
 /* Carrito titulo  */
 .carritoCompras{
@@ -5,7 +38,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 
@@ -53,7 +86,7 @@
 /*div donde colocamos la tabla*/
 .elementoCarritoCompras{
     display: block;
-    margin: 3em;
+    margin-left: 3em;
 }
 
 
@@ -140,7 +173,7 @@ td.imagenCarrito img{
 
 .cardTotalCarrito{
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
 }
 
 .totalCarrito{
@@ -154,6 +187,12 @@ td.imagenCarrito img{
     font-weight: 500;
 }
 
+#totalCarrito{
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
 .renglonCarrito{
     display: flex;
     flex-direction: row;
@@ -163,6 +202,8 @@ td.imagenCarrito img{
 }
 
 .btnFinalizar {
+    display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
 
@@ -171,6 +212,35 @@ td.imagenCarrito img{
  ||  modeloResponsivo        
   -----------------------------------------------------------------*/
 
+/* ipad md */
+@media only screen and (max-width: 769px) { 
+    
+    .elementoCarritoCompras{
+        margin: 0;
+        margin-left: 0em;
+    }
+    
+    .elementoCarritoCompras{
+        margin: 0em;
+    }
+    
+    .carritoCompras_titulo h1{
+        margin-left: 1em;
+    }
+
+    td.imagenCarrito img{
+        margin-left: 0em;
+    }
+    
+    
+    table#tablaCarritoCompras th,
+    table#tablaCarritoCompras td {
+    margin: 0em;
+    
+    }
+
+  
+}
 
 /* motoG4 sm */
 @media only screen and (max-width: 480px) { 
@@ -181,5 +251,9 @@ td.imagenCarrito img{
 
     .sepCarritoCompras{
         width: 100%;
+    }
+
+    .divTotal{
+        margin-left: -10em;
     }
 }

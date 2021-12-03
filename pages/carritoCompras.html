@@ -22,6 +22,9 @@
   <header id="myHeadpage"></header> 
 
 
+<div class="container noAnimacion" id='pedidosCarDiv'>
+</div>
+
  <div class="container noAnimacion carritoCompras">
     <div class="row carritoCompras_titulo">
         <h1>Carrito</h1>
@@ -37,7 +40,7 @@
 
        
 
-        <div class="elementoCarritoCompras ">
+        <div class="elementoCarritoCompras " id='divContenidoCarrito'>
             <table id = 'tablaCarritoCompras'>
                 <thead>
                     <tr>
@@ -60,20 +63,15 @@
 
 
 <div class="container  noAnimacion" id="divTotal">
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end" id= 'divCenterTotal'>
         <div class="card totalCarrito">
-            <div class="card-header">
-                Total del carrito
+            <div class="card-header ">
+                Total del carrito: <h4 id="totalCarrito">$ 0.00 MXN</h4>
             </div><!--titulo-->
             <ul class="list-group list-group-flush">
-                <li class="list-group-item renglonCarrito">
-                    <h5>Total</h5>
-                    <h4 id="totalCarrito">$ 0.00 MXN</h4>
-                </li>
                 <li class="list-group-item btnFinalizar">
-                    <button class = "btn elementosCardProducto_btn " id="btnComprar"> Finalizar compra</button>
+                    <button class = "btn elementosCardProducto_btn " data-toggle="modal" data-target="#alertFinalizar" id="btnComprar"> Finalizar compra</button>
                 </li>
-                
             </ul><!--elementos-->
         </div><!--card-->
     </div><!--rowHaciaDerecha-->
@@ -81,7 +79,23 @@
 
   <footer id="footerModPag"></footer>
 
-  
+
+  <div class="modal fade" id="alertFinalizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 10px;" >
+        <div class="modal-header" style="border-radius: 10px 10px 0px 0px;" >
+          <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          <button type="button" class="close equisContacNav " data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" >&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="alerta">
+          
+        </div>   
+      </div>
+    </div>
+</div>
+
 
 
 
