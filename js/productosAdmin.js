@@ -12,10 +12,10 @@
       <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
     </div><!--pIndividual-->
         <div class="cardInfo">
-          <h5 class="card-title">Nombre: ${item.nombre}</h5>
-          <h5 class="card-title">Medida: ${item.medida}cm</h5>
-          <h5 class="card-title">Categoría: ${item.categoria}</h5>
-          <h5 class="card-title">Precio: $${item.precio}</h5>
+          <h5 class="card-title"> ${item.nombre}</h5>
+          <h5 class="card-title"> ${item.medida}cm</h5>
+          <h5 class="card-title"> ${item.categoria}</h5>
+          <h5 class="card-title"> $${item.precio}.00 mxn</h5>
         </div><!--cardInfo-->
         <div class="ap">
           <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
