@@ -1,9 +1,8 @@
 package com.navattar.cliente_producto.services;
 
 import com.navattar.cliente_producto.models.productos;
-import com.navattar.cliente_producto.productoRepository;
+import com.navattar.cliente_producto.interfaces.productoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -53,10 +52,10 @@ public class ProductoServices {
             if ((!nombre.isEmpty()) && !nombre.equals(producto.getNombre())) {
                 producto.setNombre(nombre);
         }//nombre
-        if ((precio > 0) && (precio != producto.getPrecio())){
+        if ((precio > 0) && (!precio.equals(producto.getPrecio()))){
             producto.setPrecio(precio);
         }//precio
-        if ((medida != null) && (medida != producto.getMedida())){
+        if ((medida != null) && (!medida.equals(producto.getMedida()))){
             producto.setMedida(medida);
         }//medida
         if ((descripcion != null) && (!descripcion.equals(producto.getDescripcion()))) {
@@ -65,10 +64,10 @@ public class ProductoServices {
         if ((imagen !=null) && (!imagen.equals(producto.getImagen()))){
             producto.setImagen(imagen);
         }//imagen
-        if ((existencia > 0) && (existencia != producto.getExistencia())){
+        if ((existencia > 0) && (!existencia.equals(producto.getExistencia()))){
             producto.setExistencia(existencia);
         }//existencia
-        if ((Categoria_IDcategoria > 0) && (Categoria_IDcategoria != producto.getCategoria_IDcategoria())){
+        if ((Categoria_IDcategoria > 0) && (!Categoria_IDcategoria.equals(producto.getCategoria_IDcategoria()))){
             producto.setCategoria_IDcategoria(Categoria_IDcategoria);
         }//Categoria_IDcategoria
 

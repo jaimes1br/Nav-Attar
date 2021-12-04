@@ -1,4 +1,4 @@
-package com.navattar.cliente_producto;
+package com.navattar.cliente_producto.interfaces;
 
 import com.navattar.cliente_producto.models.productos;
 import org.springframework.data.jpa.repository.JpaRepository;

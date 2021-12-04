@@ -39,7 +39,7 @@ public class clienteController {
         _clienteServices.addCliente(_cliente);
     }//addCliente
 
-    @PostMapping (path = "{IDusuario}")
+    @PutMapping (path = "{IDusuario}")
     public void updateCliente(@PathVariable("IDusuario") Long IDusuario,
                               @RequestParam(required = false) String nombre,
                               @RequestParam(required = false) String apellido,
