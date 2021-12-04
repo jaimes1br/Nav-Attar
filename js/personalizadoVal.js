@@ -26,17 +26,17 @@ function formValidation(e){
     let regexpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
-        alerta += `<h3>¡Nombre no valido!</h3> <br>`;
+        alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
     }//validaciónNombre
     
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
-        alerta += `<h3>¡Número no valido! </h3><br>`;
+        alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
     }//validaciónTeléfono
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
-        alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
+        alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
     }//validaciónCorreoElectrónico
 
@@ -88,6 +88,7 @@ function formValidation(e){
                 imagen.src = result.info.secure_url;
                 url = result.info.secure_url;
                 erroneo = true;
+                imagen.style.display = 'block';
             }})
 
         document.getElementById("upload_widget").addEventListener("click", function(){
@@ -100,6 +101,12 @@ function formValidation(e){
                                   </div>`;
                                   
         }else if(erroneo){
+            let usuario = obtener();
+            
+            if (usuario.length != 0){
+                pedidoUsuario(usuario,artesano,url);
+            }
+
             enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url)
             
         }
@@ -123,6 +130,7 @@ function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
     artesano.value = '';
     mensaje.value = ''; 
     imagen.src = "http://127.0.0.1:5500/pages/perzonalizado.html"
+    imagen.style.display = 'none';
     
     document.getElementById('upload_widget').disabled = true;
     nombre.disabled = false;
@@ -149,3 +157,24 @@ window.onload = function(){
     
 }
 
+
+function obtener(){
+    let objetosJSON = localStorage.getItem("usuarioSesion");
+    let usuario = JSON.parse(objetosJSON);
+    
+    return usuario;
+}
+
+function pedidoUsuario(usuarioSesion,artesano,url){
+    let pedido = {
+        'artesano' : artesano.value,
+        'imagen' : url
+    }
+
+    console.log(usuarioSesion.pedidos);
+    console.log(pedido);
+    
+    usuarioSesion.pedidos.push(pedido);
+    let usuarioJSON = JSON.stringify(usuarioSesion); //produtos a JSON
+    localStorage.setItem("usuarioSesion", usuarioJSON);
+}

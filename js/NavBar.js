@@ -11,7 +11,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
     <ul class="">
       
       <li class="nav-item navBar-item">
-          <a href="" aling="right"><img src="./img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador">100</span></a>
+          <a href="./../pages/carritoCompras.html" aling="right"><img src="./img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador" id='contadorCanasta'>0</span></a>
       </li><!--artesanos-->
 
     </ul><!--listaNAvUsuario-->
@@ -38,7 +38,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
       </li> <!--nosotros-->
 
       <li class="nav-item mr-5">
-        <a class="nav-link" href="./pages/artesanosCard.html">Artesanos</a>
+        <a class="nav-link" href="./pages/artesanosCard.html">Nuestros<br>Artesanos</a>
       </li><!--artesanos-->
 
       <li class="nav-item dropdown mr-5">
@@ -54,7 +54,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
         <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Personalizados">Personalizados</a>
         <a class="dropdown-item navAttar_listDes" href="./../pages/catalogo.html?cat=Superheroes">Superhéroes</a>
       </div>
-      </li> <!--catalogo-->
+      </li> <!--catálogo-->
 
       
       <li class="nav-item dropdown mr-4" id="sesIni">
@@ -65,11 +65,29 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
         </div>
-      </li> <!--Iniciar Sesion-->
+      </li> <!--Iniciar Sesión-->
 
     </ul><!--listaNAv-->
     </div><!--divHamburguesa--> 
 </nav><!--navBar-->
 </div><!--navBarContaier-->`;
 
+let usuarioSesion = obtener();
+let iniciarSes= document.getElementById("sesIni");
 
+console.log (usuarioSesion);
+//let usuarioSesion = [];
+
+if (usuarioSesion.length != 0){
+    iniciarSes.innerHTML=`
+    <a class="nav-link" href="#">
+        Cerrar sesión
+    </a>` 
+}
+
+function obtener(){
+  let objetoJSON = localStorage.getItem("usuarioSesion");
+  let usuarios = JSON.parse(objetoJSON);
+
+  return usuarios;
+}

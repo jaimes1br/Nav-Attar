@@ -20,8 +20,9 @@
 <body>
     
     <header id="myHeadpage"></header> 
-
-
+  
+    
+    
     <div class="container noAnimacion">
       <div class="row procesoPersonalizado">
         <div class="col">
@@ -35,7 +36,9 @@
 
    
     <div class="container sinAnimacion formulario"> 
-        
+      <video class="video" autoplay controls> 
+        <source src="./../videos/Nav-Attar.mp4" type="video/mp4">
+       </video>
         <div class="formularioTexto formularioTextoPersonalizado">
             <div class="divLogo text-center">
                 <img src="./../img/logos/gatoLogo.png" alt="..." >
@@ -104,7 +107,7 @@
                       <button id="upload_widget" class="btn btn-lg" disabled>Subir foto</button>
                     </div>
                     <div class="col">
-                      <img class="imgPersonaizado sepPersonalizado" src="" alt="No se seleccionó imagen" id="product_img">
+                      <img class="imgPersonaizado sepPersonalizado" src="" alt="No se seleccionó imagen" id="product_img" style="display:none;">
                     </div>
                   </div>
                 </div>
@@ -144,6 +147,7 @@
     
     <script src="./../js/navPag.js"></script>
     <script src="./../js/footerPag.js"></script>
+    <script src="./../js/carritoCanasta.js"></script>
     <script src="./../js/personalizadoVal.js"></script>
     <script src="./../js/loginCerrarSesion.js"></script>
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script> <!--cloud-->

@@ -3,6 +3,9 @@ let form = document.getElementById('form');
 let correo = document.getElementById("correo");
 let pass = document.getElementById('pass');
 let alertaLogin = document.getElementById('alertaLogin');
+let usuarioSesion = [];
+// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
+// localStorage.setItem("usuarioSesion", usuarioSesionJSON);
 
 let usuarioSesion = [];
 let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
@@ -32,7 +35,7 @@ form.addEventListener('submit', e => {
     
     if(!valido){
         
-        /**Consolta del arreglo y checamos elemento por elemento si conicide*/
+        /**Consulta el arreglo y checa elemento por elemento para ver si conicide*/
         let usuarios = obtener();
         
         usuarios.forEach(usuario => {
@@ -43,7 +46,7 @@ form.addEventListener('submit', e => {
                     </div>`;
                 erroneo = false;
 
-                // Poner usuaario en el local
+                // Poner el usuario en el local
                 iniciarSesion(usuario);
                 window.setTimeout(() => {window.location.href = './../index.html';}, 2000);  
                 
