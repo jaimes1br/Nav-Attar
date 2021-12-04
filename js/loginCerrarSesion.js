@@ -20,16 +20,16 @@ if (usuarioSesion.length != 0){
     });
 
 }
-else {
-    iniciarSes.innerHTML=`
-    <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-        Iniciar sesión
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
-        <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
-    </div>`
-}
+// else {
+//     iniciarSes.innerHTML=`
+//     <a class="nav-link dropdown-toggle" href="./../pages/catalogo.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+//         Iniciar sesión
+//     </a>
+//     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+//         <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
+//         <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
+//     </div>`
+// } //Este else sobra
 
 function obtener(){
     let objetoJSON = localStorage.getItem("usuarioSesion");
