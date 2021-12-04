@@ -13,22 +13,33 @@ body{
     justify-content:center;
     align-items:center;
     flex-direction: column;
-
+    padding-top: 20px;
 }
+
+
 
 
 .vistaproducto{
-    padding-left: 50px;
-    background-color:#e1d0ff;
-    border-color:#e1d0ff;
-    width: 650px;
+    
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+    border-color:var(--colorMoradoNav);
+    width: 140vh;
+    height: 68vh;
+   
 }
 .vistaproductoimg img{
 
-    border-radius: 60%; 
-    width: 220px;
-    height: 250px;
-    margin: 10px;
+    width: 350px;
+    height: 400px;
+}
+
+.vistaproductoimg{
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
 .cardvistaproducto{
@@ -36,20 +47,42 @@ body{
     justify-content: center;
     align-items:flex-start;
     flex-direction: column;
-    padding-left: 80px;
-    padding-top: 20px;
-    margin-top: 10px;
+    /* background-color: yellow; */
 }
 
 .cardvistaproducto h4{
 
-    font-size: 30px;
+    font-size: 50px;
+    font-family: MiFuentePersonal;
 }
 
 #preciovistaProducto{
 
-    font-size: 20px;
+    font-size: 35px;
 }
+
+#descvistaproducto{
+
+    font-size: 15px;
+}
+
+#infovistaproducto{
+
+    font-size: 11px;
+}
+
+
+
+.botonvistaproducto{
+    background-color: #aba8c5;
+}
+
+.botonvistaproducto a{
+
+    font-size: 40px;
+}
+
+
 
 .btn-vistaproducto{
     
