@@ -16,7 +16,7 @@ public class serviciosUsuarios {
         lista.add(new usuarios(2, "Ilan Del Carmen", "illan@mailfalso.com", "5544332211", "My_illan", 8));
         lista.add(new usuarios(3, "Pat Ella", "pat.ella@gmail.com","1122334455", "pat.to.happiness", 9));
         lista.add(new usuarios(4, "Daniel Gomez", "danny.phantom@gmail.com","5599668844","danny_PHA", 10));
-        lista.add(new usuarios(5, "Mario oreno","cantinfleando@hotmail.com","1111155555","Cantinflas", 2));
+        lista.add(new usuarios(5, "Mario Moreno","cantinfleando@hotmail.com","1111155555","Cantinflas", 2));
     }
 
     public List<usuarios> getUsuariosT(){

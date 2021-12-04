@@ -24,7 +24,7 @@ public class productos {
     }//constructor
 
     public productos(){
-    }
+    }//Constructor vacio
 
     public int getIdProducto() {
         return idProducto;

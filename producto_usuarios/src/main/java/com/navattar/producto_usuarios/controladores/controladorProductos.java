@@ -18,6 +18,7 @@ public class controladorProductos {
         this._serviciosProductos = _serviciosProductos;
     }//constructor
 
+
     @GetMapping
     public List<productos> getProductosT (){
         return _serviciosProductos.getProductosT();
@@ -36,14 +37,13 @@ public class controladorProductos {
     @PutMapping(path = "{idProducto}")
     public void updateProducto  (@PathVariable("idProducto") Long idProducto,
                                 @RequestParam(required = false) String nombreProducto,
-                                @RequestParam(required = false) String nuevoNombre,
                                 @RequestParam(required = false) float nuevoPrecio,
                                 @RequestParam(required = false) int nuevaMedida,
                                 @RequestParam(required = false) String nuevaDescripcion,
                                 @RequestParam(required = false) String nuevaImagen,
                                 @RequestParam(required = false) int existenciaActual,
                                 @RequestParam(required = false) int actCategoria_IDcategoria){
-        _serviciosProductos.updateProducto(idProducto, nombreProducto,nuevoNombre, nuevoPrecio, nuevaMedida, nuevaDescripcion, nuevaImagen, existenciaActual, actCategoria_IDcategoria);
+        _serviciosProductos.updateProducto(idProducto, nombreProducto, nuevoPrecio, nuevaMedida, nuevaDescripcion, nuevaImagen, existenciaActual, actCategoria_IDcategoria);
     }//updateProducto
 
     @PostMapping
