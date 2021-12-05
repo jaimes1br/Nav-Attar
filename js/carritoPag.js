@@ -1,6 +1,10 @@
+import { obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD, actualizarCanasta} from './carritoCanasta.js';
+
+
+
 function mostrarPedidos(usuario){
 
-    console.log(usuario.pedidos);
+ 
 
     if(usuario.pedidos.length != 0){
         let divPedidos = document.getElementById('pedidosCarDiv');
@@ -55,8 +59,7 @@ function contador(accion, cantidadObj,precioObj,subTotalObj){
 function cuentaTotal(){
 
     let total = document.getElementById('totalCarrito');
-    // let totalNum =  parseFloat(total.innerHTML.split(" ")[1]);
-
+    
     const productos = document.querySelectorAll('.subTotal');
 
     let totalSubCuenta = 0;
@@ -74,27 +77,32 @@ function cuentaTotal(){
 function actualizarBotonesEliminar(){
     
     let btnsCarritoEliminar = document.querySelectorAll('.btnCarritoEliminar')
-    let usuarioJSON = localStorage.getItem("usuarioSesion");
-    let usuario = JSON.parse(usuarioJSON);
-
+    let usuario = obtenerUsuarioSesion();
+    let miCarrito = obtenerMiCarrito(usuario.id);
+    let indice = '';
 
     btnsCarritoEliminar.forEach( function(button){
     button.addEventListener('click',function(e){
         const target = e.currentTarget
 
-        usuario.carrito.splice(usuario.carrito.indexOf(parseInt(target.value)),1);
-        
-        let usuarioJSON = JSON.stringify(usuario); //produtos a JSON
-        localStorage.setItem("usuarioSesion", usuarioJSON);
-        
-        target.parentNode.parentNode.remove();
-        if (usuario.carrito.length == 0){
-            desplegar();
-            canasta(0);
-        }else{
-            canasta(usuario.carrito.length);
-            cuentaTotal();
+        for (let i = 0; i < miCarrito.productos.length; i++) {
+            const element = miCarrito.productos[i];
+            
+            if(element.id == target.value){
+                indice = i;
+                break;
+            }
         }
+        
+       
+        miCarrito.productos.splice(indice,1);
+       
+        actualizarCarroBD(miCarrito,usuario.id);
+        
+        actualizarCanasta();
+        desplegar();
+        
+
     });
 }); 
 }
@@ -102,9 +110,7 @@ function actualizarBotonesEliminar(){
 
 function desplegar(){
 
-    let usuarioJSON = localStorage.getItem("usuarioSesion");
-    let usuario = JSON.parse(usuarioJSON);
-   
+    let usuario = obtenerUsuarioSesion();   
 
     if (usuario.length == 0){
         let divAnuncio = document.getElementById('contenidoCarritoCompras');
@@ -120,10 +126,9 @@ function desplegar(){
     
     }else{
         
-        mostrarPedidos(usuario);
-        canasta(usuario.carrito.length);
+        let miCarrito = obtenerMiCarrito(usuario.id);
 
-        if(usuario.carrito == 0){ 
+        if(miCarrito.productos == 0){ 
             let divAnuncio = document.getElementById('contenidoCarritoCompras');
             divAnuncio.innerHTML = `
             
@@ -135,27 +140,29 @@ function desplegar(){
             let divTotal = document.getElementById('divTotal');
             divTotal.innerHTML = '';
         } //sin elementos en el carrito
+        
         else{
-          
-            let divProductos = document.getElementById("listaCarritoProd");
-            
-            let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
-            let productos = JSON.parse(productosJSON);
 
+
+            let divProductos = document.getElementById("listaCarritoProd"); // <-- div para listar mis productos
+            
             divProductos.innerHTML = '';
 
-            productos.forEach( producto => {
-                if ( usuario.carrito.indexOf(producto.id) != -1 ){
-                    divProductos.innerHTML += `
+
+            miCarrito.productos.forEach(producto => {
+     
+                let tempProduc = obtenerProducto(producto.id)
+
+                divProductos.innerHTML += `
                     <tr class="sepCarritoComprasTr productoCarrito">
                         <td class = "imagenCarrito">  
-                            <img src="${producto.imagen}" alt="">
+                            <img src="${tempProduc.imagen}" alt="">
                         </td><!--imagenProducto-->
                         <td class = "nombre"> 
-                            ${producto.nombre}
+                            ${tempProduc.nombre}
                         </td><!--nombreProducto-->
                         <td class = "precio precioCarrito">
-                           $ ${producto.precio} MXN 
+                           $ ${tempProduc.precio} MXN 
                         </td><!--precioProducto-->
                         <td class= "cantidad">
                             <button class= 'cantidadBtn' value="menos">-</button>
@@ -163,32 +170,34 @@ function desplegar(){
                             <button class= 'cantidadBtn' value="mas">+</button>
                         </td><!--cantidodaPrdocuto-->
                         <td class="subTotal">
-                            $ ${producto.precio} MXN
+                            $ ${tempProduc.precio} MXN
                         </td>
                         <td class="carritoEliminar">
-                            <button type="button" class="btn btnCarritoEliminar" value = '${producto.id}'><img src="./../img/iconos/trashWhite.svg" alt=""></button>
+                            <button type="button" class="btn btnCarritoEliminar" value = ${tempProduc.id}><img src="./../img/iconos/trashWhite.svg" alt=""></button>
                         </td>
                     </tr>
                     `;
-                }}); //forEach
 
+            })
                 
-        cuentaTotal();
-        actualizarBotonesEliminar();   
+            cuentaTotal();
+            actualizarBotonesEliminar();   
         }//elementos en carrito
         
     }//else Hay usuario en sesion
     
     let finalizarBtn = document.getElementById('btnComprar');
     finalizarBtn.addEventListener('click',function(e){
-        let alertaDiv = document.getElementById('alerta');
+        console.log('apretado')
+        let miCarrito = obtenerMiCarrito(usuario.id);
+        let alertaDiv = document.getElementById('alertaFin');
         alertaDiv.innerHTML = `
         <div class="alert alert-success" role="alert">
             <h3>¡Felicidades acabas de realizar tu compra!</h3> <br>
         </div>`;
 
-        usuario.carrito = [];
-        localStorage.setItem("usuarioSesion", JSON.stringify(usuario));
+        miCarrito.productos = []
+        actualizarCarroBD(miCarrito,usuario.id);
 
         window.setTimeout(() => {window.location.reload();}, 2000);
         
@@ -206,77 +215,7 @@ function desplegar(){
 
 
 
-function desplegarPequeño(){
-
-    let divTarjetas = document.getElementById('divContenidoCarrito');
-    divTarjetas.innerHTML = '';
-    let divTotal = document.getElementById('divCenterTotal');
-    divTotal.classList = [];
-
-    let usuarioJSON = localStorage.getItem("usuarioSesion");
-    let usuario = JSON.parse(usuarioJSON);
-   
-    if (usuario.length == 0){
-    
-        let divAnuncio = document.getElementById('contenidoCarritoCompras');
-        divAnuncio.innerHTML = `
-        
-        <div class="vacioCarritoCompras">
-            <h2>Tu carrito está vacío    <img src="./../img/iconos/triste.png"  class='tristeCarrito' alt="triste"></h2>
-            <a href="./../pages/catalogo.html?cat=Todos" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catálogo</a>
-        </div>`;
-    
-        let divTotal = document.getElementById('divTotal');
-        divTotal.innerHTML = '';
-    
-    }if(usuario.carrito == 0){ 
-        let divAnuncio = document.getElementById('contenidoCarritoCompras');
-        divAnuncio.innerHTML = `
-        
-        <div class="vacioCarritoCompras">
-            <h2>Tu carrito está vacío. <img src="./../img/iconos/triste.png"  class='tristeCarrito' alt="triste"></h2>
-            <a href="./../pages/catalogo.html?cat=Todos" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catálogo</a>
-        </div>`;
-    
-        let divTotal = document.getElementById('divTotal');
-        divTotal.innerHTML = '';
-    }
-
-}
 
 
+desplegar();
 
-
-
-function desplegarCarrito(){
-    let pantallaw = screen.width;
-    
-    if (pantallaw < 481){
-        console.log('motgo')
-        desplegarPequeño();
-    }else {
-        desplegar();     
-    }
-}//elementoCategoria
-
-
-
-desplegarCarrito();
-
-
-/*-----------------------------------------------------------------
- ||  redimension de panalla   
- -----------------------------------------------------------------*/
-
- window.addEventListener("resize", function(e){
-    desplegarCarrito();
-});
-
-
-
-function obtener(){
-    let usuarioJSON = localStorage.getItem("usuarioSesion");
-    let usuario = JSON.parse(usuarioJSON);
-
-    return usuario;
-}

@@ -6,7 +6,7 @@ let alertaLogin = document.getElementById('alertaLogin');
 
 let usuarioSesion = [];
 let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
-localStorage.setItem("usuarioSesion", usuarioSesionJSON);
+localStorage.setItem("usuarioEnSesion", usuarioSesionJSON);
 
 
 form.addEventListener('submit', e => {
@@ -88,6 +88,6 @@ function encriptar(palabra){
 function iniciarSesion(usuario){
 
     let usuarioJSON = JSON.stringify(usuario); //produtos a JSON
-    localStorage.setItem("usuarioSesion", usuarioJSON);
+    localStorage.setItem("usuarioEnSesion", usuarioJSON);
     return
 }//siLosDatosSonValidosColocamosEnLocal

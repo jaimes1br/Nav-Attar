@@ -1,4 +1,9 @@
 
+
+import { botonesCarrito } from './carritoCanasta.js';
+import { checarSesion } from './loginCerrarSesion.js';
+
+
 /*-----------------------------------------------------------------
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
@@ -47,6 +52,7 @@ function filtrado(productos,filtro){
         productos.forEach(objeto => {
             addItem(objeto);
         });
+        botonesCarrito();
     }
     else{
         itemsContainer.innerHTML = '';
@@ -55,6 +61,8 @@ function filtrado(productos,filtro){
                 addItem(objeto);
             }//if
         });//forEach
+        
+        botonesCarrito();
     }
 
 }//filtrado
@@ -82,7 +90,8 @@ function cuadro(){
         </ul>
     </div><!---->`;
     
-    
+    checarSesion();
+        
     const menu = document.querySelectorAll('.categoria');
     
     menu.forEach(function(categoria){
