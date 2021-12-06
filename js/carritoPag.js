@@ -1,38 +1,43 @@
 import { obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD, actualizarCanasta} from './carritoCanasta.js';
 
+import { obtenerMisPedidos } from './personalizadoVal.js'
+
 
 
 function mostrarPedidos(usuario){
 
- 
+    let misPedidos = obtenerMisPedidos(usuario.id)
 
-    if(usuario.pedidos.length != 0){
-        let divPedidos = document.getElementById('pedidosCarDiv');
-        divPedidos.innerHTML = `
-        <div class="row carritoCompras_tituloPedidos">
-            <h1>Pedidos</h1>
-        </div>
-        <hr class="sepCarritoCompras">
-        <div id = "pedidosLista">
-        </div>`;
-
-        let listaPedidos = document.getElementById('pedidosLista');
-        listaPedidos.innerHTML = '';
-        usuario.pedidos.forEach(pedido =>{
-            listaPedidos.innerHTML += `
-            <div class="card elementoPedido" style="width: 80rem;">
-                <img src="${pedido.imagen}" class="card-img-top" alt="...">
-                <div class="card-body elementoTexPedido">
-                    <h3> Artesan@ que realiza tu pedido: ${pedido.artesano}  </h3>
-                    <h3> Estado: Pendiete </h3>
-                </div>
+    if (Object.keys(misPedidos).length !== 0){
+        if(misPedidos.pedidos.length != 0){
+            let divPedidos = document.getElementById('pedidosCarDiv');
+            divPedidos.innerHTML = `
+            <div class="row carritoCompras_tituloPedidos">
+                <h1>Pedidos</h1>
+            </div>
+            <hr class="sepCarritoCompras">
+            <div id = "pedidosLista">
             </div>`;
-        })
-
-        
-
-
+    
+            let listaPedidos = document.getElementById('pedidosLista');
+            listaPedidos.innerHTML = '';
+            misPedidos.pedidos.forEach(pedido =>{
+                listaPedidos.innerHTML += `
+                <div class="card elementoPedido" style="width: 80rem;">
+                    <img src="${pedido.url}" class="card-img-top" alt="...">
+                    <div class="card-body elementoTexPedido">
+                        <h3> Artesan@ que realiza tu pedido: ${pedido.artesano}  </h3>
+                        <h3> Estado: Pendiete </h3>
+                    </div>
+                </div>`;
+            })
+        }
     }
+    else{
+        console.log('vacio')
+    }
+
+    
 
 }
 
@@ -126,6 +131,9 @@ function desplegar(){
     
     }else{
         
+        
+        mostrarPedidos(usuario)
+
         let miCarrito = obtenerMiCarrito(usuario.id);
 
         if(miCarrito.productos == 0){ 
@@ -143,6 +151,7 @@ function desplegar(){
         
         else{
 
+           
 
             let divProductos = document.getElementById("listaCarritoProd"); // <-- div para listar mis productos
             
@@ -188,7 +197,6 @@ function desplegar(){
     
     let finalizarBtn = document.getElementById('btnComprar');
     finalizarBtn.addEventListener('click',function(e){
-        console.log('apretado')
         let miCarrito = obtenerMiCarrito(usuario.id);
         let alertaDiv = document.getElementById('alertaFin');
         alertaDiv.innerHTML = `
@@ -212,8 +220,6 @@ function desplegar(){
     })  
 
 }
-
-
 
 
 

@@ -77,13 +77,11 @@ function guardarRegistro(){
     
 
     let usuario = {
-        'id' : 10,
+        'id' : 5,
         'nombre': nombre.value,
         'telefono': telefono.value,
         'correo': correo.value,
         'contrasena': encriptar(pass.value),
-        'carrito': [],
-        'pedidos': []
     };
     
     let usuarios = obtener();
