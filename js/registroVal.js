@@ -77,7 +77,7 @@ function guardarRegistro(){
     
 
     let usuario = {
-        'id' : 5,
+        'id' : 100,
         'nombre': nombre.value,
         'telefono': telefono.value,
         'correo': correo.value,
