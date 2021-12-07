@@ -28,7 +28,7 @@ function addItem(item){
           </div>
 
           <div class="btn_comprar">
-            <a href="./vistaProducto.html?id=${item.id}" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Comprar ! </a>
+            <a href="./vistaProducto.html?id=${item.id}" class="btn elementosCardProducto_btn" id="btnComprar"> ¡ Detalles ! </a>
             <button type="button" class="btn anadirACarrito" value = '${item.id}' data-toggle="modal" data-target="#aleLogin"><img src="./../img/iconos/anadir.png" alt=""></button>
           </div>
 
@@ -232,7 +232,7 @@ function elementoCategoria(){
         'descripcion':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id': 9,
-        'nombre':'Arnols y Helga',
+        'nombre':'Arnold y Helga',
         'imagen':'../img/muñequitos/heyh.jpg',
         'medida':'25',
         'categoria':'Caricaturas',
