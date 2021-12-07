@@ -47,7 +47,7 @@ representar un gran apoyo. </p>
 
 <p> Hecho con amor 💜 de Generation por: </p>
 
-<img src="./img/logos/gatoBN.JPG"  width="30%" alt="Logo of the project" align="right">
+<img src="./img/logos/gatoBN.jpg"  width="30%" alt="Logo of the project" align="right">
 
 - [Alejandro](https://github.com/Alex-Grym)
 
