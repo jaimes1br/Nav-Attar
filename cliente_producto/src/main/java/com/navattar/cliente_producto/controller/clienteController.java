@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("*")
 public class clienteController {
 
     private final clienteServices _clienteServices;
@@ -42,10 +43,9 @@ public class clienteController {
     @PutMapping (path = "{IDusuario}")
     public void updateCliente(@PathVariable("IDusuario") Long IDusuario,
                               @RequestParam(required = false) String nombre,
-                              @RequestParam(required = false) String apellido,
                               @RequestParam(required = true) String contrasena,
                               @RequestParam(required = false) String nuevaContrasena,
                               @RequestParam(required = false) String telefono){
-        _clienteServices.updateCliente(IDusuario, nombre, apellido, contrasena, nuevaContrasena, telefono);
+        _clienteServices.updateCliente(IDusuario, nombre, contrasena, nuevaContrasena, telefono);
     }//updateProducto
 }//clienteController

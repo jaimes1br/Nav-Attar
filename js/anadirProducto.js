@@ -66,29 +66,61 @@ function SubirNuevo(){
     
   }
   if(!validar){
-    alertas.innerHTML += `
+           
+        
+    let nuevoProducto = {
+     
+
+      "nombre": nombre.value,
+      "precio": parseFloat(precio.value),
+      "medida":  parseInt(medida.value) ,
+      "descripcion": descripcion.value,
+      "imagen": imagen.value,
+      "categoria": categoria.value,
+      
+    };
+    
+    let token = sessionStorage.getItem('sessionToken')
+    token = "Bearer " + token
+    console.log(token)
+
+  if(token != undefined){
+    console.log('Lo enviaremos')
+
+
+    let endPoint = 'http://127.0.0.1:8085/api/productos';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'authorization': token
+        },
+        body: JSON.stringify(nuevoProducto)
+        
+    }).then(function(e){
+      console.log()
+      if(e.status == 200){
+        alertas.innerHTML += `
         <div class="alert alert-success" role="alert">
             <h3> ¡Formulario Correcto! </h3>
         </div>`;
-        
-    
-    datos = obtener();
-    
-    let nuevoProducto = {
-     
-      'id': (datos.length + 1),
-      'nombre': nombre.value,
-      'imagen': imagen.value,
-      'medida': medida.value,
-      'categoria': categoria.value,
-      'precio':precio.value + '.00',
-      'descripcion': descripcion.value
-      
-    };
+      }else if(e.status == 500){
+        alertas.innerHTML += `
+        <div class="alert alert-danger" role="alert">
+            <h3> ¡El nombre ya exite, prueba con otro! </h3>
+        </div>`;
+      }
 
-    guardar(datos,nuevoProducto);
-        
-        
+    })
+    .catch(function(error){
+      console.log(error)
+    })
+
+  }else{
+    console.log('no mano')
+  }
+
     nombre.value = "";
     medida.value = "";
     categoria.value = "";
@@ -96,24 +128,31 @@ function SubirNuevo(){
     imagen.value = "";
     descripcion.value = "";
         
-    location.reload();
+    // location.reload();
   }
 }
 
-
-function obtener(){
-    
-  let objetosJSON = localStorage.getItem("objetos");      
-  let productos = JSON.parse(objetosJSON);
- 
-  return productos;
-
-}
-
-function guardar(productos,nuevoProducto){
-
-  productos.push(nuevoProducto);
+function eliminar(){
+  let idElminiar = 20;
   
-  let productosJSON = JSON.stringify(productos); //produtos a JSON
-  localStorage.setItem("objetos", productosJSON);
+  let token = sessionStorage.getItem('sessionToken')
+  token = "Bearer " + token
+
+  let endPoint = `http://127.0.0.1:8085/api/productos/${idElminiar}`;
+    fetch(endPoint, {
+	    method: 'delete', 
+      headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'authorization': token
+      }      
+    }).then(function(e){
+      console.log(e)
+    })
+    .catch(function(error){
+      console.log(error)
+    })
 }
+
+
+// eliminar()

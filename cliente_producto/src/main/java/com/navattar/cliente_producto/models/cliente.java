@@ -1,6 +1,8 @@
 package com.navattar.cliente_producto.models;
 
 
+import com.navattar.cliente_producto.util.SHAUtil;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,24 +11,23 @@ public class cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "IDusuario", unique = true, nullable = false)
     private Long IDusuario;
-
-
+    @Column(name = "nombre",nullable = false)
     private String nombre;
-    private String apellido;
+    @Column(name = "correo_electronico",nullable = false)
     private String correo_electronico;
+    @Column(name = "contrasena",nullable = false)
     private String contrasena;
-    private Long Ubicacion_IDubicacion;
+    @Column(name = "telefono",nullable = false)
     private String telefono;
 
-    public cliente(Long IDusuario, String nombre, String apellido, String correo_electronico, String contrasena, Long ubicacion_IDubicacion, String telefono) {
+    public cliente(Long IDusuario, String nombre, String correo_electronico, String contrasena,String telefono) {
         this.IDusuario = IDusuario;
         this.nombre = nombre;
-        this.apellido = apellido;
         this.correo_electronico = correo_electronico;
-        this.contrasena = contrasena;
-        Ubicacion_IDubicacion = ubicacion_IDubicacion;
+        this.setContrasena(contrasena);
         this.telefono = telefono;
     }//Constructor
 
@@ -49,14 +50,6 @@ public class cliente {
         this.nombre = nombre;
     }//setNombre
 
-    public String getApellido() {
-        return apellido;
-    }//getApellido
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }//setApellido
-
     public String getCorreo_electronico() {
         return correo_electronico;
     }//getCorreo_electronico
@@ -70,16 +63,8 @@ public class cliente {
     }//getContrasena
 
     public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+        this.contrasena = SHAUtil.createHash(contrasena);
     }//setContrasena
-
-    public Long getUbicacion_IDubicacion() {
-        return Ubicacion_IDubicacion;
-    }//getUbicacion_IDubicacion
-
-    public void setUbicacion_IDubicacion(Long ubicacion_IDubicacion) {
-        Ubicacion_IDubicacion = ubicacion_IDubicacion;
-    }//setUbicacion_IDubicacion
 
     public String getTelefono() {
         return telefono;

@@ -175,3 +175,14 @@ $('#productos-lista a').on('click', function (e) {
     $(this).tab('show')
     console.log('click')
   })
+
+
+let btnCerrar = document.getElementById("cerrarSesion");
+
+btnCerrar.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log('cerrarcerrarcerrarcerrarcerrarcerrar')
+    
+    sessionStorage.removeItem('sessionToken');
+    window.setTimeout(() => {window.location.href = './../index.html';}, 1000);
+})

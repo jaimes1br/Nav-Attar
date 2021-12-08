@@ -73,18 +73,18 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
 let usuarioSesion = obtener();
 let iniciarSes= document.getElementById("sesIni");
 
-console.log (usuarioSesion);
+// console.log (usuarioSesion);
 //let usuarioSesion = [];
 
-if (usuarioSesion.length != 0){
+if (usuarioSesion != null){
     iniciarSes.innerHTML=`
     <a class="nav-link" href="#">
         Cerrar sesión
     </a>` 
 }
-function obtener(){
-  let objetoJSON = localStorage.getItem("usuarioSesion");
-  let usuarios = JSON.parse(objetoJSON);
 
-  return usuarios;
+function obtener(){
+  let dato = sessionStorage.getItem('sessionToken');
+    
+  return dato;  
 }

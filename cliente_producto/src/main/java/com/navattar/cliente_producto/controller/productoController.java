@@ -5,16 +5,17 @@ import com.navattar.cliente_producto.services.ProductoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.transform.sax.SAXResult;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
+@CrossOrigin("*")
 public class productoController {
 
 private final ProductoServices _productoServices;
 
     @Autowired
-
     public productoController(ProductoServices _productoServices) {
         this._productoServices = _productoServices;
     }//constructor
@@ -24,6 +25,12 @@ private final ProductoServices _productoServices;
 
     @GetMapping(path="{id}")
     public productos getProducto(@PathVariable("id") Long id){return _productoServices.getProducto(id);}//getProducto
+
+    @GetMapping("/cat")
+    public List<productos> getProductosCategoria(@RequestParam(required = true) String categoria){
+
+        return _productoServices.getProductosCategoria(categoria);}//getAllProductos
+
 
     @DeleteMapping(path = "{id}")
     public void deleteProducto(@PathVariable("id") Long id){
@@ -42,10 +49,9 @@ private final ProductoServices _productoServices;
                                @RequestParam (required = false) Long medida,
                                @RequestParam (required = false) String descripcion,
                                @RequestParam (required = false) String imagen,
-                               @RequestParam (required = false) Long existencia,
-                               @RequestParam (required = false) Long Categoria_IDcategoria)
-                               {
-        _productoServices.updateProductos(IDproducto, nombre, precio, medida, descripcion, imagen, existencia, Categoria_IDcategoria);
+                               @RequestParam (required = false) String categoria)
+    {
+        _productoServices.updateProductos(IDproducto, nombre, precio, medida, descripcion, imagen,categoria);
     }//updateProducto
 
 }//class productoController
