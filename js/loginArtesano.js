@@ -1,6 +1,6 @@
 
 /**
- * Nosotros crearemos los accesos para los artesanos daremos una contraseña 
+ * Nosotros crearemos los accesos para los artesanos, daremos una contraseña 
  * provicional dado que hay que controlar sus cards de presentación.
  * 
  */

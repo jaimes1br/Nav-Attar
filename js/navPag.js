@@ -63,9 +63,28 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginUser.html">Usuario</a>
           <a class="dropdown-item navAttar_listDes" href="./../pages/loginArte.html">Artesano</a>
         </div>
-      </li> <!--Iniciar Sesion-->
+      </li> <!--Iniciar Sesión-->
 
     </ul><!--listaNAv-->
     </div><!--divHamburguesa--> 
 </nav><!--navBar-->
 </div><!--navBarContaier-->`;
+
+let usuarioSesion = obtener();
+let iniciarSes= document.getElementById("sesIni");
+
+console.log (usuarioSesion);
+//let usuarioSesion = [];
+
+if (usuarioSesion.length != 0){
+    iniciarSes.innerHTML=`
+    <a class="nav-link" href="#">
+        Cerrar sesión
+    </a>` 
+}
+function obtener(){
+  let objetoJSON = localStorage.getItem("usuarioSesion");
+  let usuarios = JSON.parse(objetoJSON);
+
+  return usuarios;
+}

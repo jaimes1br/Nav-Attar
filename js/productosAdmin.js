@@ -58,7 +58,7 @@
         'medida':'25',
         'categoria':'Superhéroes',
         'precio':'200.00',
-        'descripcion':'Batman es un superheroe que te acompañara en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'Batman es un superhéroe que te acompañará en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'2',
         'nombre':'Baby Yoda',
@@ -74,7 +74,7 @@
         'medida':'20',
         'categoria':'Caricaturas',
         'precio':'350.00',
-        'descripcion':'¿Recuerdas los momentos en familia cuando veian juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'¿Recuerdas los momentos en familia cuando veían juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'4',
         'nombre':'Coraline',
@@ -90,7 +90,7 @@
         'medida':'15',
         'categoria':'Personajes',
         'precio':'120.00',
-        'descripcion':'Desde Sprinfield hasta tus manos, este llavero te hara decir "WooHoo".'},
+        'descripcion':'Desde Springfield hasta tus manos, este llavero te hara decir "WooHoo".'},
     {
         'id':'6',
         'nombre':'Harry Potter Team',
@@ -98,7 +98,7 @@
         'medida':'20',
         'categoria':'Personajes',
         'precio':'600.00',
-        'descripcion':'Este trio de amigos magicos te van a encantar.'},
+        'descripcion':'Este trío de amigos mágicos te van a encantar.'},
     {
         'id':'7',
         'nombre':'Perrito',
@@ -106,7 +106,7 @@
         'medida':'25',
         'categoria':'Mascotas',
         'precio':'420.00',
-        'descripcion':'Una forma mas de recordar y llevar contigo a tu mascota a donde sea.'},
+        'descripcion':'Una forma más de recordar y llevar contigo a tu mascota a donde sea.'},
     {
         'id':'8',
         'nombre':'Erizo',
@@ -117,12 +117,12 @@
         'descripcion':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'9',
-        'nombre':'Arnols y Helga',
+        'nombre':'Arnold y Helga',
         'imagen':'../img/muñequitos/heyh.jpg',
         'medida':'25',
         'categoria':'Caricaturas',
         'precio':'380.00',
-        'descripcion':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlos a tu gusto'},
     {
         'id':'10',
         'nombre':'Iron Maiden',
@@ -130,7 +130,7 @@
         'medida':'20',
         'categoria':'Celebridades',
         'precio':'420.00',
-        'descripcion':'El regalo perfecto para los Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'El regalo perfecto para los Iron Maiden Lovers 💕, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'11',
         'nombre':'Friend',
@@ -146,7 +146,7 @@
         'medida':'20',
         'categoria':'Personalizados',
         'precio':'600.00',
-        'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarla a tu gusto'},
 ];
 
 

@@ -181,13 +181,13 @@ export { actualizarCanasta, botonesCarrito, obtenerUsuarioSesion, obtenerMiCarri
 
 
 
-// function carroBaseDatos(){
-//     let carroBD = [];
-//     localStorage.setItem("carroBD", JSON.stringify(carroBD));
-// }
+function carroBaseDatos(){
+    let carroBD = [];
+    localStorage.setItem("carroBD", JSON.stringify(carroBD));
+}
 
 
 
-// carroBaseDatos();
+carroBaseDatos();
 actualizarCanasta();
 botonesCarrito();
