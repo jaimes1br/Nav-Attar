@@ -31,19 +31,25 @@
     width: 150px;
     height: auto;
     margin-top: 0%;
+    
 }
 
-.pIndividual{
+.pIndividual1{
     display: flex;
     flex-direction: row;
     align-items: center;
     align-self: center;
+    
+    padding: 1em;
+   
 }
 
 .cardcom{
-    background-color:#BDB2FF;  
+    /* background-color:#BDB2FF;   */
+    background-color: #E9C4FF;
     border-radius: 1.5em;
     display: flex;
+    width: 79.5em;
     flex-direction: row;
     justify-content: space-around;
     justify-self: center;
@@ -52,8 +58,44 @@
 .cardInfo{
     display: flex;
     flex-direction: column;
-    justify-content: center ;
+    justify-content: center;
+    justify-items: center;
+    
+    /* background-color: aqua;
+    border-radius: 5%; */
+    
+   
 }
+.cardInfo1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    margin: 1em;
+    padding: 1em;
+    /* background-color:#F8EDEB; */
+    background-color: #BDB2FF;
+    border-radius: 10%;
+    height: 16em;
+
+}
+.descript{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    margin: 1em;
+    padding: 2em;
+    /* background-color:#F8EDEB; */
+    background-color: #BDB2FF;
+    border-radius: 25px;
+    margin-top: 4em;
+}
+
+.eliminar{
+    margin-top: 2em;
+}
+
 
 #productos-list{
     background-color:#BDB2FF;
@@ -210,6 +252,7 @@
         background-color:#BDB2FF;  
         border-radius: 1.5em;
         display: flex;
+        width: 40.5em;
         flex-direction: row;
         justify-content: space-around;
         justify-self: center;
@@ -258,6 +301,7 @@
         background-color:#BDB2FF;  
         border-radius: 1.5em;
         display: flex;
+        width: 28.5em;
         flex-direction: column;
         justify-content: space-around;
         justify-self: center;
