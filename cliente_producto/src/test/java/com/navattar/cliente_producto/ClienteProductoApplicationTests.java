@@ -83,15 +83,15 @@ class ClienteProductoApplicationTests {
 
 	@Test
 	public void TestGETProducto() throws Exception{
-//		this.mockMvc.perform(get("/api/productos"))
-//				.andDo(print())
-//				.andExpect(status().isOk())
-//				.andExpect(content().json(asJSONString(getAllProductos)));
+		this.mockMvc.perform(get("/api/productos/"))
+				.andDo(print())
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString(".jpg")));
 
 		this.mockMvc.perform(get("/api/productos/1"))
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("superhéroe")));
+				.andExpect(content().string(containsString("Superhéroes")));
 
 	}//TestGetProducto
 
@@ -123,8 +123,8 @@ class ClienteProductoApplicationTests {
 
 	@Test
 	public void TestPUTProducto () throws Exception {
-		cliente _cliente = new cliente();
-		this.mockMvc.perform(put("/api/productos/")).andDo(print()).andExpect(status().isOk());
+		productos _productos = new productos();
+		this.mockMvc.perform(put("/api/productos/3?medida=20&medida=25")).andDo(print()).andExpect(status().isOk());
 	}//TestPUTProducto
 
 
