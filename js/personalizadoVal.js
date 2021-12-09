@@ -1,3 +1,5 @@
+import { obtenerUsuarioSesion } from './carritoCanasta.js';
+
 
 let form = document.getElementById('formPersonalizado');
 let nombre = document.getElementById("nombre");
@@ -13,6 +15,10 @@ let imagen = document.getElementById('product_img');
 let erroneo = false;
 
 
+if (window.location.href == 'http://127.0.0.1:5502/pages/personalizado.html') {
+    form.addEventListener('submit', formValidation);
+}
+
 
 function formValidation(e){
     e.preventDefault();
@@ -26,17 +32,17 @@ function formValidation(e){
     let regexpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
-        alerta += `<h3>¡Nombre no valido!</h3> <br>`;
+        alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
     }//validaciónNombre
     
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
-        alerta += `<h3>¡Número no valido! </h3><br>`;
+        alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
     }//validaciónTeléfono
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
-        alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
+        alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
     }//validaciónCorreoElectrónico
 
@@ -86,8 +92,9 @@ function formValidation(e){
         }, (error, result) => {
             if (!error && result && result.event === "success") {
                 imagen.src = result.info.secure_url;
-                url = result.info.secure_url;
+                // url = result.info.secure_url;
                 erroneo = true;
+                imagen.style.display = 'block';
             }})
 
         document.getElementById("upload_widget").addEventListener("click", function(){
@@ -100,12 +107,96 @@ function formValidation(e){
                                   </div>`;
                                   
         }else if(erroneo){
-            enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url)
+            let usuario = obtenerUsuarioSesion();
+
+            if(usuario.length != 0){
+                guardarPedido(usuario,nombre,telefono,correo,tam,artesano,mensaje,imagen.src)
+            }
+
+            enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,imagen.src)
             
         }
    
     }
 
+
+}
+
+
+function guardarPedido(usuario,nombre,telefono,correo,tam,artesano,mensaje,url){
+   
+    let datosPedido = {
+        'nombre': nombre.value,
+        'telefono': telefono.value,
+        'correo':correo.value,
+        'tam': tam.value,
+        'artesano': artesano.value,
+        'mensaje': mensaje.value,
+        'url' : url
+
+    }
+
+    let misPedidos = obtenerMisPedidos(usuario.id);
+  
+    if (Object.keys(misPedidos).length === 0){
+
+        let nuevoPedido = {
+            'idUsuario' : usuario.id,
+            'pedidos' : []
+        }
+
+        nuevoPedido.pedidos.push(datosPedido);
+        agregarPedidoBD(nuevoPedido);
+       
+    }
+    else{
+      
+        misPedidos.pedidos.push(datosPedido)
+        
+        actualizarPedidosBD(misPedidos);
+    }
+
+}
+
+function obtenerMisPedidos(idUsuario){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+    let tusPedidos = {};
+
+    pedidosBD.forEach(function(pedidoUsu) {
+        if(pedidoUsu.idUsuario == idUsuario){
+            tusPedidos = pedidoUsu;
+        }
+    });
+
+    return tusPedidos;
+
+}
+
+
+function agregarPedidoBD(nuevoPedido){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+
+    pedidosBD.push(nuevoPedido);
+
+    localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));
+}
+
+
+function actualizarPedidosBD(misPedidos){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+
+   
+
+    pedidosBD.forEach(function(pedidoUu){
+        
+        if(pedidoUu.idUsuario == misPedidos.idUsuario){
+            pedidoUu.pedidos = misPedidos.pedidos;
+            localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));
+        }
+    })
 
 }
 
@@ -123,6 +214,7 @@ function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
     artesano.value = '';
     mensaje.value = ''; 
     imagen.src = "http://127.0.0.1:5500/pages/perzonalizado.html"
+    imagen.style.display = 'none';
     
     document.getElementById('upload_widget').disabled = true;
     nombre.disabled = false;
@@ -140,12 +232,14 @@ function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
 
 
     
+export{ obtenerMisPedidos }
 
 
-window.onload = function(){
-    //permite que carge todos los recursos externos
-    form.addEventListener('submit', formValidation);
+// window.onload = function(){
+//     //permite que carge todos los recursos externos
+//     form.addEventListener('submit', formValidation);
     
     
-}
+// }
+
 
