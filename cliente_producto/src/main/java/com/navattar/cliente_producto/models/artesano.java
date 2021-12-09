@@ -68,6 +68,10 @@ public class artesano {
         this.contrasena = SHAUtil.createHash(contrasena);
     }
 
+    public void setClearContrasena(String contrasena) {
+        this.contrasena = SHAUtil.createHash(contrasena);
+    }
+
     public String getTelefono() {
         return telefono;
     }
