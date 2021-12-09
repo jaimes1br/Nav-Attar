@@ -6,6 +6,46 @@ let imagen = document.getElementById("Imagen_prod"); //select
 let descripcion = document.getElementById("Descripcion_prod"); //input
 let alertas = document.getElementById("alerta"); //div
 
+
+function addItem(item){
+  console.log(item)
+  const itemHTML = 
+  `
+  <div class="cardcom">
+                                      
+  <div class="pIndividual1">
+    <img src="./../img/muñequitos/${item.imagen}" class="card-img-top" alt="image" id="imago">
+  </div><!--pIndividual-->
+      <div class="cardInfo">
+        <h5 class="card-title"> ${item.nombre}</h5>
+        <h5 class="card-title"> ${item.medida}cm</h5>
+        <h5 class="card-title"> ${item.categoria}</h5>
+        <h5 class="card-title"> $${item.precio}.00 mxn</h5>
+      </div><!--cardInfo-->
+      <div class="ap">
+        <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+        <div class="eliminar">
+        // <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+        </div><!--Eliminar-->
+        <div class="descript">
+        <p class="card-text">${item.descripcion}</p>
+      </div><!--descript-->
+      <!-- </div> -->
+      </div><!--ap-->
+      <!-- <div id="list-items">
+  
+      </div> -->
+  </div><!--cardcom-->
+  `
+ ;
+  const itemsContainer = document.getElementById("Productos");
+  itemsContainer.innerHTML += itemHTML;
+}//addItem
+
+
+
+
+
 function SubirNuevo(){
   
 //----------------------------Expresiones regulares
@@ -66,29 +106,61 @@ function SubirNuevo(){
     
   }
   if(!validar){
-    alertas.innerHTML += `
+           
+        
+    let nuevoProducto = {
+     
+
+      "nombre": nombre.value,
+      "precio": parseFloat(precio.value),
+      "medida":  parseInt(medida.value) ,
+      "descripcion": descripcion.value,
+      "imagen": imagen.value,
+      "categoria": categoria.value,
+      
+    };
+    
+    let token = sessionStorage.getItem('sessionToken')
+    token = "Bearer " + token
+
+  if(token != undefined){
+    
+
+    let endPoint = 'http://127.0.0.1:8085/api/productos';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'authorization': token
+        },
+        body: JSON.stringify(nuevoProducto)
+        
+    }).then(function(e){
+      
+      console.log(nuevoProducto)
+      
+      if(e.status == 200){
+        alertas.innerHTML += `
         <div class="alert alert-success" role="alert">
             <h3> ¡Formulario Correcto! </h3>
         </div>`;
-        
-    
-    datos = obtener();
-    
-    let nuevoProducto = {
-     
-      'id': (datos.length + 1),
-      'nombre': nombre.value,
-      'imagen': imagen.value,
-      'medida': medida.value,
-      'categoria': categoria.value,
-      'precio':precio.value + '.00',
-      'descripcion': descripcion.value
-      
-    };
+        addItem(nuevoProducto)
 
-    guardar(datos,nuevoProducto);
-        
-        
+      }else if(e.status == 500){
+        alertas.innerHTML += `
+        <div class="alert alert-danger" role="alert">
+            <h3> ¡El nombre ya exite, prueba con otro! </h3>
+        </div>`;
+      }
+
+    })
+    .catch(function(error){
+      
+    })
+
+  }
+
     nombre.value = "";
     medida.value = "";
     categoria.value = "";
@@ -96,24 +168,31 @@ function SubirNuevo(){
     imagen.value = "";
     descripcion.value = "";
         
-    location.reload();
+    // location.reload();
   }
 }
 
-
-function obtener(){
-    
-  let objetosJSON = localStorage.getItem("objetos");      
-  let productos = JSON.parse(objetosJSON);
- 
-  return productos;
-
-}
-
-function guardar(productos,nuevoProducto){
-
-  productos.push(nuevoProducto);
+function eliminar(){
+  let idElminiar = 29;
   
-  let productosJSON = JSON.stringify(productos); //produtos a JSON
-  localStorage.setItem("objetos", productosJSON);
+  let token = sessionStorage.getItem('sessionToken')
+  token = "Bearer " + token
+
+  let endPoint = `http://127.0.0.1:8085/api/productos/${idElminiar}`;
+    fetch(endPoint, {
+	    method: 'delete', 
+      headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'authorization': token
+      }      
+    }).then(function(e){
+      
+    })
+    .catch(function(error){
+      
+    })
 }
+
+
+// eliminar()

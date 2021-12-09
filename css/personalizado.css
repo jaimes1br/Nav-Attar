@@ -127,9 +127,25 @@
 }
 
 .video{
-    width: 520px;
+    width: 480px;
     height: 440px;
     position: relative;
-    top: -20em;
-    
+    top: -4em;    
 }
+
+.Botonayuda{
+
+    background-color:#BDB2FF;
+    width: 150px;
+    border-color: #BDB2FF;
+    font-weight: bolder;
+}
+
+.dudaspedido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

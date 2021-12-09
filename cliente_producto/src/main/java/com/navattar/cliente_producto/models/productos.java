@@ -10,37 +10,35 @@ public class productos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="IDproducto")
 
-        private  Long iDProducto;
+        private Long IDproducto;
         private String nombre;
         private Double precio;
         private Long medida;
         private String descripcion;
         private String imagen;
-        private Long existencia;
-        private Long Categoria_IDcategoria;
-        private Long Artesano_IDartesano;
+        private String categoria;
 
-    public productos(Long iDProducto, String nombre, Double precio, Long medida, String descripcion, String imagen, Long existencia, Long categoria_IDcategoria, Long artesano_IDartesano) {
-        this.iDProducto = iDProducto;
+
+    public productos(Long IDProducto, String nombre, Double precio, Long medida, String descripcion, String imagen,String categoria  ) {
+        this.IDproducto = IDProducto;
         this.nombre = nombre;
         this.precio = precio;
         this.medida = medida;
         this.descripcion = descripcion;
         this.imagen = imagen;
-        this.existencia = existencia;
-        Categoria_IDcategoria = categoria_IDcategoria;
-        Artesano_IDartesano = artesano_IDartesano;
+        this.categoria = categoria;
+
     }//constructor
 
     public productos() {
     }//constructor vacio
 
-    public Long getiDProducto() {
-        return iDProducto;
+    public Long getIDproducto() {
+        return IDproducto;
     }//getiDProducto
 
-    public void setiDProducto(Long iDProducto) {
-        this.iDProducto = iDProducto;
+    public void setIDproducto(Long IDproducto) {
+        this.IDproducto = IDproducto;
     }//setiDProducto
 
     public String getNombre() {
@@ -83,30 +81,11 @@ public class productos {
         this.imagen = imagen;
     }//setImagen
 
-    public Long getExistencia() {
-        return existencia;
-    }//getExistencia
+    public String getCategoria() {
+        return categoria;
+    }//getCategoria
 
-    public void setExistencia(Long existencia) {
-        this.existencia = existencia;
-    }//setExistencia
-
-    public Long getCategoria_IDcategoria() {
-        return Categoria_IDcategoria;
-    }//getCategoria_IDcategoria
-
-    public void setCategoria_IDcategoria(Long categoria_IDcategoria) {
-        Categoria_IDcategoria = categoria_IDcategoria;
-    }//setCategoria_IDcategoria
-
-    public Long getArtesano_IDartesano() {
-        return Artesano_IDartesano;
-    }//getArtesano_IDartesano
-
-    public void setArtesano_IDartesano(Long artesano_IDartesano) {
-        Artesano_IDartesano = artesano_IDartesano;
-    }//setArtesano_IDartesano
-
-
-
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }//setCategoria
 }//class productos

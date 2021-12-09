@@ -1,5 +1,4 @@
 
-
 document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0">
 <nav class="navbar navbar-expand-lg navbar-light navAttar">
   
@@ -11,7 +10,7 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
     <ul class="">
       
       <li class="nav-item navBar-item">
-          <a href="./../pages/carritoCompras.html" aling="right"><img src="./img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador" id='contadorCanasta'>0</span></a>
+          <a href="./../pages/carrito.html" aling="right"><img src="./img/iconos/basket1.png"  aling="right" alt="">  <span class="badge badge-danger navBarUsuarioContador" id='contadorCanasta'>0</span></a>
       </li><!--artesanos-->
 
     </ul><!--listaNAvUsuario-->
@@ -75,10 +74,8 @@ document.getElementById("myHead").innerHTML = `<div class="container-fluid px-0"
 let usuarioSesion = obtener();
 let iniciarSes= document.getElementById("sesIni");
 
-console.log (usuarioSesion);
-//let usuarioSesion = [];
 
-if (usuarioSesion.length != 0){
+if (usuarioSesion != null){
     iniciarSes.innerHTML=`
     <a class="nav-link" href="#">
         Cerrar sesión
@@ -86,8 +83,7 @@ if (usuarioSesion.length != 0){
 }
 
 function obtener(){
-  let objetoJSON = localStorage.getItem("usuarioSesion");
-  let usuarios = JSON.parse(objetoJSON);
-
-  return usuarios;
+  let dato = sessionStorage.getItem('sessionToken');
+    
+  return dato;  
 }

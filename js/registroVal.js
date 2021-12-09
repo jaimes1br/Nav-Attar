@@ -8,9 +8,9 @@ let confpass = document.getElementById('confpass');
 let alertaDiv = document.getElementById('alertaRegistro');
 
 
-let usuarios = [];
-let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
-localStorage.setItem("usuarios", usuariosJSON); //En localStorage
+// let usuarios = [];
+// let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
+// localStorage.setItem("usuarios", usuariosJSON); //En localStorage
 
 
 
@@ -62,11 +62,11 @@ form.addEventListener('submit', e => {
     }
 
     if(!valido){
+        guardarRegistro();
         alertaDiv.innerHTML += `
         <div class="alert alert-success" role="alert">
             <h3> ¡Tu registro ha sido exitoso! </h3>
         </div>`;
-        guardarRegistro();
     }
 
 
@@ -77,19 +77,32 @@ function guardarRegistro(){
     
 
     let usuario = {
-        'id' : 5,
-        'nombre': nombre.value,
-        'telefono': telefono.value,
-        'correo': correo.value,
-        'contrasena': encriptar(pass.value),
-        'carrito': [],
-        'pedidos': []
+        nombre : nombre.value,
+        telefono :  telefono.value,
+        correo_electronico : correo.value,
+        contrasena : pass.value
     };
     
-    let usuarios = obtener();
 
-    usuarios.push(usuario);
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    let endPoint = 'http://127.0.0.1:8085/api/registro';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+        
+    }).then(function(e){
+        console.log('e: ' +e)
+    
+    }).catch(function(error){
+        console.log('error: ' + error);
+    })
+
+    // let usuarios = obtener();
+    // usuarios.push(usuario);
+    // localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     nombre.value = '';
     telefono.value = '';
@@ -108,6 +121,3 @@ function obtener(){
     return usuarios;
 }//obtenerDatosDelLocal
 
-function encriptar(palabra){
-    return btoa(palabra);
-}//encripatamosLaContraseña

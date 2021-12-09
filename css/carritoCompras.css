@@ -13,6 +13,9 @@
     font-size: 5em;
     font-weight: 500;
     margin-top: 1em;
+    font-family: MiFuentePersonal;
+    src: url("/fuentes/ropest/Ropest_PERSONAL_USE_ONLY.ttf") format("opentype");
+    
 }
 
 .elementoPedido{
@@ -44,8 +47,10 @@
 
 .carritoCompras_titulo h1{
     display: inline;
-    font-size: 5em;
+    font-size: 6em;
     font-weight: 500;
+    font-family: MiFuentePersonal;
+    src: url("/fuentes/ropest/Ropest_PERSONAL_USE_ONLY.ttf") format("opentype");
 }
 
 

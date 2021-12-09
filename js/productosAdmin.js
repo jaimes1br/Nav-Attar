@@ -3,39 +3,39 @@
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
  
- function addItem(item){
-    const itemHTML = 
-    `
-    <div class="cardcom">
+//  function addItem(item){
+//     const itemHTML = 
+//     `
+//     <div class="cardcom">
                                         
-    <div class="pIndividual1">
-      <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
-    </div><!--pIndividual-->
-        <div class="cardInfo">
-          <h5 class="card-title"> ${item.nombre}</h5>
-          <h5 class="card-title"> ${item.medida}cm</h5>
-          <h5 class="card-title"> ${item.categoria}</h5>
-          <h5 class="card-title"> $${item.precio}.00 mxn</h5>
-        </div><!--cardInfo-->
-        <div class="ap">
-          <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
-          <div class="eliminar">
-          <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
-          </div><!--Eliminar-->
-          <div class="descript">
-          <p class="card-text">${item.descripcion}</p>
-        </div><!--descript-->
-        <!-- </div> -->
-        </div><!--ap-->
-        <!-- <div id="list-items">
+//     <div class="pIndividual1">
+//       <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
+//     </div><!--pIndividual-->
+//         <div class="cardInfo">
+//           <h5 class="card-title"> ${item.nombre}</h5>
+//           <h5 class="card-title"> ${item.medida}cm</h5>
+//           <h5 class="card-title"> ${item.categoria}</h5>
+//           <h5 class="card-title"> $${item.precio}.00 mxn</h5>
+//         </div><!--cardInfo-->
+//         <div class="ap">
+//           <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+//           <div class="eliminar">
+//           <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+//           </div><!--Eliminar-->
+//           <div class="descript">
+//           <p class="card-text">${item.descripcion}</p>
+//         </div><!--descript-->
+//         <!-- </div> -->
+//         </div><!--ap-->
+//         <!-- <div id="list-items">
     
-        </div> -->
-    </div><!--cardcom-->
-    `
-   ;
-    const itemsContainer = document.getElementById("Productos");
-    itemsContainer.innerHTML += itemHTML;
-}//addItem
+//         </div> -->
+//     </div><!--cardcom-->
+//     `
+//    ;
+//     const itemsContainer = document.getElementById("Productos");
+//     itemsContainer.innerHTML += itemHTML;
+// }//addItem
 
 
 
@@ -162,16 +162,26 @@
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
 
 
-let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
-let productos = JSON.parse(productosJSON);
+// let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
+// let productos = JSON.parse(productosJSON);
 
 
-let nuevo = productos[productos.length - 1];
+// let nuevo = productos[productos.length - 1];
 
-addItem(nuevo);
+// addItem(nuevo);
 
 $('#productos-lista a').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
     console.log('click')
   })
+
+
+let btnCerrar = document.getElementById("cerrarSesion");
+
+btnCerrar.addEventListener('click', function(e){
+    e.preventDefault();
+    
+    sessionStorage.removeItem('sessionToken');
+    window.setTimeout(() => {window.location.href = './../index.html';}, 1000);
+})

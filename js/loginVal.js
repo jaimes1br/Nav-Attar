@@ -3,13 +3,13 @@ let form = document.getElementById('form');
 let correo = document.getElementById("correo");
 let pass = document.getElementById('pass');
 let alertaLogin = document.getElementById('alertaLogin');
-let usuarioSesion = [];
+// let usuarioSesion = [];
 // let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
 // localStorage.setItem("usuarioSesion", usuarioSesionJSON);
 
-let usuarioSesion = [];
-let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
-localStorage.setItem("usuarioSesion", usuarioSesionJSON);
+// let usuarioSesion = [];
+// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
+// localStorage.setItem("usuarioEnSesion", usuarioSesionJSON);
 
 
 form.addEventListener('submit', e => {
@@ -35,36 +35,15 @@ form.addEventListener('submit', e => {
     
     if(!valido){
         
-        /**Consulta el arreglo y checa elemento por elemento para ver si conicide*/
-        let usuarios = obtener();
-        
-        usuarios.forEach(usuario => {
-            if(usuario.correo == correo.value && usuario.contrasena == encriptar(pass.value)){
-                alertaLogin.innerHTML += `
-                    <div class="alert alert-success" role="alert">
-                        <h3>Bienvenid@ ${usuario.nombre}</h3> <br>
-                    </div>`;
-                erroneo = false;
-
-                // Poner el usuario en el local
-                iniciarSesion(usuario);
-                window.setTimeout(() => {window.location.href = './../index.html';}, 2000);  
-                
-            }//validaciónExistaElUsuarioEnElLocal
-
-        });
-
-        if(erroneo){
-            alerta = `<h3>No pudimos encontrar tu cuenta o </h3> <br>
-                      <h3>la contraseña es incorrecta. Vuelve a intentarlo</h3> <br>
-                      <h3>o haz clic en "¿Olvidaste tu contraseña?"</h3> <br>`
-            valido = true;    
-        }//validaciónSiHayProblemasConCorreoOCntraseña
+       /**nuestra consulta a la base */
+        iniciarSesion(correo.value,pass.value);
     }
+
 
    
    
     if(valido){
+        /**algo salio mal */
         alertaLogin.innerHTML += `
         <div class="alert alert-danger" role="alert">
             ${alerta}
@@ -77,20 +56,49 @@ form.addEventListener('submit', e => {
 });
 
 
-function obtener(){
-    let objetosJSON = localStorage.getItem("usuarios");
-    let usuarios = JSON.parse(objetosJSON);
+function iniciarSesion(correo,pass){
+
+    let usuarioDatos = {
+        "email": correo,
+        "password": pass
+    }
+
+    let endPoint = 'http://127.0.0.1:8085/api/login';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuarioDatos)
+        
+    }).then(function(data){
+      
+        return data.json()
+    }).then(function(data){
+      
+        if(data.accessToken === undefined){
+            alertaLogin.innerHTML += `
+            <div class="alert alert-danger" role="alert">
+                <h3>No pudimos encontrar tu cuenta o </h3> <br>
+                <h3>la contraseña es incorrecta. Vuelve a intentarlo</h3> <br>
+                <h3>o haz clic en "¿Olvidaste tu contraseña?"</h3> <br>
+            </div>`;
+        }
+        else{
+            sessionStorage.setItem('sessionToken',data.accessToken);
+            alertaLogin.innerHTML += `
+                <div class="alert alert-success" role="alert">
+                    <h3>Bienvenid@</h3> <br>
+                </div>`;
+            window.setTimeout(() => {window.location.href = './../index.html';}, 2000);  
+        }
+       
     
-    return usuarios;
-}//TomamosDatosDelStorage
+    })
+    
+    .catch(function(error){
+        console.log('error: ' + error);
+    })
 
-function encriptar(palabra){
-    return btoa(palabra);
-}//encriptamosLaContraseñaIngresada
-
-function iniciarSesion(usuario){
-
-    let usuarioJSON = JSON.stringify(usuario); //produtos a JSON
-    localStorage.setItem("usuarioSesion", usuarioJSON);
-    return
 }//siLosDatosSonValidosColocamosEnLocal

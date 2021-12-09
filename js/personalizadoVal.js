@@ -1,3 +1,5 @@
+import { obtenerUsuarioSesion } from './carritoCanasta.js';
+
 
 let form = document.getElementById('formPersonalizado');
 let nombre = document.getElementById("nombre");
@@ -12,6 +14,10 @@ let imagen = document.getElementById('product_img');
 
 let erroneo = false;
 
+
+if (window.location.href == 'http://127.0.0.1:5502/pages/personalizado.html') {
+    form.addEventListener('submit', formValidation);
+}
 
 
 function formValidation(e){
@@ -86,7 +92,7 @@ function formValidation(e){
         }, (error, result) => {
             if (!error && result && result.event === "success") {
                 imagen.src = result.info.secure_url;
-                url = result.info.secure_url;
+                // url = result.info.secure_url;
                 erroneo = true;
                 imagen.style.display = 'block';
             }})
@@ -101,18 +107,96 @@ function formValidation(e){
                                   </div>`;
                                   
         }else if(erroneo){
-            let usuario = obtener();
-            
-            if (usuario.length != 0){
-                pedidoUsuario(usuario,artesano,url);
+            let usuario = obtenerUsuarioSesion();
+
+            if(usuario.length != 0){
+                guardarPedido(usuario,nombre,telefono,correo,tam,artesano,mensaje,imagen.src)
             }
 
-            enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url)
+            enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,imagen.src)
             
         }
    
     }
 
+
+}
+
+
+function guardarPedido(usuario,nombre,telefono,correo,tam,artesano,mensaje,url){
+   
+    let datosPedido = {
+        'nombre': nombre.value,
+        'telefono': telefono.value,
+        'correo':correo.value,
+        'tam': tam.value,
+        'artesano': artesano.value,
+        'mensaje': mensaje.value,
+        'url' : url
+
+    }
+
+    let misPedidos = obtenerMisPedidos(usuario.id);
+  
+    if (Object.keys(misPedidos).length === 0){
+
+        let nuevoPedido = {
+            'idUsuario' : usuario.id,
+            'pedidos' : []
+        }
+
+        nuevoPedido.pedidos.push(datosPedido);
+        agregarPedidoBD(nuevoPedido);
+       
+    }
+    else{
+      
+        misPedidos.pedidos.push(datosPedido)
+        
+        actualizarPedidosBD(misPedidos);
+    }
+
+}
+
+function obtenerMisPedidos(idUsuario){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+    let tusPedidos = {};
+
+    pedidosBD.forEach(function(pedidoUsu) {
+        if(pedidoUsu.idUsuario == idUsuario){
+            tusPedidos = pedidoUsu;
+        }
+    });
+
+    return tusPedidos;
+
+}
+
+
+function agregarPedidoBD(nuevoPedido){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+
+    pedidosBD.push(nuevoPedido);
+
+    localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));
+}
+
+
+function actualizarPedidosBD(misPedidos){
+    let objetosJSON = localStorage.getItem("pedidosBD");      
+    let pedidosBD = JSON.parse(objetosJSON);
+
+   
+
+    pedidosBD.forEach(function(pedidoUu){
+        
+        if(pedidoUu.idUsuario == misPedidos.idUsuario){
+            pedidoUu.pedidos = misPedidos.pedidos;
+            localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));
+        }
+    })
 
 }
 
@@ -148,33 +232,14 @@ function enviarCorreo(nombre,telefono,correo,tam,artesano,mensaje,url){
 
 
     
+export{ obtenerMisPedidos }
 
 
-window.onload = function(){
-    //permite que carge todos los recursos externos
-    form.addEventListener('submit', formValidation);
+// window.onload = function(){
+//     //permite que carge todos los recursos externos
+//     form.addEventListener('submit', formValidation);
     
     
-}
+// }
 
 
-function obtener(){
-    let objetosJSON = localStorage.getItem("usuarioSesion");
-    let usuario = JSON.parse(objetosJSON);
-    
-    return usuario;
-}
-
-function pedidoUsuario(usuarioSesion,artesano,url){
-    let pedido = {
-        'artesano' : artesano.value,
-        'imagen' : url
-    }
-
-    console.log(usuarioSesion.pedidos);
-    console.log(pedido);
-    
-    usuarioSesion.pedidos.push(pedido);
-    let usuarioJSON = JSON.stringify(usuarioSesion); //produtos a JSON
-    localStorage.setItem("usuarioSesion", usuarioJSON);
-}

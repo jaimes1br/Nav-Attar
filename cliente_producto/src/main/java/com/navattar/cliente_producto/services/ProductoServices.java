@@ -1,12 +1,13 @@
 package com.navattar.cliente_producto.services;
 
+import com.navattar.cliente_producto.models.cliente;
 import com.navattar.cliente_producto.models.productos;
-import com.navattar.cliente_producto.productoRepository;
+import com.navattar.cliente_producto.interfaces.productoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,8 +33,10 @@ public class ProductoServices {
     public void deleteProducto(Long IDproducto){
         if (_productoRepository.existsById(IDproducto)) {
             _productoRepository.deleteById(IDproducto);
-            }//if
-        throw new IllegalStateException("El producto con el id ingresado no existe.");
+        }//if
+        else{
+            throw new IllegalStateException("El producto con el id ingresado no existe.");
+        }
 
     }//deleteProducto
 
@@ -47,16 +50,16 @@ public class ProductoServices {
     }//addProducto
 
 @Transactional
-    public void updateProductos(Long IDproducto, String nombre, Double precio, Long medida, String descripcion, String imagen, Long existencia, Long Categoria_IDcategoria) {
+    public void updateProductos(Long IDproducto, String nombre, Double precio, Long medida, String descripcion, String imagen,String categoria) {
     productos producto = _productoRepository.findById(IDproducto).orElseThrow(() -> new IllegalStateException("El producto con ese id no existe."));
         if (nombre != null)
             if ((!nombre.isEmpty()) && !nombre.equals(producto.getNombre())) {
                 producto.setNombre(nombre);
         }//nombre
-        if ((precio > 0) && (precio != producto.getPrecio())){
+        if ((precio > 0) && (!precio.equals(producto.getPrecio()))){
             producto.setPrecio(precio);
         }//precio
-        if ((medida != null) && (medida != producto.getMedida())){
+        if ((medida != null) && (!medida.equals(producto.getMedida()))){
             producto.setMedida(medida);
         }//medida
         if ((descripcion != null) && (!descripcion.equals(producto.getDescripcion()))) {
@@ -65,14 +68,15 @@ public class ProductoServices {
         if ((imagen !=null) && (!imagen.equals(producto.getImagen()))){
             producto.setImagen(imagen);
         }//imagen
-        if ((existencia > 0) && (existencia != producto.getExistencia())){
-            producto.setExistencia(existencia);
-        }//existencia
-        if ((Categoria_IDcategoria > 0) && (Categoria_IDcategoria != producto.getCategoria_IDcategoria())){
-            producto.setCategoria_IDcategoria(Categoria_IDcategoria);
-        }//Categoria_IDcategoria
+    if ((categoria !=null) && (!categoria.equals(producto.getCategoria()))){
+        producto.setImagen(imagen);
+    }//imagen
 
 
     }//updateProductos
 
+    public List<productos> getProductosCategoria(String categoria) {
+        List<productos> productos = _productoRepository.findByCategory(categoria);
+        return productos ;
+    }
 }//class ProductoServices
