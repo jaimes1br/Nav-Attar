@@ -88,4 +88,5 @@ public class productos {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }//setCategoria
+
 }//class productos
