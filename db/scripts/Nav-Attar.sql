@@ -5,18 +5,19 @@ USE nav_attar;
 CREATE TABLE `artesano` (
   `IDartesano` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
+  `contrasena` varchar(200) NOT NULL,
   `correo_electronico` varchar(100) NOT NULL,
   `telefono` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`IDartesano`),
+  PRIMARY KEY (`IDartesano`)
 );
 
 CREATE TABLE `cliente` (
   `IDusuario` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
+  `contrasena` varchar(200) NOT NULL,
   `correo_electronico` varchar(100) NOT NULL,
-  `contrasena` varchar(50) NOT NULL,
   `telefono` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`IDusuario`),
+  PRIMARY KEY (`IDusuario`)
 );
 
 CREATE TABLE `productos` (
@@ -27,7 +28,7 @@ CREATE TABLE `productos` (
   `descripcion` varchar(500) DEFAULT NULL,
   `imagen` varchar(300) NOT NULL,
   `categoria` varchar(300) NOT NULL,
-  PRIMARY KEY (`IDproducto`),
+  PRIMARY KEY (`IDproducto`)
 );
 
 CREATE TABLE `pedido` (
@@ -35,7 +36,7 @@ CREATE TABLE `pedido` (
   `fecha_pedido` date NOT NULL,
   `fecha_entrega` date NOT NULL,
   `estado_pedido` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`IDpedido`),
+  PRIMARY KEY (`IDpedido`)
 );
 
 CREATE TABLE `carrito` (
@@ -43,40 +44,40 @@ CREATE TABLE `carrito` (
   `precio_total` decimal(7,2) DEFAULT NULL,
   `cantidad_producto` int DEFAULT NULL,
   `subtotal` decimal(7,2) NOT NULL,
-  PRIMARY KEY (`IDcarrito`),
+  PRIMARY KEY (`IDcarrito`)
 );
 
 
 
-INSERT INTO artesano (nombre, correo_electronico, telefono) 
+INSERT INTO artesano (nombre, contrasena,correo_electronico, telefono) 
 VALUES
-("Paola", "paola.rod.quiroz@gmail.com","5512345678"), 
-("Alejandro", "ale.rodriguez@gmail.com", "5578654321"), 
-("Erik", "erik.ramirez@gmail.com", "5534678976"), 
-("Pablo", "pablo-perez@gmail.com", "55512637849"), 
-("Fabiola", "fabiolayt1@gmail.com", "5565478965");
+("Paola",  "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f", "paola.rod.quiroz@gmail.com","5512345678"), 
+("Alejandro", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f", "ale.rodriguez@gmail.com", "5578654321"), 
+("Erik", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f", "erik.ramirez@gmail.com", "5534678976"), 
+("Pablo", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f", "pablo-perez@gmail.com", "55512637849"), 
+("Fabiola", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f", "fabiolayt1@gmail.com", "5565478965");
 
 
 
-INSERT INTO cliente (nombre, correo_electronico, telefono, contrasena)
+INSERT INTO cliente (nombre,contrasena, correo_electronico, telefono)
 VALUES 
 
-("Brandon", "brandon.jaimes@gmail.com", "5543456234", "bran1234"),
-("Ilan", "illan@mailfalso.com", "5544332211", "noTu_illan"),
-("Pat", "pat.ella@gmail.com","1122334455", "pat.to.happiness"),
-("Daniel", "danny.phantom@gmail.com","5599668844","danny_PHA"),
-("Mario","cantinfleando@hotmail.com","1111155555","Cantinflas");
+("Brandon", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f","brandon.jaimes@gmail.com", "5543456234" ),
+("Ilan", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f","illan@mailfalso.com", "5544332211"),
+("Pat", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f","pat.ella@gmail.com","1122334455"),
+("Daniel", "866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f","danny.phantom@gmail.com","5599668844"),
+("Mario","866e7d9861babf8298ee5924ece202262bf91a3a60585acbccae97194c24af5f","cantinfleando@hotmail.com","1111155555");
 
 
 
 INSERT INTO productos (nombre, precio, medida, descripcion, imagen,categoria) 
 VALUES 
 
-("Batman", 200, 25, "Batman es un superhéroe que te acompañará en todos tus aventuras, recuerda que puedes personalizarlo a tu gusto", "batman.png", "Superhéroes"),
-("Baby Yoda", 350.00, 20, "Si cool quieres ser, un baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto", "babyyoda.png", "Superhéroes"),
-("Carlitos", 350.00, 20, "¿Recuerdas los momentos en familia cuando veían a los Rugrats? Como olvidar al olvidar al adorable Carlitos", "carlitos.png", "Caricaturas"),
-("Coraline", 420.00, 22, "Muñequita de Coraline tejida, recuerda que puedes personalizarlo a tu gusto ", "coraline.png", "Caricaturas"),
-("Homero", 120.00, 15, "Desde Springfield hasta tus manos, este llavero ta hará decir ¡Woohoo!", "homero.png", "Caricatura");
+("Batman", 200, 25, "Batman es un superhéroe que te acompañará en todos tus aventuras, recuerda que puedes personalizarlo a tu gusto", "batman.jpg", "Superhéroes"),
+("Baby Yoda", 350.00, 20, "Si cool quieres ser, un baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto", "bby.jpg", "Superhéroes"),
+("Carlitos", 350.00, 20, "¿Recuerdas los momentos en familia cuando veían a los Rugrats? Como olvidar al olvidar al adorable Carlitos", "carlitos.jpg", "Caricaturas"),
+("Coraline", 420.00, 22, "Muñequita de Coraline tejida, recuerda que puedes personalizarlo a tu gusto ", "carol.jpg", "Caricaturas"),
+("Homero", 120.00, 15, "Desde Springfield hasta tus manos, este llavero ta hará decir ¡Woohoo!", "homero.jpg", "Caricaturas");
 
 
 

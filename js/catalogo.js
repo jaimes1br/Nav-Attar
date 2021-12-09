@@ -51,19 +51,19 @@ function filtrado(filtro){
 
     if( filtro === 'Todos'){
     
-    let endPoint = `http://127.0.0.1:8085/api/productos`;
-    fetch(endPoint, {
-	    method: 'get'
-    }).then(function(data){
-        return data.json()
-    }).then(function(data){
-           console.log(data)
-           itemsContainer.innerHTML ='';
-           data.forEach(function(objeto){
-               addItem(objeto);
-           })
-            // botonesCarrito();
-        })
+        let endPoint = `http://127.0.0.1:8085/api/productos`;
+        fetch(endPoint, {
+            method: 'get'
+        }).then(function(data){
+            return data.json()
+        }).then(function(data){
+            console.log(data)
+            itemsContainer.innerHTML ='';
+            data.forEach(function(objeto){
+                addItem(objeto);
+            })
+                // botonesCarrito();
+            })
     }else{
         let endPoint = `http://127.0.0.1:8085/api/productos/cat?categoria=${filtro}`;
         

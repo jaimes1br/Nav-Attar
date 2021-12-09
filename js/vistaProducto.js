@@ -9,7 +9,7 @@
     <div class="card mb-3 vistaproducto">
     <div class="row no-gutters">
       <div class="col-md-6 vistaproductoimg">
-        <img src="${item.imagen}" alt="...">
+        <img src="./../img/muñequitos/${item.imagen}" alt="...">
       </div>
       <div class="col-md-6">
         <div class="card-body cardvistaproducto">
@@ -34,16 +34,33 @@
 }//addItem
 
 
-let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
-let productos = JSON.parse(productosJSON);
+
+// let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
+// let productos = JSON.parse(productosJSON);
 
 let url = window.location;
 let idUrl = url.search.split('=')[1];
 
-productos.forEach(element => {
-    if(element.id == idUrl){
-        addItem(element)
-    }
-});
+console.log(idUrl)
+
+let endPoint = `http://127.0.0.1:8085/api/productos/${idUrl}`;
+
+fetch(endPoint, {
+    method: 'get'
+}).then(function(data){
+    return data.json()
+}).then(function(data){
+    console.log(data)
+    addItem(data)
+})
+        // botonesCarrito();
+    
+
+
+// productos.forEach(element => {
+//     if(element.id == idUrl){
+//         addItem(element)
+//     }
+// });
 
 

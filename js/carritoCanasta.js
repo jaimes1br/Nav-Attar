@@ -188,6 +188,6 @@ function carroBaseDatos(){
 
 
 
-carroBaseDatos();
-actualizarCanasta();
-botonesCarrito();
+// carroBaseDatos();
+// actualizarCanasta();
+// botonesCarrito();

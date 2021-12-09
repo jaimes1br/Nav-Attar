@@ -1,6 +1,6 @@
 import { actualizarCanasta } from './carritoCanasta.js';
 
-actualizarCanasta();
+// actualizarCanasta();
 checarSesion();
 
 function checarSesion(){
