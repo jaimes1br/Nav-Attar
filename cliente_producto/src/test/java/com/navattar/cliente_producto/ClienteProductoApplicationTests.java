@@ -2,6 +2,7 @@ package com.navattar.cliente_producto;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.navattar.cliente_producto.models.cliente;
+import com.navattar.cliente_producto.models.productos;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -30,10 +31,10 @@ class ClienteProductoApplicationTests {
 	//@Test
 	//void contextLoads() {
 	//}
-//
 
+	//*******************************PRUEBAS CLIENTE ******************************
 	@Test
-	public void TestGet() throws Exception{
+	public void TestGetCliente() throws Exception{
 		this.mockMvc.perform(get("/api/clientes/"))
 				.andDo(print())
 				.andExpect(status().isOk())
@@ -44,36 +45,93 @@ class ClienteProductoApplicationTests {
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString("brandon.jaimes@gmail.com")));
 
-	}//TestGet
+	}//TestGetCliente
 
 
 	@Test
-	public void shouldReturn500Error() throws Exception{
+	public void shouldReturn500ErrorCliente() throws Exception{
 		this.mockMvc.perform(get("/api/clientes/8")).
 				andDo(print()).
 				andExpect(status().is5xxServerError());
-	}//shouldReturn500Error
+	}//shouldReturn500ErrorCliente
 
 	@Test
-	public void TestPOST() throws Exception{
+	public void TestPOSTCliente() throws Exception{
 		cliente _cliente = new cliente();
 		_cliente.setNombre("Eika");
 		_cliente.setCorreo_electronico("eflores@idr.com");
 		_cliente.setContrasena("Pa$$w0rd");
 		_cliente.setTelefono("5588996644");
 		this.mockMvc.perform(post("/api/clientes/").contentType(MediaType.APPLICATION_JSON).content(asJSONString(_cliente))).andExpect(status().isOk());
-	}//TestPOST
+	}//TestPOSTCliente
 
 	@Test
-	public void TestDelete() throws Exception{
+	public void TestDeleteCliente () throws Exception{
 		this.mockMvc.perform( delete("/api/clientes/6")).andDo(print()).andExpect(status().isOk());
-	}//TestDelete
+	}//TestDeleteCliente
 
 	@Test
-	public void TestPUT () throws Exception {
+	public void TestPUTCliente () throws Exception {
 		cliente _cliente = new cliente();
 		this.mockMvc.perform(put("/api/clientes/3?contrasena=Leonora7894!&nuevaContrasena=Leonora7895!")).andDo(print()).andExpect(status().isOk());
-	}//TestPUT
+	}//TestPUTCliente
+
+//*******************************FINALIZA PRUEBAS CLIENTE ******************************
+
+	//*******************************PRUEBAS PRODUCTO ******************************
+
+	@Test
+	public void TestGETProducto() throws Exception{
+//		this.mockMvc.perform(get("/api/productos"))
+//				.andDo(print())
+//				.andExpect(status().isOk())
+//				.andExpect(content().json(asJSONString(getAllProductos)));
+
+		this.mockMvc.perform(get("/api/productos/1"))
+				.andDo(print())
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("superhéroe")));
+
+	}//TestGetProducto
+
+	@Test
+	public void shouldReturn500ErrorProducto() throws Exception{
+		this.mockMvc.perform(get("/api/productos/8")).
+				andDo(print()).
+				andExpect(status().is5xxServerError());
+	}//shouldReturn500ErrorProducto
+
+	@Test
+	public void TestPOSTProducto() throws Exception{
+		productos _productos = new cliente();
+		_productos.setNombre("Cosita bonita");
+		_productos.setPrecio("500");
+		_productos.setMedida("25");
+		_productos.setDescripcion("Esta es una cosita bonita que puedes comprar");
+		_productos.setImagen("Batman.jpg");
+		_productos.getCategoria("Caricaturas");
+		this.mockMvc.perform(post("/api/productos/")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(asJSONString(_productos))).andExpect(status().isOk());
+	}//TestPOSTProducto
+
+	@Test
+	public void TestDeleteProducto () throws Exception{
+		this.mockMvc.perform( delete("/api/productos/6")).andDo(print()).andExpect(status().isOk());
+	}//TestDeleteProducto
+
+	@Test
+	public void TestPUTProducto () throws Exception {
+		cliente _cliente = new cliente();
+		this.mockMvc.perform(put("/api/productos/")).andDo(print()).andExpect(status().isOk());
+	}//TestPUTProducto
+
+
+//*******************************FINALIZA PRUEBAS PRODUCTO ******************************
+
+	//*******************************PRUEBAS ARTESANO ******************************
+
+	//*******************************FINALIZA PRUEBAS ARTESANO ******************************
 
 	public static String asJSONString(final Object obj) {
 		try {
@@ -82,5 +140,6 @@ class ClienteProductoApplicationTests {
 			throw new RuntimeException(e);
 		}
 	}//asJSONString
+
 
 }//class ClienteProductoApplicationTests
