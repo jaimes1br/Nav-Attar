@@ -1,6 +1,6 @@
 
 /**
- * Nosotros crearemos los accesos para los artesanos daremos una contraseña 
+ * Nosotros crearemos los accesos para los artesanos, daremos una contraseña 
  * provicional dado que hay que controlar sus cards de presentación.
  * 
  */
@@ -32,27 +32,10 @@ form.addEventListener('submit', e => {
     }//validaciónContraseñaVacía
   
     if(!valido){
-        
-        /**Consolta del arreglo y checamos elemento por elemento si conicide*/
-        let artesanos = obtener();
-        
-        artesanos.forEach(artesanos => {
-            if(artesanos.correo == correo.value && artesanos.contrasena == encriptar(pass.value)){
-                alertaLogin.innerHTML += `
-                    <div class="alert alert-success" role="alert">
-                        <h3>Bienvenid@ ${artesanos.nombre}</h3> <br>
-                    </div>`;
-                erroneo = false;
-                window.setTimeout(() => {window.location.href = './../pages/artesanoAdmin.html';}, 2000);                 
-            } 
-         });
- 
-        if(erroneo){
-            alerta = `<h3>No pudimos encontrar tu cuenta o </h3> <br>
-                      <h3>la contraseña es incorrecta. Vuelve a intentarlo</h3> <br>
-                      <h3>o haz clic en "¿Olvidaste tu contraseña?"</h3> <br>`
-            valido = true;    
-         }
+       
+         
+       /**nuestra consulta a la base */
+       iniciarSesion(correo.value,pass.value);
      }
  
      if(valido){
@@ -68,34 +51,51 @@ form.addEventListener('submit', e => {
  });
  
  
-function obtener(){
-     let objetosJSON = localStorage.getItem("artesanos");
-     let artesanos = JSON.parse(objetosJSON);
-     
-     return artesanos;
-}//tomamosDatosDelLocal
+ function iniciarSesion(correo,pass){
 
-function encriptar(palabra){
-    return btoa(palabra);
-}//encriptamosContraseñaQueSeIngresa
+    let usuarioDatos = {
+        "email": correo,
+        "password": pass
+    }
 
+    let endPoint = 'http://127.0.0.1:8085/api/login/artesano';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuarioDatos)
+        
+    }).then(function(data){
+      
+        return data.json()
+    }).then(function(data){
+      
+        if(data.accessToken === undefined){
+            alertaLogin.innerHTML += `
+            <div class="alert alert-danger" role="alert">
+                <h3>No pudimos encontrar tu cuenta o </h3> <br>
+                <h3>la contraseña es incorrecta. Vuelve a intentarlo</h3> <br>
+                <h3>o haz clic en "¿Olvidaste tu contraseña?"</h3> <br>
+            </div>`;
+        }
+        else{
+            sessionStorage.setItem('sessionToken',data.accessToken);
+            alertaLogin.innerHTML += `
+                <div class="alert alert-success" role="alert">
+                    <h3>Bienvenid@</h3> <br>
+                </div>`;
+            window.setTimeout(() => {window.location.href = './../pages/ArtesanoAdmin.html';}, 2000);  
+        }
+       
+    
+    })
+    
+    .catch(function(error){
+        console.log('error: ' + error);
+    })
 
-let artesanos = [
-    {
-        'id' : 1,
-        "nombre" : "Fabi",
-        "telefono" : "5566775544",
-        "correo" : "fabiArtesano@hotmail.com",
-        "contrasena" : encriptar("Fabiola78943!")}
-];
+}//siLosDatosSonValidosColocamosEnLocal
 
-
-/**
- * Quitar los comentarios de las siguientes líneas (98 y 99) para 
- * poner en el local Storage el arreglo de los artesanos disponibles.
- * 
- * */
-
-let artesanosJSON = JSON.stringify(artesanos); //artesano a JSON
-localStorage.setItem("artesanos", artesanosJSON); //a localStorage
 

@@ -8,9 +8,9 @@ let confpass = document.getElementById('confpass');
 let alertaDiv = document.getElementById('alertaRegistro');
 
 
-let usuarios = [];
-let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
-localStorage.setItem("usuarios", usuariosJSON); //En localStorage
+// let usuarios = [];
+// let usuariosJSON = JSON.stringify(usuarios); //produtos a JSON
+// localStorage.setItem("usuarios", usuariosJSON); //En localStorage
 
 
 
@@ -27,22 +27,22 @@ form.addEventListener('submit', e => {
     let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*-_])[A-Za-z\d@$!%*?&-_]{8,}$/;
 
     if(!regexpNombre.test(nombre.value) || nombre.value.length <= 2 || nombre.value.length == 0 || nombre.value.length > 20){
-        alerta += `<h3>¡Nombre no valido!</h3> <br>`;
+        alerta += `<h3>¡Nombre no válido!</h3> <br>`;
         valido = true;
     }//validaciónNombre
 
     if(!regexpTel.test(telefono.value)  || telefono.value.length < 10 || telefono.value.length >= 12){
-        alerta += `<h3>¡Número no valido! </h3><br>`;
+        alerta += `<h3>¡Número no válido! </h3><br>`;
         valido = true;
     }//validaciónTeléfono
 
     if(!regexpEmail.test(correo.value) || correo.value.length == 0 || correo.value.length >= 200){
-        alerta += `<h3>¡Correo electrónico no valido!</h3> <br>`;
+        alerta += `<h3>¡Correo electrónico no válido!</h3> <br>`;
         valido = true;
     }//validaciónCorreoElectrónico
 
     if(!regexPass.test(pass.value) || pass.value.length == 0 || pass.value.length > 20){
-        alerta += `<h3>¡Contraseña no valida! </h3><br>`;
+        alerta += `<h3>¡Contraseña no válida! </h3><br>`;
         valido = true;
     }//validaciónContraseña
 
@@ -62,11 +62,11 @@ form.addEventListener('submit', e => {
     }
 
     if(!valido){
+        guardarRegistro();
         alertaDiv.innerHTML += `
         <div class="alert alert-success" role="alert">
             <h3> ¡Tu registro ha sido exitoso! </h3>
         </div>`;
-        guardarRegistro();
     }
 
 
@@ -77,18 +77,32 @@ function guardarRegistro(){
     
 
     let usuario = {
-        'id' : 5,
-        'nombre': nombre.value,
-        'telefono': telefono.value,
-        'correo': correo.value,
-        'contrasena': encriptar(pass.value),
-        'carrito': []
+        nombre : nombre.value,
+        telefono :  telefono.value,
+        correo_electronico : correo.value,
+        contrasena : pass.value
     };
     
-    let usuarios = obtener();
 
-    usuarios.push(usuario);
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    let endPoint = 'http://127.0.0.1:8085/api/registro';
+    fetch(endPoint, {
+	    method: 'post', 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+        
+    }).then(function(e){
+        console.log('e: ' +e)
+    
+    }).catch(function(error){
+        console.log('error: ' + error);
+    })
+
+    // let usuarios = obtener();
+    // usuarios.push(usuario);
+    // localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     nombre.value = '';
     telefono.value = '';
@@ -107,6 +121,3 @@ function obtener(){
     return usuarios;
 }//obtenerDatosDelLocal
 
-function encriptar(palabra){
-    return btoa(palabra);
-}//encripatamosLaContraseña

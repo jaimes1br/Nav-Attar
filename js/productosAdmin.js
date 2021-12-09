@@ -3,39 +3,39 @@
  ||  Funcion addItem        
  -----------------------------------------------------------------*/
  
- function addItem(item){
-    const itemHTML = 
-    `
-    <div class="cardcom">
+//  function addItem(item){
+//     const itemHTML = 
+//     `
+//     <div class="cardcom">
                                         
-    <div class="pIndividual1">
-      <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
-    </div><!--pIndividual-->
-        <div class="cardInfo">
-          <h5 class="card-title">Nombre: ${item.nombre}</h5>
-          <h5 class="card-title">Medida: ${item.medida}cm</h5>
-          <h5 class="card-title">Categoría: ${item.categoria}</h5>
-          <h5 class="card-title">Precio: $${item.precio}</h5>
-        </div><!--cardInfo-->
-        <div class="ap">
-          <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
-          <div class="eliminar">
-          <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
-          </div><!--Eliminar-->
-          <div class="descript">
-          <p class="card-text">${item.descripcion}</p>
-        </div><!--descript-->
-        <!-- </div> -->
-        </div><!--ap-->
-        <!-- <div id="list-items">
+//     <div class="pIndividual1">
+//       <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
+//     </div><!--pIndividual-->
+//         <div class="cardInfo">
+//           <h5 class="card-title"> ${item.nombre}</h5>
+//           <h5 class="card-title"> ${item.medida}cm</h5>
+//           <h5 class="card-title"> ${item.categoria}</h5>
+//           <h5 class="card-title"> $${item.precio}.00 mxn</h5>
+//         </div><!--cardInfo-->
+//         <div class="ap">
+//           <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+//           <div class="eliminar">
+//           <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+//           </div><!--Eliminar-->
+//           <div class="descript">
+//           <p class="card-text">${item.descripcion}</p>
+//         </div><!--descript-->
+//         <!-- </div> -->
+//         </div><!--ap-->
+//         <!-- <div id="list-items">
     
-        </div> -->
-    </div><!--cardcom-->
-    `
-   ;
-    const itemsContainer = document.getElementById("list-items");
-    itemsContainer.innerHTML += itemHTML;
-}//addItem
+//         </div> -->
+//     </div><!--cardcom-->
+//     `
+//    ;
+//     const itemsContainer = document.getElementById("Productos");
+//     itemsContainer.innerHTML += itemHTML;
+// }//addItem
 
 
 
@@ -58,7 +58,7 @@
         'medida':'25',
         'categoria':'Superhéroes',
         'precio':'200.00',
-        'descripcion':'Batman es un superheroe que te acompañara en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'Batman es un superhéroe que te acompañará en todas tus aventuras, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'2',
         'nombre':'Baby Yoda',
@@ -74,7 +74,7 @@
         'medida':'20',
         'categoria':'Caricaturas',
         'precio':'350.00',
-        'descripcion':'¿Recuerdas los momentos en familia cuando veian juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'¿Recuerdas los momentos en familia cuando veían juntos los Rugrats? Como olvidar al adorable Carlitos, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'4',
         'nombre':'Coraline',
@@ -90,7 +90,7 @@
         'medida':'15',
         'categoria':'Personajes',
         'precio':'120.00',
-        'descripcion':'Desde Sprinfield hasta tus manos, este llavero te hara decir "WooHoo".'},
+        'descripcion':'Desde Springfield hasta tus manos, este llavero te hara decir "WooHoo".'},
     {
         'id':'6',
         'nombre':'Harry Potter Team',
@@ -98,7 +98,7 @@
         'medida':'20',
         'categoria':'Personajes',
         'precio':'600.00',
-        'descripcion':'Este trio de amigos magicos te van a encantar.'},
+        'descripcion':'Este trío de amigos mágicos te van a encantar.'},
     {
         'id':'7',
         'nombre':'Perrito',
@@ -106,7 +106,7 @@
         'medida':'25',
         'categoria':'Mascotas',
         'precio':'420.00',
-        'descripcion':'Una forma mas de recordar y llevar contigo a tu mascota a donde sea.'},
+        'descripcion':'Una forma más de recordar y llevar contigo a tu mascota a donde sea.'},
     {
         'id':'8',
         'nombre':'Erizo',
@@ -117,12 +117,12 @@
         'descripcion':'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'9',
-        'nombre':'Arnols y Helga',
+        'nombre':'Arnold y Helga',
         'imagen':'../img/muñequitos/heyh.jpg',
         'medida':'25',
         'categoria':'Caricaturas',
         'precio':'380.00',
-        'descripcion':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'¿Alguna vez amaste a alguien en secreto como Helga? No hay mejor presente que Arnold y Helga, los muñecos se venden por separado, recuerda que puedes personalizarlos a tu gusto'},
     {
         'id':'10',
         'nombre':'Iron Maiden',
@@ -130,7 +130,7 @@
         'medida':'20',
         'categoria':'Celebridades',
         'precio':'420.00',
-        'descripcion':'El regalo perfecto para los Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'El regalo perfecto para los Iron Maiden Lovers 💕, recuerda que puedes personalizarlo a tu gusto'},
     {
         'id':'11',
         'nombre':'Friend',
@@ -146,7 +146,7 @@
         'medida':'20',
         'categoria':'Personalizados',
         'precio':'600.00',
-        'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarlo a tu gusto'},
+        'descripcion':'Muñequita con mejillas sonrojadas y cabello chino, recuerda que puedes personalizarla a tu gusto'},
 ];
 
 
@@ -162,11 +162,26 @@
 // localStorage.setItem("objetos", objetosJSON); //En localStorage
 
 
-let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
-let productos = JSON.parse(productosJSON);
+// let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
+// let productos = JSON.parse(productosJSON);
 
 
-let nuevo = productos[productos.length - 1];
+// let nuevo = productos[productos.length - 1];
 
-addItem(nuevo);
+// addItem(nuevo);
 
+$('#productos-lista a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    console.log('click')
+  })
+
+
+let btnCerrar = document.getElementById("cerrarSesion");
+
+btnCerrar.addEventListener('click', function(e){
+    e.preventDefault();
+    
+    sessionStorage.removeItem('sessionToken');
+    window.setTimeout(() => {window.location.href = './../index.html';}, 1000);
+})
