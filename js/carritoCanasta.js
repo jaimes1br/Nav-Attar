@@ -191,7 +191,7 @@ function actualizarCanasta(){
     
 }
 
-export { actualizarCanasta, botonesCarrito, obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD};
+export { actualizarCanasta, botonesCarrito, obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD, anadirProductoCarrito};
 
 
 
