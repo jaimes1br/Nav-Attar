@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.navattar.cliente_producto.models.artesano;
 import com.navattar.cliente_producto.models.cliente;
 import com.navattar.cliente_producto.models.productos;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,9 +18,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+//pao
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class ClienteProductoApplicationTests {
+
 
 	//Añadimos dependencias
 	//comentamos los beans en la clase main

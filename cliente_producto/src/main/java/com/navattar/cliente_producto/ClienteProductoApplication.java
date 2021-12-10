@@ -22,15 +22,15 @@ public class ClienteProductoApplication {
 		return registrationBean;
 	}//jwtFilter
 
-	@Bean
-	public FilterRegistrationBean<JwtFilterProducts> jwtFilterProducts(){
-		FilterRegistrationBean<JwtFilterProducts> filProductos = new FilterRegistrationBean<>();
-
-		filProductos.setFilter(new JwtFilterProducts());
-		filProductos.addUrlPatterns("/api/productos/*");
-		filProductos.addUrlPatterns("/api/productos");
-
-		return filProductos;
-	}
+//	@Bean
+//	public FilterRegistrationBean<JwtFilterProducts> jwtFilterProducts(){
+//		FilterRegistrationBean<JwtFilterProducts> filProductos = new FilterRegistrationBean<>();
+//
+//		filProductos.setFilter(new JwtFilterProducts());
+//		filProductos.addUrlPatterns("/api/productos/*");
+//		filProductos.addUrlPatterns("/api/productos");
+//
+//		return filProductos;
+//	}
 
 }
