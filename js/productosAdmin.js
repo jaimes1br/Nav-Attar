@@ -28,6 +28,28 @@
 //         <!-- </div> -->
 //         </div><!--ap-->
 //         <!-- <div id="list-items">
+    // <div class="pIndividual1">
+    //   <img src="${item.imagen}" class="card-img-top" alt="image" id="imago">
+    // </div><!--pIndividual-->
+    //     <div class="cardInfo">
+    //     <div class="cardInfo1">
+    //       <h5 class="card-title"> ${item.nombre}</h5>
+    //       <h5 class="card-title"> ${item.medida}cm</h5>
+    //       <h5 class="card-title"> ${item.categoria}</h5>
+    //       <h5 class="card-title"> $${item.precio} mxn</h5>
+    //       </div><!--cardInfo1-->
+    //     </div><!--cardInfo-->
+    //     <div class="ap">
+    //       <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+    //       <div class="eliminar">
+    //       <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+    //       </div><!--Eliminar-->
+    //       <div class="descript">
+    //       <p class="card-text">${item.descripcion}</p>
+    //     </div><!--descript-->
+    //     <!-- </div> -->
+    //     </div><!--ap-->
+    //     <!-- <div id="list-items">
     
 //         </div> -->
 //     </div><!--cardcom-->

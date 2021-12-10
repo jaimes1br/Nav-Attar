@@ -9,37 +9,35 @@ let alertas = document.getElementById("alerta"); //div
 
 function addItem(item){
 
-  const itemHTML = 
-  `
+  const itemHTML = `
   <div class="cardcom">
-                                      
-  <div class="pIndividual1">
-    <img src="./../img/muñequitos/${item.imagen}" class="card-img-top" alt="image" id="imago">
-  </div><!--pIndividual-->
-      <div class="cardInfo">
-        <h5 class="card-title"> ${item.nombre}</h5>
-        <h5 class="card-title"> ${item.medida}cm</h5>
-        <h5 class="card-title"> ${item.categoria}</h5>
-        <h5 class="card-title"> $${item.precio}.00 mxn</h5>
-      </div><!--cardInfo-->
-      <div class="ap">
-        <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
-        <div class="eliminar">
-        // <a href="#" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
-        </div><!--Eliminar-->
-        <div class="descript">
+    <div class="pIndividual1">
+      <img src="./../img/muñequitos/${item.imagen}" class="card-img-top" alt="image" id="imago">
+    </div><!--pIndividual-->
+    <div class="cardInfo">
+      <h5 class="card-title"> ${item.nombre}</h5>
+      <h5 class="card-title"> ${item.medida}cm</h5>
+      <h5 class="card-title"> ${item.categoria}</h5>
+      <h5 class="card-title"> $${item.precio}.00 mxn</h5>
+    </div><!--cardInfo-->
+    <div class="ap">
+      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+      <div class="eliminar">
+        <a href="#" id="EliminarPROD" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+      </div><!--Eliminar-->
+      <div class="descript">
         <p class="card-text">${item.descripcion}</p>
       </div><!--descript-->
       <!-- </div> -->
-      </div><!--ap-->
-      <!-- <div id="list-items">
-  
-      </div> -->
+    </div><!--ap-->   
   </div><!--cardcom-->
-  `
- ;
+  `;
+  
   const itemsContainer = document.getElementById("Productos");
   itemsContainer.innerHTML += itemHTML;
+
+  
+
 }//addItem
 
 
@@ -172,7 +170,7 @@ function SubirNuevo(){
 }
 
 function eliminar(){
-  let idElminiar = 29;
+  let idElminiar = 10;
   
   let token = sessionStorage.getItem('sessionToken')
   token = "Bearer " + token

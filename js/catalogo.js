@@ -84,23 +84,7 @@ function filtrado(filtro){
 
 
     
-    // if( filtro === 'Todos'){
-    //     itemsContainer.innerHTML = '';
-    //     productos.forEach(objeto => {
-    //         addItem(objeto);
-    //     });
-    //     botonesCarrito();
-    // }
-    // else{
-    //     itemsContainer.innerHTML = '';
-    //     productos.forEach(objeto => {
-    //         if ((objeto.categoria).normalize('NFD').replace(/[\u0300-\u036f]/g,"") === filtro) {
-    //             addItem(objeto);
-    //         }//if
-    //     });//forEach
-        
-        // botonesCarrito();
-    // }
+  
 
 }//filtrado
 
