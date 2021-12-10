@@ -1,4 +1,4 @@
-CREATE DATABASE nav_attar;
+﻿CREATE DATABASE nav_attar;
 USE nav_attar;
 
 
@@ -70,14 +70,32 @@ VALUES
 
 
 
-INSERT INTO productos (nombre, precio, medida, descripcion, imagen,categoria) 
-VALUES 
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (1,'Batman',200.00,25,'Batman es un superhéroe que te acompañará en todos tus aventuras, recuerda que puedes personalizarlo a tu gusto','batman.jpg','Superhéroes');
 
-("Batman", 200, 25, "Batman es un superhéroe que te acompañará en todos tus aventuras, recuerda que puedes personalizarlo a tu gusto", "batman.jpg", "Superhéroes"),
-("Baby Yoda", 350.00, 20, "Si cool quieres ser, un baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto", "bby.jpg", "Superhéroes"),
-("Carlitos", 350.00, 20, "¿Recuerdas los momentos en familia cuando veían a los Rugrats? Como olvidar al olvidar al adorable Carlitos", "carlitos.jpg", "Caricaturas"),
-("Coraline", 420.00, 22, "Muñequita de Coraline tejida, recuerda que puedes personalizarlo a tu gusto ", "carol.jpg", "Caricaturas"),
-("Homero", 120.00, 15, "Desde Springfield hasta tus manos, este llavero ta hará decir ¡Woohoo!", "homero.jpg", "Caricaturas");
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (2,'Baby Yoda',350.00,20,'Si cool quieres ser, un baby Yoda debes tener, recuerda que puedes personalizarlo a tu gusto','bby.jpg','Superhéroes');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (3,'Carlitos',350.00,20,'¿Recuerdas los momentos en familia cuando veían a los Rugrats? Como olvidar al olvidar al adorable Carlitos','carlitos.jpg','Caricaturas');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (4,'Coraline',420.00,22,'Muñequita de Coraline tejida, recuerda que puedes personalizarlo a tu gusto ','carol.jpg','Caricaturas');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (5,'Iron Maiden',420.00,22,'El regalo perfecto para los Iron Maiden Lover 💕, recuerda que puedes personalizarlo a tu gusto','iron.jpg','Celebridades');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (6,'Homero',120.00,15,'Desde Springfield hasta tus manos, este llavero ta hará decir ¡Woohoo!','homero.jpg','Caricaturas');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (7,'Eladoscuro',600.00,20,'Luchador inspirado en una e-commerce basada en la venta online de souvenirs mexicanas con diseños originales, recuerda que puedes personalizarlo a tu gusto','luchador.jpg','Personalizados');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (8,'Ketzal',600.00,20,'Quetzal inspirado en una e-commerce para una cafetería, recuerda que puedes personalizarlo a tu gusto','quetzal.jpg','Personalizados');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (9,'Nav-Attar',600.00,20,'Inspirado en una e-commerce basada en la venta muñecos de crochet, recuerda que puedes personalizarlo a tu gusto','sata.jpg','Personalizados');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (10,'TremendaMexa',600.00,20,'Inspirado en la e-commerce basada en la venta de mandiles de cuero personalizados y café, recuerda que puedes personalizarlo a tu gusto','mndil.jpg','Personalizados');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (11,'Never Dies Co.',600.00,20,'Inspirado en una e-commerce basada en la venta de playeras, recuerda que puedes personalizarlo a tu gusto','metal.jpg','Personalizados');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (12,'Gato programador',600.00,20,'Recordemos a nuestras mascotas con algo pequeñito pero con mucho amor, recuerda que puedes personalizarlo a tu gusto','Gato-Cafe.jpg','Mascotas');
+
+INSERT INTO productos (`IDproducto`,`nombre`,`precio`,`medida`,`descripcion`,`imagen`,`categoria`) VALUES (13,'Harry Potter Team',600.00,20,'\'Este trio de amigos magicos te van a encantar.','hp.jpg','Personajes');
+
 
 
 
