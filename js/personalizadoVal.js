@@ -136,35 +136,35 @@ function guardarPedido(usuario,nombre,telefono,correo,tam,artesano,mensaje,url){
 
     }
 
-    let misPedidos = obtenerMisPedidos(usuario.id);
-  
+    let misPedidos = obtenerMisPedidos(usuario.email);
+    
     if (Object.keys(misPedidos).length === 0){
 
         let nuevoPedido = {
-            'idUsuario' : usuario.id,
+            'idEmail' : usuario.email,
             'pedidos' : []
         }
 
         nuevoPedido.pedidos.push(datosPedido);
-        agregarPedidoBD(nuevoPedido);
+        agregarPedidoBD(nuevoPedido);   
        
     }
     else{
       
         misPedidos.pedidos.push(datosPedido)
-        
         actualizarPedidosBD(misPedidos);
     }
 
 }
 
-function obtenerMisPedidos(idUsuario){
+function obtenerMisPedidos(email){
     let objetosJSON = localStorage.getItem("pedidosBD");      
     let pedidosBD = JSON.parse(objetosJSON);
     let tusPedidos = {};
 
+
     pedidosBD.forEach(function(pedidoUsu) {
-        if(pedidoUsu.idUsuario == idUsuario){
+        if(pedidoUsu.idEmail == email){
             tusPedidos = pedidoUsu;
         }
     });
@@ -188,11 +188,9 @@ function actualizarPedidosBD(misPedidos){
     let objetosJSON = localStorage.getItem("pedidosBD");      
     let pedidosBD = JSON.parse(objetosJSON);
 
-   
-
     pedidosBD.forEach(function(pedidoUu){
         
-        if(pedidoUu.idUsuario == misPedidos.idUsuario){
+        if(pedidoUu.email == misPedidos.email){
             pedidoUu.pedidos = misPedidos.pedidos;
             localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));
         }

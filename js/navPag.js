@@ -73,8 +73,6 @@ document.getElementById("myHeadpage").innerHTML = `<div class="container-fluid p
 let usuarioSesion = obtener();
 let iniciarSes= document.getElementById("sesIni");
 
-// console.log (usuarioSesion);
-//let usuarioSesion = [];
 
 if (usuarioSesion != null){
     iniciarSes.innerHTML=`

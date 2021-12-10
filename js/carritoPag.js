@@ -6,7 +6,7 @@ import { obtenerMisPedidos } from './personalizadoVal.js'
 
 function mostrarPedidos(usuario){
 
-    let misPedidos = obtenerMisPedidos(usuario.id)
+    let misPedidos = obtenerMisPedidos(usuario.email)
 
     if (Object.keys(misPedidos).length !== 0){
         if(misPedidos.pedidos.length != 0){
@@ -34,7 +34,7 @@ function mostrarPedidos(usuario){
         }
     }
     else{
-        console.log('vacio')
+        
     }
 
     
@@ -67,6 +67,7 @@ function cuentaTotal(){
     
     const productos = document.querySelectorAll('.subTotal');
 
+
     let totalSubCuenta = 0;
 
     for (let index = 0; index < productos.length; index++) {
@@ -83,7 +84,7 @@ function actualizarBotonesEliminar(){
     
     let btnsCarritoEliminar = document.querySelectorAll('.btnCarritoEliminar')
     let usuario = obtenerUsuarioSesion();
-    let miCarrito = obtenerMiCarrito(usuario.id);
+    let miCarrito = obtenerMiCarrito(usuario.email);
     let indice = '';
 
     btnsCarritoEliminar.forEach( function(button){
@@ -116,6 +117,7 @@ function actualizarBotonesEliminar(){
 function desplegar(){
 
     let usuario = obtenerUsuarioSesion();   
+    
 
     if (usuario.length == 0){
         let divAnuncio = document.getElementById('contenidoCarritoCompras');
@@ -134,8 +136,8 @@ function desplegar(){
         
         mostrarPedidos(usuario)
 
-        let miCarrito = obtenerMiCarrito(usuario.id);
-
+        let miCarrito = obtenerMiCarrito(usuario.email);
+       
         if(miCarrito.productos == 0){ 
             let divAnuncio = document.getElementById('contenidoCarritoCompras');
             divAnuncio.innerHTML = `
@@ -159,45 +161,46 @@ function desplegar(){
 
 
             miCarrito.productos.forEach(producto => {
-     
-                let tempProduc = obtenerProducto(producto.id)
+
 
                 divProductos.innerHTML += `
-                    <tr class="sepCarritoComprasTr productoCarrito">
-                        <td class = "imagenCarrito">  
-                            <img src="${tempProduc.imagen}" alt="">
-                        </td><!--imagenProducto-->
-                        <td class = "nombre"> 
-                            ${tempProduc.nombre}
-                        </td><!--nombreProducto-->
-                        <td class = "precio precioCarrito">
-                           $ ${tempProduc.precio} MXN 
-                        </td><!--precioProducto-->
-                        <td class= "cantidad">
-                            <button class= 'cantidadBtn' value="menos">-</button>
-                            <p id = 'cantidadValor' >1</p>
-                            <button class= 'cantidadBtn' value="mas">+</button>
-                        </td><!--cantidodaPrdocuto-->
-                        <td class="subTotal">
-                            $ ${tempProduc.precio} MXN
-                        </td>
-                        <td class="carritoEliminar">
-                            <button type="button" class="btn btnCarritoEliminar" value = ${tempProduc.id}><img src="./../img/iconos/trashWhite.svg" alt=""></button>
-                        </td>
-                    </tr>
-                    `;
+                        <tr class="sepCarritoComprasTr productoCarrito">
+                            <td class = "imagenCarrito">  
+                                <img src="./../img/muñequitos/${producto.imagen}" alt="">
+                            </td><!--imagenProducto-->
+                            <td class = "nombre"> 
+                                ${producto.nombre}
+                            </td><!--nombreProducto-->
+                            <td class = "precio precioCarrito">
+                               $ ${producto.precio} MXN 
+                            </td><!--precioProducto-->
+                            <td class= "cantidad">
+                                <button class= 'cantidadBtn' value="menos">-</button>
+                                <p id = 'cantidadValor' >1</p>
+                                <button class= 'cantidadBtn' value="mas">+</button>
+                            </td><!--cantidodaPrdocuto-->
+                            <td class="subTotal">
+                                $ ${producto.precio} MXN
+                            </td>
+                            <td class="carritoEliminar">
+                                <button type="button" class="btn btnCarritoEliminar" value = ${producto.id}><img src="./../img/iconos/trashWhite.svg" alt=""></button>
+                            </td>
+                        </tr>
+                        `;
 
             })
-                
+
+
             cuentaTotal();
-            actualizarBotonesEliminar();   
+            actualizarBotonesEliminar();
+               
         }//elementos en carrito
         
     }//else Hay usuario en sesion
     
     let finalizarBtn = document.getElementById('btnComprar');
     finalizarBtn.addEventListener('click',function(e){
-        let miCarrito = obtenerMiCarrito(usuario.id);
+        let miCarrito = obtenerMiCarrito(usuario.email);
         let alertaDiv = document.getElementById('alertaFin');
         alertaDiv.innerHTML = `
         <div class="alert alert-success" role="alert">
@@ -205,7 +208,7 @@ function desplegar(){
         </div>`;
 
         miCarrito.productos = []
-        actualizarCarroBD(miCarrito,usuario.id);
+        actualizarCarroBD(miCarrito,usuario.email);
 
         window.setTimeout(() => {window.location.reload();}, 2000);
         
@@ -213,6 +216,7 @@ function desplegar(){
 
     let btnsCantidad = document.querySelectorAll('.cantidadBtn');
     btnsCantidad.forEach( function(boton){
+    
         boton.addEventListener('click', function (e) {
             const target = e.currentTarget;
             contador(target.value,target.parentNode.children[1],target.parentNode.parentNode.children[2],target.parentNode.parentNode.children[4])

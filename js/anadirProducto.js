@@ -8,7 +8,7 @@ let alertas = document.getElementById("alerta"); //div
 
 
 function addItem(item){
-  console.log(item)
+
   const itemHTML = 
   `
   <div class="cardcom">
@@ -138,7 +138,6 @@ function SubirNuevo(){
         
     }).then(function(e){
       
-      console.log(nuevoProducto)
       
       if(e.status == 200){
         alertas.innerHTML += `

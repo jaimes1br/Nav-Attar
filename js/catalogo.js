@@ -1,5 +1,4 @@
 
-
 import { botonesCarrito } from './carritoCanasta.js';
 import { checarSesion } from './loginCerrarSesion.js';
 
@@ -47,7 +46,6 @@ function addItem(item){
 function filtrado(filtro){
     const itemsContainer = document.getElementById("list-items");
      
-   console.log('f ' + filtro)
 
     if( filtro === 'Todos'){
     
@@ -57,12 +55,11 @@ function filtrado(filtro){
         }).then(function(data){
             return data.json()
         }).then(function(data){
-            console.log(data)
             itemsContainer.innerHTML ='';
             data.forEach(function(objeto){
                 addItem(objeto);
             })
-                // botonesCarrito();
+                botonesCarrito();
             })
     }else{
         let endPoint = `http://127.0.0.1:8085/api/productos/cat?categoria=${filtro}`;
@@ -77,6 +74,7 @@ function filtrado(filtro){
             data.forEach(function(objeto){
                 addItem(objeto);
             })
+            botonesCarrito();
         })
 
 
@@ -137,7 +135,6 @@ function cuadro(){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
         seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-        console.log(seleccion);
         filtrado(seleccion);
     })
     });

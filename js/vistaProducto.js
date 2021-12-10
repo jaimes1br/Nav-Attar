@@ -35,13 +35,9 @@
 
 
 
-// let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
-// let productos = JSON.parse(productosJSON);
-
 let url = window.location;
 let idUrl = url.search.split('=')[1];
 
-console.log(idUrl)
 
 let endPoint = `http://127.0.0.1:8085/api/productos/${idUrl}`;
 
@@ -50,17 +46,6 @@ fetch(endPoint, {
 }).then(function(data){
     return data.json()
 }).then(function(data){
-    console.log(data)
     addItem(data)
 })
-        // botonesCarrito();
-    
-
-
-// productos.forEach(element => {
-//     if(element.id == idUrl){
-//         addItem(element)
-//     }
-// });
-
 
