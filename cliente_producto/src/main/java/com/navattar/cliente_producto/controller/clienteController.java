@@ -44,8 +44,8 @@ public class clienteController {
     public void updateCliente(@PathVariable("IDusuario") Long IDusuario,
                               @RequestParam(required = false) String nombre,
                               @RequestParam(required = true) String contrasena,
-                              @RequestParam(required = false) String nuevaContrasena,
-                              @RequestParam(required = false) String telefono){
-        _clienteServices.updateCliente(IDusuario, nombre, contrasena, nuevaContrasena, telefono);
+                              @RequestParam(required = true) String nuevaContrasena,
+                              @RequestParam(required = true) String telefono){
+        _clienteServices.updateCliente(IDusuario, nombre, contrasena,  nuevaContrasena, telefono);
     }//updateProducto
 }//clienteController

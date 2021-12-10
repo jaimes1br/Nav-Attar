@@ -30,6 +30,7 @@ public class artesano {
         this.nombre = nombre;
         this.correo_electronico = correo_electronico;
         this.setContrasena(contrasena);
+        this.contrasena = contrasena;
         this.telefono = telefono;
     }//constructor
 
@@ -69,7 +70,7 @@ public class artesano {
     }
 
     public void setClearContrasena(String contrasena) {
-        this.contrasena = SHAUtil.createHash(contrasena);
+        this.contrasena = contrasena;
     }
 
     public String getTelefono() {

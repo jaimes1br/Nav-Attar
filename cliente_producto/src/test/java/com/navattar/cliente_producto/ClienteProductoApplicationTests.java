@@ -50,40 +50,33 @@ class ClienteProductoApplicationTests {
 
 
 	@Test
-	public void shouldReturn500ErrorCliente() throws Exception{
-		this.mockMvc.perform(get("/api/clientes/8")).
-				andDo(print()).
-				andExpect(status().is5xxServerError());
-	}//shouldReturn500ErrorCliente
-
-	@Test
 	public void TestPOSTCliente() throws Exception{
 		cliente _cliente = new cliente();
-		_cliente.setNombre("Eika");
+		_cliente.setNombre("Erika");
 		_cliente.setCorreo_electronico("eflores@idr.com");
-		_cliente.setContrasena("Pa$$w0rd");
+		_cliente.setClearContrasena("Pa$$w0rd");
 		_cliente.setTelefono("5588996644");
 		this.mockMvc.perform(post("/api/clientes/").contentType(MediaType.APPLICATION_JSON).content(asJSONString(_cliente))).andExpect(status().isOk());
 	}//TestPOSTCliente
 
 	@Test
 	public void TestDeleteCliente () throws Exception{
-		this.mockMvc.perform( delete("/api/clientes/6")).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform( delete("/api/clientes/7")).andDo(print()).andExpect(status().isOk());
 	}//TestDeleteCliente
 
 	@Test
 	public void TestPUTCliente () throws Exception {
-		cliente _cliente = new cliente();
-		this.mockMvc.perform(put("/api/clientes/3?contrasena=Leonora7894!&nuevaContrasena=Leonora7895!")).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform(put("/api/clientes/8?contrasena=Pa$$w0rd&nuevaContrasena=hola1234"))
+				.andDo(print()).andExpect(status().isOk());
 	}//TestPUTCliente
 
 //*******************************FINALIZA PRUEBAS CLIENTE ******************************
 
-	//*******************************PRUEBAS PRODUCTO ******************************
+	//*******************************PRUEBAS PRODUCTO******************************
 
 	@Test
 	public void TestGETProducto() throws Exception{
-		this.mockMvc.perform(get("/api/productos/"))
+		this.mockMvc.perform(get("/api/productos"))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString(".jpg")));
@@ -91,16 +84,9 @@ class ClienteProductoApplicationTests {
 		this.mockMvc.perform(get("/api/productos/1"))
 				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("Superhéroes")));
-
+				.andExpect(content().string(containsString("Batman")));
 	}//TestGetProducto
 
-	@Test
-	public void shouldReturn500ErrorProducto() throws Exception{
-		this.mockMvc.perform(get("/api/productos/8")).
-				andDo(print()).
-				andExpect(status().is5xxServerError());
-	}//shouldReturn500ErrorProducto
 
 	@Test
 	public void TestPOSTProducto() throws Exception{
@@ -118,13 +104,13 @@ class ClienteProductoApplicationTests {
 
 	@Test
 	public void TestDeleteProducto () throws Exception{
-		this.mockMvc.perform( delete("/api/productos/6")).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform( delete("/api/productos/7")).andDo(print()).andExpect(status().isOk());
 	}//TestDeleteProducto
 
 	@Test
 	public void TestPUTProducto () throws Exception {
 		productos _productos = new productos();
-		this.mockMvc.perform(put("/api/productos/3?medida=20&medida=25")).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform(put("/api/productos/1?medida=25&medida=20")).andDo(print()).andExpect(status().isOk());
 	}//TestPUTProducto
 
 
@@ -148,13 +134,6 @@ class ClienteProductoApplicationTests {
 
 
 	@Test
-	public void shouldReturn500ErrorArtesano() throws Exception{
-		this.mockMvc.perform(get("/api/artesano/8")).
-				andDo(print()).
-				andExpect(status().is4xxClientError());
-	}//shouldReturn500ErrorCliente
-
-	@Test
 	public void TestPOSTArtesano() throws Exception{
 		artesano _artesano = new artesano();
 		_artesano.setNombre("Juan Carlos Valencia");
@@ -172,8 +151,7 @@ class ClienteProductoApplicationTests {
 
 	@Test
 	public void TestPUTArtesano () throws Exception {
-		//artesano _artesano = new artesano();
-		this.mockMvc.perform(put("/api/artesano/1?contrasena=Leonora7894!&nuevaContrasena=ErikDPrueba!")).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform(put("/api/artesano/8?contrasena=Leonora7894!&nuevaContrasena=HolaJuanCarlos555!")).andDo(print()).andExpect(status().isOk());
 	}//TestPUTCliente
 
 	//*******************************FINALIZA PRUEBAS ARTESANO ******************************
