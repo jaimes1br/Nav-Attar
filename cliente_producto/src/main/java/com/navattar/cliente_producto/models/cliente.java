@@ -67,9 +67,10 @@ public class cliente {
         this.contrasena = SHAUtil.createHash(contrasena);
     }//setContrasena
 
-    public void setClearContrasena(String contrasema){
+    public void setClearContrasena(String contrasena) {
         this.contrasena = contrasena;
-    }
+    }//setClearContrasena
+
 
     public String getTelefono() {
         return telefono;

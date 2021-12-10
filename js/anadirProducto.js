@@ -6,6 +6,44 @@ let imagen = document.getElementById("Imagen_prod"); //select
 let descripcion = document.getElementById("Descripcion_prod"); //input
 let alertas = document.getElementById("alerta"); //div
 
+
+function addItem(item){
+
+  const itemHTML = `
+  <div class="cardcom">
+    <div class="pIndividual1">
+      <img src="./../img/muñequitos/${item.imagen}" class="card-img-top" alt="image" id="imago">
+    </div><!--pIndividual-->
+    <div class="cardInfo">
+      <h5 class="card-title"> ${item.nombre}</h5>
+      <h5 class="card-title"> ${item.medida}cm</h5>
+      <h5 class="card-title"> ${item.categoria}</h5>
+      <h5 class="card-title"> $${item.precio}.00 mxn</h5>
+    </div><!--cardInfo-->
+    <div class="ap">
+      <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> -->
+      <div class="eliminar">
+        <a href="#" id="EliminarPROD" class="btn"><img src="./../img/iconos/social/Eliminar-btn.jpg" id="eliminar-btn" alt=""></a>
+      </div><!--Eliminar-->
+      <div class="descript">
+        <p class="card-text">${item.descripcion}</p>
+      </div><!--descript-->
+      <!-- </div> -->
+    </div><!--ap-->   
+  </div><!--cardcom-->
+  `;
+  
+  const itemsContainer = document.getElementById("Productos");
+  itemsContainer.innerHTML += itemHTML;
+
+  
+
+}//addItem
+
+
+
+
+
 function SubirNuevo(){
   
 //----------------------------Expresiones regulares
@@ -82,11 +120,9 @@ function SubirNuevo(){
     
     let token = sessionStorage.getItem('sessionToken')
     token = "Bearer " + token
-    console.log(token)
 
   if(token != undefined){
-    console.log('Lo enviaremos')
-
+    
 
     let endPoint = 'http://127.0.0.1:8085/api/productos';
     fetch(endPoint, {
@@ -99,12 +135,15 @@ function SubirNuevo(){
         body: JSON.stringify(nuevoProducto)
         
     }).then(function(e){
-      console.log()
+      
+      
       if(e.status == 200){
         alertas.innerHTML += `
         <div class="alert alert-success" role="alert">
             <h3> ¡Formulario Correcto! </h3>
         </div>`;
+        addItem(nuevoProducto)
+
       }else if(e.status == 500){
         alertas.innerHTML += `
         <div class="alert alert-danger" role="alert">
@@ -114,11 +153,9 @@ function SubirNuevo(){
 
     })
     .catch(function(error){
-      console.log(error)
+      
     })
 
-  }else{
-    console.log('no mano')
   }
 
     nombre.value = "";
@@ -133,7 +170,7 @@ function SubirNuevo(){
 }
 
 function eliminar(){
-  let idElminiar = 20;
+  let idElminiar = 10;
   
   let token = sessionStorage.getItem('sessionToken')
   token = "Bearer " + token
@@ -147,10 +184,10 @@ function eliminar(){
             'authorization': token
       }      
     }).then(function(e){
-      console.log(e)
+      
     })
     .catch(function(error){
-      console.log(error)
+      
     })
 }
 

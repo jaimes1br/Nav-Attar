@@ -53,13 +53,37 @@ public class clienteServices {
             if ((!nombre.isEmpty()) && (!nombre.equals(_clientetemp.getNombre()))){
                 _clientetemp.setNombre(nombre);
             }//nombre
+
         if (_clientetemp.getContrasena().equals(contrasena)){
             _clientetemp.setContrasena(nuevaContrasena);
         }//if contrasena => nuevaContrasena
+
         if (telefono != null)
             if ((!telefono.isEmpty()) && (!telefono.equals(_clientetemp.getTelefono()))){
                 _clientetemp.setTelefono(telefono);
             }//telefono
+        _clientetemp.setContrasena(nuevaContrasena);
     }
+
+
+//@Transactional
+//public void updateUser(Long id, String contrasena, String newPassword){
+//    cliente _clientetemp = clienteRepository.findById(id).
+//            orElseThrow(()->new IllegalStateException("El Usuario con el id[" + id  + "]no existe"));
+//    if ((currentPassword == null) || (newPassword ==null)){
+//        throw new IllegalStateException("El Usuario con el id[" + id   + "]no existe");
+//    }// if
+//    if(! SHAUtil.verifyHash(currentPassword, user.getPassword())){
+//        throw new IllegalStateException("El Usuario con el id[" + id   + "]no existe");
+//    }
+//
+//    user.setPassword(newPassword);
+//
+//}//updateUser
+
+    
+    
+    
+    
 
 }//clienteServices

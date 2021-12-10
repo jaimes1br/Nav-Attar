@@ -2,7 +2,7 @@ function botonesCarrito(){
     let bntsAgregar = document.querySelectorAll('.anadirACarrito');
     let alertaModal = document.getElementById('alertaCarrito');
 
-    
+   
     bntsAgregar.forEach(function(boton){
         
         boton.addEventListener('click',function(e){
@@ -40,34 +40,41 @@ function anadirProductoCarrito(usuario,idProducto){
     // usuario // <-- usuario en sesión lo utilizamos para conocer el id y abrir su carrito  
     // idProducto // <-- para obtener el producto que seleccionamos 
     let alertaModal = document.getElementById('alertaCarrito');
-    let miCarrito = obtenerMiCarrito(usuario.id);
+    let miCarrito = obtenerMiCarrito(usuario.email);
     
     if (Object.keys(miCarrito).length === 0){
    
         let carrito = {
-            'idUsuario' : usuario.id,
+            'idEmail' : usuario.email,
             'productos' : []
         }
 
-        let producto = obtenerProducto(idProducto);
-        
-        carrito.productos.push(producto);
-        agregarCarroBD(carrito);
-        
-        alertaModal.innerHTML = '';
-        alertaModal.innerHTML = `
-        <div class="alert alert-success" role="alert">
-            <h3>Agregado a carrito <br>
-        </div>`;
 
-        canasta(1);
-        
+        let endPoint = `http://127.0.0.1:8085/api/productos/${idProducto}`;
+        fetch(endPoint, {
+            method: 'get'
+        }).then(function(data){
+            return data.json()
+        }).then(function(data){
+            carrito.productos.push(data)
+            agregarCarroBD(carrito);
+            alertaModal.innerHTML = '';
+            alertaModal.innerHTML = `
+            <div class="alert alert-success" role="alert">
+                <h3>Agregado a carrito <br>
+            </div>`;
+            
+            canasta(1);
+            actualizarCanasta();
+        })
+
+
     }else{
         
         let flagAgregar = true;
-
+    
         miCarrito.productos.forEach(function(elementoCarrito){
-            if(elementoCarrito.id == idProducto){
+            if(elementoCarrito.idproducto == idProducto){
                 flagAgregar = false;
                 alertaModal.innerHTML = '';
                 alertaModal.innerHTML = `
@@ -79,27 +86,35 @@ function anadirProductoCarrito(usuario,idProducto){
         })
 
         if(flagAgregar){
-            let producto = obtenerProducto(idProducto);
-            miCarrito.productos.push(producto)
-            actualizarCarroBD(miCarrito,usuario.id);
-            alertaModal.innerHTML = '';
-            alertaModal.innerHTML = `
-            <div class="alert alert-success" role="alert">
-                <h3>Agregado a carrito <br>
-            </div>`;
-            canasta(miCarrito.productos.length);
+            
+            let endPoint = `http://127.0.0.1:8085/api/productos/${idProducto}`;
+            fetch(endPoint, {
+                method: 'get'
+            }).then(function(data){
+                return data.json()
+            }).then(function(data){
+                miCarrito.productos.push(data)
+                actualizarCarroBD(miCarrito,usuario.email);
+                alertaModal.innerHTML = '';
+                alertaModal.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    <h3>Agregado a carrito <br>
+                </div>`;
+                actualizarCanasta();
+        })
+
         }
     }
 }//anadirProductoCarrito
 
 
-function obtenerMiCarrito(id){
+function obtenerMiCarrito(email){
     let objetosJSON = localStorage.getItem("carroBD");      
     let carroBD = JSON.parse(objetosJSON);
     let tuCarrito = {};
 
     carroBD.forEach(function(carrito){
-        if(carrito.idUsuario == id){
+        if(carrito.idEmail == email){
             tuCarrito = carrito;        
         }
     });
@@ -141,7 +156,7 @@ function actualizarCarroBD(carrito,id){
     let carroBD = JSON.parse(objetosJSON);
     
     carroBD.forEach(function(carritoBD){
-        if(carritoBD.idUsuario == carrito.idUsuario){
+        if(carritoBD.idEmail == carrito.idEmail){
             carritoBD.productos = carrito.productos;
             localStorage.setItem("carroBD", JSON.stringify(carroBD));
         }
@@ -163,7 +178,7 @@ function actualizarCanasta(){
 
     if( usuarioEnSesion.length != 0){
        
-        let misProductos = obtenerMiCarrito(usuarioEnSesion.id);
+        let misProductos = obtenerMiCarrito(usuarioEnSesion.email);
         if (Object.keys(misProductos).length === 0){
             canasta(0)
         }
@@ -176,18 +191,13 @@ function actualizarCanasta(){
     
 }
 
-export { actualizarCanasta, botonesCarrito, obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD};
+export { actualizarCanasta, botonesCarrito, obtenerUsuarioSesion, obtenerMiCarrito, obtenerProducto, actualizarCarroBD, anadirProductoCarrito};
 
 
 
 
-function carroBaseDatos(){
-    let carroBD = [];
-    localStorage.setItem("carroBD", JSON.stringify(carroBD));
-}
 
 
 
-carroBaseDatos();
 actualizarCanasta();
 botonesCarrito();

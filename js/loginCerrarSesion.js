@@ -6,11 +6,9 @@ checarSesion();
 function checarSesion(){
 
     let usuarioSesion = obtener();  
-    // let usuarioSesion = obtener();
     let iniciarSes = document.getElementById("sesIni");
 
     if(usuarioSesion != null){
-        console.log('ensesion')
         iniciarSes.innerHTML=`
         <a class="nav-link" id="cerrarSesion">
             Cerrar sesión
@@ -20,6 +18,7 @@ function checarSesion(){
             e.preventDefault();
             
             sessionStorage.removeItem('sessionToken');
+            localStorage.setItem("usuarioEnSesion", JSON.stringify([]));
             window.setTimeout(() => {window.location.href = './../index.html';}, 1000);
         });        
     }

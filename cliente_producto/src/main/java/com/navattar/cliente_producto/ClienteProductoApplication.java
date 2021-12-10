@@ -1,11 +1,7 @@
 package com.navattar.cliente_producto;
 
-import com.navattar.cliente_producto.filter.JwtFilter;
-import com.navattar.cliente_producto.filter.JwtFilterProducts;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class ClienteProductoApplication {
@@ -14,7 +10,7 @@ public class ClienteProductoApplication {
 		SpringApplication.run(ClienteProductoApplication.class, args);
 	}
 
-	//Aqui va a arrancar mi filtro
+	Aqui va a arrancar mi filtro
 	@Bean
 	public FilterRegistrationBean<JwtFilter> jwtFilter(){
 		FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<JwtFilter>();

@@ -10,5 +10,4 @@ let btnCerrar = document.getElementById("cerrarSesion");
 
 btnCerrar.addEventListener('click', function(e){
     e.preventDefault();
-    console.log('cerrarcerrarcerrarcerrarcerrarcerrar')
 })

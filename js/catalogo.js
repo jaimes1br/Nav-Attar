@@ -1,5 +1,4 @@
 
-
 import { botonesCarrito } from './carritoCanasta.js';
 import { checarSesion } from './loginCerrarSesion.js';
 
@@ -47,23 +46,21 @@ function addItem(item){
 function filtrado(filtro){
     const itemsContainer = document.getElementById("list-items");
      
-   console.log('f ' + filtro)
 
     if( filtro === 'Todos'){
     
-    let endPoint = `http://127.0.0.1:8085/api/productos`;
-    fetch(endPoint, {
-	    method: 'get'
-    }).then(function(data){
-        return data.json()
-    }).then(function(data){
-           console.log(data)
-           itemsContainer.innerHTML ='';
-           data.forEach(function(objeto){
-               addItem(objeto);
-           })
-            // botonesCarrito();
-        })
+        let endPoint = `http://127.0.0.1:8085/api/productos`;
+        fetch(endPoint, {
+            method: 'get'
+        }).then(function(data){
+            return data.json()
+        }).then(function(data){
+            itemsContainer.innerHTML ='';
+            data.forEach(function(objeto){
+                addItem(objeto);
+            })
+                botonesCarrito();
+            })
     }else{
         let endPoint = `http://127.0.0.1:8085/api/productos/cat?categoria=${filtro}`;
         
@@ -77,6 +74,7 @@ function filtrado(filtro){
             data.forEach(function(objeto){
                 addItem(objeto);
             })
+            botonesCarrito();
         })
 
 
@@ -86,23 +84,7 @@ function filtrado(filtro){
 
 
     
-    // if( filtro === 'Todos'){
-    //     itemsContainer.innerHTML = '';
-    //     productos.forEach(objeto => {
-    //         addItem(objeto);
-    //     });
-    //     botonesCarrito();
-    // }
-    // else{
-    //     itemsContainer.innerHTML = '';
-    //     productos.forEach(objeto => {
-    //         if ((objeto.categoria).normalize('NFD').replace(/[\u0300-\u036f]/g,"") === filtro) {
-    //             addItem(objeto);
-    //         }//if
-    //     });//forEach
-        
-        // botonesCarrito();
-    // }
+  
 
 }//filtrado
 
@@ -137,7 +119,6 @@ function cuadro(){
     categoria.addEventListener('click', (e) =>{
         let seleccion = e.currentTarget.innerHTML; 
         seleccion = seleccion.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-        console.log(seleccion);
         filtrado(seleccion);
     })
     });

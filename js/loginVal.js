@@ -3,13 +3,6 @@ let form = document.getElementById('form');
 let correo = document.getElementById("correo");
 let pass = document.getElementById('pass');
 let alertaLogin = document.getElementById('alertaLogin');
-// let usuarioSesion = [];
-// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
-// localStorage.setItem("usuarioSesion", usuarioSesionJSON);
-
-// let usuarioSesion = [];
-// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
-// localStorage.setItem("usuarioEnSesion", usuarioSesionJSON);
 
 
 form.addEventListener('submit', e => {
@@ -87,6 +80,11 @@ function iniciarSesion(correo,pass){
         }
         else{
             sessionStorage.setItem('sessionToken',data.accessToken);
+
+            usuarioDatos['password'] = '';
+            localStorage.setItem("usuarioEnSesion", JSON.stringify(usuarioDatos));
+
+
             alertaLogin.innerHTML += `
                 <div class="alert alert-success" role="alert">
                     <h3>Bienvenid@</h3> <br>
@@ -98,7 +96,7 @@ function iniciarSesion(correo,pass){
     })
     
     .catch(function(error){
-        console.log('error: ' + error);
+    
     })
 
 }//siLosDatosSonValidosColocamosEnLocal
