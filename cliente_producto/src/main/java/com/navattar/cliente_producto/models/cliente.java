@@ -28,6 +28,7 @@ public class cliente {
         this.nombre = nombre;
         this.correo_electronico = correo_electronico;
         this.setContrasena(contrasena);
+        this.contrasena = contrasena;
         this.telefono = telefono;
     }//Constructor
 
@@ -65,6 +66,10 @@ public class cliente {
     public void setContrasena(String contrasena) {
         this.contrasena = SHAUtil.createHash(contrasena);
     }//setContrasena
+
+    public void setClearContrasena(String contrasema){
+        this.contrasena = contrasena;
+    }
 
     public String getTelefono() {
         return telefono;
