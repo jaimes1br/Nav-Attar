@@ -3,13 +3,6 @@ let form = document.getElementById('form');
 let correo = document.getElementById("correo");
 let pass = document.getElementById('pass');
 let alertaLogin = document.getElementById('alertaLogin');
-let usuarioSesion = [];
-// let usuarioSesionJSON = JSON.stringify(usuarioSesion); //productos a JSON
-// localStorage.setItem("usuarioSesion", usuarioSesionJSON);
-
-let usuarioSesion = [];
-let usuarioSesionJSON = JSON.stringify(usuarioSesion); //produtos a JSON
-localStorage.setItem("usuarioEnSesion", usuarioSesionJSON);
 
 
 form.addEventListener('submit', e => {
@@ -37,7 +30,7 @@ form.addEventListener('submit', e => {
         
         /**Consulta el arreglo y checa elemento por elemento para ver si conicide*/
         let usuarios = obtener();
-        
+        console.log()
         usuarios.forEach(usuario => {
             if(usuario.correo == correo.value && usuario.contrasena == encriptar(pass.value)){
                 alertaLogin.innerHTML += `

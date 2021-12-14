@@ -30,7 +30,10 @@ public class clienteServices {
         if (_clienteRepository.existsById(IDusuario)){
             _clienteRepository.deleteById(IDusuario);
         }//if
-        throw new IllegalStateException("El cliente con el ID no Existe");
+        else{
+            throw new IllegalStateException("El cliente con el ID no Existe");
+        }
+
     }//deleteCliente
 
     public void addCliente (cliente _cliente){
@@ -42,16 +45,12 @@ public class clienteServices {
     }//addCliente
 
     @Transactional
-    public void updateCliente(Long IDusuario, String nombre, String apellido, String contrasena, String nuevaContrasena, String telefono){
+    public void updateCliente(Long IDusuario, String nombre, String contrasena, String nuevaContrasena, String telefono){
         cliente _clientetemp = _clienteRepository.findById(IDusuario).orElseThrow(()-> new IllegalStateException("El cliente con el ID ["+IDusuario+"] No existe"));
         if (nombre != null)
             if ((!nombre.isEmpty()) && (!nombre.equals(_clientetemp.getNombre()))){
                 _clientetemp.setNombre(nombre);
             }//nombre
-        if (apellido != null)
-            if((!apellido.isEmpty()) && (!apellido.equals(_clientetemp.getApellido()))){
-                _clientetemp.setApellido(apellido);
-            }//apellido
         if (_clientetemp.getContrasena().equals(contrasena)){
             _clientetemp.setContrasena(nuevaContrasena);
         }//if contrasena => nuevaContrasena

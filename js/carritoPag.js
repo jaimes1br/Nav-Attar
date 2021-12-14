@@ -135,8 +135,7 @@ function desplegar(){
         mostrarPedidos(usuario)
 
         let miCarrito = obtenerMiCarrito(usuario.id);
-
-        if(miCarrito.productos == 0){ 
+        if (Object.keys(miCarrito).length === 0){
             let divAnuncio = document.getElementById('contenidoCarritoCompras');
             divAnuncio.innerHTML = `
             
@@ -147,51 +146,69 @@ function desplegar(){
         
             let divTotal = document.getElementById('divTotal');
             divTotal.innerHTML = '';
-        } //sin elementos en el carrito
-        
+        }//si no existe mi carrito
         else{
+        
+            if(miCarrito.productos == 0){ 
+                let divAnuncio = document.getElementById('contenidoCarritoCompras');
+                divAnuncio.innerHTML = `
+                
+                <div class="vacioCarritoCompras">
+                    <h2>Tu carrito está vacío. <img src="./../img/iconos/triste.png"  class='tristeCarrito' alt="triste"></h2>
+                    <a href="./../pages/catalogo.html?cat=Todos" class="btn elementosCardProducto_btn" id="btnComprar">Volver a catálogo</a>
+                </div>`;
+            
+                let divTotal = document.getElementById('divTotal');
+                divTotal.innerHTML = '';
+            } //sin elementos en el carrito
+            
+            else{
 
            
 
-            let divProductos = document.getElementById("listaCarritoProd"); // <-- div para listar mis productos
-            
-            divProductos.innerHTML = '';
-
-
-            miCarrito.productos.forEach(producto => {
-     
-                let tempProduc = obtenerProducto(producto.id)
-
-                divProductos.innerHTML += `
-                    <tr class="sepCarritoComprasTr productoCarrito">
-                        <td class = "imagenCarrito">  
-                            <img src="${tempProduc.imagen}" alt="">
-                        </td><!--imagenProducto-->
-                        <td class = "nombre"> 
-                            ${tempProduc.nombre}
-                        </td><!--nombreProducto-->
-                        <td class = "precio precioCarrito">
-                           $ ${tempProduc.precio} MXN 
-                        </td><!--precioProducto-->
-                        <td class= "cantidad">
-                            <button class= 'cantidadBtn' value="menos">-</button>
-                            <p id = 'cantidadValor' >1</p>
-                            <button class= 'cantidadBtn' value="mas">+</button>
-                        </td><!--cantidodaPrdocuto-->
-                        <td class="subTotal">
-                            $ ${tempProduc.precio} MXN
-                        </td>
-                        <td class="carritoEliminar">
-                            <button type="button" class="btn btnCarritoEliminar" value = ${tempProduc.id}><img src="./../img/iconos/trashWhite.svg" alt=""></button>
-                        </td>
-                    </tr>
-                    `;
-
-            })
+                let divProductos = document.getElementById("listaCarritoProd"); // <-- div para listar mis productos
                 
-            cuentaTotal();
-            actualizarBotonesEliminar();   
-        }//elementos en carrito
+                divProductos.innerHTML = '';
+                // let miCarrito = obtenerMiCarrito(usuario.id);
+    
+                console.log(miCarrito);
+    
+                miCarrito.productos.forEach(producto => {
+         
+                    let tempProduc = obtenerProducto(producto.id)
+    
+                    divProductos.innerHTML += `
+                        <tr class="sepCarritoComprasTr productoCarrito">
+                            <td class = "imagenCarrito">  
+                                <img src="${tempProduc.imagen}" alt="">
+                            </td><!--imagenProducto-->
+                            <td class = "nombre"> 
+                                ${tempProduc.nombre}
+                            </td><!--nombreProducto-->
+                            <td class = "precio precioCarrito">
+                               $ ${tempProduc.precio} MXN 
+                            </td><!--precioProducto-->
+                            <td class= "cantidad">
+                                <button class= 'cantidadBtn' value="menos">-</button>
+                                <p id = 'cantidadValor' >1</p>
+                                <button class= 'cantidadBtn' value="mas">+</button>
+                            </td><!--cantidodaPrdocuto-->
+                            <td class="subTotal">
+                                $ ${tempProduc.precio} MXN
+                            </td>
+                            <td class="carritoEliminar">
+                                <button type="button" class="btn btnCarritoEliminar" value = ${tempProduc.id}><img src="./../img/iconos/trashWhite.svg" alt=""></button>
+                            </td>
+                        </tr>
+                        `;
+    
+                })
+                    
+                cuentaTotal();
+                actualizarBotonesEliminar();   
+            }//elementos en carrito
+            
+        }
         
     }//else Hay usuario en sesion
     

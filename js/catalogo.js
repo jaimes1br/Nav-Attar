@@ -311,9 +311,10 @@ function elementoCategoria(){
 /**Descomentar líneas de abajo para generar el local de los productos iniciales
  * comentar la siguiente vez
  */
-  let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
-  localStorage.setItem("objetos", objetosJSON); //En localStorage
 
+ let objetosJSON = JSON.stringify(objetosTexto); //produtos a JSON
+ localStorage.setItem("objetos", objetosJSON); //En localStorage
+// console.log('aqui')
 
 let productosJSON = localStorage.getItem("objetos"); //Lo tomamos del local
 let productos = JSON.parse(productosJSON);

@@ -16,7 +16,9 @@ let erroneo = false;
 
 
 if (window.location.href == 'http://127.0.0.1:5502/pages/personalizado.html') {
-    form.addEventListener('submit', formValidation);
+// let pedidosBD = [];
+// localStorage.setItem("pedidosBD", JSON.stringify(pedidosBD));  
+form.addEventListener('submit', formValidation);
 }
 
 

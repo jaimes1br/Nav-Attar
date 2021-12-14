@@ -31,8 +31,10 @@ public class ProductoServices {
     public void deleteProducto(Long IDproducto){
         if (_productoRepository.existsById(IDproducto)) {
             _productoRepository.deleteById(IDproducto);
-            }//if
-        throw new IllegalStateException("El producto con el id ingresado no existe.");
+        }//if
+        else{
+            throw new IllegalStateException("El producto con el id ingresado no existe.");
+        }
 
     }//deleteProducto
 
@@ -46,7 +48,7 @@ public class ProductoServices {
     }//addProducto
 
 @Transactional
-    public void updateProductos(Long IDproducto, String nombre, Double precio, Long medida, String descripcion, String imagen, Long existencia, Long Categoria_IDcategoria) {
+    public void updateProductos(Long IDproducto, String nombre, Double precio, Long medida, String descripcion, String imagen,String categoria) {
     productos producto = _productoRepository.findById(IDproducto).orElseThrow(() -> new IllegalStateException("El producto con ese id no existe."));
         if (nombre != null)
             if ((!nombre.isEmpty()) && !nombre.equals(producto.getNombre())) {
@@ -64,12 +66,9 @@ public class ProductoServices {
         if ((imagen !=null) && (!imagen.equals(producto.getImagen()))){
             producto.setImagen(imagen);
         }//imagen
-        if ((existencia > 0) && (!existencia.equals(producto.getExistencia()))){
-            producto.setExistencia(existencia);
-        }//existencia
-        if ((Categoria_IDcategoria > 0) && (!Categoria_IDcategoria.equals(producto.getCategoria_IDcategoria()))){
-            producto.setCategoria_IDcategoria(Categoria_IDcategoria);
-        }//Categoria_IDcategoria
+    if ((categoria !=null) && (!categoria.equals(producto.getCategoria()))){
+        producto.setImagen(imagen);
+    }//imagen
 
 
     }//updateProductos

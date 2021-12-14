@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
+@CrossOrigin("*")
 public class productoController {
 
 private final ProductoServices _productoServices;
@@ -42,10 +43,9 @@ private final ProductoServices _productoServices;
                                @RequestParam (required = false) Long medida,
                                @RequestParam (required = false) String descripcion,
                                @RequestParam (required = false) String imagen,
-                               @RequestParam (required = false) Long existencia,
-                               @RequestParam (required = false) Long Categoria_IDcategoria)
-                               {
-        _productoServices.updateProductos(IDproducto, nombre, precio, medida, descripcion, imagen, existencia, Categoria_IDcategoria);
+                               @RequestParam (required = false) String categoria)
+    {
+        _productoServices.updateProductos(IDproducto, nombre, precio, medida, descripcion, imagen,categoria);
     }//updateProducto
 
 }//class productoController
